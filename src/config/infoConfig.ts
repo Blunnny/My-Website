@@ -3,7 +3,7 @@ export * from './education'
 export * from './career'
 
 // personal info
-export const name = 'Derek Hu'
+export const name = '靳安和'
 export const headline = 'Teacher at Shanghai Soong Ching Ling School.'
 export const introduction =
   "Coucou Les Amis! My name is Derek Hu. I'm from Hubei and an alumnus of BUPT, UChicago, and Tsinghua. I’ve been teaching Computer Science at SCLS since 2020."
