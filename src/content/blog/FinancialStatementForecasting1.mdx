@@ -1,0 +1,153 @@
+---
+title: '预测财务报表（上）'
+description: '财务报表预测介绍、预测顺序及利润表预测方法'
+date: '2024-02-25'
+---
+
+## 前言
+
+印象中第一次做预测财务报表是在大三，上公司理财的时候搞了个预测的模型，但是当时对预测报表还不够了解，做出来的结果问题也很大，最后被hb问的半天下不来台（虽然我至今觉得hb也不懂），尴尬的程度仅次于7015被professor GAO argue，现在有时间再拿出来详细整理一下，算是做个总结。
+
+## 一、财务报表预测介绍
+
+财务报表预测指的是根据企业期初已经平衡（资产 = 负债 + 所有者权益）的财务报表，根据一系列假设预测企业未来的财务报表，并将新一期的三张报表串联起来，实现新报表的平衡。
+
+财务报表预测表面上是对会计报表的应用，实际上是借由会计报表，通过各种假设体现对企业的整体理解。为简化起见，这篇文章的目的仅仅在于整理构建财务模型的一般性步骤，而不在于讨论其中的具体细节，包括追加/收回投资、递延所得税的处理、企业合并等等，以下示例的建模过程均是以一个理想的成熟公司为基础进行的。
+
+<strong>
+  但必须强调的是，财务模型的意义在于体现我们对于企业的整体理解：不仅包括企业的财务状况，还包括业务模式、发展规划等信息。
+</strong>
+体现到具体细节上，再相近的公司也会千差万别，所以我们暂时忽略的这些细节又是至关重要的，因为公司的本质就体现在这些细节中。在这个层面上来说，虽然财务报表预测通常在分析时放在最后，但进行财务报表预测并不是目的，而只是展示并从会计层面验证我们对于公司理解的一种手段。为了时刻提醒这一点，尽管不会作具体分析，但我们在后边预测的时候仍然会给出一些分析角度。
+
+## 二、财务报表预测的顺序
+
+根据公司经营的特点，我们可以将公司分为两类：<strong>收入驱动型与资产驱动型。</strong>收入驱动型企业的特征是资产负债的规模变化主要取决于收入的变化，绝大多数企业均属于此类。对资产驱动型企业来说，其收入的规模直接取决于资产负债的规模，或者说其资产负债的规模代表了业务的规模，这类企业的典型代表就是银行业。
+
+因为绝大多数企业都属于收入驱动型，因此后边的介绍均以收入驱动型企业为基础。由于该类企业收入驱动的特点，我们一般从利润表入手，具体是否选择重构利润表均可（利润表的重构，以下示例采用标准利润表），在预测完利润表之后，考虑到资产负债表比现金流量表更好预测（资产负债表是时点值，与历史数据关联性强），所以下一步为预测资产负债表，最后，由于会计恒等式的存在（会计入门指南（二）），三张报表只存在两个自由度，因此当确定利润表和资产负债表时，现金流量表就已经确定，不需要我们继续进行预测。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/1.png"
+    alt="财务报表预测顺序"
+  />
+</div>
+
+总结一下，我们预测报表的一般步骤为：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/2.png"
+    alt="预测报表步骤"
+  />
+</div>
+
+## 三、利润表的预测
+
+### 1 预测营业收入
+
+预测营业收入是整个财务报表预测的第一步，也是最为重要的一步，因为后边大多数项目都要受到营业收入的影响。以下是可能的预测角度：
+
+（1）收入增长率法：在公司经营没有重大变化的时候，可以考虑使用历史增长率，包括平均增长率、复合增长率、时间序列等。但要注意历史数据总是不能完全代表未来，更重要的在于了解收入增长背后的驱动因素，如上下游情况、产能情况等。
+
+（2）自上而下：预测收入也可以从市场总体出发考虑
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/3.png"
+    alt="自上而下预测"
+  />
+</div>
+
+进一步：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/4.png"
+    alt="自上而下预测进一步"
+  />
+</div>
+
+（3）自下而上：与自上而下相反，这一方法着眼于公司自身：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/5.png"
+    alt="自下而上预测"
+  />
+</div>
+
+其中价格受到产品特点、竞争策略、公司定价方法的影响，而销量又可以进一步拆分：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img src="/images/blog/FinancialStatementForecasting1/6.png" alt="销量拆分" />
+</div>
+
+产能还能再多拆分一步：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img src="/images/blog/FinancialStatementForecasting1/7.png" alt="产能拆分" />
+</div>
+
+（4）分产品/业务/地区预测：如果公司有多个产品或业务，则可以分门别类地逐一预测（可结合前面三种方法），将各个项目的预测值加总即为企业的营业收入。可拆分的角度有很多，难点在于找到最适合的拆分方法，此外如果拆分过细，可能面临没有足够信息支撑的问题。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/8.png"
+    alt="分产品预测"
+  />
+</div>
+
+### 2 预测营业成本
+
+对于一个成熟稳定的企业来说，毛利率水平一般保持稳定，因此营业成本会占营业收入固定比重，在这种情况下，我们可以简单根据历史数据假定毛利率来预测营业成本，当然假定的毛利率也可以根据我们对于市场环境的判断进行一定调整，例如供给的增加会压低毛利，而需求的增加会拉高毛利。
+
+如果需要更详细的预测，则可以参照营业收入的拆分方式，根据成本的构成情况对成本进行拆分。同样，拆分并非越细越好，其目的在于找到成本的主要驱动因素，对于不重要的因素可以统一丢到"其他营业成本"中。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/9.png"
+    alt="营业成本预测"
+  />
+</div>
+
+### 3 税金及附加+销售/管理/研发费用
+
+对税金及附加来说，一般假定占营业收入一定比例进行预测。销售/管理/研发费用可以按占营业收入一定比例进行预测，也可以假定单独的增长率进行预测。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/10.png"
+    alt="费用预测"
+  />
+</div>
+
+### 4 营业外收支预测
+
+营业外收支与主营业务无关，按保守原则估计，一般认为保持不变或为0。在这一步，除财务费用未考虑外我们已经得到了企业利润总额。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/11.png"
+    alt="营业外收支预测"
+  />
+</div>
+
+### 5 所得税增长率
+
+在这部分中，简化起见不考虑递延所得税的影响，认为所得税费用等于当期所得税费用。在此基础上，根据税法规定：当期所得税费用= 应纳税所得额*适用税率。由于将利润总额调整为应纳税所得额的步骤十分繁琐，再次从简化的目的出发，我们将上式转化为：当期所得税费用 = 利润总额*有效税率，其中有效税率可以通过取历史数据平均得到。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/12.png"
+    alt="所得税预测"
+  />
+</div>
+
+至此，我们完成了除财务费用之外利润表的全部预测。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting1/13.png"
+    alt="利润表预测总结"
+  />
+</div>{' '}

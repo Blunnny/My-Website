@@ -4,24 +4,23 @@ export * from './career'
 
 // personal info
 export const name = '靳安和'
-export const headline = 'Teacher at Shanghai Soong Ching Ling School.'
+export const headline = '香港大学会计学硕士在读'
 export const introduction =
-  "Coucou Les Amis! My name is Derek Hu. I'm from Hubei and an alumnus of BUPT, UChicago, and Tsinghua. I’ve been teaching Computer Science at SCLS since 2020."
-export const email = 'tong.hu@scls-sh.org'
-export const githubUsername = 'derekhut'
+  'Coucou Les Amis! 我是靳安和，来自山东济南，毕业于厦门大学会计学专业，目前就读于香港大学会计学硕士。'
+export const email = 'jah22956@163.com'
+export const githubUsername = 'Blunnny'
 
 // about page
-export const aboutMeHeadline = 'Who Are You and Why Should I Care?'
+export const aboutMeHeadline = 'Who am I?'
 export const aboutParagraphs = [
-  "Coucou Les Amis! My name is Derek Hu. I'm from Hubei and an alumnus of BUPT, UChicago, and Tsinghua. I’ve been teaching Computer Science at SCLS since 2020.",
-  'Currently I am working on a new course called AI Camp, an innovative course where high school students create real-world products and startups while exploring the frontiers of AI.',
-  "I started this blog to share the insights I learn every day. Most blogs focus on education in Artificial Intelligence and general computer science, while others share the life lessons I've learned.",
+  'Coucou Les Amis! 我是靳安和，来自山东济南，本科毕业于厦门大学会计学专业，目前就读于香港大学会计学硕士',
+  '虽然我一直以来学习的都是会计学，但我对于计算机有着极强的兴趣，我始终相信计算机将改变世界，Make the world a better place!',
+  '我写这个博客的目的是为了记录和分享我学到的关于会计学和计算机的见解，特别是两个学科交叉的部分！',
 ]
 
 // blog
-export const blogHeadLine = "What I've thinking about."
-export const blogIntro =
-  "I've written something about AI, programming and life."
+export const blogHeadLine = '我正在关注和感兴趣的事情...'
+export const blogIntro = '关于会计、计算机、艺术以及最重要的——人生'
 
 // social links
 export type SocialLinkType = {
@@ -31,41 +30,36 @@ export type SocialLinkType = {
   href: string
 }
 
+// 待修改 TikTok 部分
 export const socialLinks: Array<SocialLinkType> = [
   {
-    name: 'Tiktok',
-    icon: 'tiktok',
+    name: 'Wechat',
+    icon: 'wechat',
     href: 'https://www.tiktok.com/@harvard?lang=en',
   },
   {
     name: 'Bilibili',
     icon: 'bilibili',
-    href: 'https://space.bilibili.com/349721082',
+    href: 'https://space.bilibili.com/17405856',
   },
 ]
 
 // https://simpleicons.org/
 export const techIcons = [
-  'typescript',
+  'steam',
+  'python',
   'javascript',
-  'supabase',
-  'cloudflare',
-  'java',
-  'oracle',
-  'mysql',
-  'react',
-  'nodedotjs',
-  'nextdotjs',
-  'prisma',
-  'postgresql',
-  'nginx',
-  'vercel',
-  'docker',
+  'tesla',
+  'xiaomi',
+  'css',
   'git',
   'github',
-  'visualstudiocode',
-  'androidstudio',
-  'ios',
   'apple',
+  'rockstargames',
   'wechat',
+  'nvidia',
+  'kfc',
+  'mcdonalds',
+  'gamescience',
+  'bilibili',
 ]

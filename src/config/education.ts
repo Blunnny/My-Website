@@ -1,36 +1,25 @@
-
-// education 
+// education
 export type EducationItemType = {
-    school: string
-    major: string
-    image?: string
-    logo: string
-    start: string
-    end: string
-  }
-  
-  
-  
-  export const educationList: Array<EducationItemType> = [
-    {
-      school: 'Tsinghua University',
-      major: 'MBA',
-      logo: 'college',
-      start: '2017',
-      end: '2020'
-    },
-    {
-      school: 'University of Chicago',
-      major: 'Computer Science',
-      logo: 'college',
-      start: '2013',
-      end: '2015'
-    },
-    {
-      school: 'BUPT',
-      major: 'Automation',
-      logo: 'college',
-      start: '2009',
-      end: '2013'
-    },
-  ]
+  school: string
+  major: string
+  image?: string
+  start: string
+  end: string
+}
+
+export const educationList: Array<EducationItemType> = [
+  {
+    school: '香港大学',
+    major: '会计学',
+    image: '/images/schools/hku.png',
+    start: '2023',
+    end: '2025',
+  },
+  {
+    school: '厦门大学',
+    major: '会计学',
+    image: '/images/schools/xmu.png',
+    start: '2019',
+    end: '2023',
+  },
+]

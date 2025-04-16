@@ -14,82 +14,76 @@ export type ActivityItemType = {
   link?: string
 }
 
-// Awards
-export const awardsHeadLine = "Awards & Honors"
-export const awardsIntro = "Recognition for academic and professional achievements."
-
-export const awards: Array<ActivityItemType> = [
-  {
-    name: 'Outstanding Teacher Award',
-    description: '',
-    date: '2024',
-    location: 'SCLS, Shanghai',
-  },
-  {
-    name: 'Zhui Ying Award',
-    description: '',
-    date: '2023',
-    location: 'Qingpu, Shanghai',
-  },
-]
-
 // Research & Projects
-export const projectHeadLine = "Research & Projects"
-export const projectIntro = "Academic research and technical projects I've worked on."
+export const projectHeadLine = '项目经历'
+export const projectIntro = '参与的学术研究和技术项目（之后有了再写）'
 
+// 之后有了再写
 export const projects: Array<ProjectItemType> = [
   {
     name: 'Student Final Project Portfolio',
     description: 'Static website portfolio',
     link: { href: 'scls-cs.com', label: 'GitHub Cards' },
-    tags: ['Website', 'Next.js', 'TailwindCSS', 'DaisyUI', 'Portfolio']
-  },
-  {
-    name: 'Seeking DNA',
-    description: '2022 SCLS Hackathon',
-    link: { href: 'https://scls-cs.gitbook.io/scls-apcs-lab/lab5-dna', label: 'Hackathon' },
-    tags: ['Hackathon', 'Java']
-  },
-  {
-    name: 'Texas Holdem Poker Judge',
-    description: '2024 SCLS Hackathon',
-    link: { href: 'https://onecompiler.com/challenges/42yf4n5yn/scls-hackathon', label: 'Hackathon' },
-    tags: ['Hackathon']
+    tags: ['Website', 'Next.js', 'TailwindCSS', 'DaisyUI', 'Portfolio'],
   },
   {
     name: 'AI Camp Course Development',
-    description: 'Developed a comprehensive AI curriculum for high school students, incorporating real-world projects and startup concepts.',
+    description:
+      'Developed a comprehensive AI curriculum for high school students, incorporating real-world projects and startup concepts.',
     link: { href: 'https://scls-cs.gitbook.io/ai-camp', label: 'View Course' },
-    tags: ['Education', 'AI']
+    tags: ['Education', 'AI'],
+  },
+]
+
+// Awards
+export const awardsHeadLine = '所获奖项'
+export const awardsIntro = '学术和职业成就的认可。'
+
+export const awards: Array<ActivityItemType> = [
+  {
+    name: '互联网+大学生创新创业大赛国赛铜奖（主赛道）',
+    description: '“智”预癌症',
+    date: '2021',
+    location: '中国, 厦门',
+  },
+  {
+    name: '互联网+大学生创新创业大赛校赛金奖（红旅赛道）',
+    description: '红树林校园公益教育',
+    date: '2021',
+    location: '中国, 厦门',
   },
 ]
 
 // Hobbies & Volunteer
-export const activitiesHeadLine = "Hobbies & Volunteer"
-export const activitiesIntro = "Personal interests and community contributions."
+export const activitiesHeadLine = '兴趣爱好'
+export const activitiesIntro = '没事的时候喜欢...'
 
 export const activities: Array<ActivityItemType> = [
   {
-    name: 'Python Workshop',
+    name: '乒乓球',
     description:
-      'Teaching basic Python programming concepts to beginners. Covering variables, control flow, and functions.',
-    date: '2024-02-24',
-    location: 'Shanghai',
-    link: 'https://example.com/python-workshop',
+      '小学三年级开始学习乒乓球，曾称霸球馆小学组，后被市队淘汰选手击碎道心，遂放弃职业之路',
+    date: '2010-至今',
+    location: '济南',
+    // 有素材再添加链接
+    // link: 'https://example.com/python-workshop',
   },
   {
-    name: 'AI Ethics Discussion',
+    name: '钢琴',
     description:
-      'A group discussion about the ethical implications of AI development and its impact on society.',
-    date: '2024-03-01',
-    location: 'Shanghai',
-    link: 'https://example.com/ai-ethics',
+      '初中一年级受父母所迫学习钢琴，艰难完成拜厄钢琴基础教程，最高水平可演奏《卡农》（现在仍然可以！），后因学业压力放弃钢琴',
+    date: '2013-至今',
+    location: '济南',
+    // 有素材再添加链接
+    // link: 'https://example.com/ai-ethics',
   },
   {
-    name: 'Code Review Session',
+    name: '旅游',
     description:
-      'Helping students improve their coding skills through peer code review and best practices sharing.',
-    date: '2024-03-15',
-    location: 'Shanghai',
+      '已探索地区：法国、德国、意大利、奥地利、瑞士、梵蒂冈、新加坡、日本、香港、澳门，更多地区探索中...',
+    date: '2001-未来',
+    location: '全世界！',
+    // 有素材再添加链接
+    // link: 'https://example.com/ai-ethics',
   },
 ]
