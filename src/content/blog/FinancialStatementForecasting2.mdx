@@ -1,0 +1,172 @@
+---
+title: '预测财务报表（下）'
+description: '资产负债表与现金流量表的预测方法'
+date: '2024-02-26'
+---
+
+## 四、资产负债表的预测
+
+### 1 固定资产
+
+对固定资产影响较大的因素主要有：新增的固定资产（包括对原有固定资产的维护性支出、新购入的固定资产、在建工程转入的固定资产）以及折旧（包括原有固定资产的折旧和新增固定资产的折旧）。
+
+若仅需做简单预测，则可认为新增的固定资产与营业收入成一定比例，同时折旧与期初固定资产成一定比例，根据假设的比例即可完成预测。
+
+若需要更为详细的预测，可参考营业收入的拆分方法，对各个部分做更为详细的拆解，示例如下图。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/1.png"
+    alt="固定资产预测拆解"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+实际上，固定资产的增减项远不止以上涉及的内容，很可能还包括资产减值、固定资产出售、子公司注销等情形。如果公司存在以上情形，我们需要考虑是否将这些因素纳入模型。
+
+### 2 无形资产
+
+无形资产的预测一般与固定资产的简易预测类似，我们认为无形资产构建额与营业收入或固定资产构建额成一定比例（购买土地使用权配合固定资产进行生产），摊销与期初无形资产成一定比例，根据假设即可完成预测。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/2.png"
+    alt="无形资产预测"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+### 3 营运资金相关科目
+
+<strong>营运资金指流动资产与流动负债的差额</strong>
+，其中经营性流动资产包括应收账款、应收票据、存货、其他应付款、预付账款等，流动负债包括应付账款、应付票据、预收账款、应付职工薪酬、应交税费、其他应付款等。以上科目的预测方法基本一致，因此合并到一起讲。
+
+对于营运资金相关科目，预测方法主要有两种：一是假设与营业收入或营业成本的比值保持不变（具体选择收入还是成本取决于科目性质），二是假设与该科目相对的周转率或周转天数不变。其实两种方法本质十分类似，以应收账款为例：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/3.png"
+    alt="应收账款预测方法"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+当应收账款变化趋势保持稳定时，可以认为两种方法是等价的。
+
+### 4 长期经营性负债
+
+长期经营性负债主要包括长期应付款、专项应付款和递延所得税负债。这些项目的预测比较困难，因为这部分负债意味着公司将长期占用其他公司的现金资源，常见的例子包括分期付款购入固定资产、融资租入固定资产等。
+
+对这部分的详细预测需要详细的信息才能做到预测，在基础模型中我们使用简化处理，假设长期经营性负债占营业成本一定比例。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/4.png"
+    alt="长期经营性负债预测"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+### 5 非核心资产
+
+非核心资产指与核心资产无关的资产和负债，主要包括各类金融资产、投资性房地产、长期股权投资等。对于非核心资产，一般假设这类资产与前期保持不变以简化处理。
+
+### 6 付息债务与财务费用
+
+<strong>付息债务指具有付息义务的融资性负债</strong>
+，主要包括短期借款、长期借款以及应付债券。同时由于长期借款和应付债券在一年内到期时，会转入"一年内到期的非流动负债"，所以部分付息债务也会在"一年内到期的非流动负债"中存在。
+
+对于财务费用，一般我们采用净利息费用（利息收入-利息支出）作为财务费用简化替代，忽略汇兑损失、银行手续费、发行债券的费用等其他财务费用。
+
+为了得到净利息费用，我们需要估计债务金额和对应的利率。债务金额中，融资缺口是额外加入资产负债表的最终配平项，暂时空缺。短期借款一般认为是资金缺口与内部融资的差额，长期借款则一般与固定资产和无形资产的购置计划有关。在利率的预测上，对于已有的债务，其利率可通过年报等渠道获得；对于新发行的债务，可以参考公司近期融资利率和市场利率给出假设。利息收入主要来自货币资金存款的利息，等完成现金流量表再补充该部分。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/5.png"
+    alt="付息债务与财务费用预测"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+### 7 股本与资本公积
+
+在不考虑股权融资及带有股权融资性质的衍生工具（如可转债、认股权证）的前提下，我们一般认为企业的股本与资本公积保持不变。
+
+### 8 留存收益
+
+标准资产负债表下没有留存收益一项，这里为简单起见将盈余公积和未分配利润合并为留存收益。因为留存收益期末额 = 留存收益期初额 + 净利润 - 分红，因此我们只需要估计分红率即可得到留存收益的期末数。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/6.png"
+    alt="留存收益预测"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+至此，我们完成了除货币资金和融资缺口以外全部的资产负债表预测。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/7.png"
+    alt="资产负债表预测总结"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+## 五、现金流量表预测
+
+如前所述，当我们完成资产负债表与利润表的预测后，由于会计恒等式的约束，现金流量表已经被确定，因此在预测现金流量表时，实际上不涉及任何"预测"，我只需要根据资产负债表与利润表的数据"得到"现金流量表。
+
+<strong>
+  资产负债表中，资产（除货币资金）的变动与现金成反向变动关系，即资产减少现金增加，资产增加现金减少，因此对资产类科目而言，其对应的净现金流量
+  = 期初资产 - 期末资产。而负债的变动与现金成正向变动关系，其对应的净现金流量 =
+  期末资产 - 期初资产。
+</strong>
+需要注意的是，每个资产负债表项目（除货币资金）都需要在现金流量表中体现，且只体现一次，否则最后报表会不平。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/8.png"
+    alt="现金流量表与资产负债表的关系"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+将资产负债表项目的变化逐个体现在现金流量表后，我们完成了除融资缺口以外的所有现金流量表的项目。
+
+最后来估计融资缺口。假设经营所需现金需要达到营业收入的一定比例，根据融资缺口前的期末现金可以计算出所需的现金，若所需现金低于融资缺口前的期末现金，则两者差额计入多余现金，融资缺口为0；若所需现金高于融资缺口前的期末现金，则两者差额计入融资缺口，多余现金为0。最后以max(融资缺口前的期末现金，所需现金)确定期末货币资金。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/9.png"
+    alt="融资缺口估计"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+将计算出的融资缺口和货币资金引用至资产负债表，Excel会提示循环引用。我们Excel中的文件-选项-公式-启用迭代计算，顺利的话会发现资产负债表已经配平。如果不平，说明计算中有科目存在错误，一个检查技巧是逐个直接修改科目数值（详细预测的要分别修改新增量与减少量，如固定资产要分别修改新构建部分和折旧部分），观察资产与负债权益差额的变化，如果差额不变，说明这一科目已经实现局部平衡，处理是正确的。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/10.png"
+    alt="利润表"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/11.png"
+    alt="资产负债表"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/FinancialStatementForecasting2/12.png"
+    alt="现金流量表"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>

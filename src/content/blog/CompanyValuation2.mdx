@@ -1,0 +1,122 @@
+---
+title: '公司估值：相对估值'
+description: 'PE与PB估值方法的原理与应用'
+date: '2024-03-07'
+---
+
+## 一、PE估值法
+
+### （1）推导原理
+
+PE估值法是最常用的相对估值方法之一。我们从PE的定义出发：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/CompanyValuation2/1.png"
+    alt="PE定义"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+从DCF模型我们可以得到：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/CompanyValuation2/2.png"
+    alt="DCF模型"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+由于预测每一期现金流过于复杂，而从足够长的时间来看，企业的权益现金流等于净利润（净利润实际上是现金流的平滑处理），因此我们做出一个重要假设：**权益现金流最终能收敛到净利润**。用净利润（E）代替现金流，用净利润全生命周期的平均增速（g）替代每一期现金流增速，代入PE的公式可得：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/CompanyValuation2/3.png"
+    alt="PE推导公式"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+### （2）PE估值的适用范围与局限性
+
+从推导可以看出，PE只与两个因素相关：
+
+- 折现率（r）：与公司风险相关
+- 净利润全生命周期的平均增速（g）
+
+虽然PE的适用范围很广，但使用时必须关注其成立的前提是否满足：<strong>权益现金流是否真的能收敛到净利润？</strong>（参考<a href="/blogs/BeginnerGuideToAccounting2" style={{ color: '#0066cc' }}>会计入门指南（二）</a>中关于权责发生制的讨论）举例来说，这个假设在以下情况下可能失效：
+
+1. 资产使用寿命过长的公司
+2. 应收应付周转慢的公司
+3. 重资产公司
+4. 折旧期限和真实使用寿命偏离大的公司
+
+### （3）EV/EBITDA：解决折旧带来的估值偏差
+
+为解决折旧造成的净利润和现金流不匹配问题，可以使用企业价值倍数（EV/EBITDA）。因为EBITDA不受息税折旧摊销影响，可以用企业的EBITDA乘以行业平均EV/EBITDA再扣除债务，得到权益价值。
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/CompanyValuation2/4.png"
+    alt="EV/EBITDA计算"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+### （4）增速与股价的关系
+
+一个常见的误解是：如果PE不变，股价就和利润成正比。但通过严格的DCF推导，我们发现股价的涨幅实际上等于折现率，与利润增速无关：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/CompanyValuation2/5.png"
+    alt="三阶段增长模型"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+这是因为公司增长存在天花板，每增长一步就离天花板近一分，平均增长速度g就减少一点，减少的g会拉低PE，最终刚好对冲掉利润的涨幅。
+
+在现实中，股价与利润同步上升的现象往往是因为市场在确认增速兑现后上修了增速的持续时间。这种现象可能存在风险：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/CompanyValuation2/6.png"
+    alt="增长预期与风险"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+## 二、PB估值法
+
+### （1）推导过程
+
+在PE的基础上继续推导：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/CompanyValuation2/7.png"
+    alt="PB推导过程1"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+两边除以账面净资产（B）：
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/CompanyValuation2/8.png"
+    alt="PB推导过程2"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+### （2）PB估值的优势
+
+从推导可以看出，PB的公式实际上是在PE的基础上乘以ROE。PB估值法除了极度轻资产的行业外，同样适合大多数公司，特别是：
+
+1. 成熟期公司
+2. 周期公司
+
+PB之所以是PE之外应用最广泛的估值方法，主要在于其稳定性。以周期股为例，虽然周期股的ROE会不断变动，导致DCF和PE大幅波动，但同时也会带来g的变动（企业全生命周期增速的基数改变），两者方向变动相反，使得最后计算出来的PB基本保持稳定。
