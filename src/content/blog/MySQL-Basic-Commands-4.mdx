@@ -1,0 +1,440 @@
+---
+title: 'MySQL基础命令（4）——其他命令'
+description: 'MySQL基础命令-其他命令'
+date: '2024-10-01'
+---
+
+## 一、表达式和函数
+
+### 1. 表达式
+
+"1 + 1"中，"1"为操作数，"+"为运算符。
+
+### 2. 运算符
+
+#### （1）算术运算符
+
+- `+`（加）
+- `-`（减）
+- `*`（乘）
+- `/`（除）
+- `DIV`（除法，取商的整数部分）
+- `%`（取余）
+- `-`（取负数）
+
+#### （2）比较运算符
+
+参见：[MySQL基础命令（2）——基础查询](/blogs/MySQL-Basic-Commands-2)
+
+#### （3）逻辑运算符
+
+- `NOT`或`!`（取反）
+- `AND`或`&&`（同时为真时表达式为真）
+- `OR`或`||`（至少一个为真时表达式为真）
+- `XOR`（有且只有一个为真时表达式为真）
+
+### 3. 函数
+
+#### 3.1 字符串处理函数
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/MySQL-Basic-Commands-4/1.webp"
+    alt="字符串处理函数"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+#### 3.2 日期和时间处理函数
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/MySQL-Basic-Commands-4/2.webp"
+    alt="日期和时间处理函数"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+#### 3.3 日期与时间的格式符
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/MySQL-Basic-Commands-4/3.webp"
+    alt="日期格式符"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/MySQL-Basic-Commands-4/4.webp"
+    alt="时间格式符"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+#### 3.4 数值处理函数
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/MySQL-Basic-Commands-4/5.webp"
+    alt="数值处理函数"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+#### 3.5 流程控制表达式和函数
+
+（1）根据条件生成新的列：
+
+```sql
+case when 表达式1 then 结果1 [when 表达式2 then 结果2 …] [else 默认结果] end
+```
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/MySQL-Basic-Commands-4/6.webp"
+    alt="case when示例"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+（2）if判断：
+
+```sql
+if(表达式1, 表达式2, 表达式3)
+```
+
+——表达式1为true时，输出表达式2，否则输出表达式3。
+
+（3）ifnull判断：
+
+```sql
+ifnull(表达式1, 表达式2)
+```
+
+——表达式1为null时，输出表达式2，否则输出表达式1。
+
+（4）nullif判断：
+
+```sql
+nullif(表达式1, 表达式2)
+```
+
+——当表达式1和表达式2相同时，输出null，否则输出表达式1。
+
+#### 3.6 汇总函数
+
+包括：`Max()`、`min()`、`sum()`、`avg()`、`count()`
+
+其中`count()`函数只统计非null值的数量，若希望统计全部数量，可以使用`count(*)`进行统计。
+
+汇总函数可以结合去重命令`distinct`使用，例如：
+
+```sql
+select count(distinct major) from student_info;
+```
+
+## 二、数据的插入、删除和更新
+
+### 1. 插入数据
+
+#### 1.1 插入完整的记录
+
+```sql
+insert into 表名 values(列1的值, 列2的值, …, 列n的值);
+```
+
+#### 1.2 自定义列的插入顺序
+
+```sql
+insert into 表名(列名1, 列名2, … , 列名n) values(列1的值, 列2的值, …, 列n的值);
+```
+
+其中，列名顺序可随意调换，同时可以不包含表的全部列（未包含的列默认为null）
+
+#### 1.3 批量插入数据
+
+```sql
+insert into 表名 values(列1的值, 列2的值, …, 列n的值), (列1的值, 列2的值, …, 列n的值) …(列1的值, 列2的值, …, 列n的值);
+```
+
+#### 1.4 将查询的结果集插入表中
+
+```sql
+Insert into second_table(a, b) select second_column, first_column from first_table where first_column < 5;
+```
+
+——先从 `first_table` 中选择 `first_column` 小于 5 的行，再从这些行中提取 `second_column` 和 `first_column` 的值，最后将这些值插入到 `second_table` 的 a 和 b 列中，其中 `second_column` 对应 a，`first_column` 对应 b。
+
+#### 1.5 insert ignore
+
+当已有数据存在主键或unique键约束时，不能出现重复值，此时再插入重复值会报错。如果我们不知道需要插入的信息是否已重复，同时不希望报错，可以采用`insert ignore`命令：
+
+```sql
+insert ignore into 表名 values(列1的值, 列2的值, …, 列n的值);
+```
+
+在该命令下，若无重复，则插入该信息，否则忽略此次插入操作。
+
+#### 1.6 insert … on duplicate key update
+
+与ignore命令类似，该命令也会先判断需要插入的数据是否重复，若无重复，则插入该信息，否则对数据执行更新命令。
+
+```sql
+Insert into first_table (first_column, second_column) values(1,'a') on duplicate key update first_column = 10, second = 'b';
+```
+
+——如果插入 (1, 'a') 导致冲突，那么将现有行的 `first_column` 更新为 10，`second_column` 更新为 'b'。
+
+### 2. 删除数据
+
+基本语句：
+
+```sql
+delete from 表名 [where 表达式];
+```
+
+例如：
+
+```sql
+delete from first_table where first_column > 4;
+```
+
+——删除`first_table`表中`first_column`列大于4的数据。
+
+（1）如果不加where筛选条件，那么会删除表中所有数据
+
+（2）删除时可以结合limit子句和order by语句对删除的内容进行限制，例如：
+
+```sql
+Delete from first_table order by first_column desc limit 1;
+```
+
+——删除`first_table`表中，`first_column`列最大的那条数据。
+
+### 3. 更新数据
+
+基本语句：
+
+```sql
+update 表名 set 列1 = 值1, 列2 = 值2, …, 列n = 值n [where 表达式];
+```
+
+例如：
+
+```sql
+update first_table set first_column = 5, second_column = 'a' where first_column is null;
+```
+
+——在 `first_table` 中找到所有 `first_column` 值为 NULL 的行，将这些行的 `first_column` 更新为 5，`second_column` 更新为 'a'。
+
+更新与删除在where筛选条件、limit子句和order by语句应用上基本一致。
+
+## 三、视图
+
+视图实际上是一个查询语句的别名，当我们需要重复利用某条过长的查询语句时，可以将其存为一个视图。
+
+视图创建语句为：
+
+```sql
+create view 视图名 as 查询语句;
+```
+
+例如：
+
+```sql
+create view male_student_view as select s1.number, s1.subject from student_info as s1 inner join student_score as s2 where s1.number = s2.number and s1.gender = 'male';
+```
+
+### 1. 使用视图
+
+#### 1.1 使用视图进行各类查询
+
+```sql
+Select * from male_student_view;
+```
+
+——查询`male_student_view`中的所有结果。
+
+```sql
+Select subject, avg(score) from male_student_view where score > 60 group by subject having avg(score) > 75;
+```
+
+——使用分组、汇总函数进行筛选。
+
+#### 1.2 利用视图来创建新视图
+
+```sql
+Create view male_student_view2 as select number, score from male_student_view;
+```
+
+——使用`male_student_view`视图来创建`male_student_view2`视图。
+
+#### 1.3 创建视图时指定自定义列名
+
+```sql
+Create view student_info_view(no, n, m) as select number, name, major from student_info;
+```
+
+自定义的列名`no`、`n`、`m`与查询列表中的`number`、`name`、`major`对应（必须与查询列表中的表达式一一对应），之后对视图的查询都要基于这些自定义列名，例如：
+
+```sql
+select no, n, m from student_info_view;
+```
+
+不能再使用原列名：
+
+```sql
+select number, name, major from student_info_view;
+```
+
+### 2. 查看和删除视图
+
+#### 2.1 查看视图
+
+视图默认存放在默认数据库下，查看视图的命令与查看表的命令一致：
+
+```sql
+Show tables;
+```
+
+查看视图的定义：
+
+```sql
+Show create view 视图名\G
+```
+
+#### 2.2 可更新的视图
+
+可以对视图进行insert、delete、update语句，例如：
+
+```sql
+Update student_info_view set n = 'billy' where no = 20210123;
+```
+
+需要注意的是，只有当视图中的每一条记录都与底层表中的每一条记录一一对应时，这个视图才是可更新的。因此，当视图中包含汇总函数/distinct/group by/having/union/子查询等内容时，视图是不可更新的。
+
+#### 2.3 删除视图
+
+基本语句：
+
+```sql
+Drop view 视图名;
+```
+
+## 四、存储程序
+
+### 1. 用户自定义变量
+
+#### 1.1 定义变量
+
+```sql
+Set @a = 1;
+```
+
+——定义一个称为a的变量，并把整数1赋值给这个变量。
+
+#### 1.2 查看变量的值
+
+查看变量的值：
+
+```sql
+select @a;
+```
+
+#### 1.3 变量赋值
+
+（1）可以把一个变量赋值给另一个变量：
+
+```sql
+Set @b = @a;
+```
+
+——将变量a的值赋给变量b（但变量a和变量b并不会关联起来，即之后改变变量a，变量b并不会随之改变）。
+
+（2）若搜索结果只包含一行一列（可以为空），那么可以把搜索结果直接赋值给变量：
+
+```sql
+Set @a = (select m1 from t1 limit 1);
+```
+
+或：
+
+```sql
+select m1 from t1 limit 1 into @a;
+```
+
+（3）若搜索结果包含一行多列（可以为空），那么可以把搜索结果直接赋值给与列数量相等的变量：
+
+```sql
+select m1, n1 from t1 limit 1 into @a, @b;
+```
+
+### 2. 存储函数
+
+可以将常用的语法封装成函数，使用时可以直接调用。
+
+#### 2.1 创建存储函数
+
+基本语法：
+
+```sql
+Create function 存储函数名称([参数列表])
+    Returns 返回值类型
+    Begin
+         函数体内容
+    end
+```
+
+例如：
+
+```sql
+Create function avg_score(s varchar(100))
+    Returns double
+    Begin
+       Return (select avg(score) from student_score where subject = s);
+    End
+```
+
+需要注意的是，因为函数体内容中包含默认分隔符";"，所以在执行时会默认在此处结束，要解决该问题，需要先使用delimiter语句临时修改默认分隔符：
+
+```sql
+Delimiter $
+```
+
+——将默认分隔符改为"$"
+
+之后再执行函数定义语句。
+
+（若在创建函数时出现以下错误：ERROR 1418 (HY000): This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled (you _might_ want to use the less safe log_bin_trust_function_creators variable)，可以先执行以下命令：`set global log_bin_trust_function_creators=true$`）
+
+#### 2.2 储存函数的调用
+
+和系统内置函数使用方法相同，都在在函数名后加小括号表示函数调用，例如：
+
+```sql
+Select avg_score('math');
+```
+
+#### 2.3 查看和删除函数
+
+（1）查看已定义的储存函数以及各个储存函数的相关属性：
+
+```sql
+Show function status [like 需要匹配的函数名]
+```
+
+虽然like匹配不是必须的，但如果不加，执行该语句得到的结果会过多（系统自带了很多的存储程序）。
+
+（2）查看具体函数的定义：
+
+```sql
+Show create function 函数名;
+```
+
+（3）删除储存函数：
+
+```sql
+Drop function 函数名;
+```

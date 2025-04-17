@@ -1,0 +1,253 @@
+---
+title: 'MySQL基础命令（1）——基础操作'
+description: 'MySQL基础命令-基础操作'
+date: '2024-09-28'
+---
+
+## 一、数据库基本操作
+
+### 1. 展示数据库
+
+```sql
+show databases;
+```
+
+### 2. 创建数据库
+
+```sql
+create database 数据库名;
+```
+
+### 3. 切换默认数据库
+
+```sql
+use 数据库名;
+```
+
+### 4. 删除数据库
+
+```sql
+drop database 数据库名;
+```
+
+## 二、表的基本操作
+
+### 1. 展示数据库中的表
+
+```sql
+show tables from 数据库名;
+```
+
+（若已切换至默认数据库，可以简化为`show tables;`）
+
+### 2. 创建表
+
+```sql
+Create table 表名 (
+    列名1 数据类型  [列的属性],
+    列名2 数据类型  [列的属性],
+    …
+    列名n 数据类型  [列的属性]
+) comment '表的注释信息';
+```
+
+其中以"[]"注明的列的属性、表的注释信息为可选项（下同）。
+
+### 3. 删除表
+
+```sql
+drop table 表1, 表2, 表3, …, 表n;
+```
+
+### 4. 查看表结构
+
+```sql
+Describe 表名;
+Desc 表名;
+Explain 表名;
+Show columns from 表名;
+Show fields from 表名;
+```
+
+以上命令效果完全相同，若希望不以表格形式呈现内容，可以在结尾加"\G"。
+
+### 5. 直接使用特定数据库的特定表（绝对路径）
+
+```sql
+数据库名.表名
+```
+
+### 6. 修改表
+
+#### 6.1 修改表名
+
+方式一：
+
+```sql
+alter table 旧表名 rename to 新表名;
+```
+
+方式二（可一次修改多个表名）：
+
+```sql
+rename table 旧表名1 to 新表名1, 旧表名2 to 新表名2, ... 旧表名n to 新表名n;
+```
+
+#### 6.2 增加列
+
+```sql
+Alter table 表名 add column 列名 数据类型 [列的属性];
+```
+
+增加列到特定位置：
+
+（1）添加到第一列：
+
+```sql
+Alter table 表名 add column 列名 数据类型 [列的属性] first;
+```
+
+（2）添加到指定列的后边：
+
+```sql
+Alter table 表名 add column 列名 数据类型 [列的属性] after 指定列名;
+```
+
+#### 6.3 删除列
+
+```sql
+Alter table 表名 drop column 列名;
+```
+
+#### 6.4 修改列信息
+
+（1）修改列的属性和列名
+
+方式一：
+
+```sql
+alter table 表名 modify 列名 新数据类型 [新属性];
+```
+
+方式二：
+
+```sql
+alter table 表名 change 旧列名 新列名 新数据类型 [新属性];
+```
+
+其中，方式二也可以同时修改列名
+
+（2）修改列的位置
+
+将某列设为表的第一列：
+
+```sql
+Alter table 表名 modify 列名 列的类型 列的属性 first;
+```
+
+将某列放到指定列后边：
+
+```sql
+Alter table 表名 modify 列名 列的类型 列的属性 after 指定列名;
+```
+
+#### 6.5 同时执行多个操作
+
+```sql
+alter table 表名 操作1, 操作2, …, 操作n;
+```
+
+## 三、列的属性
+
+### 1. 查询与插入语句
+
+查询特定表中已经储存的数据：
+
+```sql
+select * from 表名;
+```
+
+插入语句：
+
+```sql
+insert into 表名(列1, 列2, …) values(列1的值, 列2的值, …);
+```
+
+只在特定列插入的语句（其他列内容为null）：
+
+```sql
+insert into 表名(列2) values(列2的值);
+```
+
+批量插入：
+
+```sql
+insert into 表名(列1, 列2, …) values(列1的值, 列2的值, …), (列1的值, 列2的值, …) , (列1的值, 列2的值, …),…;
+```
+
+### 2. 列的属性
+
+（1）默认值：
+
+```sql
+列名 列的类型 default 默认值
+```
+
+（2）非空：
+
+```sql
+列名 列的类型 not null
+```
+
+（3）主键（非空且唯一）：
+
+```sql
+列名 列的类型 primary key
+```
+
+或单独声明：
+
+```sql
+Create table 表名 (
+    列名1 数据类型,
+    列名2 数据类型,
+    …
+    列名n 数据类型,
+    primary key(列名1)
+);
+```
+
+（4）unique约束：
+
+```sql
+列名 列的类型 unique
+```
+
+（5）外键：
+
+```sql
+constraint [外键名称] foreign key(列1,列2,…) references 父表名(父列1, 父列2,…);
+```
+
+（6）自增：
+
+```sql
+列名 列的类型 auto_increment;
+```
+
+（7）列的注释（与表的注释类似）
+
+```sql
+Create table 表名 (
+    列名1 数据类型  [列的属性] comment '第一列注释',
+    列名2 数据类型  [列的属性] comment '第二列注释',
+    …
+    列名n 数据类型  [列的属性] comment '第n列注释'
+);
+```
+
+（8）显示宽度：
+
+```sql
+列名 列的类型 zerofill;
+```

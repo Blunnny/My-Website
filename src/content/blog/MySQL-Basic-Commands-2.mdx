@@ -1,0 +1,232 @@
+---
+title: 'MySQL基础命令（2）——基础查询'
+description: 'MySQL基础命令-基础查询'
+date: '2024-09-29'
+---
+
+## 一、简单查询
+
+### 1. 单列查询
+
+```sql
+Select 列名 from 表名;
+Select 列名 [as] 列的别名 from 表名;
+```
+
+### 2. 多列查询
+
+```sql
+Select 列名1, 列名2,… 列名n from 表名;
+Select 列名1 [as] 列1的别名,  列名2 [as] 列2的别名,…列名n [as] 列n的别名from 表名;
+```
+
+### 3. 查询所有列
+
+```sql
+Select * from 表名;
+```
+
+### 4. 查询结果去重
+
+```sql
+Select distinct 列名 from 表名;
+```
+
+多列结果去重（不存在每一列的值都相同的情况）：
+
+```sql
+Select distinct 列名1, 列名2,…列名n  from 表名;
+```
+
+### 5. 限制结果集记录条数
+
+查询结果中只含有规定数量（限制条数）的结果：
+
+```sql
+Limit 限制条数;
+```
+
+查询结果中只含有规定数量（限制条数）的结果，且跳过前若干条（偏移量）结果：
+
+```sql
+Limit 偏移量, 限制条数;
+```
+
+### 6. 查询结果排序
+
+```sql
+Order by 列名 [ASC | DESC]
+```
+
+ASC排序为升序，DESC为降序，若不填写排序规则，默认为ASC升序排列。
+
+## 二、带搜索条件的查询
+
+### 1. 简单搜索条件
+
+```sql
+Select 列名 from 表名 where 搜索条件;
+```
+
+### 常用比较运算符
+
+- `=`（等于）
+- `<=>`（等于，处理 NULL）
+- `<>` 或 `!=`（不等于）
+- `<`（小于）
+- `>`（大于）
+- `<=`（小于等于）
+- `>=`（大于等于）
+- `BETWEEN`（在指定闭区间内）
+- `NOT BETWEEN`（在指定闭区间外）
+  例：
+
+```sql
+select number from student_info where name = 'billy';
+```
+
+<div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+  <img
+    src="/images/blog/MySQL-Basic-Commands-2/1.WEBP"
+    alt="=与<=>的区别"
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+
+列表匹配运算符：in（处于指定集合中）、not in（不处于指定集合中）
+
+例：
+
+```sql
+select number from student_info where name in ('billy', 'ann');
+```
+
+NULL匹配运算符：null（值为空）、not null（值非空）
+
+例：
+
+```sql
+select number from student_info where name is null;
+```
+
+### 2. 多个搜索条件
+
+And运算符：同时满足多个搜索条件的数据。
+
+```sql
+Select * from student_info where score > 90 and id < 100;
+```
+
+Or运算符：至少满足一个搜索条件的数据。
+
+```sql
+Select * from student_info where score > 90 or id < 100;
+```
+
+_复杂搜索条件的组合_
+
+同时存在And运算符与Or运算符时，系统优先执行And运算符，若想调整优先级，需要用小括号显式指定。
+
+例如：
+
+```sql
+select * from student_info where id > 100 or score < 60 and subject = 'math';
+```
+
+——表示搜索"数学科目成绩小于60的数据"或"id大于100的数据"。
+
+```sql
+select * from student_info where (id > 100 or score < 60) and subject = 'math';
+```
+
+——表示搜索"id大于100或成绩小于60"且"科目为数学"的数据。
+
+### 3. 通配符（不能代表null，匹配null需要用is null或is not null）
+
+%：代表任意字符。
+
+\_：代表任意一个字符。
+
+配套运算符：
+
+like：匹配
+
+not like：不匹配
+
+```sql
+Select * from student_info where name = 'a%';
+```
+
+——表示搜索name列以"a"开头的数据。
+
+### 4. 转义通配符
+
+若待匹配字符串中本身含有"%"或"\_"，需要在其之前加反斜杠（\）进行区分。
+
+```sql
+Select * from student_info where name = 'a\%'
+```
+
+——搜索name列为"a%"的数据。
+
+## 三、分组查询
+
+### 1. 分组
+
+分组指针对某一列，将该列的值相同的记录分到一个组中。
+
+```sql
+Select * from 表名 group by 列名;
+```
+
+注意：查询列中不能包含既不是分组列也不是汇总函数的列（可能会报错）
+
+### 2. 带有where子句的分组查询
+
+在分组前先利用where进行筛选，例如：
+
+```sql
+Select avg(score) from student_score where score >= 60 group by subject;
+```
+
+——去除低于60分的数据后，统计各科目的平均分。
+
+### 3. 作用于分组的过滤条件
+
+对分组后产生的数据进行筛选，例如：
+
+```sql
+Select avg(score) from student_score group by subject having avg(socre) > 70;
+```
+
+——统计平均分高于70分的各科目的平均分。
+
+### 4. 分组与排序
+
+分组查询的结果也可以排序，例如：
+
+```sql
+Select avg(score) from student_score group by subject order by avg(socre) desc;
+```
+
+统计各个科目的平均分，并按平均分从大到小进行排序。
+
+### 5. 多个分组列
+
+```sql
+Select department, major, count(*) from student_info group by department, major;
+```
+
+先按学院分组，同学院下再按专业分组。
+
+### 6. 简单查询语句中各子句的顺序（必须严格遵守）
+
+```sql
+Select [distinct] 查询列表
+    [from 表名]
+    [where 布尔表达式]
+    [group by 分组列表]
+    [having 分组过滤条件]
+    [order by 排序列表]
+    [limit 偏移量, 限制条数]
+```
