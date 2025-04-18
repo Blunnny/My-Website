@@ -4,6 +4,7 @@ export type ProjectItemType = {
   description: string
   link: { href: string; label: string }
   tags: string[]
+  icon?: string // 可选的图标路径
 }
 
 export type ActivityItemType = {
@@ -16,22 +17,23 @@ export type ActivityItemType = {
 
 // Research & Projects
 export const projectHeadLine = '项目经历'
-export const projectIntro = '参与的学术研究和技术项目（之后有了再写）'
+export const projectIntro = 'Some are useful, some are just for fun!'
 
-// 之后有了再写
+// 项目的详细信息
 export const projects: Array<ProjectItemType> = [
   {
-    name: 'Student Final Project Portfolio',
-    description: 'Static website portfolio',
-    link: { href: 'scls-cs.com', label: 'GitHub Cards' },
-    tags: ['Website', 'Next.js', 'TailwindCSS', 'DaisyUI', 'Portfolio'],
+    name: 'TimeVault',
+    description: '随机生成地牢探险，限时挑战闯五关，金币钥匙全收集！',
+    link: { href: 'github.com/Blunnny/TimeVault', label: 'GitHub' },
+    tags: ['Java', 'Maven', 'TileEngine '],
+    icon: '/images/icon/TimeVault.png', // 添加自定义图标
   },
   {
-    name: 'AI Camp Course Development',
-    description:
-      'Developed a comprehensive AI curriculum for high school students, incorporating real-world projects and startup concepts.',
-    link: { href: 'https://scls-cs.gitbook.io/ai-camp', label: 'View Course' },
-    tags: ['Education', 'AI'],
+    name: '个人网站开发',
+    description: '本网站的所有资料都可以在这里找到！',
+    link: { href: 'github.com/Blunnny/My-Website', label: 'GitHub' },
+    tags: ['Next.js', 'React', 'TailwindCSS', 'TypeScript'],
+    icon: '/images/icon/My-Website.png', // 添加自定义图标
   },
 ]
 
@@ -71,7 +73,7 @@ export const activities: Array<ActivityItemType> = [
   {
     name: '钢琴',
     description:
-      '初中一年级受父母所迫学习钢琴，艰难完成拜厄钢琴基础教程，最高水平可演奏《卡农》（现在仍然可以！），后因学业压力放弃钢琴',
+      '初中一年级开始学习钢琴，艰难完成拜厄钢琴基础教程，最高水平可演奏《卡农》（现在仍然可以！），后因学业压力放弃钢琴',
     date: '2013-至今',
     location: '济南',
     // 有素材再添加链接

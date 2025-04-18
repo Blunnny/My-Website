@@ -4,18 +4,18 @@ export * from './career'
 
 // personal info
 export const name = '靳安和'
-export const headline = '香港大学会计学硕士在读'
+export const headline = '探索技术无限可能！'
 export const introduction =
-  'Coucou Les Amis! 我是靳安和，来自山东济南，毕业于厦门大学会计学专业，目前就读于香港大学会计学硕士。'
+  'Hello! 我是靳安和，来自山东济南，欢迎来到我的数字花园！'
 export const email = 'jah22956@163.com'
 export const githubUsername = 'Blunnny'
 
 // about page
 export const aboutMeHeadline = 'Who am I?'
 export const aboutParagraphs = [
-  'Coucou Les Amis! 我是靳安和，来自山东济南，本科毕业于厦门大学会计学专业，目前就读于香港大学会计学硕士',
-  '虽然我一直以来学习的都是会计学，但我对于计算机有着极强的兴趣，我始终相信计算机将改变世界，Make the world a better place!',
-  '我写这个博客的目的是为了记录和分享我学到的关于会计学和计算机的见解，特别是两个学科交叉的部分！',
+  'Hello! 我是靳安和，来自山东济南，本科毕业于厦门大学会计学专业，目前就读于香港大学会计学专业',
+  '我一直以来学习的都是会计学，但我对于计算机有着极强的兴趣，我始终相信计算机将改变世界，Make the world a better place!',
+  '希望用这个博客来记录和分享我学到的关于会计学和计算机的见解，特别是学科间交叉碰撞出的火花！',
 ]
 
 // blog
@@ -30,12 +30,12 @@ export type SocialLinkType = {
   href: string
 }
 
-// 待修改 TikTok 部分
+// 微信公众号以及 bilibili 链接
 export const socialLinks: Array<SocialLinkType> = [
   {
     name: 'Wechat',
     icon: 'wechat',
-    href: 'https://www.tiktok.com/@harvard?lang=en',
+    href: 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg5NTU4MzE1Ng==&scene=124#wechat_redirect',
   },
   {
     name: 'Bilibili',
@@ -62,4 +62,6 @@ export const techIcons = [
   'mcdonalds',
   'gamescience',
   'bilibili',
+  'mysql',
+  'openai',
 ]

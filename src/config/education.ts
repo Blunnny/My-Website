@@ -11,7 +11,7 @@ export const educationList: Array<EducationItemType> = [
   {
     school: '香港大学',
     major: '会计学',
-    image: '/images/schools/hku.png',
+    image: '/images/schools/hku.JPEG',
     start: '2023',
     end: '2025',
   },

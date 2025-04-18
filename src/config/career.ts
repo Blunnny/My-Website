@@ -23,7 +23,7 @@ export const careerList: Array<CareerItemType> = [
     end: '2024.7',
   },
   {
-    company: '海通证券股份有限公司(sadly, now it is gone)',
+    company: '海通证券股份有限公司(sadly, it is gone)',
     title: '研究所实习生',
     image: '/images/companies/haitong.png',
     start: '2024.1',

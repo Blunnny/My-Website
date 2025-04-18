@@ -48,7 +48,7 @@ export default function Career() {
     <div className="rounded-2xl border border-muted p-6 shadow-sm">
       <h2 className="flex text-sm font-semibold">
         <Briefcase size={24} weight="duotone" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">实习经历</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {careerList.map((careerItem, careerItemIndex) => (

@@ -52,7 +52,7 @@ export default function Education() {
     <div className="rounded-2xl border border-muted p-6 shadow-sm">
       <h2 className="flex text-sm font-semibold">
         <Student size={24} weight="duotone" />
-        <span className="ml-3">Education</span>
+        <span className="ml-3">教育经历</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {educationList.map((educationItem, educationItemIndex) => (
