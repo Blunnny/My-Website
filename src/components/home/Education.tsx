@@ -31,7 +31,18 @@ function EducationItem({
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
         <dd className="w-full flex-none text-sm font-medium">
-          {educationItem.school}
+          {educationItem.website ? (
+            <a
+              href={educationItem.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary hover:underline"
+            >
+              {educationItem.school}
+            </a>
+          ) : (
+            educationItem.school
+          )}
         </dd>
         <dt className="sr-only">Title</dt>
         <dd className="text-xs text-muted-foreground">{educationItem.major}</dd>

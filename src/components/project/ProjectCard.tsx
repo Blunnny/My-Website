@@ -21,9 +21,9 @@ export function ProjectCard({
     <li className="group relative flex h-full flex-col items-start">
       <div className="relative flex h-full w-full flex-col justify-between rounded-2xl border border-muted-foreground/20 p-4 shadow-sm transition-all group-hover:scale-[1.03] group-hover:bg-muted/5 group-hover:shadow-md">
         <div className="">
-          <div className="flex flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-start">
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-background">
-              {project.icon ? (
+          {project.icon ? (
+            <div className="flex flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-start">
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-background">
                 <Image
                   src={project.icon}
                   alt={`${project.name} icon`}
@@ -31,17 +31,26 @@ export function ProjectCard({
                   height={48}
                   className="rounded-full"
                 />
-              ) : (
-                <Favicon url={project.link.href} />
-              )}
+              </div>
+              <Component className="text-base font-semibold">
+                {project.name}
+              </Component>
             </div>
-            <Component className="text-base font-semibold">
-              {project.name}
-            </Component>
-          </div>
-          <p className="relative z-10 ml-2 mt-2 text-sm text-muted-foreground">
-            {project.description}
-          </p>
+          ) : (
+            <div className="ml-2 flex flex-col items-start">
+              <Component className="text-base font-semibold">
+                {project.name}
+              </Component>
+              <p className="mt-2 text-sm text-muted-foreground">
+                {project.description}
+              </p>
+            </div>
+          )}
+          {project.icon && (
+            <p className="relative z-10 ml-2 mt-2 text-sm text-muted-foreground">
+              {project.description}
+            </p>
+          )}
         </div>
 
         <div className="relative z-10 ml-1 mt-auto pt-4">

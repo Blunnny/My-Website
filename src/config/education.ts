@@ -5,6 +5,7 @@ export type EducationItemType = {
   image?: string
   start: string
   end: string
+  website?: string
 }
 
 export const educationList: Array<EducationItemType> = [
@@ -14,6 +15,7 @@ export const educationList: Array<EducationItemType> = [
     image: '/images/schools/hku.JPEG',
     start: '2023',
     end: '2025',
+    website: 'https://www.hku.hk/c_index.html',
   },
   {
     school: '厦门大学',
@@ -21,5 +23,6 @@ export const educationList: Array<EducationItemType> = [
     image: '/images/schools/xmu.png',
     start: '2019',
     end: '2023',
+    website: 'https://www.xmu.edu.cn/',
   },
 ]

@@ -27,7 +27,18 @@ function CareerItem({ careerItem }: { careerItem: CareerItemType }) {
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
         <dd className="w-full flex-none text-sm font-medium">
-          {careerItem.company}
+          {careerItem.website ? (
+            <a
+              href={careerItem.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary hover:underline"
+            >
+              {careerItem.company}
+            </a>
+          ) : (
+            careerItem.company
+          )}
         </dd>
         <dt className="sr-only">Title</dt>
         <dd className="text-xs text-muted-foreground">{careerItem.title}</dd>

@@ -16,7 +16,7 @@ export type ActivityItemType = {
 }
 
 // Research & Projects
-export const projectHeadLine = '项目经历'
+export const projectHeadLine = '我做的小项目'
 export const projectIntro = 'Some are useful, some are just for fun!'
 
 // 项目的详细信息
@@ -87,5 +87,92 @@ export const activities: Array<ActivityItemType> = [
     location: '全世界！',
     // 有素材再添加链接
     // link: 'https://example.com/ai-ethics',
+  },
+]
+
+export const watchingProjectHeadLine = '我正在关注的项目'
+export const watchingProjectIntro = '他山之石，可以攻玉'
+export const watchingProjects: Array<ProjectItemType> = [
+  {
+    name: 'minimind',
+    description: '从0开始训练一个超小语言模型 MiniMind！',
+    link: {
+      href: 'github.com/jingyaogong/minimind',
+      label: 'minimind',
+    },
+    tags: ['PyTorch', 'LLM', 'transformers'],
+  },
+  {
+    name: 'newsnow',
+    description: '优雅地阅读实时热门新闻',
+    link: {
+      href: 'github.com/ourongxing/newsnow',
+      label: 'newsnow',
+    },
+    tags: ['Node.js', 'Docker', 'Typescript'],
+  },
+  {
+    name: 'browser-use',
+    description: '让 AI 来操控浏览器!',
+    link: {
+      href: 'github.com/browser-use/browser-use',
+      label: 'browser-use',
+    },
+    tags: ['Python', 'web', 'ChromeDriver', 'AI'],
+  },
+  {
+    name: 'AI Hedge Fund',
+    description: 'AI 驱动的对冲基金',
+    link: {
+      href: 'github.com/virattt/ai-hedge-fund',
+      label: 'AI Hedge Fund',
+    },
+    tags: ['Python', 'Docker', 'AI', 'Stockmarket'],
+  },
+  {
+    name: 'metabase',
+    description:
+      '无需 SQL 知识，即可实现数据分析的开源商业智能和嵌入式分析工具',
+    link: {
+      href: 'github.com/metabase/metabase',
+      label: 'metabase',
+    },
+    tags: ['Clojure', 'typescript', 'SQL', 'BI'],
+  },
+  {
+    name: 'n8n',
+    description: '安全的工作流程自动化平台',
+    link: {
+      href: 'github.com/n8n-io/n8n',
+      label: 'n8n',
+    },
+    tags: ['Typescript', 'Vue', 'Python', 'AI'],
+  },
+  {
+    name: 'glance',
+    description: '一个将所有源订阅集中在一个地方的托管仪表板',
+    link: {
+      href: 'github.com/glanceapp/glance',
+      label: 'glance',
+    },
+    tags: ['Go', 'HTML', 'CSS', 'JavaScript'],
+  },
+  {
+    name: 'toga',
+    description: '一个 Python 与操作系统原生 GUI 工具包。',
+    link: {
+      href: 'github.com/beeware/toga',
+      label: 'toga',
+    },
+    tags: ['Python', 'GUI', 'CSS'],
+  },
+  {
+    name: 'MinerU',
+    description: '将PDF转换成Markdown和JSON格式的一站式开源高质量数据提取工具',
+    link: {
+      href: 'github.com/opendatalab/MinerU',
+      label: 'MinerU',
+    },
+    tags: ['Python', 'Typescript'],
   },
 ]

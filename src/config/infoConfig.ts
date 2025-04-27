@@ -14,8 +14,8 @@ export const githubUsername = 'Blunnny'
 export const aboutMeHeadline = 'Who am I?'
 export const aboutParagraphs = [
   'Hello! 我是靳安和，来自山东济南，本科毕业于厦门大学会计学专业，目前就读于香港大学会计学专业',
-  '我一直以来学习的都是会计学，但我对于计算机有着极强的兴趣，我始终相信计算机将改变世界，Make the world a better place!',
-  '希望用这个博客来记录和分享我学到的关于会计学和计算机的见解，特别是学科间交叉碰撞出的火花！',
+  '虽然我一直以来学习的都是会计学，但我对于计算机有着极强的兴趣，我始终相信技术将改变会计，也将改变世界',
+  'Make the world a better place!',
 ]
 
 // blog
