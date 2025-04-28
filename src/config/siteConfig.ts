@@ -21,6 +21,10 @@ export const footerItems: Array<NavItemType> = [
     href: '/projects',
   },
   {
+    name: '书影音',
+    href: '/books-movies-music',
+  },
+  {
     name: '我的博客',
     href: '/blogs',
   },
@@ -38,6 +42,10 @@ export const navItems: Array<NavItemType> = [
   {
     name: '我的项目',
     href: '/projects',
+  },
+  {
+    name: '书影音',
+    href: '/books-movies-music',
   },
   {
     name: '我的博客',

@@ -73,7 +73,7 @@ export default async function BlogsIndex({
                 className="rounded-lg"
               />
               <div className="text-xl font-medium text-zinc-600 dark:text-zinc-400">
-                <p>☚ 关注我</p>
+                <p>☚ 关注微信公众号</p>
                 <p>第一时间获得新内容推送！</p>
               </div>
             </div>

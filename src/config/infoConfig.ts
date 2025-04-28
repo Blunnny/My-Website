@@ -6,21 +6,21 @@ export * from './career'
 export const name = '靳安和'
 export const headline = '探索技术无限可能！'
 export const introduction =
-  'Hello! 我是靳安和，来自山东济南，欢迎来到我的数字花园！'
+  'Hello! 我是靳安和，来自山东济南，欢迎访问我的个人网站！'
 export const email = 'jah22956@163.com'
 export const githubUsername = 'Blunnny'
 
 // about page
 export const aboutMeHeadline = 'Who am I?'
 export const aboutParagraphs = [
-  'Hello! 我是靳安和，来自山东济南，本科毕业于厦门大学会计学专业，目前就读于香港大学会计学专业',
-  '虽然我一直以来学习的都是会计学，但我对于计算机有着极强的兴趣，我始终相信技术将改变会计，也将改变世界',
+  'Hello! 我是靳安和，来自山东济南，本科毕业于厦门大学会计学专业，目前就读于香港大学会计学专业。',
+  '虽然我一直以来学习的都是会计学，但我对于计算机有着极大的兴趣，我始终相信技术将改变会计，也将改变世界！',
   'Make the world a better place!',
 ]
 
 // blog
-export const blogHeadLine = '我正在关注和感兴趣的事情...'
-export const blogIntro = '关于会计、计算机、艺术以及最重要的——人生'
+export const blogHeadLine = '字耕墨耘，且记浮生'
+export const blogIntro = '关于会计、计算机、哲学以及最重要的——人生'
 
 // social links
 export type SocialLinkType = {

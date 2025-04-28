@@ -17,7 +17,7 @@ export type ActivityItemType = {
 
 // Research & Projects
 export const projectHeadLine = '我做的小项目'
-export const projectIntro = 'Some are useful, some are just for fun!'
+export const projectIntro = '此中有真意，bug已忘言'
 
 // 项目的详细信息
 export const projects: Array<ProjectItemType> = [
@@ -91,7 +91,7 @@ export const activities: Array<ActivityItemType> = [
 ]
 
 export const watchingProjectHeadLine = '我正在关注的项目'
-export const watchingProjectIntro = '他山之石，可以攻玉'
+export const watchingProjectIntro = '观千剑而后识器，追开源以觅真知'
 export const watchingProjects: Array<ProjectItemType> = [
   {
     name: 'minimind',
@@ -174,5 +174,23 @@ export const watchingProjects: Array<ProjectItemType> = [
       label: 'MinerU',
     },
     tags: ['Python', 'Typescript'],
+  },
+  {
+    name: 'video-subtitle-remover',
+    description: '基于AI的图片/视频硬字幕去除、文本水印去除的本地视频处理工具',
+    link: {
+      href: 'github.com/Blunnny/video-subtitle-remover',
+      label: 'video-subtitle-remover',
+    },
+    tags: ['Python', 'AI'],
+  },
+  {
+    name: 'aigcpanel',
+    description: '一站式AI数字人系统，支持视频合成、声音合成、声音克隆',
+    link: {
+      href: 'github.com/modstart-lib/aigcpanel?tab=readme-ov-file',
+      label: 'aigcpanel',
+    },
+    tags: ['Python', 'Typescript', 'Vue'],
   },
 ]
