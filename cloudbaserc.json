@@ -1,0 +1,21 @@
+{
+  "envId": "mywebsite-6g0oyyqd625c7c90",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "functionRoot": "./functions",
+  "functions": [],
+  "framework": {
+    "name": "mywebsite",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "buildCommand": "pnpm install && pnpm run build && pnpm run export",
+          "outputPath": "out",
+          "installCommand": "pnpm install",
+          "httpPath": "/"
+        }
+      }
+    }
+  }
+}

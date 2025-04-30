@@ -4,22 +4,23 @@ import remarkGfm from 'remark-gfm'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   images: {
     unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'favicon.im'
+        hostname: 'favicon.im',
       },
       {
         protocol: 'https',
-        hostname: 'www.google.com'
+        hostname: 'www.google.com',
       },
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-      }
+      },
     ],
   },
 }
