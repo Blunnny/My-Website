@@ -2,8 +2,8 @@ import { Container } from '@/components/layout/Container'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '且将新火试新茶，诗酒趁年华',
-  description: '图书、电影、音乐与游戏',
+  title: 'Audio&Books',
+  description: 'Audio&Books',
 }
 
 export default function BooksMoviesMusicPage() {
