@@ -1,0 +1,18 @@
+{
+  "envId": "personal-website-2fsk73415fbd320",
+  "framework": {
+    "name": "personal-website",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "buildCommand": "npm run build && npx next export",
+          "outputPath": "out",
+          "installCommand": "npm install",
+          "httpPath": "/",
+          "nodeVersion": "18"
+        }
+      }
+    }
+  }
+} 
