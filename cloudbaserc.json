@@ -10,7 +10,7 @@
       "client": {
         "use": "@cloudbase/framework-plugin-website",
         "inputs": {
-          "buildCommand": "pnpm install && pnpm run build && pnpm run export",
+          "buildCommand": "pnpm install && pnpm run build",
           "outputPath": "out",
           "installCommand": "pnpm install",
           "httpPath": "/"

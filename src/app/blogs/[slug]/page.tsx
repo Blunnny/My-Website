@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { getBlogBySlug } from '@/lib/blogs'
+import { getBlogBySlug, getAllBlogs } from '@/lib/blogs'
 import { getMDXContent } from '@/lib/mdx'
 import { BlogLayout } from '@/components/layout/BlogLayout'
 
@@ -11,6 +11,13 @@ interface Props {
   params: {
     slug: string
   }
+}
+
+export async function generateStaticParams() {
+  const blogs = await getAllBlogs()
+  return blogs.map((blog) => ({
+    slug: blog.slug,
+  }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -29,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPage({ params }: Props) {
   const blog = await getBlogBySlug(params.slug)
-  
+
   if (!blog) {
     notFound()
   }
@@ -37,12 +44,8 @@ export default async function BlogPage({ params }: Props) {
   const content = await getMDXContent(params.slug)
 
   return (
-    <BlogLayout
-        blog={blog}
-    >
-      <div className="mt-8 prose dark:prose-invert">
-        {content}
-      </div>
+    <BlogLayout blog={blog}>
+      <div className="prose dark:prose-invert mt-8">{content}</div>
     </BlogLayout>
   )
 }
