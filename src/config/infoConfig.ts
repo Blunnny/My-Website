@@ -64,4 +64,5 @@ export const techIcons = [
   'bilibili',
   'mysql',
   'openai',
+  'samsung',
 ]
