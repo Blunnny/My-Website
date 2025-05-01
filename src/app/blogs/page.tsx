@@ -6,7 +6,6 @@ import { SimpleLayout } from '@/components/layout/SimpleLayout'
 import { type BlogType, getAllBlogs } from '@/lib/blogs'
 import { formatDate } from '@/lib/formatDate'
 import { blogHeadLine, blogIntro } from '@/config/infoConfig'
-import { Pagination } from '@/components/shared/Pagination'
 
 export const runtime = process.env.NEXT_RUNTIME === 'edge' ? 'edge' : 'nodejs'
 
@@ -42,20 +41,8 @@ export const metadata: Metadata = {
   description: blogIntro,
 }
 
-const ITEMS_PER_PAGE = 10
-
-export default async function BlogsIndex({
-  searchParams,
-}: {
-  searchParams: { page?: string }
-}) {
+export default async function BlogsIndex() {
   const blogs = await getAllBlogs()
-  const currentPage = Number(searchParams.page) || 1
-  const totalPages = Math.ceil(blogs.length / ITEMS_PER_PAGE)
-
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
-  const endIndex = startIndex + ITEMS_PER_PAGE
-  const currentBlogs = blogs.slice(startIndex, endIndex)
 
   return (
     <SimpleLayout
@@ -63,35 +50,28 @@ export default async function BlogsIndex({
       intro={
         <div className="space-y-6">
           <p>{blogIntro}</p>
-          {currentPage === 1 && (
-            <div className="flex items-center gap-8">
-              <Image
-                src="/images/wechat/WeChatOfficialAccount.png"
-                alt="微信公众号二维码"
-                width={400}
-                height={400}
-                className="rounded-lg"
-              />
-              <div className="text-xl font-medium text-zinc-600 dark:text-zinc-400">
-                <p>☚ 关注微信公众号</p>
-                <p>第一时间获得新内容推送！</p>
-              </div>
+          <div className="flex items-center gap-8">
+            <Image
+              src="/images/wechat/WeChatOfficialAccount.png"
+              alt="微信公众号二维码"
+              width={400}
+              height={400}
+              className="rounded-lg"
+            />
+            <div className="text-xl font-medium text-zinc-600 dark:text-zinc-400">
+              <p>☚ 关注微信公众号</p>
+              <p>第一时间获得新内容推送！</p>
             </div>
-          )}
+          </div>
         </div>
       }
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">
-          {currentBlogs.map((blog: BlogType) => (
+          {blogs.map((blog: BlogType) => (
             <Blog key={blog.slug} blog={blog} />
           ))}
         </div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          basePath="/blogs"
-        />
       </div>
     </SimpleLayout>
   )
