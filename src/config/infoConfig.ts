@@ -4,9 +4,9 @@ export * from './career'
 
 // personal info
 export const name = '靳安和'
-export const headline = '探索技术无限可能！'
+export const headline = '欢迎访问我的个人网站！'
 export const introduction =
-  'Hello! 我是靳安和，来自山东济南，欢迎访问我的个人网站！'
+  '编译生活，调试人生，为代码、财报和思想找寻一席之地。'
 export const email = 'jah22956@163.com'
 export const githubUsername = 'Blunnny'
 
@@ -20,7 +20,7 @@ export const aboutParagraphs = [
 
 // blog
 export const blogHeadLine = '字耕墨耘，且记浮生'
-export const blogIntro = '关于会计、计算机、哲学以及最重要的——人生'
+export const blogIntro = '关于会计、计算机、哲学以及最重要的——人生。'
 
 // social links
 export type SocialLinkType = {

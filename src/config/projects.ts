@@ -17,7 +17,7 @@ export type ActivityItemType = {
 
 // Research & Projects
 export const projectHeadLine = '我做的小项目'
-export const projectIntro = '此中有真意，bug已忘言'
+export const projectIntro = '此中有真意，bug已忘言。'
 
 // 项目的详细信息
 export const projects: Array<ProjectItemType> = [
@@ -58,13 +58,13 @@ export const awards: Array<ActivityItemType> = [
 
 // Hobbies & Volunteer
 export const activitiesHeadLine = '兴趣爱好'
-export const activitiesIntro = '没事的时候喜欢...'
+export const activitiesIntro = '琴棋书画诗酒花，代码咖啡猫与茶。'
 
 export const activities: Array<ActivityItemType> = [
   {
     name: '乒乓球',
     description:
-      '小学三年级开始学习乒乓球，曾称霸球馆小学组，后被市队淘汰选手击碎道心，遂放弃职业之路',
+      '小学三年级开始学习乒乓球，曾称霸球馆小学组，后被市队淘汰选手击碎道心，遂放弃职业之路。',
     date: '2010-至今',
     location: '济南',
     // 有素材再添加链接
@@ -73,7 +73,7 @@ export const activities: Array<ActivityItemType> = [
   {
     name: '钢琴',
     description:
-      '初中一年级开始学习钢琴，艰难完成拜厄钢琴基础教程，最高水平可演奏《卡农》（现在仍然可以！），后因学业压力放弃钢琴',
+      '初中一年级开始学习钢琴，艰难完成拜厄钢琴基础教程，最高水平可演奏《卡农》（现在仍然可以！），后因学业压力放弃钢琴。',
     date: '2013-至今',
     location: '济南',
     // 有素材再添加链接
@@ -91,7 +91,7 @@ export const activities: Array<ActivityItemType> = [
 ]
 
 export const watchingProjectHeadLine = '我正在关注的项目'
-export const watchingProjectIntro = '观千剑而后识器，追开源以觅真知'
+export const watchingProjectIntro = '观千剑而后识器，追开源以觅真知。'
 export const watchingProjects: Array<ProjectItemType> = [
   {
     name: 'minimind',
