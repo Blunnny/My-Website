@@ -193,4 +193,13 @@ export const watchingProjects: Array<ProjectItemType> = [
     },
     tags: ['Python', 'Typescript', 'Vue'],
   },
+  {
+    name: 'Deep-Live-Cam',
+    description: '实时人脸交换和单图一键视频深度伪造',
+    link: {
+      href: 'github.com/hacksider/Deep-Live-Cam',
+      label: 'Deep-Live-Cam',
+    },
+    tags: ['Python', 'CUDA'],
+  },
 ]

@@ -1,14 +1,11 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-
 import { Card } from '@/components/shared/Card'
 import { SimpleLayout } from '@/components/layout/SimpleLayout'
-import { type BlogType, getAllBlogs } from '@/lib/blogs'
-import { formatDate } from '@/lib/formatDate'
 import { blogHeadLine, blogIntro } from '@/config/infoConfig'
-
-export const runtime = process.env.NEXT_RUNTIME === 'edge' ? 'edge' : 'nodejs'
+import { getAllBlogs } from '@/lib/blogs'
+import { type BlogType } from '@/lib/blogs'
+import Link from 'next/link'
+import { formatDate } from '@/lib/formatDate'
 
 function Blog({ blog }: { blog: BlogType }) {
   return (
@@ -37,17 +34,29 @@ function Blog({ blog }: { blog: BlogType }) {
   )
 }
 
-export const metadata: Metadata = {
-  title: 'Blogs',
-  description: blogIntro,
-}
-
-export default async function BlogsIndex() {
+// 添加generateStaticParams函数
+export async function generateStaticParams() {
   const blogs = await getAllBlogs()
   const blogsPerPage = 10
   const totalPages = Math.ceil(blogs.length / blogsPerPage)
-  const currentPage = 1 // 默认第一页
-  const currentBlogs = blogs.slice(0, blogsPerPage)
+
+  // 生成所有分页的参数
+  return Array.from({ length: totalPages }, (_, i) => ({
+    page: (i + 1).toString(),
+  }))
+}
+
+export default async function BlogsPage({
+  params,
+}: {
+  params: { page: string }
+}) {
+  const blogs = await getAllBlogs()
+  const blogsPerPage = 10
+  const totalPages = Math.ceil(blogs.length / blogsPerPage)
+  const currentPage = parseInt(params.page)
+  const startIndex = (currentPage - 1) * blogsPerPage
+  const currentBlogs = blogs.slice(startIndex, startIndex + blogsPerPage)
 
   return (
     <SimpleLayout
@@ -55,19 +64,6 @@ export default async function BlogsIndex() {
       intro={
         <div className="space-y-6">
           <p>{blogIntro}</p>
-          <div className="flex items-center gap-8">
-            <Image
-              src="/images/wechat/WeChatOfficialAccount.png"
-              alt="微信公众号二维码"
-              width={400}
-              height={400}
-              className="rounded-lg"
-            />
-            <div className="text-xl font-medium text-zinc-600 dark:text-zinc-400">
-              <p>☚ 关注微信公众号</p>
-              <p>第一时间获得新内容推送！</p>
-            </div>
-          </div>
         </div>
       }
     >
