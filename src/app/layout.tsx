@@ -8,11 +8,9 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: `%s - ${name}`,
-    default:
-      `${name} - ${headline}`,
+    default: `${name} - ${headline}`,
   },
-  description:
-    `${introduction}`,
+  description: `${introduction}`,
   alternates: {
     canonical: '/',
   },
@@ -25,6 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+      </head>
       <body className="flex h-full">
         <Providers>
           <div className="flex w-full">
