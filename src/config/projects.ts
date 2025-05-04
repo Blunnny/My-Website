@@ -213,11 +213,29 @@ export const watchingProjects: Array<ProjectItemType> = [
   },
   {
     name: 'stardroid(sky map)',
-    description: '带你在晚上看星星！（免费且无广告）',
+    description: '带你在晚上看星星！（免费无广告）',
     link: {
       href: 'github.com/sky-map-team/stardroid?tab=readme-ov-file',
       label: 'stardroid',
     },
     tags: ['Android', 'Java', 'Kotlin'],
+  },
+  {
+    name: 'KrillinAI',
+    description: '大模型驱动的视频翻译和配音工具',
+    link: {
+      href: 'github.com/krillinai/KrillinAI?tab=readme-ov-file',
+      label: 'KrillinAI',
+    },
+    tags: ['GO', 'HTML', 'Docker'],
+  },
+  {
+    name: 'WeClone',
+    description: '使用聊天记录创建数字分身！',
+    link: {
+      href: 'github.com/xming521/WeClone?tab=readme-ov-file',
+      label: 'WeClone',
+    },
+    tags: ['Python', 'LLM'],
   },
 ]
