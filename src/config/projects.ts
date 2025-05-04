@@ -202,4 +202,22 @@ export const watchingProjects: Array<ProjectItemType> = [
     },
     tags: ['Python', 'CUDA'],
   },
+  {
+    name: 'Spark-TTS',
+    description: '基于qwen2.5的高质量人声克隆工具',
+    link: {
+      href: 'github.com/SparkAudio/Spark-TTS?tab=readme-ov-file',
+      label: 'Spark-TTS',
+    },
+    tags: ['Python', 'CUDA'],
+  },
+  {
+    name: 'stardroid(sky map)',
+    description: '带你在晚上看星星！（免费且无广告）',
+    link: {
+      href: 'github.com/sky-map-team/stardroid?tab=readme-ov-file',
+      label: 'stardroid',
+    },
+    tags: ['Android', 'Java', 'Kotlin'],
+  },
 ]
