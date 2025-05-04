@@ -26,6 +26,7 @@ import {
 } from '@/config/projects'
 import IconCloud from '@/components/ui/icon-cloud'
 import { Award, Briefcase, Heart } from 'lucide-react'
+import { GithubRepo } from '@/components/shared/GithubRepo'
 
 export default async function Home() {
   let blogList = (await getAllBlogs()).slice(0, 4)
@@ -40,7 +41,10 @@ export default async function Home() {
               {headline}
             </h2>
             <p className="mt-6 text-xl text-muted-foreground">{introduction}</p>
-            <SocialLinks className="md:mt-24" />
+            <div className="mt-6 flex flex-row items-center gap-2">
+              <SocialLinks className="mt-0" />
+              <GithubRepo />
+            </div>
           </div>
           <div className="relative ml-auto flex size-full w-full items-center justify-center overflow-hidden px-20 md:mr-8 md:w-2/3 md:px-0">
             <IconCloud iconSlugs={techIcons} />

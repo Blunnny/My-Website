@@ -4,6 +4,7 @@ import { ContainerInner, ContainerOuter } from '@/components/layout/Container'
 import { footerItems } from '@/config/siteConfig'
 import { name } from '@/config/infoConfig'
 import SocialLinks from '@/components/home/SocialLinks'
+import { GithubRepo } from '@/components/shared/GithubRepo'
 
 function NavLink({
   href,
@@ -41,7 +42,10 @@ export function Footer() {
                     2025159378号
                   </p>
                 </div>
-                <SocialLinks className="mt-0" />
+                <div className="mt-4 flex flex-row items-center justify-end gap-2">
+                  <SocialLinks className="mt-0" />
+                  <GithubRepo />
+                </div>
               </div>
             </div>
           </ContainerInner>
