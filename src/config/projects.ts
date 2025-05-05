@@ -238,4 +238,13 @@ export const watchingProjects: Array<ProjectItemType> = [
     },
     tags: ['Python', 'LLM'],
   },
+  {
+    name: 'Anime.js',
+    description: '前端开发中实现复杂动画的首选工具！',
+    link: {
+      href: 'github.com/juliangarnier/anime',
+      label: 'Anime.js',
+    },
+    tags: ['JavaScript', 'CSS', 'HTML'],
+  },
 ]
