@@ -11,7 +11,7 @@ const books = [
     info: '余华',
     publisher: '作家出版社',
     rating: 9.4,
-    votes: '500K',
+    comment: '生命的坚韧与苦难，令人动容。',
   },
   {
     title: '百年孤独',
@@ -20,7 +20,7 @@ const books = [
     info: '加西亚·马尔克斯',
     publisher: '南海出版公司',
     rating: 9.3,
-    votes: '420K',
+    comment: '魔幻现实主义的巅峰之作。',
   },
   {
     title: '小王子',
@@ -29,7 +29,7 @@ const books = [
     info: '圣埃克苏佩里',
     publisher: '人民文学出版社',
     rating: 9.2,
-    votes: '390K',
+    comment: '童话外衣下的哲理人生。',
   },
   {
     title: '追风筝的人',
@@ -38,7 +38,7 @@ const books = [
     info: '卡勒德·胡赛尼',
     publisher: '上海人民出版社',
     rating: 9.1,
-    votes: '370K',
+    comment: '关于救赎与成长的动人故事。',
   },
   {
     title: '三体',
@@ -47,7 +47,7 @@ const books = [
     info: '刘慈欣',
     publisher: '重庆出版社',
     rating: 9.0,
-    votes: '350K',
+    comment: '中国科幻的里程碑。',
   },
 ]
 
@@ -210,9 +210,7 @@ function Section({
                 <span className="text-lg font-bold">
                   {idx + 1}. {item.title}
                 </span>
-              </div>
-              <div className="mt-2 flex items-center gap-2 text-sm">
-                <span className="text-xs text-muted-foreground">
+                <span className="ml-2 text-xs text-muted-foreground">
                   {item.year}
                 </span>
                 <span className="ml-2 text-xs text-muted-foreground">
@@ -223,6 +221,11 @@ function Section({
                     {item.publisher}
                   </span>
                 )}
+              </div>
+              <div className="mt-2 flex items-center gap-2 text-sm">
+                <span className="text-xs text-muted-foreground">
+                  {item.comment || '这是一段我的评价。'}
+                </span>
               </div>
             </div>
             <div className="ml-2 flex items-center gap-1">
@@ -237,7 +240,7 @@ function Section({
 }
 
 export const metadata: Metadata = {
-  title: 'Vedio&Books&Music&Games',
+  title: 'Entertainment',
   description: '图书、电影、音乐与游戏',
 }
 
