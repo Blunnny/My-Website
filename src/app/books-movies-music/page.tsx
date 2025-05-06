@@ -97,87 +97,83 @@ const movies = [
 
 const musics = [
   {
-    title: 'Yesterday Once More',
-    cover: '/images/musics/music1.jpg',
-    year: 1973,
-    info: 'Carpenters',
+    title: '夕阳之歌 In Brasil',
+    cover: '/images/musics/夕阳之歌 In Brasil.jpg',
+    year: 1989,
+    rating: 9.9,
+    comment: '「路上紛擾波折再一彎，一天想，想到歸去但已晚」',
+  },
+  {
+    title: '情歌',
+    cover: '/images/musics/情歌.jpg',
+    year: 2009,
+    rating: 9.6,
+    comment: '「生命宛如 静静的 相拥的河 永远天长地久」',
+  },
+  {
+    title: '我想要拥有你',
+    cover: '/images/musics/我想要拥有你.jpg',
+    year: 2024,
     rating: 9.5,
-    votes: '1.2M',
+    comment: '出轨の小曲，但是真的好听！',
   },
   {
-    title: 'Let It Be',
-    cover: '/images/musics/music2.jpg',
-    year: 1970,
-    info: 'The Beatles',
+    title: '有种',
+    cover: '/images/musics/有种.jpg',
+    year: 2012,
+    rating: 9.5,
+    comment: '「時來運到 天下無敵 即使最終得個夢」',
+  },
+  {
+    title: '梦里水乡',
+    cover: '/images/musics/梦里水乡.jpg',
+    year: 2021,
     rating: 9.4,
-    votes: '1.1M',
-  },
-  {
-    title: '晴天',
-    cover: '/images/musics/music3.jpg',
-    year: 2003,
-    info: '周杰伦',
-    rating: 9.3,
-    votes: '900K',
-  },
-  {
-    title: 'Shape of You',
-    cover: '/images/musics/music4.jpg',
-    year: 2017,
-    info: 'Ed Sheeran',
-    rating: 9.2,
-    votes: '850K',
-  },
-  {
-    title: '夜空中最亮的星',
-    cover: '/images/musics/music5.jpg',
-    year: 2011,
-    info: '逃跑计划',
-    rating: 9.1,
-    votes: '800K',
+    comment: '梦回上世纪初的上海滩。',
   },
 ]
 
 const games = [
   {
-    title: 'The Legend of Zelda: Breath of the Wild',
-    cover: '/images/games/game1.jpg',
-    year: 2017,
-    info: 'Switch',
-    rating: 9.7,
-    votes: '1.5M',
-  },
-  {
-    title: 'Minecraft',
-    cover: '/images/games/game2.jpg',
-    year: 2011,
-    info: 'Multi',
-    rating: 9.6,
-    votes: '2.0M',
-  },
-  {
-    title: 'The Witcher 3: Wild Hunt',
-    cover: '/images/games/game3.jpg',
+    title: 'GTA5',
+    cover: '/images/games/GTA5.jpg',
     year: 2015,
-    info: 'PC/PS4/XB1',
+    type: '角色扮演 / 冒险 / 动作 / 开放世界',
+    rating: 10.0,
+    comment: '能打败GTA5的只有GTA6（但GTA6跳票了😭）',
+  },
+  {
+    title: '黑神话·悟空',
+    cover: '/images/games/黑神话·悟空.jpg',
+    year: 2024,
+    type: '游戏 / 角色扮演 / 冒险 / 动作',
+    rating: 9.9,
+    comment: '「这猴子，真令我欢喜！」',
+  },
+  {
+    title: '赛博朋克 2077 Cyberpunk 2077',
+    cover: '/images/games/赛博朋克 2077 Cyberpunk 2077.jpg',
+    year: 2020,
+    type: '游戏 / 第一人称射击 / 角色扮演 / 冒险 / 动作',
+    rating: 9.9,
+    comment:
+      '「你是愿意当个无名之辈，一辈子安生？还是就算活不到三十岁，也要名留青史呢？」',
+  },
+  {
+    title: '死亡搁浅 DEATH STRANDING',
+    cover: '/images/games/死亡搁浅 DEATH STRANDING.jpg',
+    year: 2019,
+    type: '游戏 / 冒险 / 动作',
+    rating: 9.8,
+    comment: '试着与这个世界、与这世界中的千万人建立联系。',
+  },
+  {
+    title: '杀戮尖塔 Slay the Spire',
+    cover: '/images/games/杀戮尖塔 Slay the Spire.jpg',
+    year: 2019,
+    type: '游戏 / 横版过关 / 卡牌 / 角色扮演 / 策略',
     rating: 9.5,
-    votes: '1.3M',
-  },
-  {
-    title: 'Red Dead Redemption 2',
-    cover: '/images/games/game4.jpg',
-    year: 2018,
-    info: 'PS4/XB1/PC',
-    rating: 9.4,
-    votes: '1.1M',
-  },
-  {
-    title: '塞尔达传说：时之笛',
-    cover: '/images/games/game5.jpg',
-    year: 1998,
-    info: 'N64',
-    rating: 9.3,
-    votes: '900K',
+    comment: '信仰力量战，一刀999！',
   },
 ]
 
@@ -214,12 +210,19 @@ function Section({
                 <span className="ml-2 text-xs text-muted-foreground">
                   {item.year}
                 </span>
-                <span className="ml-2 text-xs text-muted-foreground">
-                  {item.info}
-                </span>
+                {type === 'game' && item.type && (
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {item.type}
+                  </span>
+                )}
                 {type === 'book' && item.publisher && (
                   <span className="ml-2 text-xs text-muted-foreground">
                     {item.publisher}
+                  </span>
+                )}
+                {type !== 'game' && type !== 'book' && item.info && (
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {item.info}
                   </span>
                 )}
               </div>
