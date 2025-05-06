@@ -63,7 +63,7 @@ const movies = [
   },
   {
     title: '破·地狱',
-    cover: '/images/movies/破·地狱.jps',
+    cover: '/images/movies/破·地狱.jpg',
     year: 2024,
     info: '剧情 / 家庭',
     rating: 8.4,
@@ -71,7 +71,7 @@ const movies = [
   },
   {
     title: '哪吒之魔童闹海',
-    cover: '/images/movies/哪吒之魔童闹海.jps',
+    cover: '/images/movies/哪吒之魔童闹海.jpg',
     year: 2025,
     info: '剧情 / 喜剧 / 动画 / 奇幻',
     rating: 8.5,
@@ -87,7 +87,7 @@ const movies = [
   },
   {
     title: '影后',
-    cover: '/images/movies/影后.jps',
+    cover: '/images/movies/影后.jpg',
     year: 2024,
     info: '剧情 / 喜剧',
     rating: 8.1,
