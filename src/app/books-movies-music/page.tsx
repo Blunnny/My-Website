@@ -55,7 +55,7 @@ const books = [
 const movies = [
   {
     title: '黑镜 第七季',
-    cover: '/images/movies/黑镜.WEBP',
+    cover: '/images/movies/黑镜.png',
     year: 2025,
     info: '剧情 / 科幻 / 悬疑 / 惊悚 / 犯罪',
     rating: 8.7,
@@ -63,7 +63,7 @@ const movies = [
   },
   {
     title: '破·地狱',
-    cover: '/images/movies/破·地狱.WEBP',
+    cover: '/images/movies/破·地狱.jps',
     year: 2024,
     info: '剧情 / 家庭',
     rating: 8.4,
@@ -71,7 +71,7 @@ const movies = [
   },
   {
     title: '哪吒之魔童闹海',
-    cover: '/images/movies/哪吒之魔童闹海.WEBP',
+    cover: '/images/movies/哪吒之魔童闹海.jps',
     year: 2025,
     info: '剧情 / 喜剧 / 动画 / 奇幻',
     rating: 8.5,
@@ -79,7 +79,7 @@ const movies = [
   },
   {
     title: '长安三万里',
-    cover: '/images/movies/长安三万里.WEBP',
+    cover: '/images/movies/长安三万里.png',
     year: 2023,
     info: '动画 / 历史',
     rating: 8.3,
@@ -87,7 +87,7 @@ const movies = [
   },
   {
     title: '影后',
-    cover: '/images/movies/影后.WEBP',
+    cover: '/images/movies/影后.jps',
     year: 2024,
     info: '剧情 / 喜剧',
     rating: 8.1,
