@@ -54,9 +54,103 @@ const booksByYear: Record<string, any[]> = {
       comment: '在照抄日本的答案之外，我们究竟能从日本的教训中学到什么？',
     },
   ],
-  2023: [],
-  2022: [],
-  2021: [],
+  2023: [
+    {
+      title: '宏观经济数据分析手册',
+      cover: '/images/books/宏观经济数据分析手册.jpg',
+      year: 2021,
+      info: '李奇霖',
+      publisher: '上海财经大学出版社',
+      rating: 9.6,
+      comment: '最好的经济工具书之一！',
+    },
+    {
+      title: '寻觅意义',
+      cover: '/images/books/寻觅意义.jpg',
+      year: 2022,
+      info: '王德峰',
+      publisher: '山东文艺出版社',
+      rating: 9.5,
+      comment:
+        '「当宏大叙事已经解体的今天，叙事并没有停止，而是化为了一些小叙事。在无数的小叙事中，我们重新编织起生命的意义。」”',
+    },
+    {
+      title: '金榜题名之后',
+      cover: '/images/books/金榜题名之后.jpg',
+      year: 2023,
+      info: '郑雅君',
+      publisher: '上海三联书店',
+      rating: 9.1,
+      comment: '大一新生必读书目。',
+    },
+
+    {
+      title: '窗边的小豆豆',
+      cover: '/images/books/窗边的小豆豆.jpg',
+      year: 2003,
+      info: '[日] 黑柳彻子',
+      publisher: '南海出版公司',
+      rating: 9.0,
+      comment: '教育不是注满一桶水，而是点燃一把火。',
+    },
+    {
+      title: '13 67',
+      cover: '/images/books/13 67.jpg',
+      year: 2014,
+      info: '陳浩基',
+      publisher: '皇冠文化出版有限公司',
+      rating: 9.0,
+      comment: '专属于香港的传奇故事。',
+    },
+  ],
+  2022: [
+    {
+      title: '置身事内',
+      cover: '/images/books/置身事内.jpg',
+      year: 2021,
+      info: '兰小欢',
+      publisher: '上海人民出版社',
+      rating: 9.7,
+      comment: '「站在岸边只看到波澜壮阔，看不见暗潮汹涌。」',
+    },
+    {
+      title: '结构性改革',
+      cover: '/images/books/结构性改革.jpg',
+      year: 2020,
+      info: '黄奇帆',
+      publisher: '中信出版社',
+      rating: 9.5,
+      comment: '高屋建瓴，值得反复阅读。',
+    },
+    {
+      title: '大国大城',
+      cover: '/images/books/大国大城.jpg',
+      year: 2016,
+      info: '陆铭',
+      publisher: '上海人民出版社',
+      rating: 9.3,
+      comment: '北上广深的问题不是城市太大，而是还不够大。',
+    },
+
+    {
+      title: '故事便利店',
+      cover: '/images/books/故事便利店.jpg',
+      year: 2022,
+      info: '骆以军',
+      publisher: '河南文艺出版社',
+      rating: 8.5,
+      comment: '有种小时读意林、格言和读者的感觉。',
+    },
+    {
+      title: '诡计博物馆',
+      cover: '/images/books/诡计博物馆.jpg',
+      year: 2020,
+      info: '[日]大山诚一郎',
+      publisher: '上海文艺出版社',
+      rating: 8.5,
+      comment: '最爱《复仇日记》这篇，有点东野圭吾的味道。',
+    },
+  ],
 }
 
 const moviesByYear: Record<string, any[]> = {
@@ -165,7 +259,7 @@ const games = [
     year: 2024,
     type: '游戏 / 角色扮演 / 冒险 / 动作',
     rating: 9.9,
-    comment: '「这猴子，真令我欢喜！」',
+    comment: '踏平坎坷成大道！',
   },
   {
     title: '赛博朋克 2077 Cyberpunk 2077',
@@ -203,21 +297,27 @@ function YearSection({
   dataByYear: Record<string, any[]>
   type: string
 }) {
-  const years = Object.keys(dataByYear).sort((a, b) => b.localeCompare(a))
+  // 如果是图书部分，过滤掉2021年
+  const years = Object.keys(dataByYear)
+    .filter((y) => !(type === 'book' && y === '2021'))
+    .sort((a, b) => b.localeCompare(a))
   const [year, setYear] = useState(years[0])
   return (
     <div className="mb-12">
       <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
         {title}
       </h2>
-      <div className="mb-4 flex gap-2">
+      <div className="mb-4 flex items-center gap-2">
+        <span className="text-base font-medium text-muted-foreground">
+          年度 TOP5
+        </span>
         {years.map((y) => (
           <button
             key={y}
             className={`rounded-full border px-4 py-1 text-sm transition-colors ${year === y ? 'bg-primary text-primary-foreground' : 'bg-background text-foreground hover:bg-muted'}`}
             onClick={() => setYear(y)}
           >
-            {y} 年度TOP5
+            {y}
           </button>
         ))}
       </div>
