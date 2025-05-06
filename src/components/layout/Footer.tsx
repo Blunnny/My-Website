@@ -1,24 +1,9 @@
 import Link from 'next/link'
 
 import { ContainerInner, ContainerOuter } from '@/components/layout/Container'
-import { footerItems } from '@/config/siteConfig'
 import { name } from '@/config/infoConfig'
 import SocialLinks from '@/components/home/SocialLinks'
 import { GithubRepo } from '@/components/shared/GithubRepo'
-
-function NavLink({
-  href,
-  children,
-}: {
-  href: string
-  children: React.ReactNode
-}) {
-  return (
-    <Link href={href} className="transition hover:text-primary">
-      {children}
-    </Link>
-  )
-}
 
 export function Footer() {
   return (
@@ -27,12 +12,9 @@ export function Footer() {
         <div className="border-t border-muted pb-16 pt-10">
           <ContainerInner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-start">
-              <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium">
-                {footerItems.map((item) => (
-                  <NavLink key={item.name} href={item.href}>
-                    {item.name}
-                  </NavLink>
-                ))}
+              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm font-medium">
+                <SocialLinks className="mt-0" />
+                <GithubRepo />
               </div>
               <div className="flex flex-col items-start justify-center">
                 <div className="flex flex-row items-center justify-end gap-2">
@@ -41,10 +23,6 @@ export function Footer() {
                     reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;鲁ICP备
                     2025159378号
                   </p>
-                </div>
-                <div className="mt-4 flex flex-row items-center justify-end gap-2">
-                  <SocialLinks className="mt-0" />
-                  <GithubRepo />
                 </div>
               </div>
             </div>
