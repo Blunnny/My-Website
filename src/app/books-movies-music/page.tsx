@@ -5,15 +5,6 @@ import { Metadata } from 'next'
 
 const books = [
   {
-    title: '动荡时代',
-    cover: '/images/books/动荡时代.jpg',
-    year: 2021,
-    info: '[日]白川方明',
-    publisher: '中信出版集团',
-    rating: 8.7,
-    comment: '在照抄日本的答案之外，我们究竟能从日本的教训中学到什么？',
-  },
-  {
     title: '动物农场',
     cover: '/images/books/动物农场.jpg',
     year: 2010,
@@ -28,18 +19,8 @@ const books = [
     year: 2022,
     info: '周洛华',
     publisher: '上海财经大学出版社',
-    rating: 8.7,
+    rating: 9.3,
     comment: '估值的社会学解释。',
-  },
-  {
-    title: '计算广告',
-    cover: '/images/books/计算广告.jpg',
-    year: 2022,
-    info: '刘鹏 / 王超',
-    publisher: '人民邮电出版社',
-    rating: 8.5,
-    comment:
-      '读之前以为重点是广告，读完发现重点是计算... 尽管完全理解需要一定计算机背景，但相当值得一读。',
   },
   {
     title: '长安的荔枝',
@@ -47,18 +28,53 @@ const books = [
     year: 2022,
     info: '马伯庸',
     publisher: '湖南文艺出版社',
-    rating: 8.5,
+    rating: 9.3,
     comment: '「一骑红尘妃子笑，无人知是荔枝来」',
+  },
+  {
+    title: '计算广告',
+    cover: '/images/books/计算广告.jpg',
+    year: 2022,
+    info: '刘鹏 / 王超',
+    publisher: '人民邮电出版社',
+    rating: 9.0,
+    comment:
+      '读之前以为重点是广告，读完发现重点是计算... 尽管完全理解需要一定计算机背景，但相当值得一读。',
+  },
+  {
+    title: '动荡时代',
+    cover: '/images/books/动荡时代.jpg',
+    year: 2021,
+    info: '[日]白川方明',
+    publisher: '中信出版集团',
+    rating: 8.5,
+    comment: '在照抄日本的答案之外，我们究竟能从日本的教训中学到什么？',
   },
 ]
 
 const movies = [
   {
+    title: '长安三万里',
+    cover: '/images/movies/长安三万里.png',
+    year: 2023,
+    info: '动画 / 历史',
+    rating: 9.7,
+    comment: '「诗在，书在，长安就在」',
+  },
+  {
+    title: '哪吒之魔童闹海',
+    cover: '/images/movies/哪吒之魔童闹海.jpg',
+    year: 2025,
+    info: '剧情 / 喜剧 / 动画 / 奇幻',
+    rating: 9.5,
+    comment: '首部电影院二刷的电影',
+  },
+  {
     title: '黑镜 第七季',
     cover: '/images/movies/黑镜.png',
     year: 2025,
     info: '剧情 / 科幻 / 悬疑 / 惊悚 / 犯罪',
-    rating: 8.7,
+    rating: 9.5,
     comment: '暗黑科技向的巅峰之作！',
   },
   {
@@ -66,31 +82,15 @@ const movies = [
     cover: '/images/movies/破·地狱.jpg',
     year: 2024,
     info: '剧情 / 家庭',
-    rating: 8.4,
+    rating: 8.9,
     comment: '「其實生人都係需要破地獄嘅」',
-  },
-  {
-    title: '哪吒之魔童闹海',
-    cover: '/images/movies/哪吒之魔童闹海.jpg',
-    year: 2025,
-    info: '剧情 / 喜剧 / 动画 / 奇幻',
-    rating: 8.5,
-    comment: '首部电影院二刷的电影',
-  },
-  {
-    title: '长安三万里',
-    cover: '/images/movies/长安三万里.png',
-    year: 2023,
-    info: '动画 / 历史',
-    rating: 8.3,
-    comment: '「诗在，书在，长安就在」',
   },
   {
     title: '影后',
     cover: '/images/movies/影后.jpg',
     year: 2024,
     info: '剧情 / 喜剧',
-    rating: 8.1,
+    rating: 8.8,
     comment: '单曲循环「我想要拥有你」中 · · ·',
   },
 ]
