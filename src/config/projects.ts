@@ -247,4 +247,22 @@ export const watchingProjects: Array<ProjectItemType> = [
     },
     tags: ['JavaScript', 'CSS', 'HTML'],
   },
+  {
+    name: 'developer-roadmap',
+    description: '涵盖几乎所有方向的开发者路线图！',
+    link: {
+      href: 'github.com/kamranahmedse/developer-roadmap',
+      label: 'developer-roadmap',
+    },
+    tags: ['JavaScript', 'TypeScript', 'Astro'],
+  },
+  {
+    name: 'Python-100-Days',
+    description: 'Python - 100天从新手到大师（其实内容远远不止python）',
+    link: {
+      href: 'github.com/jackfrued/Python-100-Days',
+      label: 'Python-100-Days',
+    },
+    tags: ['Python', 'Jupyter Notebook'],
+  },
 ]
