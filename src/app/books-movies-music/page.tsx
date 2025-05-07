@@ -72,7 +72,7 @@ const booksByYear: Record<string, any[]> = {
       publisher: '山东文艺出版社',
       rating: 9.5,
       comment:
-        '「当宏大叙事已经解体的今天，叙事并没有停止，而是化为了一些小叙事。在无数的小叙事中，我们重新编织起生命的意义。」”',
+        '「当宏大叙事已经解体的今天，叙事并没有停止，而是化为了一些小叙事。在无数的小叙事中，我们重新编织起生命的意义。」"',
     },
     {
       title: '金榜题名之后',
@@ -156,14 +156,6 @@ const booksByYear: Record<string, any[]> = {
 const moviesByYear: Record<string, any[]> = {
   2024: [
     {
-      title: '长安三万里',
-      cover: '/images/movies/长安三万里.png',
-      year: 2023,
-      info: '动画 / 历史',
-      rating: 9.7,
-      comment: '「诗在，书在，长安就在」',
-    },
-    {
       title: '哪吒之魔童闹海',
       cover: '/images/movies/哪吒之魔童闹海.jpg',
       year: 2025,
@@ -195,8 +187,58 @@ const moviesByYear: Record<string, any[]> = {
       rating: 8.8,
       comment: '单曲循环「我想要拥有你」中 · · ·',
     },
+    {
+      title: '死侍与金刚狼 Deadpool & Wolverine ',
+      cover: '/images/movies/死侍与金刚狼.jpg',
+      year: 2024,
+      info: '剧情 / 家庭',
+      rating: 8.9,
+      comment: '「其實生人都係需要破地獄嘅」',
+    },
   ],
-  2023: [],
+  2023: [
+    {
+      title: '长安三万里',
+      cover: '/images/movies/长安三万里.png',
+      year: 2023,
+      info: '动画 / 历史',
+      rating: 9.7,
+      comment: '「诗在，书在，长安就在」',
+    },
+    {
+      title: '硅谷 Silicon Valley（1-6季）',
+      cover: '/images/movies/硅谷.jpg',
+      year: 2014 - 2019,
+      info: '喜剧 / 剧情',
+      rating: 9.8,
+      comment: 'make the world a better place!',
+    },
+    {
+      title: '齐木楠雄的灾难',
+      cover: '/images/movies/齐木楠雄的灾难.jpg',
+      year: 2016 - 2029,
+      info: '剧情 / 喜剧 / 动画 / 奇幻',
+      rating: 9.3,
+      comment: '在非日常的设定中展现了普通中学生的日常故事',
+    },
+    {
+      title: '沙丘2 Dune: Part Two',
+      cover: '/images/movies/沙丘2.jpg',
+      year: 2024,
+      info: '剧情 / 动作 / 科幻 / 冒险',
+      rating: 9.4,
+      comment: '独特的沙漠美学，值得一看。',
+    },
+
+    {
+      title: '年会不能停!',
+      cover: '/images/movies/年会不能停! .webp',
+      year: 2023,
+      info: '剧情 / 喜剧',
+      rating: 9.0,
+      comment: '「裁员广进」',
+    },
+  ],
   2022: [],
   2021: [],
 }
@@ -337,6 +379,11 @@ function YearSection({
                 <span className="text-lg font-bold">
                   {idx + 1}. {item.title}
                 </span>
+                {type === 'book' && item.info && (
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {item.info}
+                  </span>
+                )}
                 <span className="ml-2 text-xs text-muted-foreground">
                   {item.year}
                 </span>
@@ -403,6 +450,11 @@ function Section({
                 <span className="text-lg font-bold">
                   {idx + 1}. {item.title}
                 </span>
+                {type === 'book' && item.info && (
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {item.info}
+                  </span>
+                )}
                 <span className="ml-2 text-xs text-muted-foreground">
                   {item.year}
                 </span>
