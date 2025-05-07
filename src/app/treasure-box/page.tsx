@@ -16,7 +16,7 @@ type WebsiteItem = {
 }
 
 // 主分类类型定义
-type MainCategory = '工具' | '学习资源'
+type MainCategory = '工具' | '公司数据' | '宏观数据'
 
 // 工具子分类类型定义
 type ToolSubCategory =
@@ -29,12 +29,27 @@ type ToolSubCategory =
   | 'AI大模型'
 
 // 学习资源子分类类型定义
-type ResourceSubCategory = '示例分类'
+type ResourceSubCategory =
+  | '证券信息'
+  | '研究报告'
+  | '企业信息'
+  | '审计信息'
+  | '会计信息'
+
+type MacroDataSubCategory =
+  | '经济数据'
+  | 'APP数据'
+  | '房地产数据'
+  | '其他数据'
+  | '电影数据'
+  | '研究报告'
+  | '咨询报告'
 
 // 分类数据结构类型定义
 type CategoriesType = {
   工具: Record<ToolSubCategory, WebsiteItem[]>
-  学习资源: Record<ResourceSubCategory, WebsiteItem[]>
+  公司数据: Record<ResourceSubCategory, WebsiteItem[]>
+  宏观数据: Record<MacroDataSubCategory, WebsiteItem[]>
 }
 
 // 标签样式映射
@@ -210,13 +225,314 @@ const categories: CategoriesType = {
     ],
   },
 
-  学习资源: {
-    示例分类: [
+  公司数据: {
+    证券信息: [
       {
-        title: '示例学习网站',
-        url: 'https://learn.example.com',
-        description: '这是一个示例学习网站的描述',
-        tags: ['免费'],
+        title: '巨潮资讯网',
+        url: 'https://www.cninfo.com.cn/new/index',
+        description: '证券金融数据权威查询网站',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '上海证券交易所',
+        url: 'https://www.sse.com.cn/',
+        description: '上海证券交易所官方网站',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '深圳证券交易所',
+        url: 'https://www.sse.org.cn/disclosure/index.html',
+        description: '深圳证券交易所官方网站',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '中国债券信息网',
+        url: 'https://www.chinabond.com.cn/',
+        description: '中央国债登记结算有限责任公司官方网站',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '证监会',
+        url: 'http://www.csrc.gov.cn/',
+        description: '中国证券监督管理委员会官方官网',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '中国货币网',
+        url: 'https://www.chinamoney.com.cn/chinese/index.html',
+        description: '银行间市场、货币市场查询',
+        tags: ['免费', '政府网站'],
+      },
+    ],
+    研究报告: [
+      {
+        title: '萝卜投研',
+        url: 'https://robo.datayes.com/v2/selection',
+        description: '券商研报查询网站',
+        tags: ['免费额度', '无广告'],
+      },
+      {
+        title: '发现报告',
+        url: 'https://www.fxbaogao.com/rp?rt=11&keywords=AIGC&order=2&nop=-1',
+        description: '券商研报、行业研究等报告查询网站',
+        tags: ['免费额度', '有广告'],
+      },
+    ],
+    企业信息: [
+      {
+        title: '天眼查',
+        url: 'https://www.tianyancha.com/',
+        description: '企业信息查询网站',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '企查查',
+        url: 'https://www.qcc.com/',
+        description: '企业信息查询网站',
+        tags: ['收费', '有广告'],
+      },
+      {
+        title: '中国土地市场网',
+        url: 'https://www.landchina.com/#/',
+        description: '查询土地信息',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '中国版权保护中心',
+        url: 'https://www.ccopyright.com.cn/',
+        description: '著作信息查询',
+        tags: ['免费', '政府网站'],
+      },
+    ],
+    会计信息: [
+      {
+        title: '企业会计准则',
+        url: 'https://kjs.mof.gov.cn/zt/kjzzss/kuaijizhunzeshishi/index.htm',
+        description: '中华人民共和国财政部发布的官方会计准则',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '中国会计视野',
+        url: 'https://www.esnai.com/',
+        description: '会计信息交流网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '会计家园',
+        url: 'https://www.mykuaiji.com/',
+        description: '会计信息交流网站',
+        tags: ['免费', '有广告'],
+      },
+      {
+        title: '会计准则',
+        url: 'https://kjs.mof.gov.cn/zt/kjzzss/kuaijizhunzeshishi/index.htm',
+        description: '中华人民共和国财政部',
+        tags: ['免费', '政府网站'],
+      },
+    ],
+    审计信息: [
+      {
+        title: '青藤数据',
+        url: 'https://www.qingtengdata.com/audit/keyaudit',
+        description: '企业审计数据、实务案例与法律法规',
+        tags: ['免费', '无广告'],
+      },
+    ],
+  },
+
+  宏观数据: {
+    经济数据: [
+      {
+        title: '国家统计局',
+        url: 'https://www.stats.gov.cn/',
+        description: '宏观数据的权威统计网站',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: 'CEIC',
+        url: 'https://www.ceicdata.com/zh-hans',
+        description: '全球经济数据统计网站',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '前瞻数据库',
+        url: 'https://d.qianzhan.com/xdata/list/xfx5yyyex0xTyynHxey0.html',
+        description: '宏观经济数据、行业数据与公司数据',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: 'RESSET数据库',
+        url: 'https://db.resset.com/common/main.jsp',
+        description: '宏观经济数据、行业数据与公司数据',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: 'CSMAR数据库',
+        url: 'https://data.csmar.com/',
+        description: '宏观经济数据、行业数据与公司数据',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: 'statista',
+        url: 'https://www.statista.com/',
+        description: '全球行业数据及分析报告',
+        tags: ['免费额度', '无广告'],
+      },
+      {
+        title: '济南公共数据开放网',
+        url: 'http://data.jinan.gov.cn/jinan/api/',
+        description: '济南各类数据统计网站',
+        tags: ['免费', '政府网站'],
+      },
+    ],
+    APP数据: [
+      {
+        title: '七麦数据',
+        url: 'https://www.qimai.cn/',
+        description: 'IOS应用数据统计网站',
+        tags: ['免费额度', '无广告'],
+      },
+    ],
+    房地产数据: [
+      {
+        title: '房天下',
+        url: 'https://fdc.fang.com/data/',
+        description: '中国房地产数据统计网站',
+        tags: ['免费额度', '无广告'],
+      },
+    ],
+    电影数据: [
+      {
+        title: '艺恩娱数',
+        url: 'https://ys.endata.cn/DataMarket/Index',
+        description: '中国电影数据统计网站',
+        tags: ['免费额度', '无广告'],
+      },
+    ],
+    其他数据: [
+      {
+        title: '199it大数据导航',
+        url: 'https://hao.199it.com/',
+        description: '各类数据的导航网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '高德数据',
+        url: 'https://report.amap.com/diagnosis/index.do',
+        description: '中国主要城市交通健康榜',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    研究报告: [
+      {
+        title: '镝数聚',
+        url: 'https://www.dydata.io/',
+        description: '行业数据分析报告',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '消费站',
+        url: 'https://www.cbndata.com/report',
+        description: '中国消费趋势分析报告',
+        tags: ['免费额度', '无广告'],
+      },
+      {
+        title: 'Quest Mobile',
+        url: 'https://www.questmobile.com.cn/research-book/annualreport',
+        description: '互联网数据分析报告',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '艾媒网',
+        url: 'https://www.iimedia.cn/#shuju',
+        description: '行业数据分析报告',
+        tags: ['免费额度', '无广告'],
+      },
+      {
+        title: '中研网',
+        url: 'https://www.chinairn.com/yjbg/',
+        description: '行业数据分析报告',
+        tags: ['免费额度', '无广告'],
+      },
+      {
+        title: '创业邦',
+        url: 'https://www.cyzone.cn/report/',
+        description: '行业数据分析报告',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '中国报告大厅',
+        url: 'https://www.chinabgao.com/',
+        description: '行业数据分析报告',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '亿欧智库',
+        url: 'https://www.iyiou.com/research',
+        description: '行业数据分析报告',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '中国信通院',
+        url: 'https://www.caict.ac.cn/kxyj/',
+        description: '新质生产力分析报告',
+        tags: ['免费', '无广告', '政府网站'],
+      },
+    ],
+    咨询报告: [
+      {
+        title: '麦肯锡咨询',
+        url: 'https://www.mckinsey.com.cn/',
+        description: '中国各行业分析报告',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '贝恩咨询',
+        url: 'https://www.bain.cn/',
+        description: '全球各行业分析报告',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '普华永道咨询',
+        url: 'https://www.pwccn.com/zh',
+        description: '中国各行业分析报告',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '德勤咨询',
+        url: 'https://www2.deloitte.com/cn/zh.html#',
+        description: '中国各行业分析报告',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'IBM咨询',
+        url: 'https://www.ibm.com/cn-zh/consulting?lnk=L0G',
+        description: '行业分析报告',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'BCG咨询',
+        url: 'https://www.bcg.com/greater-china',
+        description: '中国各行业分析报告',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'LEK咨询',
+        url: 'https://www.lek.com/zh-hant/lek-china',
+        description: '全球各行业分析报告',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '思略特咨询',
+        url: 'https://www.strategyand.pwc.com/cn/zh.html',
+        description: '行业分析报告',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '安永咨询',
+        url: 'https://www.ey.com/zh_cn',
+        description: '全球各行业分析报告',
+        tags: ['免费', '无广告'],
       },
     ],
   },
