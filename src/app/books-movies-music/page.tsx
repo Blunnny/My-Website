@@ -154,14 +154,14 @@ const booksByYear: Record<string, any[]> = {
 }
 
 const moviesByYear: Record<string, any[]> = {
-  2024: [
+  2025: [
     {
       title: '哪吒之魔童闹海',
       cover: '/images/movies/哪吒之魔童闹海.jpg',
       year: 2025,
       info: '剧情 / 喜剧 / 动画 / 奇幻',
       rating: 9.5,
-      comment: '首部电影院二刷的电影',
+      comment: '首部电影院二刷的电影。',
     },
     {
       title: '黑镜 第七季',
@@ -177,7 +177,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2024,
       info: '剧情 / 家庭',
       rating: 8.9,
-      comment: '「其實生人都係需要破地獄嘅」',
+      comment: '「其實生人都係需要破地獄嘅。」',
     },
     {
       title: '影后',
@@ -192,11 +192,11 @@ const moviesByYear: Record<string, any[]> = {
       cover: '/images/movies/死侍与金刚狼.jpg',
       year: 2024,
       info: '剧情 / 家庭',
-      rating: 8.9,
-      comment: '「其實生人都係需要破地獄嘅」',
+      rating: 8.5,
+      comment: '漫威挽尊之作。',
     },
   ],
-  2023: [
+  2024: [
     {
       title: '长安三万里',
       cover: '/images/movies/长安三万里.png',
@@ -206,9 +206,9 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「诗在，书在，长安就在」',
     },
     {
-      title: '硅谷 Silicon Valley（1-6季）',
+      title: '硅谷 Silicon Valley',
       cover: '/images/movies/硅谷.jpg',
-      year: 2014 - 2019,
+      year: '2014-2019',
       info: '喜剧 / 剧情',
       rating: 9.8,
       comment: 'make the world a better place!',
@@ -216,10 +216,10 @@ const moviesByYear: Record<string, any[]> = {
     {
       title: '齐木楠雄的灾难',
       cover: '/images/movies/齐木楠雄的灾难.jpg',
-      year: 2016 - 2029,
+      year: '2016-2019',
       info: '剧情 / 喜剧 / 动画 / 奇幻',
       rating: 9.3,
-      comment: '在非日常的设定中展现了普通中学生的日常故事',
+      comment: '下饭小神剧。',
     },
     {
       title: '沙丘2 Dune: Part Two',
@@ -229,26 +229,108 @@ const moviesByYear: Record<string, any[]> = {
       rating: 9.4,
       comment: '独特的沙漠美学，值得一看。',
     },
-
     {
-      title: '年会不能停!',
-      cover: '/images/movies/年会不能停! .webp',
-      year: 2023,
-      info: '剧情 / 喜剧',
+      title: '鬼灭之刃 鬼滅の刃',
+      cover: '/images/movies/鬼灭之刃.jpg',
+      year: 2019,
+      info: '动画 / 奇幻',
       rating: 9.0,
-      comment: '「裁员广进」',
+      comment: '「老去或是死亡，都是人类短暂生命的美妙之处。」',
     },
   ],
-  2022: [],
-  2021: [],
+  2023: [
+    {
+      title: '生活大爆炸 The Big Bang Theory',
+      cover: '/images/movies/生活大爆炸.jpg',
+      year: '2007-2018',
+      info: '喜剧 / 爱情',
+      rating: 9.8,
+      comment: '永远的经典！',
+    },
+    {
+      title: '布达佩斯大饭店 The Grand Budapest Hotel',
+      cover: '/images/movies/布达佩斯大饭店.jpg',
+      year: 2014,
+      info: '喜剧 / 剧情',
+      rating: 9.5,
+      comment: '用复古的色调，大师的配乐，和冷不丁的幽默记录一个时代的逝去。',
+    },
+    {
+      title: '寻梦环游记 Coco',
+      cover: '/images/movies/寻梦环游记.jpg',
+      year: 2017,
+      info: '喜剧 / 动画 / 音乐 / 奇幻',
+      rating: 9.5,
+      comment: '「死亡不是生命的终点，遗忘才是。」',
+    },
+    {
+      title: '星期三',
+      cover: '/images/movies/星期三.jpg',
+      year: 2022,
+      info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
+      rating: 9.3,
+      comment: '太爱星期三和小狼女了。',
+    },
+    {
+      title: '四月是你的谎言 四月は君の嘘',
+      cover: '/images/movies/四月是你的谎言.jpg',
+      year: 2014,
+      info: '剧情 / 动画 / 音乐',
+      rating: 9.3,
+      comment: '初中看完结局一个月没走出来，现在在看仍然感动。',
+    },
+  ],
+  2022: [
+    {
+      title: '头号玩家 Ready Player One',
+      cover: '/images/movies/头号玩家.jpg',
+      year: 2018,
+      info: '动作 / 科幻 / 冒险',
+      rating: 9.6,
+      comment: '「谢谢你来玩我的游戏。」',
+    },
+    {
+      title: '蜘蛛侠：平行宇宙 Spider-Man: Into the Spider-Verse',
+      cover: '/images/movies/蜘蛛侠：平行宇宙.jpg',
+      year: 2018,
+      info: '动作 / 科幻 / 动画 / 冒险',
+      rating: 9.4,
+      comment: '动画想象力的巅峰之作！',
+    },
+    {
+      title: '乔乔的异想世界 Jojo Rabbit',
+      cover: '/images/movies/乔乔的异想世界.jpg',
+      year: 2019,
+      info: '剧情 / 喜剧 / 战争',
+      rating: 9.3,
+      comment: '「等你自由了，你第一件事要做什么？跳舞」',
+    },
+    {
+      title: '模仿游戏 The Imitation Game',
+      cover: '/images/movies/模仿游戏.jpg',
+      year: 2014,
+      info: '剧情 / 同性 / 传记 / 战争',
+      rating: 9.2,
+      comment: '人和机器的区别究竟是什么呢？',
+    },
+    {
+      title: '调音师 Andhadhun',
+      cover: '/images/movies/调音师.jpg',
+      year: 2018,
+      info: '喜剧 / 悬疑 / 惊悚 / 犯罪',
+      rating: 9.1,
+      comment: '年度最佳悬疑片！',
+    },
+  ],
 }
 
 const musicsByYear: Record<string, any[]> = {
-  2024: [
+  2025: [
     {
       title: '夕阳之歌 In Brasil',
       cover: '/images/musics/夕阳之歌 In Brasil.jpg',
       year: 1989,
+      artist: '梅艳芳',
       rating: 9.9,
       comment: '「路上紛擾波折再一彎，一天想，想到歸去但已晚」',
     },
@@ -256,6 +338,7 @@ const musicsByYear: Record<string, any[]> = {
       title: '情歌',
       cover: '/images/musics/情歌.jpg',
       year: 2009,
+      artist: '梁静茹',
       rating: 9.6,
       comment: '「生命宛如 静静的 相拥的河 永远天长地久」',
     },
@@ -263,6 +346,7 @@ const musicsByYear: Record<string, any[]> = {
       title: '我想要拥有你',
       cover: '/images/musics/我想要拥有你.jpg',
       year: 2024,
+      artist: '小男孩乐团',
       rating: 9.5,
       comment: '出轨の小曲，但是真的好听！',
     },
@@ -270,6 +354,7 @@ const musicsByYear: Record<string, any[]> = {
       title: '有种',
       cover: '/images/musics/有种.jpg',
       year: 2012,
+      artist: '郑中基',
       rating: 9.5,
       comment: '「時來運到 天下無敵 即使最終得個夢」',
     },
@@ -277,13 +362,138 @@ const musicsByYear: Record<string, any[]> = {
       title: '梦里水乡',
       cover: '/images/musics/梦里水乡.jpg',
       year: 2021,
+      artist: '陈婧霏',
       rating: 9.4,
       comment: '梦回上世纪初的上海滩。',
     },
   ],
-  2023: [],
-  2022: [],
-  2021: [],
+  2024: [
+    {
+      title: '突然的自我',
+      cover: '/images/musics/突然的自我.jpg',
+      year: 2004,
+      artist: '伍佰',
+      rating: 9.7,
+      comment: '「那就不再留 时光一过不再有」',
+    },
+    {
+      title: '野孩子',
+      cover: '/images/musics/野孩子.jpg',
+      year: 2001,
+      artist: '杨千嬅',
+      rating: 9.5,
+      comment: '「我也笑我原來是個天生的野孩子 連沒有幸福都不介意」',
+    },
+    {
+      title: '阳光男孩 阳光女孩',
+      cover: '/images/musics/阳光男孩 阳光女孩.jpg',
+      year: 2005,
+      artist: 'TG4',
+      rating: 9.5,
+      comment: '「你的童年我的童年 好像都一样」',
+    },
+    {
+      title: '唯一',
+      cover: '/images/musics/唯一.jpg',
+      year: 2020,
+      artist: '告五人',
+      rating: 9.3,
+      comment: '「你不想证明 证明我是你唯一」',
+    },
+    {
+      title: '万水千山总是情',
+      cover: '/images/musics/万水千山总是情.jpg',
+      year: 1982,
+      artist: '汪明荃',
+      rating: 9.2,
+      comment: '「聚散也有天註定 不怨天不怨命 但求有山水共作證」',
+    },
+  ],
+  2023: [
+    {
+      title: '真的爱你',
+      cover: '/images/musics/真的爱你.jpg',
+      year: 1989,
+      artist: 'Beyond',
+      rating: 9.9,
+      comment: '「是妳多麼溫馨的目光 教我堅毅望著前路」',
+    },
+    {
+      title: '小镇姑娘',
+      cover: '/images/musics/小镇姑娘.jpg',
+      year: 1999,
+      artist: '陶喆',
+      rating: 9.5,
+      comment: '「或許妳會有一天懷念 可是我已不在」',
+    },
+    {
+      title: '国王与法老',
+      cover: '/images/musics/国王与法老.jpg',
+      year: 2021,
+      artist: '法老/杨和苏/张馨月',
+      rating: 9.0,
+      comment: '「还是那么骄狂 如果我弹钢琴就像肖邦」',
+    },
+    {
+      title: '没有理想的人不伤心',
+      cover: '/images/musics/没有理想的人不伤心.jpg',
+      year: 2013,
+      artist: '新裤子',
+      rating: 9.1,
+      comment: '「我不要在失败孤独中死去 我不要一直活在地下里」',
+    },
+    {
+      title: '在草地上肆意奔跑',
+      cover: '/images/musics/在草地上肆意奔跑.jpg',
+      year: 2022,
+      artist: '告五人',
+      rating: 9.0,
+      comment: '「要肆意奔跑白天到晚上 直到我看见天空变微亮」',
+    },
+  ],
+  2022: [
+    {
+      title: '单车',
+      cover: '/images/musics/单车.jpg',
+      year: 2001,
+      artist: '陈奕迅',
+      rating: 9.8,
+      comment: '「難離難捨想抱緊些 茫茫人生好像荒野」',
+    },
+    {
+      title: '涙そうそう (泪光闪闪) ',
+      cover: '/images/musics/涙そうそう.jpg',
+      year: 2001,
+      artist: '夏川りみ',
+      rating: 9.5,
+      comment:
+        '「想い出遠くあせても、おもかげ探してよみがえる日は 涙そうそう」',
+    },
+    {
+      title: '小宇',
+      cover: '/images/musics/小宇.jpg',
+      year: 2007,
+      artist: '张震岳',
+      rating: 9.5,
+      comment: '「总有些惊奇的际遇 比方说当我遇见你」',
+    },
+    {
+      title: '亲爱的',
+      cover: '/images/musics/亲爱的.jpg',
+      year: 2009,
+      artist: '潘玮柏',
+      rating: 9.3,
+      comment: '「我 叮咚的 弹奏着 故事里那首儿歌 缤纷的音乐盒木马还旋转着」',
+    },
+    {
+      title: '缘分一道桥',
+      cover: '/images/musics/缘分一道桥.jpg',
+      year: 2016,
+      artist: '王力宏 / 谭维维',
+      rating: 9.0,
+      comment: '「谈爱恨不能潦草 战鼓敲啊敲 用信任立下誓言我来熬」',
+    },
+  ],
 }
 
 const games = [
@@ -384,6 +594,11 @@ function YearSection({
                     {item.info}
                   </span>
                 )}
+                {type === 'music' && item.artist && (
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {item.artist}
+                  </span>
+                )}
                 <span className="ml-2 text-xs text-muted-foreground">
                   {item.year}
                 </span>
@@ -397,11 +612,14 @@ function YearSection({
                     {item.publisher}
                   </span>
                 )}
-                {type !== 'game' && type !== 'book' && item.info && (
-                  <span className="ml-2 text-xs text-muted-foreground">
-                    {item.info}
-                  </span>
-                )}
+                {type !== 'game' &&
+                  type !== 'book' &&
+                  type !== 'music' &&
+                  item.info && (
+                    <span className="ml-2 text-xs text-muted-foreground">
+                      {item.info}
+                    </span>
+                  )}
               </div>
               <div className="mt-2 flex items-center gap-2 text-sm">
                 <span className="text-xs text-muted-foreground">
@@ -411,7 +629,7 @@ function YearSection({
             </div>
             <div className="ml-2 flex items-center gap-1">
               <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
-              <span className="font-semibold">{item.rating}</span>
+              <span className="font-semibold">{item.rating.toFixed(1)}</span>
             </div>
           </li>
         ))}
@@ -482,7 +700,7 @@ function Section({
             </div>
             <div className="ml-2 flex items-center gap-1">
               <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
-              <span className="font-semibold">{item.rating}</span>
+              <span className="font-semibold">{item.rating.toFixed(1)}</span>
             </div>
           </li>
         ))}
@@ -513,7 +731,11 @@ export default function BooksMoviesMusicPage() {
           dataByYear={musicsByYear}
           type="music"
         />
-        <Section title="Play hard, die fast" items={games} type="game" />
+        <Section
+          title="All work and no play makes Jack a dull boy"
+          items={games}
+          type="game"
+        />
       </div>
     </Container>
   )
