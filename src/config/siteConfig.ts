@@ -28,6 +28,10 @@ export const footerItems: Array<NavItemType> = [
     name: '我的博客',
     href: '/blogs',
   },
+  {
+    name: '百宝箱',
+    href: '/treasure-box',
+  },
 ]
 
 export const navItems: Array<NavItemType> = [
@@ -50,5 +54,9 @@ export const navItems: Array<NavItemType> = [
   {
     name: '我的博客',
     href: '/blogs',
+  },
+  {
+    name: '百宝箱',
+    href: '/treasure-box',
   },
 ]
