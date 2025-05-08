@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { ExternalLink } from 'lucide-react'
 
 // 标签类型定义
-type TagType = '免费' | '无广告' | '免费额度' | '收费' | '政府网站' | '有广告'
+type TagType = '免费' | '无广告' | '部分免费' | '收费' | '政府网站' | '有广告'
 
 // 网站项目类型定义
 type WebsiteItem = {
@@ -16,19 +16,23 @@ type WebsiteItem = {
 }
 
 // 主分类类型定义
-type MainCategory = '工具' | '公司数据' | '宏观数据'
+type MainCategory =
+  | '实用工具'
+  | '公司数据'
+  | '宏观数据'
+  | '艺术设计'
+  | '医疗健康'
+  | '终身学习'
 
 // 工具子分类类型定义
 type ToolSubCategory =
   | '音视频处理'
   | '文件格式转换'
-  | '字体下载'
   | '小工具集合'
   | '其他工具'
-  | '色彩搭配'
   | 'AI大模型'
 
-// 学习资源子分类类型定义
+// 公司数据子分类类型定义
 type ResourceSubCategory =
   | '证券信息'
   | '研究报告'
@@ -36,6 +40,7 @@ type ResourceSubCategory =
   | '审计信息'
   | '会计信息'
 
+// 宏观数据子分类类型定义
 type MacroDataSubCategory =
   | '经济数据'
   | 'APP数据'
@@ -45,18 +50,36 @@ type MacroDataSubCategory =
   | '研究报告'
   | '咨询报告'
 
+// 艺术设计子分类类型定义
+type ArtDesignSubCategory =
+  | '字体网站'
+  | '色彩搭配'
+  | '图片素材'
+  | '图标素材'
+  | '艺术欣赏'
+  | '其他'
+
+// 医疗健康子分类类型定义
+type HealthMedSubCategory = '医疗健康'
+
+// 终身学习子分类类型定义
+type LifelongLearningSubCategory = '学习网站' | '语言学习' | '音乐学习'
+
 // 分类数据结构类型定义
 type CategoriesType = {
-  工具: Record<ToolSubCategory, WebsiteItem[]>
+  实用工具: Record<ToolSubCategory, WebsiteItem[]>
   公司数据: Record<ResourceSubCategory, WebsiteItem[]>
   宏观数据: Record<MacroDataSubCategory, WebsiteItem[]>
+  艺术设计: Record<ArtDesignSubCategory, WebsiteItem[]>
+  医疗健康: Record<HealthMedSubCategory, WebsiteItem[]>
+  终身学习: Record<LifelongLearningSubCategory, WebsiteItem[]>
 }
 
 // 标签样式映射
 const tagStyles: Record<TagType, string> = {
   免费: 'bg-green-100 text-green-800',
   无广告: 'bg-blue-100 text-blue-800',
-  免费额度: 'bg-yellow-100 text-yellow-800',
+  部分免费: 'bg-yellow-100 text-yellow-800',
   收费: 'bg-red-100 text-red-800',
   政府网站: 'bg-purple-100 text-purple-800',
   有广告: 'bg-red-100 text-red-800',
@@ -64,21 +87,13 @@ const tagStyles: Record<TagType, string> = {
 
 // 网站分类数据
 const categories: CategoriesType = {
-  工具: {
-    音视频处理: [
-      {
-        title: 'cobalt',
-        url: 'https://cobalt.tools/',
-        description: '输入视频网址即可下载视频或音频',
-        tags: ['免费', '无广告'],
-      },
-    ],
+  实用工具: {
     文件格式转换: [
       {
         title: 'convertio',
         url: 'https://convertio.co/zh/',
         description: '上百种文件格式在线转换器',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: '图片格式转换器',
@@ -90,7 +105,7 @@ const categories: CategoriesType = {
         title: '超级PDF',
         url: 'https://lkssite.vip/',
         description: 'PDF与多种office文档的在线转换与处理工具',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: '凹凸凹',
@@ -102,39 +117,21 @@ const categories: CategoriesType = {
         title: 'ilovepdf',
         url: 'https://www.ilovepdf.com/zh-cn/pricing',
         description: 'PDF与多种office文档的在线转换与处理工具',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'aconvert',
+        url: 'https://www.aconvert.com/',
+        description: '超多文件格式转换与处理工具',
+        tags: ['免费', '无广告'],
       },
     ],
-    字体下载: [
+    音视频处理: [
       {
-        title: '自由字体',
-        url: 'https://ziyouziti.com/',
-        description: '免费可商用字体大全',
+        title: 'cobalt',
+        url: 'https://cobalt.tools/',
+        description: '输入视频网址即可下载视频或音频',
         tags: ['免费', '无广告'],
-      },
-      {
-        title: 'qiuziti',
-        url: 'https://www.qiuziti.com/member.html',
-        description: '字体识别与下载网站',
-        tags: ['免费额度', '无广告'],
-      },
-      {
-        title: '方正字体',
-        url: 'https://www.foundertype.com/index.php/Index/plusExtend/utm_source/qiuziti_newfontinfo/mid/194',
-        description: '方正旗下字体下载平台',
-        tags: ['免费', '无广告'],
-      },
-      {
-        title: '字体天下',
-        url: 'https://www.fonts.net.cn/commercial-free/fonts-zh-1.html',
-        description: '海量字体免费高速下载',
-        tags: ['免费', '无广告'],
-      },
-      {
-        title: '字由',
-        url: 'https://www.hellofont.cn/member',
-        description: '字体下载网站',
-        tags: ['免费额度', '无广告'],
       },
     ],
     小工具集合: [
@@ -150,31 +147,11 @@ const categories: CategoriesType = {
         description: '海量工具合集',
         tags: ['免费', '有广告'],
       },
-    ],
-    色彩搭配: [
       {
-        title: '中国色',
-        url: 'https://www.zhongguose.com/#xiangyehong',
-        description: '中国传统颜色大全',
-        tags: ['免费', '无广告'],
-      },
-      {
-        title: 'Colorhunt',
-        url: 'https://colorhunt.co/palettes',
-        description: '设计师和艺术家的调色盘',
-        tags: ['免费', '无广告'],
-      },
-      {
-        title: 'LOLcolors',
-        url: 'https://www.webdesignrankings.com/resources/lolcolors/',
-        description: '精选调色盘灵感',
-        tags: ['免费', '无广告'],
-      },
-      {
-        title: 'Paletton',
-        url: 'https://paletton.com/#uid=1270u0k2ljc6hnI3vhb50fr6wdx',
-        description: '每个人都可以使用的调色轮',
-        tags: ['免费', '无广告'],
+        title: '即时工具',
+        url: 'https://www.67tool.com/',
+        description: '海量在线工具合集',
+        tags: ['部分免费', '无广告'],
       },
     ],
     AI大模型: [
@@ -182,37 +159,37 @@ const categories: CategoriesType = {
         title: 'chatgpt',
         url: 'https://chatgpt.com/',
         description: '最强AI大模型',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: 'grok',
         url: 'https://x.ai/',
         description: '马斯克X旗下的AI大模型',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: 'gemini',
         url: 'https://gemini.google.com/',
         description: '谷歌旗下的AI大模型',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: '通义千问',
         url: 'https://chat.qwen.ai/c/1ee6ba6e-61df-44ce-972e-4030929ca6ff',
         description: '阿里旗下的AI大模型',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: 'deepseek',
         url: 'https://chat.deepseek.com/',
         description: '无需多言',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: 'AI 导航',
         url: 'https://www.jyshare.com/ai/',
         description: '汇聚AI对话、绘画、编程等多方面的AI工具',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
     ],
     其他工具: [
@@ -221,6 +198,24 @@ const categories: CategoriesType = {
         url: 'https://sms-activate.world/cn',
         description: '虚拟电话平台',
         tags: ['收费', '无广告'],
+      },
+      {
+        title: 'hotkeycheatsheet',
+        url: 'https://hotkeycheatsheet.com/zh',
+        description: '各大软件的快捷键备忘录',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '深言达意',
+        url: 'https://www.shenyandayi.com/',
+        description: '寻找同义词、同义句以及公文表述',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'CSP check',
+        url: 'https://cps-check.com/cn/polling-rate-check',
+        description: '鼠标与键盘测试工具',
+        tags: ['免费', '无广告'],
       },
     ],
   },
@@ -269,13 +264,13 @@ const categories: CategoriesType = {
         title: '萝卜投研',
         url: 'https://robo.datayes.com/v2/selection',
         description: '券商研报查询网站',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: '发现报告',
         url: 'https://www.fxbaogao.com/rp?rt=11&keywords=AIGC&order=2&nop=-1',
         description: '券商研报、行业研究等报告查询网站',
-        tags: ['免费额度', '有广告'],
+        tags: ['部分免费', '有广告'],
       },
     ],
     企业信息: [
@@ -376,7 +371,7 @@ const categories: CategoriesType = {
         title: 'statista',
         url: 'https://www.statista.com/',
         description: '全球行业数据及分析报告',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: '济南公共数据开放网',
@@ -390,7 +385,7 @@ const categories: CategoriesType = {
         title: '七麦数据',
         url: 'https://www.qimai.cn/',
         description: 'IOS应用数据统计网站',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
     ],
     房地产数据: [
@@ -398,7 +393,7 @@ const categories: CategoriesType = {
         title: '房天下',
         url: 'https://fdc.fang.com/data/',
         description: '中国房地产数据统计网站',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
     ],
     电影数据: [
@@ -406,7 +401,7 @@ const categories: CategoriesType = {
         title: '艺恩娱数',
         url: 'https://ys.endata.cn/DataMarket/Index',
         description: '中国电影数据统计网站',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
     ],
     其他数据: [
@@ -434,7 +429,7 @@ const categories: CategoriesType = {
         title: '消费站',
         url: 'https://www.cbndata.com/report',
         description: '中国消费趋势分析报告',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: 'Quest Mobile',
@@ -446,13 +441,13 @@ const categories: CategoriesType = {
         title: '艾媒网',
         url: 'https://www.iimedia.cn/#shuju',
         description: '行业数据分析报告',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: '中研网',
         url: 'https://www.chinairn.com/yjbg/',
         description: '行业数据分析报告',
-        tags: ['免费额度', '无广告'],
+        tags: ['部分免费', '无广告'],
       },
       {
         title: '创业邦',
@@ -477,6 +472,12 @@ const categories: CategoriesType = {
         url: 'https://www.caict.ac.cn/kxyj/',
         description: '新质生产力分析报告',
         tags: ['免费', '无广告', '政府网站'],
+      },
+      {
+        title: '报告查一查',
+        url: 'https://report.seedsufe.com/#/report',
+        description: '行业分析报告',
+        tags: ['部分免费', '无广告'],
       },
     ],
     咨询报告: [
@@ -536,6 +537,305 @@ const categories: CategoriesType = {
       },
     ],
   },
+
+  艺术设计: {
+    字体网站: [
+      {
+        title: '自由字体',
+        url: 'https://ziyouziti.com/',
+        description: '免费可商用字体大全',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'qiuziti',
+        url: 'https://www.qiuziti.com/member.html',
+        description: '字体识别与下载网站',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: '方正字体',
+        url: 'https://www.foundertype.com/index.php/Index/plusExtend/utm_source/qiuziti_newfontinfo/mid/194',
+        description: '方正旗下字体下载平台',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '字体天下',
+        url: 'https://www.fonts.net.cn/commercial-free/fonts-zh-1.html',
+        description: '海量字体免费高速下载',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '字由',
+        url: 'https://www.hellofont.cn/member',
+        description: '字体下载网站',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'grid-type',
+        url: 'https://www.grid-type.com/',
+        description: '使用格子来打造自己的字体！',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    色彩搭配: [
+      {
+        title: '中国色',
+        url: 'https://www.zhongguose.com/#xiangyehong',
+        description: '中国传统颜色大全',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Colorhunt',
+        url: 'https://colorhunt.co/palettes',
+        description: '设计师和艺术家的调色盘',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'LOLcolors',
+        url: 'https://www.webdesignrankings.com/resources/lolcolors/',
+        description: '精选调色盘灵感',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Paletton',
+        url: 'https://paletton.com/#uid=1270u0k2ljc6hnI3vhb50fr6wdx',
+        description: '每个人都可以使用的调色轮',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Adobe Color',
+        url: 'https://color.adobe.com/zh/create/color-wheel',
+        description: 'Adobe出品的调色盘工具',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    图片素材: [
+      {
+        title: 'hippopx',
+        url: 'https://www.hippopx.com/zh',
+        description: '免版权图库',
+        tags: ['免费', '有广告'],
+      },
+      {
+        title: '摄图网',
+        url: 'https://699pic.com/',
+        description: '图片素材下载网站',
+        tags: ['部分免费', '有广告'],
+      },
+      {
+        title: 'pexels',
+        url: 'https://www.pexels.com/zh-cn/',
+        description: '免费图片素材网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'pixabay',
+        url: 'https://pixabay.com/zh/',
+        description: '免费图片素材网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'unsplash',
+        url: 'https://unsplash.com/',
+        description: '图片下载网站',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'visualhunt',
+        url: 'https://visualhunt.com/',
+        description: '产品图片网站',
+        tags: ['免费', '有广告'],
+      },
+      {
+        title: '500px摄影师社区',
+        url: 'https://500px.com.cn/',
+        description: '摄影师交流网站（多数图片受版权保护）',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'foodiesfeed',
+        url: 'https://www.foodiesfeed.com/',
+        description: '食物图片网站',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'lifeofpix',
+        url: 'https://www.lifeofpix.com/',
+        description: '风景大图下载网站',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: '天空之城',
+        url: 'https://www.skypixel.com/',
+        description: '城市风光的图片与视频网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '高图网',
+        url: 'https://gaoimg.com/',
+        description: '可商用的图片、样机与素材网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '标小智',
+        url: 'https://www.logosc.cn/so/',
+        description: '一键搜索多家免版权图库',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'stocksnap',
+        url: 'https://stocksnap.com/',
+        description: '聚合多个图片下载网站',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    图标素材: [
+      {
+        title: '阿里巴巴矢量库',
+        url: 'https://www.iconfont.cn/',
+        description: '免费的图标素材网站',
+        tags: ['免费', '有广告'],
+      },
+      {
+        title: 'iconfinder',
+        url: 'https://www.iconfinder.com/',
+        description: '多种图标下载网站',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: 'iconhub',
+        url: 'https://iconhub.io/',
+        description: '简单图标素材网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Font Awesome',
+        url: 'https://fontawesome.dashgame.com/',
+        description: '网页矢量图标网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'appicons',
+        url: 'https://appicons.co/?ref=pushkeen',
+        description: '获取AppStore中的应用图标',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    艺术欣赏: [
+      {
+        title: '千年调',
+        url: 'https://news.cgtn.com/event/2023/The-Song-Painted-Nature/index.html',
+        description: '宋代山水画鉴赏网站',
+        tags: ['免费', '有广告'],
+      },
+      {
+        title: '麦田艺术',
+        url: 'https://www.nbfox.com/',
+        description: '10w+世界名画鉴赏与下载网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '中华古籍资源库',
+        url: 'http://read.nlc.cn/thematDataSearch/toGujiIndex',
+        description: '中国国家数字图书馆旗下的海量古籍资料',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '中华珍宝馆',
+        url: 'https://www.ltfc.net/home',
+        description: '中华书法和绘画的欣赏和下载网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'gallerix',
+        url: 'https://en.gallerix.ru/',
+        description: '世界名画鉴赏与下载网站',
+        tags: ['免费', '有广告'],
+      },
+    ],
+    其他: [
+      {
+        title: 'CreativeMass',
+        url: 'https://creativemass.cn/',
+        description: '创意网站导航',
+        tags: ['免费', '无广告'],
+      },
+    ],
+  },
+
+  医疗健康: {
+    医疗健康: [
+      {
+        title: '中国医药信息查询平台',
+        url: 'https://www.dayi.org.cn/',
+        description: '中国疾病、医院、医生和药品查询平台',
+        tags: ['免费', '政府网站'],
+      },
+      {
+        title: '默沙东诊疗手册',
+        url: 'https://www.msdmanuals.cn/?ruleredirectid=14#mission',
+        description: '提供涵盖了医学所有领域的诊疗手册',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'fatsecret',
+        url: 'https://www.fatsecret.cn/%E7%83%AD%E9%87%8F%E8%90%A5%E5%85%BB/',
+        description: '食物的热量和营养信息',
+        tags: ['免费', '无广告'],
+      },
+    ],
+  },
+
+  终身学习: {
+    学习网站: [
+      {
+        title: 'coursera',
+        url: 'https://www.coursera.org/',
+        description: '免费学习来自世界顶级高校和公司的课程',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'wikihow',
+        url: 'https://zh.wikihow.com/%E9%A6%96%E9%A1%B5',
+        description: '互联网上最值得信赖的指南网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'ifixit',
+        url: 'https://zh.ifixit.com/about-us-zh',
+        description: '教你维修任何东西的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '中国大学MOOC',
+        url: 'https://www.icourse163.org/',
+        description: '网易与高教社携手推出的在线教育平台',
+        tags: ['部分免费', '有广告'],
+      },
+    ],
+    语言学习: [
+      {
+        title: 'Language Player',
+        url: 'https://languageplayer.io/login',
+        description: '学习世界的上百种语言',
+        tags: ['部分免费', '无广告'],
+      },
+    ],
+    音乐学习: [
+      {
+        title: 'learningmusic',
+        url: 'https://learningmusic.ableton.com/zh-Hans/index.html',
+        description: '乐理学习',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'flowkey',
+        url: 'https://app.flowkey.com/home',
+        description: '钢琴学习',
+        tags: ['收费', '无广告'],
+      },
+    ],
+  },
 }
 
 function CategorySection({
@@ -590,7 +890,7 @@ function CategorySection({
 
 export default function TreasureBoxPage() {
   const [selectedMainCategory, setSelectedMainCategory] =
-    useState<MainCategory>('工具')
+    useState<MainCategory>('实用工具')
   const [selectedSubCategory, setSelectedSubCategory] =
     useState<string>('音视频处理')
 
