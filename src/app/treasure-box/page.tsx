@@ -361,12 +361,6 @@ const categories: CategoriesType = {
         description: '会计信息交流网站',
         tags: ['免费', '有广告'],
       },
-      {
-        title: '会计准则',
-        url: 'https://kjs.mof.gov.cn/zt/kjzzss/kuaijizhunzeshishi/index.htm',
-        description: '中华人民共和国财政部',
-        tags: ['免费', '政府网站'],
-      },
     ],
     审计信息: [
       {
@@ -971,6 +965,7 @@ const categories: CategoriesType = {
       },
     ],
   },
+
   其他: {
     其他: [
       {
@@ -1052,9 +1047,11 @@ export default function TreasureBoxPage() {
     <Container className="mt-16 sm:mt-32">
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <h1 className="mb-8 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          百宝箱
+          百川驿
         </h1>
-        <p className="mb-8 text-xl text-muted-foreground">有用或有趣的网站。</p>
+        <p className="mb-8 text-xl text-muted-foreground">
+          收藏夹里的星辰大海。
+        </p>
 
         {/* 主分类按钮 */}
         <div className="mb-4 flex flex-wrap gap-2">
