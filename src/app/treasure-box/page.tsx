@@ -978,6 +978,19 @@ const categories: CategoriesType = {
   },
 }
 
+function feePriority(tags: TagType[]) {
+  if (tags.includes('免费')) return 1
+  if (tags.includes('部分免费')) return 2
+  if (tags.includes('收费')) return 3
+  return 4
+}
+
+function adPriority(tags: TagType[]) {
+  if (tags.includes('无广告')) return 1
+  if (tags.includes('有广告')) return 2
+  return 3
+}
+
 function CategorySection({
   title,
   items,
@@ -985,13 +998,29 @@ function CategorySection({
   title: string
   items: WebsiteItem[]
 }) {
+  // 排序
+  const sortedItems = [...items].sort((a, b) => {
+    // 1. 政府网站优先
+    const aGov = a.tags.includes('政府网站')
+    const bGov = b.tags.includes('政府网站')
+    if (aGov && !bGov) return -1
+    if (!aGov && bGov) return 1
+
+    // 2. 费用优先级
+    const feeDiff = feePriority(a.tags) - feePriority(b.tags)
+    if (feeDiff !== 0) return feeDiff
+
+    // 3. 广告优先级
+    return adPriority(a.tags) - adPriority(b.tags)
+  })
+
   return (
     <div className="mb-12">
       <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
         {title}
       </h2>
       <ul className="divide-y divide-muted-foreground/10">
-        {items.map((item) => (
+        {sortedItems.map((item) => (
           <li key={item.title} className="py-4">
             <div className="flex items-center justify-between">
               <div className="min-w-0 flex-1">
@@ -1050,7 +1079,7 @@ export default function TreasureBoxPage() {
           百川驿
         </h1>
         <p className="mb-8 text-xl text-muted-foreground">
-          收藏夹里的星辰大海。
+          万维网罗，百宝归藏。
         </p>
 
         {/* 主分类按钮 */}
