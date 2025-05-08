@@ -23,10 +23,13 @@ type MainCategory =
   | '艺术设计'
   | '医疗健康'
   | '终身学习'
+  | '购物'
+  | '其他'
 
 // 工具子分类类型定义
 type ToolSubCategory =
   | '音视频处理'
+  | '图片处理'
   | '文件格式转换'
   | '小工具集合'
   | '其他工具'
@@ -39,6 +42,7 @@ type ResourceSubCategory =
   | '企业信息'
   | '审计信息'
   | '会计信息'
+  | '其他信息'
 
 // 宏观数据子分类类型定义
 type MacroDataSubCategory =
@@ -63,7 +67,18 @@ type ArtDesignSubCategory =
 type HealthMedSubCategory = '医疗健康'
 
 // 终身学习子分类类型定义
-type LifelongLearningSubCategory = '学习网站' | '语言学习' | '音乐学习'
+type LifelongLearningSubCategory =
+  | '学习网站'
+  | '语言学习'
+  | '音乐学习'
+  | '棋类学习'
+  | '历史学习'
+
+// 购物子分类类型定义
+type ShoppingSubCategory = '购物指南' | '购物网站'
+
+// 其他子分类类型定义
+type OtherSubCategory = '其他'
 
 // 分类数据结构类型定义
 type CategoriesType = {
@@ -73,6 +88,8 @@ type CategoriesType = {
   艺术设计: Record<ArtDesignSubCategory, WebsiteItem[]>
   医疗健康: Record<HealthMedSubCategory, WebsiteItem[]>
   终身学习: Record<LifelongLearningSubCategory, WebsiteItem[]>
+  购物: Record<ShoppingSubCategory, WebsiteItem[]>
+  其他: Record<OtherSubCategory, WebsiteItem[]>
 }
 
 // 标签样式映射
@@ -126,12 +143,26 @@ const categories: CategoriesType = {
         tags: ['免费', '无广告'],
       },
     ],
+    图片处理: [
+      {
+        title: 'Magic Eraser',
+        url: 'https://magicstudio.com/zh/magiceraser/',
+        description: '智能消除图片中的元素',
+        tags: ['部分免费', '无广告'],
+      },
+    ],
     音视频处理: [
       {
         title: 'cobalt',
         url: 'https://cobalt.tools/',
         description: '输入视频网址即可下载视频或音频',
         tags: ['免费', '无广告'],
+      },
+      {
+        title: '团子AI',
+        url: 'https://tuanziai.com/vocal-remover',
+        description: '伴奏声音与人声提取网站',
+        tags: ['部分免费', '无广告'],
       },
     ],
     小工具集合: [
@@ -152,6 +183,12 @@ const categories: CategoriesType = {
         url: 'https://www.67tool.com/',
         description: '海量在线工具合集',
         tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'miku tool',
+        url: 'https://tools.miku.ac/',
+        description: '在线小工具合集',
+        tags: ['免费', '无广告'],
       },
     ],
     AI大模型: [
@@ -216,6 +253,12 @@ const categories: CategoriesType = {
         url: 'https://cps-check.com/cn/polling-rate-check',
         description: '鼠标与键盘测试工具',
         tags: ['免费', '无广告'],
+      },
+      {
+        title: 'temp Mail',
+        url: 'https://temp-mail.org/zh/',
+        description: '临时邮箱工具',
+        tags: ['部分免费', '无广告'],
       },
     ],
   },
@@ -333,6 +376,21 @@ const categories: CategoriesType = {
         tags: ['免费', '无广告'],
       },
     ],
+    其他信息: [
+      {
+        title: 'IT橘子-死亡公司公墓',
+        url: 'https://www.itjuzi.com/deathCompany',
+        description:
+          '倒闭公司数据库，包含公司成立时间、赛道、倒闭原因、获投情况等',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'startzone',
+        url: 'https://startzone.club/',
+        description: '初创公司及盈利情况的数据统计网站',
+        tags: ['部分免费', '无广告'],
+      },
+    ],
   },
 
   宏观数据: {
@@ -386,6 +444,12 @@ const categories: CategoriesType = {
         url: 'https://www.qimai.cn/',
         description: 'IOS应用数据统计网站',
         tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'Product Hunt',
+        url: 'https://www.producthunt.com/',
+        description: '各领域好用的软件',
+        tags: ['免费', '无广告'],
       },
     ],
     房地产数据: [
@@ -760,6 +824,24 @@ const categories: CategoriesType = {
         description: '创意网站导航',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'Branding Style Guides',
+        url: 'https://brandingstyleguides.com/',
+        description: '各大品牌的官方视觉手册',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '米画师',
+        url: 'https://www.mihuashi.com/',
+        description: '画师约稿平台',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '考拉新媒体导航',
+        url: 'https://www.kaolamedia.com/',
+        description: '媒体人常用工具聚合网站',
+        tags: ['免费', '有广告'],
+      },
     ],
   },
 
@@ -833,6 +915,69 @@ const categories: CategoriesType = {
         url: 'https://app.flowkey.com/home',
         description: '钢琴学习',
         tags: ['收费', '无广告'],
+      },
+    ],
+    棋类学习: [
+      {
+        title: 'chess',
+        url: 'https://www.chess.com/zh',
+        description: '国际象棋在线学习与对弈网站',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    历史学习: [
+      {
+        title: '全历史',
+        url: 'https://www.allhistory.com/',
+        description: '历史学习网站',
+        tags: ['免费', '有广告'],
+      },
+    ],
+  },
+
+  购物: {
+    购物指南: [
+      {
+        title: '买购网',
+        url: 'https://www.maigoo.com/brand/',
+        description: '全行业品牌排行榜',
+        tags: ['免费', '有广告'],
+      },
+      {
+        title: '听懂一切',
+        url: 'https://tingdong.cn/',
+        description: '音响、耳机、乐器等设备的专业声音测评网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '耳机测评站',
+        url: 'https://www.woodenears.com/',
+        description: '各类耳机的详细参数测评网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'skyscanner',
+        url: 'https://www.tianxun.com/',
+        description: '全球机票酒店价格查询平台',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    购物网站: [
+      {
+        title: '孔夫子旧书网',
+        url: 'https://www.maigoo.com/brand/',
+        description: '大型的二手旧货、古旧图书和商品交易平台',
+        tags: ['免费', '无广告'],
+      },
+    ],
+  },
+  其他: {
+    其他: [
+      {
+        title: '全球广播',
+        url: 'https://radio.garden/visit/taoyuan-city/bC9K66xZ',
+        description: '可以收听全球广播的网站',
+        tags: ['免费', '无广告'],
       },
     ],
   },
