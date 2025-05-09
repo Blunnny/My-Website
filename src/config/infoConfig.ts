@@ -65,3 +65,5 @@ export const techIcons = [
   'openai',
   'samsung',
 ]
+
+export const projectHeadLine = '我的项目'

@@ -24,6 +24,7 @@ type MainCategory =
   | '医疗健康'
   | '终身学习'
   | '购物'
+  | '游戏'
   | '其他'
 
 // 工具子分类类型定义
@@ -64,21 +65,27 @@ type ArtDesignSubCategory =
   | '其他'
 
 // 医疗健康子分类类型定义
-type HealthMedSubCategory = '医疗健康'
+type HealthMedSubCategory = '医疗健康' | '运动健身'
 
 // 终身学习子分类类型定义
 type LifelongLearningSubCategory =
-  | '学习网站'
+  | '课程学习'
+  | '维修与手工学习'
   | '语言学习'
   | '音乐学习'
   | '棋类学习'
   | '历史学习'
+  | '书法学习'
+  | '其他'
 
 // 购物子分类类型定义
 type ShoppingSubCategory = '购物指南' | '购物网站'
 
+// 游戏子分类类型定义
+type GameSubCategory = '游戏网站'
+
 // 其他子分类类型定义
-type OtherSubCategory = '其他'
+type OtherSubCategory = '世界公民' | '其他'
 
 // 分类数据结构类型定义
 type CategoriesType = {
@@ -89,6 +96,7 @@ type CategoriesType = {
   医疗健康: Record<HealthMedSubCategory, WebsiteItem[]>
   终身学习: Record<LifelongLearningSubCategory, WebsiteItem[]>
   购物: Record<ShoppingSubCategory, WebsiteItem[]>
+  游戏: Record<GameSubCategory, WebsiteItem[]>
   其他: Record<OtherSubCategory, WebsiteItem[]>
 }
 
@@ -142,6 +150,12 @@ const categories: CategoriesType = {
         description: '超多文件格式转换与处理工具',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'PDF24',
+        url: 'https://tools.pdf24.org/zh/all-tools',
+        description: '超多PDF文件在线转换与处理工具',
+        tags: ['免费', '无广告'],
+      },
     ],
     图片处理: [
       {
@@ -149,6 +163,12 @@ const categories: CategoriesType = {
         url: 'https://magicstudio.com/zh/magiceraser/',
         description: '智能消除图片中的元素',
         tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'Bgsub',
+        url: 'https://bgsub.cn/',
+        description: '一个AI驱动的免费抠图网站，支持批量操作',
+        tags: ['免费', '无广告'],
       },
     ],
     音视频处理: [
@@ -259,6 +279,12 @@ const categories: CategoriesType = {
         url: 'https://temp-mail.org/zh/',
         description: '临时邮箱工具',
         tags: ['部分免费', '无广告'],
+      },
+      {
+        title: '纸由我paperme',
+        url: 'https://paperme.toolooz.com/?ref=www.qssily.com',
+        description: '纸张模拟编辑网站',
+        tags: ['免费', '无广告'],
       },
     ],
   },
@@ -383,6 +409,12 @@ const categories: CategoriesType = {
         url: 'https://startzone.club/',
         description: '初创公司及盈利情况的数据统计网站',
         tags: ['部分免费', '无广告'],
+      },
+      {
+        title: '国家标准公开系统',
+        url: 'https://openstd.samr.gov.cn/bzgk/gb/',
+        description: '国家标准信息查询系统',
+        tags: ['免费', '政府网站'],
       },
     ],
   },
@@ -746,6 +778,18 @@ const categories: CategoriesType = {
         description: '聚合多个图片下载网站',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'pngimg',
+        url: 'https://pngimg.com/',
+        description: '免扣图片素材网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'shots.so',
+        url: 'https://shots.so/',
+        description: '样机素材网站',
+        tags: ['部分免费', '无广告'],
+      },
     ],
     图标素材: [
       {
@@ -860,16 +904,32 @@ const categories: CategoriesType = {
         tags: ['免费', '无广告'],
       },
     ],
+    运动健身: [
+      {
+        title: 'musclewiki',
+        url: 'https://musclewiki.com//',
+        description: '教你健身的网站',
+        tags: ['免费', '有广告'],
+      },
+    ],
   },
 
   终身学习: {
-    学习网站: [
+    课程学习: [
       {
         title: 'coursera',
         url: 'https://www.coursera.org/',
         description: '免费学习来自世界顶级高校和公司的课程',
         tags: ['免费', '无广告'],
       },
+      {
+        title: '中国大学MOOC',
+        url: 'https://www.icourse163.org/',
+        description: '网易与高教社携手推出的在线教育平台',
+        tags: ['部分免费', '有广告'],
+      },
+    ],
+    维修与手工学习: [
       {
         title: 'wikihow',
         url: 'https://zh.wikihow.com/%E9%A6%96%E9%A1%B5',
@@ -883,10 +943,28 @@ const categories: CategoriesType = {
         tags: ['免费', '无广告'],
       },
       {
-        title: '中国大学MOOC',
-        url: 'https://www.icourse163.org/',
-        description: '网易与高教社携手推出的在线教育平台',
-        tags: ['部分免费', '有广告'],
+        title: 'startmycar',
+        url: 'https://www.startmycar.com/',
+        description: '专治汽车各种疑难杂症的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'instructables',
+        url: 'https://www.instructables.com/projects',
+        description: '全球最大的DIY教程网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: "Fold 'N Fly",
+        url: 'https://www.foldnfly.com/#/1-1-1-1-1-1-1-1-2-1',
+        description: '手把手教你折所有纸飞机的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'manualslib',
+        url: 'https://www.manualslib.com/',
+        description: '收录海量产品使用手册的网站',
+        tags: ['免费', '无广告'],
       },
     ],
     语言学习: [
@@ -895,6 +973,12 @@ const categories: CategoriesType = {
         url: 'https://languageplayer.io/login',
         description: '学习世界的上百种语言',
         tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'lingohut',
+        url: 'https://www.lingohut.com/zh',
+        description: '免费学习几十种语言',
+        tags: ['免费', '无广告'],
       },
     ],
     音乐学习: [
@@ -923,8 +1007,24 @@ const categories: CategoriesType = {
       {
         title: '全历史',
         url: 'https://www.allhistory.com/',
-        description: '历史学习网站',
+        description: '历史课程学习',
         tags: ['免费', '有广告'],
+      },
+    ],
+    书法学习: [
+      {
+        title: 'Z2H字帖',
+        url: 'https://paper.z2h.cn/',
+        description: '高自由度的汉字、英文即数字字帖生成网站',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    其他: [
+      {
+        title: 'edclub',
+        url: 'https://www.edclub.com/',
+        description: '电脑打字语练习网站',
+        tags: ['部分免费', '无广告'],
       },
     ],
   },
@@ -966,12 +1066,79 @@ const categories: CategoriesType = {
     ],
   },
 
+  游戏: {
+    游戏网站: [
+      {
+        title: 'emu666',
+        url: 'https://www.emu666.com/',
+        description: '在线玩上百款经典游戏',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'poki',
+        url: 'https://poki.com/zh#utm_source=redirect-en-zh',
+        description: '在线玩上百款经典游戏',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'play-cs',
+        url: 'https://play-cs.com/',
+        description: '在线和各国网友对战CS',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'ra2web',
+        url: 'https://ra2web.com/',
+        description: '在线和各国网友玩红警',
+        tags: ['免费', '无广告'],
+      },
+    ],
+  },
+
   其他: {
-    其他: [
+    世界公民: [
       {
         title: '全球广播',
         url: 'https://radio.garden/visit/taoyuan-city/bC9K66xZ',
         description: '可以收听全球广播的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '高速公路云实时监控',
+        url: 'http://m.luodianyun.com/#%E5%B0%8F%E7%A8%8B%E5%BA%8F://e%E5%AE%B6%E5%B8%AE/WTxeLdPHrOag3ed',
+        description: '可以看到全国多个省份的高速公路实时监控的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'skylinewebcams',
+        url: 'https://www.skylinewebcams.com/',
+        description: '免费观看全球公开摄像头',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '巡礼地图',
+        url: 'https://anitabi.cn/map',
+        description: '帮你找到全球动漫取景地',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'explore.org',
+        url: 'https://explore.org/livecams',
+        description: '免费观看全球各种动物实时直播',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    其他: [
+      {
+        title: '时光邮局',
+        url: 'https://www.hi2future.com/',
+        description: '给未来的自己写一封信吧',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Mobile Phone Museum',
+        url: 'https://www.mobilephonemuseum.com/catalogue',
+        description: '收集了有史以来所有手机的博物馆！',
         tags: ['免费', '无广告'],
       },
     ],
