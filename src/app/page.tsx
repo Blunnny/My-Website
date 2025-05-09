@@ -80,15 +80,9 @@ export default async function Home() {
             role="list"
             className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3"
           >
-            {projects
-              .filter((project) => project.category === 'my')
-              .map((project) => (
-                <ProjectCard
-                  key={project.name}
-                  project={project}
-                  titleAs="h3"
-                />
-              ))}
+            {projects.my.map((project) => (
+              <ProjectCard key={project.name} project={project} titleAs="h3" />
+            ))}
           </ul>
         </div>
 

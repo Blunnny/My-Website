@@ -45,9 +45,14 @@ export function ProjectCard({
                   className="rounded-full"
                 />
               </div>
-              <Component className="text-base font-semibold">
-                {project.name}
-              </Component>
+              <div className="flex flex-col items-start">
+                <Component className="text-base font-semibold">
+                  {project.name}
+                </Component>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {project.description}
+                </p>
+              </div>
             </div>
           ) : (
             <div className="ml-2 flex flex-col items-start">

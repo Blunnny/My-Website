@@ -3,10 +3,10 @@
 import { useState } from 'react'
 import { Container } from '@/components/layout/Container'
 import { ProjectCard } from '@/components/project/ProjectCard'
-import { projects, ProjectItemType } from '@/config/projects'
+import { projects, WatchingCategory } from '@/config/projects'
 
 // 分类列表
-const watchingCategoryList = [
+const watchingCategoryList: WatchingCategory[] = [
   'LLM',
   '金融',
   '数据分析',
@@ -15,22 +15,11 @@ const watchingCategoryList = [
   '技术学习',
   '文件处理',
   '有趣的小工具',
-] as const
-
-type ProjectCategory = (typeof watchingCategoryList)[number]
+]
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] =
-    useState<ProjectCategory>('LLM')
-
-  // “我做的小项目”
-  const myProjects: ProjectItemType[] = projects.filter(
-    (p) => p.category === 'my',
-  )
-  // “我正在关注的项目”按分类过滤
-  const watchingProjects: ProjectItemType[] = projects.filter(
-    (p) => p.category === 'watching' && p.tags.includes(selectedCategory),
-  )
+    useState<WatchingCategory>('LLM')
 
   return (
     <Container className="mt-16 sm:mt-32">
@@ -45,13 +34,16 @@ export default function ProjectsPage() {
           此中有真意，bug已忘言。
         </div>
         <ul className="mb-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {myProjects.map((project) => (
+          {projects.my.map((project) => (
             <ProjectCard key={project.name} project={project} />
           ))}
         </ul>
 
         {/* 我正在关注的项目 */}
         <h2 className="mb-4 text-xl font-semibold">我正在关注的项目</h2>
+        <div className="mb-6 text-base text-muted-foreground">
+          观千剑而后识器，追开源而觅真知。
+        </div>
         <div className="mb-4 flex flex-wrap gap-2">
           {watchingCategoryList.map((category) => (
             <button
@@ -68,7 +60,7 @@ export default function ProjectsPage() {
           ))}
         </div>
         <ul className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-          {watchingProjects.map((project) => (
+          {projects.watching[selectedCategory].map((project) => (
             <ProjectCard key={project.name} project={project} />
           ))}
         </ul>
