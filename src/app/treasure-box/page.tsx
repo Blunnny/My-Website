@@ -828,7 +828,7 @@ const categories: CategoriesType = {
         title: '千年调',
         url: 'https://news.cgtn.com/event/2023/The-Song-Painted-Nature/index.html',
         description: '宋代山水画鉴赏网站',
-        tags: ['免费', '有广告'],
+        tags: ['免费', '无广告'],
       },
       {
         title: '麦田艺术',
@@ -852,7 +852,7 @@ const categories: CategoriesType = {
         title: 'gallerix',
         url: 'https://en.gallerix.ru/',
         description: '世界名画鉴赏与下载网站',
-        tags: ['免费', '有广告'],
+        tags: ['免费', '无广告'],
       },
     ],
     其他: [

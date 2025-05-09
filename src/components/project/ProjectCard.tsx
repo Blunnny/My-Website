@@ -35,20 +35,22 @@ export function ProjectCard({
       <div className="relative flex h-full w-full flex-col justify-between rounded-2xl border border-muted-foreground/20 p-4 shadow-sm transition-all group-hover:scale-[1.03] group-hover:bg-muted/5 group-hover:shadow-md">
         <div className="">
           {project.logo ? (
-            <div className="flex flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-start">
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-background">
-                <Image
-                  src={project.logo}
-                  alt={`${project.name} logo`}
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-              </div>
+            <div className="flex flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex flex-col items-start">
-                <Component className="text-base font-semibold">
-                  {project.name}
-                </Component>
+                <div className="flex items-center gap-2">
+                  <Component className="text-base font-semibold">
+                    {project.name}
+                  </Component>
+                  <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-background">
+                    <Image
+                      src={project.logo}
+                      alt={`${project.name} logo`}
+                      width={32}
+                      height={32}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
                 <p className="mt-2 text-sm text-muted-foreground">
                   {project.description}
                 </p>
