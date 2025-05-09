@@ -17,16 +17,29 @@ export function ProjectCard({
 }) {
   const utmLink = `https://${project.link.href}?utm_source=${utm_source}`
   let Component = titleAs ?? 'h2'
+  // 获取 favicon 的 url
+  const getFavicon = () => {
+    try {
+      const url = new URL(
+        project.link.href.startsWith('http')
+          ? project.link.href
+          : `https://${project.link.href}`,
+      )
+      return `https://www.google.com/s2/favicons?sz=64&domain_url=${url.origin}`
+    } catch {
+      return ''
+    }
+  }
   return (
     <li className="group relative flex h-full flex-col items-start">
       <div className="relative flex h-full w-full flex-col justify-between rounded-2xl border border-muted-foreground/20 p-4 shadow-sm transition-all group-hover:scale-[1.03] group-hover:bg-muted/5 group-hover:shadow-md">
         <div className="">
-          {project.icon ? (
+          {project.logo ? (
             <div className="flex flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-start">
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-background">
                 <Image
-                  src={project.icon}
-                  alt={`${project.name} icon`}
+                  src={project.logo}
+                  alt={`${project.name} logo`}
                   width={48}
                   height={48}
                   className="rounded-full"
@@ -45,11 +58,6 @@ export function ProjectCard({
                 {project.description}
               </p>
             </div>
-          )}
-          {project.icon && (
-            <p className="relative z-10 ml-2 mt-2 text-sm text-muted-foreground">
-              {project.description}
-            </p>
           )}
         </div>
 
