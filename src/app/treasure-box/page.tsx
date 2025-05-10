@@ -23,6 +23,7 @@ type MainCategory =
   | '艺术设计'
   | '医疗健康'
   | '终身学习'
+  | '编程'
   | '购物'
   | '游戏'
   | '其他'
@@ -78,6 +79,9 @@ type LifelongLearningSubCategory =
   | '历史学习'
   | '其他'
 
+// 代码子分类类型定义
+type CodingSubCategory = '学习路线' | '学习网站' | '实用工具'
+
 // 购物子分类类型定义
 type ShoppingSubCategory = '购物指南' | '购物网站'
 
@@ -95,6 +99,7 @@ type CategoriesType = {
   艺术设计: Record<ArtDesignSubCategory, WebsiteItem[]>
   医疗健康: Record<HealthMedSubCategory, WebsiteItem[]>
   终身学习: Record<LifelongLearningSubCategory, WebsiteItem[]>
+  编程: Record<CodingSubCategory, WebsiteItem[]>
   购物: Record<ShoppingSubCategory, WebsiteItem[]>
   游戏: Record<GameSubCategory, WebsiteItem[]>
   其他: Record<OtherSubCategory, WebsiteItem[]>
@@ -1056,6 +1061,93 @@ const categories: CategoriesType = {
         url: 'https://www.edclub.com/',
         description: '电脑打字语练习网站',
         tags: ['部分免费', '无广告'],
+      },
+    ],
+  },
+
+  编程: {
+    学习路线: [
+      {
+        title: 'CSDIY',
+        url: 'https://github.com/PKUFlyingPig/cs-self-learning',
+        description: '梦开始的地方',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'CS plan',
+        url: 'https://cs-plan.com/',
+        description: 'CSDIY的有益补充',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'CS自学社区',
+        url: 'https://www.learncs.site/docs/intro',
+        description: '适用于软件工程师方向的学习路线图',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'HIT自学组',
+        url: 'https://jowus72zrc.feishu.cn/wiki/Khl9wKWO7iuKKpkTUEOcqRzvnVh',
+        description: '计算机本科学业规划',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    学习网站: [
+      {
+        title: '菜鸟教程',
+        url: 'https://www.runoob.com/',
+        description: '快速入门计算机的所有技术！',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'KodeKloud',
+        url: 'https://learn.kodekloud.com/courses/docker-training-course-for-the-absolute-beginner',
+        description: '最好的docker学习网站',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'Learn Git Branching',
+        url: 'https://learngitbranching.js.org/?locale=zh_CN',
+        description: '最好的GIT学习网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'JSchallenger',
+        url: 'https://www.jschallenger.com/dashboard/',
+        description: 'JavaScript学习网站',
+        tags: ['部分免费', '无广告'],
+      },
+    ],
+    实用工具: [
+      {
+        title: 'Git cheat sheet',
+        url: 'https://education.github.com/git-cheat-sheet-education.pdf',
+        description: '常用git命令总结',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'SQL cheat sheet',
+        url: 'https://websitesetup.org/sql-cheat-sheet/',
+        description: '常用SQL命令总结',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'regex101',
+        url: 'https://regex101.com/',
+        description: '正则表达式测试网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'regexr-cn',
+        url: 'https://regexr-cn.com/',
+        description: '正则表达式测试与学习网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'regex-vis',
+        url: 'https://regex-vis.com/',
+        description: '正则表达式可视化网站',
+        tags: ['免费', '无广告'],
       },
     ],
   },
