@@ -928,6 +928,31 @@ const categories: CategoriesType = {
         description: '网易与高教社携手推出的在线教育平台',
         tags: ['部分免费', '有广告'],
       },
+      {
+        title: '爱课程',
+        url: 'https://www.icourses.cn/home/',
+        description:
+          '教育部、财政部“十二五”期间委托高等教育出版社建设的高等教育课程资源共享平台',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'khanacademy',
+        url: 'https://www.khanacademy.org/',
+        description: '免费的、适合全年龄段的世界级课程网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Crash Course',
+        url: 'https://thecrashcourse.com/courses/',
+        description: '涵盖多个学科的优质动画视频课程网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '我要自学网',
+        url: 'https://www.51zxw.net/',
+        description: '实用技能学习平台',
+        tags: ['收费', '无广告'],
+      },
     ],
     维修与手工学习: [
       {
@@ -1125,6 +1150,18 @@ const categories: CategoriesType = {
         title: 'explore.org',
         url: 'https://explore.org/livecams',
         description: '免费观看全球各种动物实时直播',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'TED',
+        url: 'https://www.ted.com/',
+        description: '全世界各行各业顶尖人物分享思想的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: '一席',
+        url: 'https://yixi.tv/#/home',
+        description: '中国版TED',
         tags: ['免费', '无广告'],
       },
     ],
