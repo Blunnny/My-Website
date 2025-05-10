@@ -31,6 +31,7 @@ type MainCategory =
 type ToolSubCategory =
   | '音视频处理'
   | '图片处理'
+  | 'office学习'
   | '文件格式转换'
   | '小工具集合'
   | '其他工具'
@@ -72,10 +73,9 @@ type LifelongLearningSubCategory =
   | '课程学习'
   | '维修与手工学习'
   | '语言学习'
-  | '音乐学习'
+  | '艺术学习'
   | '棋类学习'
   | '历史学习'
-  | '书法学习'
   | '其他'
 
 // 购物子分类类型定义
@@ -155,6 +155,14 @@ const categories: CategoriesType = {
         url: 'https://tools.pdf24.org/zh/all-tools',
         description: '超多PDF文件在线转换与处理工具',
         tags: ['免费', '无广告'],
+      },
+    ],
+    office学习: [
+      {
+        title: '懒人EXCEL',
+        url: 'https://www.lanrenexcel.com/',
+        description: '关于EXCEL的一切都可以在这里找到！',
+        tags: ['部分免费', '无广告'],
       },
     ],
     图片处理: [
@@ -1006,7 +1014,7 @@ const categories: CategoriesType = {
         tags: ['免费', '无广告'],
       },
     ],
-    音乐学习: [
+    艺术学习: [
       {
         title: 'learningmusic',
         url: 'https://learningmusic.ableton.com/zh-Hans/index.html',
@@ -1018,6 +1026,12 @@ const categories: CategoriesType = {
         url: 'https://app.flowkey.com/home',
         description: '钢琴学习',
         tags: ['收费', '无广告'],
+      },
+      {
+        title: 'Z2H字帖',
+        url: 'https://paper.z2h.cn/',
+        description: '高自由度的汉字、英文即数字字帖生成网站',
+        tags: ['免费', '无广告'],
       },
     ],
     棋类学习: [
@@ -1034,14 +1048,6 @@ const categories: CategoriesType = {
         url: 'https://www.allhistory.com/',
         description: '历史课程学习',
         tags: ['免费', '有广告'],
-      },
-    ],
-    书法学习: [
-      {
-        title: 'Z2H字帖',
-        url: 'https://paper.z2h.cn/',
-        description: '高自由度的汉字、英文即数字字帖生成网站',
-        tags: ['免费', '无广告'],
       },
     ],
     其他: [
