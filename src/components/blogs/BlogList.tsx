@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { type BlogType } from '@/lib/blogs'
 import { CategoryButtons } from './CategoryButtons'
 import { Card } from '@/components/shared/Card'
@@ -39,7 +39,7 @@ interface BlogListProps {
   initialBlogs: BlogType[]
 }
 
-export function BlogList({ initialBlogs }: BlogListProps) {
+function BlogListContent({ initialBlogs }: BlogListProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [blogs, setBlogs] = useState(initialBlogs)
@@ -93,5 +93,13 @@ export function BlogList({ initialBlogs }: BlogListProps) {
         ))}
       </div>
     </>
+  )
+}
+
+export function BlogList(props: BlogListProps) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BlogListContent {...props} />
+    </Suspense>
   )
 }
