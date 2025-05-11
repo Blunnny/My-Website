@@ -28,32 +28,30 @@ function EducationItem({
           </div>
         )}
       </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium">
-          {educationItem.website ? (
-            <a
-              href={educationItem.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary hover:underline"
-            >
-              {educationItem.school}
-            </a>
-          ) : (
-            educationItem.school
-          )}
-        </dd>
-        <dt className="sr-only">Title</dt>
-        <dd className="text-xs text-muted-foreground">{educationItem.major}</dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs text-muted-foreground"
-          aria-label={`${educationItem.start} until ${educationItem.end}`}
-        >
-          {educationItem.start} - {educationItem.end}
-        </dd>
-      </dl>
+      <div className="flex min-w-0 flex-auto flex-col">
+        <div className="flex w-full min-w-0 items-center justify-between">
+          <span className="truncate text-sm font-medium">
+            {educationItem.website ? (
+              <a
+                href={educationItem.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary hover:underline"
+              >
+                {educationItem.school}
+              </a>
+            ) : (
+              educationItem.school
+            )}
+          </span>
+          <span className="ml-4 whitespace-nowrap text-xs text-muted-foreground">
+            {educationItem.start} - {educationItem.end}
+          </span>
+        </div>
+        <div className="mt-1 truncate text-xs text-muted-foreground">
+          {educationItem.major}
+        </div>
+      </div>
     </li>
   )
 }

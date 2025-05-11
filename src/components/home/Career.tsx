@@ -24,32 +24,30 @@ function CareerItem({ careerItem }: { careerItem: CareerItemType }) {
           </div>
         )}
       </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium">
-          {careerItem.website ? (
-            <a
-              href={careerItem.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary hover:underline"
-            >
-              {careerItem.company}
-            </a>
-          ) : (
-            careerItem.company
-          )}
-        </dd>
-        <dt className="sr-only">Title</dt>
-        <dd className="text-xs text-muted-foreground">{careerItem.title}</dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs text-muted-foreground"
-          aria-label={`${careerItem.start} until ${careerItem.end}`}
-        >
-          {careerItem.start} - {careerItem.end}
-        </dd>
-      </dl>
+      <div className="flex min-w-0 flex-auto flex-col">
+        <div className="flex w-full min-w-0 items-center justify-between">
+          <span className="truncate text-sm font-medium">
+            {careerItem.website ? (
+              <a
+                href={careerItem.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary hover:underline"
+              >
+                {careerItem.company}
+              </a>
+            ) : (
+              careerItem.company
+            )}
+          </span>
+          <span className="ml-4 whitespace-nowrap text-xs text-muted-foreground">
+            {careerItem.start} - {careerItem.end}
+          </span>
+        </div>
+        <div className="mt-1 truncate text-xs text-muted-foreground">
+          {careerItem.title}
+        </div>
+      </div>
     </li>
   )
 }
