@@ -9,18 +9,17 @@ export type BlogType = {
   author: string
   date: string
   slug: string
+  tags?: string[]
 }
 
-async function importBlog(
-  blogFilename: string,
-): Promise<BlogType> {
+async function importBlog(blogFilename: string): Promise<BlogType> {
   const source = await fs.readFile(
     path.join(process.cwd(), 'src/content/blog', blogFilename),
-    'utf-8'
+    'utf-8',
   )
-  
+
   const { data } = matter(source)
-  
+
   // @ts-expect-error
   return {
     slug: blogFilename.replace(/\.mdx$/, ''),
@@ -36,9 +35,9 @@ export async function getAllBlogs() {
   let blogs = await Promise.all(blogFileNames.map(importBlog))
 
   return blogs.sort((a, z) => {
-    const aDate = a.date ? +new Date(a.date) : 0;
-    const zDate = z.date ? +new Date(z.date) : 0;
-    return zDate - aDate;
+    const aDate = a.date ? +new Date(a.date) : 0
+    const zDate = z.date ? +new Date(z.date) : 0
+    return zDate - aDate
   })
 }
 

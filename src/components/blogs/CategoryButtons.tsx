@@ -1,11 +1,13 @@
-import { useState } from 'react'
+'use client'
+
 import { type BlogType } from '@/lib/blogs'
+import { useState } from 'react'
 
 type Category = '全部' | '会计' | '金融&经济' | '技术' | '其他'
 
 interface CategoryButtonsProps {
   blogs: BlogType[]
-  onCategoryChange: (filteredBlogs: BlogType[]) => void
+  onCategoryChange: (blogs: BlogType[], category: Category) => void
 }
 
 export function CategoryButtons({
@@ -14,26 +16,40 @@ export function CategoryButtons({
 }: CategoryButtonsProps) {
   const [activeCategory, setActiveCategory] = useState<Category>('全部')
 
-  const categories: Category[] = ['全部', '会计', '金融&经济', '技术', '其他']
-
   const filterBlogsByCategory = (category: Category) => {
     setActiveCategory(category)
 
     if (category === '全部') {
-      onCategoryChange(blogs)
+      onCategoryChange(blogs, category)
       return
     }
 
     const filteredBlogs = blogs.filter((blog) => {
       const tags = blog.tags || []
-      if (category === '金融&经济') {
-        return tags.some((tag) => tag.includes('金融') || tag.includes('经济'))
+
+      switch (category) {
+        case '会计':
+          return tags.includes('会计')
+        case '金融&经济':
+          return tags.includes('金融') || tags.includes('经济')
+        case '技术':
+          return tags.includes('技术')
+        case '其他':
+          return (
+            !tags.includes('会计') &&
+            !tags.includes('金融') &&
+            !tags.includes('经济') &&
+            !tags.includes('技术')
+          )
+        default:
+          return true
       }
-      return tags.includes(category)
     })
 
-    onCategoryChange(filteredBlogs)
+    onCategoryChange(filteredBlogs, category)
   }
+
+  const categories: Category[] = ['全部', '会计', '金融&经济', '技术', '其他']
 
   return (
     <div className="mb-8 flex flex-wrap gap-4">
