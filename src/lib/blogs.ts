@@ -10,6 +10,7 @@ export type BlogType = {
   date: string
   slug: string
   tags?: string[]
+  content: string
 }
 
 async function importBlog(blogFilename: string): Promise<BlogType> {
