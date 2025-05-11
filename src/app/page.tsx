@@ -129,8 +129,8 @@ export default async function Home() {
 
           {/* right column */}
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Career />
             <Education />
+            <Career />
           </div>
         </div>
       </Container>

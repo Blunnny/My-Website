@@ -1178,6 +1178,12 @@ const categories: CategoriesType = {
         description: '全球机票酒店价格查询平台',
         tags: ['免费', '无广告'],
       },
+      {
+        title: '少数派',
+        url: 'https://sspai.com/',
+        description: '高效工作，品质生活',
+        tags: ['部分免费', '有广告'],
+      },
     ],
     购物网站: [
       {
