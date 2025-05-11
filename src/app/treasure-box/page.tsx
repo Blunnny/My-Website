@@ -1282,6 +1282,12 @@ const categories: CategoriesType = {
         description: '收集了有史以来所有手机的博物馆！',
         tags: ['免费', '无广告'],
       },
+      {
+        title: '城市租房生存指南',
+        url: 'https://zufang.ababtools.com/',
+        description: '租房相关的信息都在这里',
+        tags: ['免费', '有广告'],
+      },
     ],
   },
 }
