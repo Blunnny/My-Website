@@ -514,11 +514,19 @@ const games = [
     comment: '踏平坎坷成大道！',
   },
   {
+    title: '艾尔登法环 Elden Ring',
+    cover: '/images/games/艾尔登法环.jpg',
+    year: 2022,
+    type: '游戏 / 角色扮演 / 冒险 / 动作',
+    rating: 9.8,
+    comment: '「即使引导早已破碎，也请您当上艾尔登之王。」',
+  },
+  {
     title: '赛博朋克 2077 Cyberpunk 2077',
     cover: '/images/games/赛博朋克 2077 Cyberpunk 2077.jpg',
     year: 2020,
     type: '游戏 / 第一人称射击 / 角色扮演 / 冒险 / 动作',
-    rating: 9.9,
+    rating: 9.8,
     comment:
       '「你是愿意当个无名之辈，一辈子安生？还是就算活不到三十岁，也要名留青史呢？」',
   },
@@ -528,15 +536,7 @@ const games = [
     year: 2019,
     type: '游戏 / 冒险 / 动作',
     rating: 9.8,
-    comment: '在断裂的大地上，用开罗尔网络重新编织千万条羁绊的绳结。',
-  },
-  {
-    title: '杀戮尖塔 Slay the Spire',
-    cover: '/images/games/杀戮尖塔 Slay the Spire.jpg',
-    year: 2019,
-    type: '游戏 / 横版过关 / 卡牌 / 角色扮演 / 策略',
-    rating: 9.5,
-    comment: '信仰力量战，一刀999！',
+    comment: '用开罗尔网络重新编织千万条羁绊的绳结。',
   },
 ]
 
