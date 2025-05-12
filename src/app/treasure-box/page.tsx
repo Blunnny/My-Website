@@ -183,6 +183,12 @@ const categories: CategoriesType = {
         description: '一个AI驱动的免费抠图网站，支持批量操作',
         tags: ['免费', '无广告'],
       },
+      {
+        title: '加水印',
+        url: 'https://jiashuiyin.com/',
+        description: '高度自定义的批量图片水印添加网站',
+        tags: ['免费', '无广告'],
+      },
     ],
     音视频处理: [
       {
