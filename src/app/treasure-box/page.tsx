@@ -89,7 +89,7 @@ type ShoppingSubCategory = '购物指南' | '购物网站'
 type GameSubCategory = '游戏网站'
 
 // 其他子分类类型定义
-type OtherSubCategory = '世界公民' | '其他'
+type OtherSubCategory = '世界公民' | '其他' | '演讲'
 
 // 分类数据结构类型定义
 type CategoriesType = {
@@ -1256,6 +1256,8 @@ const categories: CategoriesType = {
         description: '免费观看全球各种动物实时直播',
         tags: ['免费', '无广告'],
       },
+    ],
+    演讲: [
       {
         title: 'TED',
         url: 'https://www.ted.com/',
