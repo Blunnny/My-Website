@@ -1262,6 +1262,12 @@ const categories: CategoriesType = {
         description: '免费观看全球各种动物实时直播',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'news minimalist',
+        url: 'https://newsletter.newsminimalist.com/',
+        description: 'AI 过滤后的全球新闻',
+        tags: ['部分免费', '无广告'],
+      },
     ],
     演讲: [
       {
