@@ -57,6 +57,17 @@ export const projects: ProjectsType = {
       logo: '/images/icon/My-Website.png',
       category: 'my',
     },
+    {
+      name: '豆瓣年轮',
+      description: '个人豆瓣数据的可视化分析工具。',
+      link: {
+        href: 'github.com/Blunnny/douban-data-analysis',
+        label: 'GitHub',
+      },
+      tags: ['Jupyter Notebook', 'python'],
+      logo: '/images/icon/douban-data-analysis.webp',
+      category: 'my',
+    },
   ],
   watching: {
     LLM: [
