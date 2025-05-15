@@ -13,7 +13,7 @@ export const githubUsername = 'Blunnny'
 export const aboutMeHeadline = 'Who am I?'
 export const aboutParagraphs = [
   'Hello! 我是靳安和，来自山东济南，本科毕业于厦门大学会计学专业，目前就读于香港大学会计学专业。',
-  '虽然我一直以来学习的都是会计学，但我对于计算机有着极大的兴趣，我始终相信技术将改变会计，也将改变世界！',
+  '我一直以来学习的都是会计学，但我同时对于计算机有着极大的兴趣，我始终相信技术将改变会计，也将改变世界！',
   'Make the world a better place!',
 ]
 

@@ -50,6 +50,7 @@ type ResourceSubCategory =
 // 宏观数据子分类类型定义
 type MacroDataSubCategory =
   | '经济数据'
+  | '金融数据'
   | 'APP数据'
   | '房地产数据'
   | '其他数据'
@@ -314,37 +315,37 @@ const categories: CategoriesType = {
         title: '巨潮资讯网',
         url: 'https://www.cninfo.com.cn/new/index',
         description: '证券金融数据权威查询网站',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '上海证券交易所',
         url: 'https://www.sse.com.cn/',
         description: '上海证券交易所官方网站',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '深圳证券交易所',
         url: 'https://www.sse.org.cn/disclosure/index.html',
         description: '深圳证券交易所官方网站',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '中国债券信息网',
         url: 'https://www.chinabond.com.cn/',
         description: '中央国债登记结算有限责任公司官方网站',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '证监会',
         url: 'http://www.csrc.gov.cn/',
         description: '中国证券监督管理委员会官方官网',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '中国货币网',
         url: 'https://www.chinamoney.com.cn/chinese/index.html',
         description: '银行间市场、货币市场查询',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
     ],
     研究报告: [
@@ -392,7 +393,7 @@ const categories: CategoriesType = {
         title: '企业会计准则',
         url: 'https://kjs.mof.gov.cn/zt/kjzzss/kuaijizhunzeshishi/index.htm',
         description: '中华人民共和国财政部发布的官方会计准则',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '中国会计视野',
@@ -444,7 +445,7 @@ const categories: CategoriesType = {
         title: '国家统计局',
         url: 'https://www.stats.gov.cn/',
         description: '宏观数据的权威统计网站',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: 'CEIC',
@@ -481,6 +482,57 @@ const categories: CategoriesType = {
         url: 'http://data.jinan.gov.cn/jinan/api/',
         description: '济南各类数据统计网站',
         tags: ['免费', '政府网站'],
+      },
+    ],
+    金融数据: [
+      {
+        title: '中国人民银行',
+        url: 'http://www.pbc.gov.cn/rmyh/index.html',
+        description: '中国货币政策、信贷政策等信息官方披露网站',
+        tags: ['政府网站'],
+      },
+      {
+        title: '国家外汇管理局',
+        url: 'https://www.safe.gov.cn/',
+        description: '中国外汇数据信息官方披露网站',
+        tags: ['政府网站'],
+      },
+      {
+        title: '国家金融监督管理总局',
+        url: 'https://www.nfra.gov.cn/cn/view/pages/index/index.html',
+        description: '中国银行业与保险业数据披露网站',
+        tags: ['政府网站'],
+      },
+      {
+        title: 'Bloomberg（彭博）',
+        url: 'https://www.bloomberg.com',
+        description: '全球权威金融数据终端，覆盖国际市场',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: 'Reuters（路透社）',
+        url: 'https://www.reuters.com/',
+        description: '新闻与市场数据，旗下Eikon终端提供专业金融数据',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'Wind（万得）',
+        url: 'https://www.wind.com.cn/',
+        description:
+          '中国最主流的金融终端，覆盖股票、债券、基金、宏观等全领域数据',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '同花顺iFinD',
+        url: 'https://www.51ifind.com/',
+        description: '类似 Wind 的金融数据终端',
+        tags: ['收费', '无广告'],
+      },
+      {
+        title: '东方财富Choice',
+        url: 'https://choice.eastmoney.com/',
+        description: '类似 Wind 的金融数据终端',
+        tags: ['收费', '无广告'],
       },
     ],
     APP数据: [
@@ -580,7 +632,7 @@ const categories: CategoriesType = {
         title: '中国信通院',
         url: 'https://www.caict.ac.cn/kxyj/',
         description: '新质生产力分析报告',
-        tags: ['免费', '无广告', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '报告查一查',
@@ -908,7 +960,7 @@ const categories: CategoriesType = {
         title: '中国医药信息查询平台',
         url: 'https://www.dayi.org.cn/',
         description: '中国疾病、医院、医生和药品查询平台',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '默沙东诊疗手册',
