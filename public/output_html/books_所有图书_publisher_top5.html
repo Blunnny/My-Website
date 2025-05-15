@@ -1,0 +1,73 @@
+<div>
+  <script type="text/javascript">
+    window.PlotlyConfig = { MathJaxConfig: 'local' }
+  </script>
+  <script
+    charset="utf-8"
+    src="https://cdn.plot.ly/plotly-2.35.2.min.js"
+  ></script>
+  <div
+    id="books-publisher-top5"
+    class="plotly-graph-div"
+    style="height: 100%; width: 100%"
+  ></div>
+  <script type="text/javascript">
+    window.PLOTLYENV = window.PLOTLYENV || {}
+    if (document.getElementById('books-publisher-top5')) {
+      Plotly.newPlot(
+        'books-publisher-top5',
+        [
+          {
+            alignmentgroup: 'True',
+            hovertemplate:
+              'count=%{x}\u003cbr\u003epublisher=%{y}\u003cextra\u003e\u003c\u002fextra\u003e',
+            legendgroup: '',
+            marker: { color: '#636efa', pattern: { shape: '' } },
+            name: '',
+            offsetgroup: '',
+            orientation: 'h',
+            showlegend: false,
+            textposition: 'auto',
+            x: [18, 14, 12, 10, 8],
+            xaxis: 'x',
+            y: [
+              '\u673a\u68b0\u5de5\u4e1a\u51fa\u7248\u793e',
+              '\u4e2d\u4fe1\u51fa\u7248\u793e',
+              '\u4eba\u6c11\u90ae\u7535\u51fa\u7248\u793e',
+              '\u4e2d\u56fd\u4eba\u6c11\u5927\u5b66\u51fa\u7248\u793e',
+              '\u4e2d\u4fe1\u51fa\u7248\u96c6\u56e2',
+            ],
+            yaxis: 'y',
+            type: 'bar',
+          },
+        ],
+        {
+          template: {},
+          xaxis: {
+            anchor: 'y',
+            domain: [0.1, 1.0],
+            title: { text: '出现次数' },
+            showline: false,
+            linecolor: 'white',
+          },
+          yaxis: {
+            anchor: 'x',
+            domain: [0.0, 1.0],
+            title: null,
+            autorange: 'reversed',
+            showline: false,
+            linecolor: 'white',
+          },
+          legend: { tracegroupgap: 0 },
+          title: {
+            text: '我最经常看的出版社',
+            x: 0.5, // 将标题水平居中
+            xanchor: 'center', // 确保标题以中心为锚点
+          },
+          barmode: 'relative',
+        },
+        { displayModeBar: true, scrollZoom: false, responsive: true },
+      )
+    }
+  </script>
+</div>

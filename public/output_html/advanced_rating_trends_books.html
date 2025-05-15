@@ -1,0 +1,79 @@
+<div>
+  <script type="text/javascript">
+    window.PlotlyConfig = { MathJaxConfig: 'local' }
+  </script>
+  <script
+    charset="utf-8"
+    src="https://cdn.plot.ly/plotly-2.35.2.min.js"
+  ></script>
+  <div
+    id="advanced_rating_trends_books"
+    class="plotly-graph-div"
+    style="height: 100%; width: 100%"
+  ></div>
+  <script type="text/javascript">
+    window.PLOTLYENV = window.PLOTLYENV || {}
+    if (document.getElementById('advanced_rating_trends_books')) {
+      Plotly.newPlot(
+        'advanced_rating_trends_books',
+        [
+          {
+            legendgroup: '\u56fe\u4e66\u8bc4\u5206\u8d8b\u52bf',
+            mode: 'lines+markers',
+            name: '\u8c46\u74e3\u8bc4\u5206',
+            marker: { color: '#636efa' },
+            x: [2022, 2023, 2024, 2025],
+            y: [
+              8.379999999999999, 8.542857142857143, 8.741666666666665,
+              8.540000000000001,
+            ],
+            type: 'scatter',
+            xaxis: 'x',
+            yaxis: 'y',
+          },
+          {
+            legendgroup: '\u56fe\u4e66\u8bc4\u5206\u8d8b\u52bf',
+            mode: 'lines+markers',
+            name: '\u6211\u7684\u8bc4\u5206',
+            marker: { color: '#ff4fc1' },
+            x: [2022, 2023, 2024, 2025],
+            y: [9.6, 8.285714285714286, 8.666666666666666, 9.4],
+            type: 'scatter',
+            xaxis: 'x',
+            yaxis: 'y',
+          },
+        ],
+        {
+          template: {
+            data: { scatter: [{ type: 'scatter' }] },
+            layout: {
+              xaxis: {
+                gridcolor: 'white',
+                showgrid: false,
+              },
+              yaxis: {
+                gridcolor: '#e5e5e5',
+                showgrid: true,
+                title: null,
+                range: [5, 10],
+                dtick: 1,
+              },
+              legend: {
+                orientation: 'h',
+                x: 0.5,
+                xanchor: 'center',
+                y: -0.1,
+                yanchor: 'top',
+                itemwidth: 60,
+              },
+            },
+          },
+          title: { text: '图书的年评分趋势', x: 0.5, xanchor: 'center' },
+          showlegend: true,
+          height: 400,
+        },
+        { displayModeBar: true, scrollZoom: false, responsive: true },
+      )
+    }
+  </script>
+</div>

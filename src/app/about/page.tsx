@@ -6,7 +6,8 @@ import { aboutMeHeadline, aboutParagraphs } from '@/config/infoConfig'
 import { Container } from '@/components/layout/Container'
 import { activities } from '@/config/projects'
 import { ActivityCard } from '@/components/home/ActivityCard'
-import { Calendar } from 'lucide-react'
+import { Book, Clapperboard, Gamepad2, LineChart, Calendar } from 'lucide-react'
+import PlotlyCharts from '@/components/about/PlotlyCharts'
 
 import portraitImage from '@/images/portrait.jpg'
 import SocialLinks from '@/components/about/SocialLinks'
@@ -60,6 +61,14 @@ export default function About() {
             />
           ))}
         </ul>
+      </div>
+
+      <div className="mx-auto my-16 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
+        <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
+          <LineChart size={28} />
+          我的各类数据统计
+        </h2>
+        <PlotlyCharts />
       </div>
     </Container>
   )

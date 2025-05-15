@@ -1,0 +1,54 @@
+<div>
+  <script type="text/javascript">
+    window.PlotlyConfig = { MathJaxConfig: 'local' }
+  </script>
+  <script
+    charset="utf-8"
+    src="https://cdn.plot.ly/plotly-2.35.2.min.js"
+  ></script>
+  <div
+    id="advanced_interest_cycle_books_monthly"
+    class="plotly-graph-div"
+    style="height: 100%; width: 100%"
+  ></div>
+  <script type="text/javascript">
+    window.PLOTLYENV = window.PLOTLYENV || {}
+    if (document.getElementById('advanced_interest_cycle_books_monthly')) {
+      Plotly.newPlot(
+        'advanced_interest_cycle_books_monthly',
+        [
+          {
+            name: '\u56fe\u4e66 \u6708\u4efd',
+            showlegend: false,
+            x: ['1', '10', '11', '2', '3', '4', '5', '6', '7', '8', '9'],
+            y: [2, 2, 1, 2, 1, 2, 8, 6, 1, 3, 6],
+            type: 'bar',
+            marker: { color: '#636efa' },
+            xaxis: {
+              title: { text: '月份' },
+              linecolor: 'white',
+              showline: false,
+            },
+            yaxis: {
+              title: null,
+              linecolor: 'white',
+              showline: false,
+            },
+          },
+        ],
+        {
+          template: {
+            data: { bar: [{ type: 'bar' }] },
+            layout: {
+              xaxis: { title: { text: '月份' } },
+              yaxis: { title: null },
+            },
+          },
+          title: { text: '我读书的月份规律', x: 0.5, xanchor: 'center' },
+          height: 400,
+        },
+        { displayModeBar: true, scrollZoom: false, responsive: true },
+      )
+    }
+  </script>
+</div>

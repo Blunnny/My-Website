@@ -1,0 +1,85 @@
+<div>
+  <script type="text/javascript">
+    window.PlotlyConfig = { MathJaxConfig: 'local' }
+  </script>
+  <script
+    charset="utf-8"
+    src="https://cdn.plot.ly/plotly-2.35.2.min.js"
+  ></script>
+  <div
+    id="advanced_interest_cycle_movies_monthly"
+    class="plotly-graph-div"
+    style="height: 100%; width: 100%"
+  ></div>
+  <script type="text/javascript">
+    window.PLOTLYENV = window.PLOTLYENV || {}
+    if (document.getElementById('advanced_interest_cycle_movies_monthly')) {
+      Plotly.newPlot(
+        'advanced_interest_cycle_movies_monthly',
+        [
+          {
+            name: '\u7535\u5f71 \u6708\u4efd',
+            showlegend: false,
+            x: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+            y: [18, 16, 19, 10, 15, 4, 31, 29, 20, 17, 20, 13],
+            type: 'bar',
+            marker: { color: '#636efa' },
+            xaxis: {
+              title: { text: '月份' },
+              linecolor: 'white',
+              showline: false,
+            },
+            yaxis: {
+              title: null,
+              linecolor: 'white',
+              showline: false,
+            },
+          },
+        ],
+        {
+          template: {
+            data: { bar: [{ type: 'bar' }] },
+            layout: {
+              xaxis: {
+                title: { text: '月份' },
+                showline: false,
+                tickvals: [
+                  '1',
+                  '2',
+                  '3',
+                  '4',
+                  '5',
+                  '6',
+                  '7',
+                  '8',
+                  '9',
+                  '10',
+                  '11',
+                  '12',
+                ],
+                ticktext: [
+                  '1',
+                  '2',
+                  '3',
+                  '4',
+                  '5',
+                  '6',
+                  '7',
+                  '8',
+                  '9',
+                  '10',
+                  '11',
+                  '12',
+                ],
+              },
+              yaxis: { title: null },
+            },
+          },
+          title: { text: '我观影的月份规律', x: 0.5, xanchor: 'center' },
+          height: 400,
+        },
+        { displayModeBar: true, scrollZoom: false, responsive: true },
+      )
+    }
+  </script>
+</div>

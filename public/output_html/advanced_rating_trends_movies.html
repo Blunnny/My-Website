@@ -1,0 +1,82 @@
+<div>
+  <script type="text/javascript">
+    window.PlotlyConfig = { MathJaxConfig: 'local' }
+  </script>
+  <script
+    charset="utf-8"
+    src="https://cdn.plot.ly/plotly-2.35.2.min.js"
+  ></script>
+  <div
+    id="advanced_rating_trends_movies"
+    class="plotly-graph-div"
+    style="height: 100%; width: 100%"
+  ></div>
+  <script type="text/javascript">
+    window.PLOTLYENV = window.PLOTLYENV || {}
+    if (document.getElementById('advanced_rating_trends_movies')) {
+      Plotly.newPlot(
+        'advanced_rating_trends_movies',
+        [
+          {
+            legendgroup: '\u7535\u5f71\u8bc4\u5206\u8d8b\u52bf',
+            mode: 'lines+markers',
+            name: '\u8c46\u74e3\u8bc4\u5206',
+            marker: { color: '#636efa' },
+            x: [2021, 2022, 2023, 2024, 2025],
+            y: [
+              8.230434782608695, 8.230434782608695, 7.562790697674418,
+              7.948484848484851, 7.980952380952382,
+            ],
+            type: 'scatter',
+            xaxis: 'x',
+            yaxis: 'y',
+          },
+          {
+            legendgroup: '\u7535\u5f71\u8bc4\u5206\u8d8b\u52bf',
+            mode: 'lines+markers',
+            name: '\u6211\u7684\u8bc4\u5206',
+            marker: { color: '#ff4fc1' },
+            x: [2021, 2022, 2023, 2024, 2025],
+            y: [
+              9.391304347826088, 8.847826086956522, 8.093023255813954,
+              9.030303030303031, 8.380952380952381,
+            ],
+            type: 'scatter',
+            xaxis: 'x',
+            yaxis: 'y',
+          },
+        ],
+        {
+          template: {
+            data: { scatter: [{ type: 'scatter' }] },
+            layout: {
+              xaxis: {
+                gridcolor: 'white',
+                showgrid: false,
+              },
+              yaxis: {
+                gridcolor: '#e5e5e5',
+                showgrid: true,
+                title: null,
+                range: [5, 10],
+                dtick: 1,
+              },
+              legend: {
+                orientation: 'h',
+                x: 0.5,
+                xanchor: 'center',
+                y: -0.1,
+                yanchor: 'top',
+                itemwidth: 60,
+              },
+            },
+          },
+          title: { text: '影视作品的年评分趋势', x: 0.5, xanchor: 'center' },
+          showlegend: true,
+          height: 400,
+        },
+        { displayModeBar: true, scrollZoom: false, responsive: true },
+      )
+    }
+  </script>
+</div>
