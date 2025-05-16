@@ -13,150 +13,237 @@ import {
 
 export default function PlotlyCharts() {
   useEffect(() => {
-    // 确保 Plotly 脚本只加载一次
-    if (!(window as any).PlotlyConfig) {
-      const script = document.createElement('script')
-      script.src = 'https://cdn.plot.ly/plotly-2.35.2.min.js'
-      script.async = true
-      document.head.appendChild(script)
+    // 动态创建iframe辅助器脚本
+    const createHelperScript = () => {
+      const helperScript = `
+        // 移动设备检测
+        function isMobileDevice() {
+          return (
+            typeof window.orientation !== 'undefined' || 
+            navigator.userAgent.indexOf('Mobile') !== -1 ||
+            navigator.userAgent.indexOf('Android') !== -1 ||
+            window.innerWidth < 768
+          );
+        }
 
-      // 添加全局响应式配置
-      script.onload = () => {
-        initPlotlyResponsive()
-      }
-    } else {
-      // 如果Plotly已加载，立即执行响应式配置
-      initPlotlyResponsive()
-    }
-
-    // 创建辅助脚本，提供给所有iframe使用
-    function initPlotlyResponsive() {
-      // 延迟执行，确保所有iframe都已加载
-      setTimeout(() => {
-        const iframes = document.querySelectorAll('iframe')
-        iframes.forEach((iframe) => {
-          // 使用标准事件监听器而不是onload属性
-          iframe.addEventListener('load', function (event) {
-            const target = event.target as HTMLIFrameElement
-            makeIframeResponsive(target)
-          })
-          // 对于已加载的iframe也执行一次
-          if (iframe.contentDocument?.readyState === 'complete') {
-            makeIframeResponsive(iframe)
+        // 直接修改Plotly配置和布局
+        function fixPlotlyForMobile() {
+          if (!window.Plotly) return;
+          
+          console.log("Fixing Plotly for mobile...");
+          
+          const plotlyDivs = document.querySelectorAll('.plotly-graph-div');
+          if (!plotlyDivs.length) return;
+          
+          // 添加适当的移动设备元标签
+          if (!document.querySelector('meta[name="viewport"]')) {
+            const meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+            document.head.appendChild(meta);
           }
-        })
-      }, 500)
+          
+          // 添加移动设备样式
+          const style = document.createElement('style');
+          style.textContent = \`
+            body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
+            .plotly-graph-div { width: 100% !important; height: 100% !important; }
+            .main-svg { width: 100% !important; height: 100% !important; }
+            .svg-container { width: 100% !important; height: 100% !important; }
+          \`;
+          document.head.appendChild(style);
+          
+          // 遍历所有图表并应用移动设备调整
+          plotlyDivs.forEach(div => {
+            try {
+              const id = div.id;
+              
+              // 移动设备的特殊配置
+              const mobileConfig = {
+                responsive: true,
+                displayModeBar: false,
+                scrollZoom: false,
+                staticPlot: false  // 在移动设备上允许基本交互
+              };
+              
+              // 移动设备布局调整
+              const mobileLayout = {
+                autosize: true,
+                margin: { l: 40, r: 10, t: 10, b: 40 },
+                font: { size: 10 }, // 缩小字体适应移动设备
+                hovermode: 'closest',
+                dragmode: 'pan'
+              };
+              
+              // 在移动设备上应用特殊配置
+              if (isMobileDevice()) {
+                console.log("Applying mobile config for:", id);
+                
+                // 尝试获取当前图表数据
+                const plotlyData = window.Plotly.d3.select('#' + id).data()[0];
+                if (plotlyData && plotlyData.data) {
+                  // 重新绘制图表以应用移动配置
+                  window.Plotly.react(
+                    id, 
+                    plotlyData.data,
+                    { ...plotlyData.layout, ...mobileLayout },
+                    mobileConfig
+                  );
+                } else {
+                  // 如果无法获取数据，直接应用布局
+                  window.Plotly.relayout(id, mobileLayout);
+                }
+                
+                // 确保图表填充容器
+                div.style.width = '100%';
+                div.style.height = '100%';
+              }
+            } catch (e) {
+              console.error("Failed to configure Plotly chart:", e);
+            }
+          });
+        }
+        
+        // 在脚本加载完成后调用
+        if (document.readyState === 'complete') {
+          fixPlotlyForMobile();
+        } else {
+          window.addEventListener('load', fixPlotlyForMobile);
+        }
+        
+        // 监听窗口大小变化
+        window.addEventListener('resize', function() {
+          // 防抖动处理
+          if (this._resizeTimer) clearTimeout(this._resizeTimer);
+          this._resizeTimer = setTimeout(function() {
+            const plotlyDivs = document.querySelectorAll('.plotly-graph-div');
+            plotlyDivs.forEach(div => {
+              try {
+                window.Plotly.relayout(div.id, { autosize: true });
+              } catch (e) {
+                console.error("Error on resize:", e);
+              }
+            });
+          }, 100);
+        });
+      `
+
+      return helperScript
     }
 
-    function makeIframeResponsive(iframe: HTMLIFrameElement) {
-      try {
-        const iframeDoc = iframe.contentDocument
-        const iframeWin = iframe.contentWindow
+    // 确保Plotly脚本加载并增强iframe的处理
+    const enhanceIframes = () => {
+      const helperScript = createHelperScript()
 
-        if (!iframeDoc || !iframeWin) return
-
-        // 1. 添加viewport元标签以确保移动设备适配
-        const head = iframeDoc.head
-        if (!head.querySelector('meta[name="viewport"]')) {
-          const meta = iframeDoc.createElement('meta')
-          meta.name = 'viewport'
-          meta.content =
-            'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
-          head.appendChild(meta)
-        }
-
-        // 2. 添加CSS以确保图表宽高自适应
-        if (!head.querySelector('style[data-plotly-responsive]')) {
-          const style = iframeDoc.createElement('style')
-          style.setAttribute('data-plotly-responsive', 'true')
-          style.textContent = `
-            .plotly-graph-div {
-              width: 100% !important;
-              height: 100% !important;
-              min-height: 400px !important;
-            }
-            
-            body, html {
-              margin: 0;
-              padding: 0;
-              width: 100%;
-              height: 100%;
-              overflow: hidden;
-            }
-          `
-          head.appendChild(style)
-        }
-
-        // 3. 如果iframe中有Plotly，应用响应式配置
-        if ((iframeWin as any).Plotly) {
-          const plotlyDivs = iframeDoc.querySelectorAll('.plotly-graph-div')
-          plotlyDivs.forEach((div) => {
-            // 延迟处理已确保图表已完全渲染
-            setTimeout(() => {
-              try {
-                ;(iframeWin as any).Plotly.relayout(div.id, {
-                  responsive: true,
-                  autosize: true,
-                  config: {
-                    displayModeBar: false,
-                    responsive: true,
-                  },
-                })
-              } catch (e) {
-                console.error('Failed to relayout Plotly chart:', e)
-              }
-            }, 200)
-          })
-
-          // 4. 添加窗口大小变化监听器以重新布局图表
-          iframeWin.addEventListener('resize', () => {
-            plotlyDivs.forEach((div) => {
-              try {
-                ;(iframeWin as any).Plotly.relayout(div.id, {
-                  autosize: true,
-                })
-              } catch (e) {
-                console.error('Failed to resize Plotly chart:', e)
-              }
-            })
-          })
-        }
-      } catch (e) {
-        console.error('Error making iframe responsive:', e)
-      }
-    }
-
-    // 5. 监听窗口大小变化，重新调整所有iframe
-    const resizeHandler = () => {
+      // 准备修改所有iframe
       const iframes = document.querySelectorAll('iframe')
       iframes.forEach((iframe) => {
-        try {
-          if (iframe.contentWindow && (iframe.contentWindow as any).Plotly) {
-            const plotlyDivs =
-              iframe.contentDocument?.querySelectorAll('.plotly-graph-div')
-            plotlyDivs?.forEach((div) => {
-              ;(iframe.contentWindow as any).Plotly.relayout(div.id, {
-                autosize: true,
-              })
-            })
+        iframe.onload = function () {
+          try {
+            // 尝试向iframe注入辅助脚本
+            const iframeDoc =
+              iframe.contentDocument || iframe.contentWindow?.document
+            if (!iframeDoc) return
+
+            // 添加移动设备viewport设置
+            if (!iframeDoc.querySelector('meta[name="viewport"]')) {
+              const meta = iframeDoc.createElement('meta')
+              meta.name = 'viewport'
+              meta.content =
+                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+              iframeDoc.head.appendChild(meta)
+            }
+
+            // 注入辅助脚本
+            const scriptElem = iframeDoc.createElement('script')
+            scriptElem.textContent = helperScript
+            iframeDoc.body.appendChild(scriptElem)
+
+            // 添加样式以确保内容填充完整空间
+            const styleElem = iframeDoc.createElement('style')
+            styleElem.textContent = `
+              body, html { 
+                margin: 0; 
+                padding: 0; 
+                width: 100%; 
+                height: 100%;
+                overflow: hidden; 
+              }
+              .plotly-graph-div { 
+                width: 100% !important; 
+                height: 100% !important; 
+                min-height: 300px !important;
+              }
+              .main-svg {
+                width: 100% !important;
+                height: 100% !important;
+              }
+            `
+            iframeDoc.head.appendChild(styleElem)
+          } catch (e) {
+            console.error('Error enhancing iframe:', e)
           }
-        } catch (e) {
-          console.error('Failed to resize charts on window resize:', e)
+        }
+
+        // 对于已加载的iframe立即处理
+        if (iframe.contentDocument?.readyState === 'complete') {
+          if (iframe.onload) {
+            iframe.onload.call(iframe, new Event('load'))
+          }
         }
       })
     }
 
-    window.addEventListener('resize', resizeHandler)
+    // 主要执行逻辑
+    if (typeof window !== 'undefined') {
+      // 监听Plotly脚本加载
+      const checkPlotlyLoaded = () => {
+        if ((window as any).Plotly) {
+          enhanceIframes()
+          return true
+        }
+        return false
+      }
 
-    // 清理函数
-    return () => {
-      window.removeEventListener('resize', resizeHandler)
+      // 如果Plotly已加载，直接处理
+      if (!checkPlotlyLoaded()) {
+        // 如果未加载，添加Plotly脚本并设置加载回调
+        const script = document.createElement('script')
+        script.src = 'https://cdn.plot.ly/plotly-2.35.2.min.js'
+        script.async = true
+        script.onload = enhanceIframes
+        document.head.appendChild(script)
+      }
+
+      // 监听窗口大小变化
+      const resizeHandler = () => {
+        const iframes = document.querySelectorAll('iframe')
+        iframes.forEach((iframe) => {
+          try {
+            const iframeWindow = iframe.contentWindow
+            if (iframeWindow && (iframeWindow as any).Plotly) {
+              // 通知iframe内部调整尺寸
+              iframeWindow.dispatchEvent(new Event('resize'))
+            }
+          } catch (e) {
+            console.error('Failed to resize charts on window resize:', e)
+          }
+        })
+      }
+
+      window.addEventListener('resize', resizeHandler)
+
+      // 清理函数
+      return () => {
+        window.removeEventListener('resize', resizeHandler)
+      }
     }
   }, [])
 
+  // 为移动设备优化的样式
   const chartContainerClass =
-    'h-[450px] w-full rounded-lg border p-4 dark:border-zinc-700'
-  const iframeClass = 'h-full w-full border-0'
+    'h-[450px] w-full rounded-lg border p-4 dark:border-zinc-700 relative'
+  const iframeClass = 'h-full w-full border-0 absolute inset-0 m-0 p-0'
 
   return (
     <div className="mt-16 space-y-20">
@@ -174,6 +261,8 @@ export default function PlotlyCharts() {
               title="演员分布"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className={chartContainerClass}>
@@ -183,6 +272,8 @@ export default function PlotlyCharts() {
               title="导演分布"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className={chartContainerClass}>
@@ -192,6 +283,8 @@ export default function PlotlyCharts() {
               title="观影时间线"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className={chartContainerClass}>
@@ -201,6 +294,8 @@ export default function PlotlyCharts() {
               title="电影按月份创建数量"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
         </div>
@@ -220,6 +315,8 @@ export default function PlotlyCharts() {
               title="出版社分布"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className={chartContainerClass}>
@@ -229,6 +326,8 @@ export default function PlotlyCharts() {
               title="作者分布"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className={chartContainerClass}>
@@ -238,6 +337,8 @@ export default function PlotlyCharts() {
               title="阅读时间线"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className={chartContainerClass}>
@@ -247,6 +348,8 @@ export default function PlotlyCharts() {
               title="图书按月份创建数量"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
         </div>
@@ -266,6 +369,8 @@ export default function PlotlyCharts() {
               title="游戏类型分布"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className={chartContainerClass}>
@@ -275,6 +380,8 @@ export default function PlotlyCharts() {
               title="游戏时间线"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
         </div>
@@ -294,6 +401,8 @@ export default function PlotlyCharts() {
               title="电影评分趋势"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className={chartContainerClass}>
@@ -303,6 +412,8 @@ export default function PlotlyCharts() {
               title="图书评分趋势"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
           <div className="flex justify-center md:col-span-2">
@@ -316,6 +427,8 @@ export default function PlotlyCharts() {
                 title="游戏评分趋势"
                 scrolling="no"
                 loading="lazy"
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
               />
             </div>
           </div>
@@ -341,6 +454,8 @@ export default function PlotlyCharts() {
               title="平均消费速度"
               scrolling="no"
               loading="lazy"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
             />
           </div>
         </div>
