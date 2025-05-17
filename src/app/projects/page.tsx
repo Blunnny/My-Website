@@ -10,6 +10,7 @@ const watchingCategoryList: WatchingCategory[] = [
   'LLM',
   '金融',
   '数据分析',
+  '爬虫',
   '自动化',
   '音视频处理',
   '技术学习',

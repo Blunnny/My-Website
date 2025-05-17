@@ -16,7 +16,7 @@ export type ActivityItemType = {
   link?: string
 }
 
-// 项目分类类型定义
+// 项目分类类型定义，注意添加时还要在page.tsx中添加
 export type WatchingCategory =
   | 'LLM'
   | '金融'
