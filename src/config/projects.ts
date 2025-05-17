@@ -21,6 +21,7 @@ export type WatchingCategory =
   | 'LLM'
   | '金融'
   | '数据分析'
+  | '爬虫'
   | '自动化'
   | '音视频处理'
   | '技术学习'
@@ -108,6 +109,15 @@ export const projects: ProjectsType = {
         description:
           '无需 SQL 知识，即可实现数据分析的开源商业智能和嵌入式分析工具',
         tags: ['Clojure', 'typescript', 'SQL', 'BI'],
+        category: 'watching',
+      },
+    ],
+    爬虫: [
+      {
+        name: 'MediaCrawler',
+        link: { href: 'github.com/NanmiCoder/MediaCrawler', label: 'scrapy' },
+        description: '一个适用于国内主要社交媒体平台的爬虫工具',
+        tags: ['Python'],
         category: 'watching',
       },
     ],

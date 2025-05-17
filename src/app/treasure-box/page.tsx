@@ -81,7 +81,7 @@ type LifelongLearningSubCategory =
   | '其他'
 
 // 代码子分类类型定义
-type CodingSubCategory = '学习路线' | '学习网站' | '实用工具'
+type CodingSubCategory = '学习路线' | '学习网站' | '实用工具' | '资源网站'
 
 // 购物子分类类型定义
 type ShoppingSubCategory = '购物指南' | '购物网站'
@@ -1205,6 +1205,14 @@ const categories: CategoriesType = {
         title: 'regex-vis',
         url: 'https://regex-vis.com/',
         description: '正则表达式可视化网站',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    资源网站: [
+      {
+        title: 'uiverse',
+        url: 'https://uiverse.io/',
+        description: '6000+动画组件开源UI库',
         tags: ['免费', '无广告'],
       },
     ],
