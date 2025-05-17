@@ -81,7 +81,12 @@ type LifelongLearningSubCategory =
   | '其他'
 
 // 代码子分类类型定义
-type CodingSubCategory = '学习路线' | '学习网站' | '实用工具' | '资源网站'
+type CodingSubCategory =
+  | '学习路线'
+  | '学习网站'
+  | '实用工具'
+  | '资源网站'
+  | '商业变现'
 
 // 购物子分类类型定义
 type ShoppingSubCategory = '购物指南' | '购物网站'
@@ -1024,6 +1029,12 @@ const categories: CategoriesType = {
         description: '实用技能学习平台',
         tags: ['收费', '无广告'],
       },
+      {
+        title: '中国教科书',
+        url: 'https://github.com/TapXWorld/ChinaTextbook',
+        description: '国内从小学到大学的全部课本',
+        tags: ['免费', '无广告'],
+      },
     ],
     维修与手工学习: [
       {
@@ -1213,6 +1224,14 @@ const categories: CategoriesType = {
         title: 'uiverse',
         url: 'https://uiverse.io/',
         description: '6000+动画组件开源UI库',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    商业变现: [
+      {
+        title: 'weekly',
+        url: 'https://github.com/ljinkai/weekly?tab=readme-ov-file',
+        description: '独立开发变现周刊',
         tags: ['免费', '无广告'],
       },
     ],

@@ -26,8 +26,7 @@ export type WatchingCategory =
   | '音视频处理'
   | '技术学习'
   | '文件处理'
-  | '有趣的小工具'
-
+  | '小工具'
 // 项目数据结构类型定义
 export type ProjectsType = {
   my: ProjectItemType[]
@@ -251,7 +250,7 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
     ],
-    有趣的小工具: [
+    小工具: [
       {
         name: 'newsnow',
         description: '优雅地阅读实时热门新闻',
@@ -280,6 +279,26 @@ export const projects: ProjectsType = {
           label: 'stardroid',
         },
         tags: ['Android', 'Java', 'Kotlin'],
+        category: 'watching',
+      },
+      {
+        name: 'ContextMenuManager',
+        description: '管理鼠标右键内容，让右键菜单不再冗长！',
+        link: {
+          href: 'github.com/BluePointLilac/ContextMenuManager',
+          label: 'ContextMenuManager',
+        },
+        tags: ['C#'],
+        category: 'watching',
+      },
+      {
+        name: 'KeyCastOW',
+        description: '在电脑屏幕上实时显示按键的开源软件，用于录制视频',
+        link: {
+          href: 'github.com/brookhong/KeyCastOW',
+          label: 'KeyCastOW',
+        },
+        tags: ['C', 'C++'],
         category: 'watching',
       },
     ],
