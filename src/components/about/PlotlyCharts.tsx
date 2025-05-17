@@ -289,9 +289,9 @@ export default function PlotlyCharts() {
           </div>
           <div className={chartContainerClass}>
             <iframe
-              src="/output_html/advanced_interest_cycle_movies_monthly.html"
+              src="/output_html/advanced_rating_trends_movies.html"
               className={iframeClass}
-              title="电影按月份创建数量"
+              title="电影评分趋势"
               scrolling="no"
               loading="lazy"
               allowFullScreen
@@ -300,7 +300,6 @@ export default function PlotlyCharts() {
           </div>
         </div>
       </section>
-
       {/* 图书统计 - 更新为 读书数据 */}
       <section>
         <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
@@ -343,9 +342,9 @@ export default function PlotlyCharts() {
           </div>
           <div className={chartContainerClass}>
             <iframe
-              src="/output_html/advanced_interest_cycle_books_monthly.html"
+              src="/output_html/advanced_rating_trends_books.html"
               className={iframeClass}
-              title="图书按月份创建数量"
+              title="图书评分趋势"
               scrolling="no"
               loading="lazy"
               allowFullScreen
@@ -354,7 +353,6 @@ export default function PlotlyCharts() {
           </div>
         </div>
       </section>
-
       {/* 游戏统计 - 更新为 游戏数据 */}
       <section>
         <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
@@ -375,9 +373,9 @@ export default function PlotlyCharts() {
           </div>
           <div className={chartContainerClass}>
             <iframe
-              src="/output_html/games_所有游戏_create_time.html"
+              src="/output_html/advanced_rating_trends_games.html"
               className={iframeClass}
-              title="游戏时间线"
+              title="游戏评分趋势"
               scrolling="no"
               loading="lazy"
               allowFullScreen
@@ -386,55 +384,6 @@ export default function PlotlyCharts() {
           </div>
         </div>
       </section>
-
-      {/* 评分趋势 - 每行2个，最后一个居中 */}
-      <section>
-        <h3 className="mb-6 flex items-center gap-3 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          <TrendingUp className="h-7 w-7" />
-          评分趋势分析
-        </h3>
-        <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className={chartContainerClass}>
-            <iframe
-              src="/output_html/advanced_rating_trends_movies.html"
-              className={iframeClass}
-              title="电影评分趋势"
-              scrolling="no"
-              loading="lazy"
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-            />
-          </div>
-          <div className={chartContainerClass}>
-            <iframe
-              src="/output_html/advanced_rating_trends_books.html"
-              className={iframeClass}
-              title="图书评分趋势"
-              scrolling="no"
-              loading="lazy"
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-            />
-          </div>
-          <div className="flex justify-center md:col-span-2">
-            <div
-              className={chartContainerClass}
-              style={{ maxWidth: 'calc(50% - 1rem)' }}
-            >
-              <iframe
-                src="/output_html/advanced_rating_trends_games.html"
-                className={iframeClass}
-                title="游戏评分趋势"
-                scrolling="no"
-                loading="lazy"
-                allowFullScreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 其他数据 */}
       <section>
         <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
@@ -444,19 +393,18 @@ export default function PlotlyCharts() {
 
         {/* 消费速度 - 单个图表居中 */}
         <div className="mb-12 flex justify-center">
-          <div
-            className={chartContainerClass}
-            style={{ maxWidth: 'calc(50% - 1rem)' }}
-          >
-            <iframe
-              src="/output_html/advanced_consumption_speed.html"
-              className={iframeClass}
-              title="平均消费速度"
-              scrolling="no"
-              loading="lazy"
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-            />
+          <div className="w-full" style={{ maxWidth: '540px' }}>
+            <div className={chartContainerClass}>
+              <iframe
+                src="/output_html/advanced_consumption_speed.html"
+                className={iframeClass}
+                title="平均消费速度"
+                scrolling="no"
+                loading="lazy"
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+              />
+            </div>
           </div>
         </div>
       </section>
