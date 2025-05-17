@@ -66,8 +66,29 @@ export default function About() {
       <div className="mx-auto my-16 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
         <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
           <LineChart size={28} />
-          我的各类数据统计
+          Some fun data about me
         </h2>
+        <h3>
+          统计数据来自我的项目「
+          <a
+            href="https://github.com/Blunnny/douban-data-analysis"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline dark:text-blue-400"
+          >
+            豆瓣年龄
+          </a>
+          」，
+          <a
+            href="https://github.com/Blunnny/douban-data-analysis/blob/main/output_markdown/douban_data_analysis.md#%E6%88%91%E7%9A%84%E8%B1%86%E7%93%A3%E6%95%B0%E6%8D%AE%E6%8F%AD%E7%A7%98%E7%9C%8B%E7%89%87%E8%AF%BB%E4%B9%A6%E7%8E%A9%E6%B8%B8%E6%88%8F%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline dark:text-blue-400"
+          >
+            点我
+          </a>
+          查看报告~
+        </h3>
         <PlotlyCharts />
       </div>
     </Container>
