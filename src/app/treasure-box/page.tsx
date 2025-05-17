@@ -481,7 +481,7 @@ const categories: CategoriesType = {
         title: '济南公共数据开放网',
         url: 'http://data.jinan.gov.cn/jinan/api/',
         description: '济南各类数据统计网站',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
     ],
     金融数据: [
