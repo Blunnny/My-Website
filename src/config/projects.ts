@@ -70,13 +70,13 @@ export const projects: ProjectsType = {
     },
     {
       name: 'TasteBuddy',
-      description: '拒绝踩雷！预测自己对于影视作品的评分。',
+      description: '到底看点啥？预测自己对于影视作品的评分。',
       link: {
         href: 'github.com/Blunnny/TasteBuddy',
         label: 'GitHub',
       },
       tags: ['Jupyter Notebook', 'Python'],
-      logo: '/images/icon/TasteBuddy.jpg',
+      logo: '/images/icon/TasteBuddy.png',
       category: 'my',
     },
   ],
