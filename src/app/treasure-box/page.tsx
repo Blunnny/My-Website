@@ -306,9 +306,15 @@ const categories: CategoriesType = {
         tags: ['部分免费', '无广告'],
       },
       {
-        title: '纸由我paperme',
+        title: '纸由我 paperme',
         url: 'https://paperme.toolooz.com/?ref=www.qssily.com',
         description: '纸张模拟编辑网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'SOC PK',
+        url: 'https://socpk.com/',
+        description: '极客湾出品的移动芯片排行榜',
         tags: ['免费', '无广告'],
       },
     ],

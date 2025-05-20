@@ -76,7 +76,7 @@ export default function About() {
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline dark:text-blue-400"
           >
-            豆瓣年龄
+            豆瓣年轮
           </a>
           」，
           <a
