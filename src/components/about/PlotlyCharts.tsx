@@ -256,9 +256,9 @@ export default function PlotlyCharts() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className={chartContainerClass}>
             <iframe
-              src="/output_html/movies_所有影视作品_actor_top5.html"
+              src="/output_html/movies_所有影视作品_country_top5.html"
               className={iframeClass}
-              title="演员分布"
+              title="国家分布"
               scrolling="no"
               loading="lazy"
               allowFullScreen
@@ -267,9 +267,9 @@ export default function PlotlyCharts() {
           </div>
           <div className={chartContainerClass}>
             <iframe
-              src="/output_html/movies_所有影视作品_director_top5.html"
+              src="/output_html/movies_所有影视作品_genre_top5.html"
               className={iframeClass}
-              title="导演分布"
+              title="类型分布"
               scrolling="no"
               loading="lazy"
               allowFullScreen

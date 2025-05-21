@@ -1,0 +1,63 @@
+<div>
+  <script type="text/javascript">
+    window.PlotlyConfig = { MathJaxConfig: 'local' }
+  </script>
+  <script
+    charset="utf-8"
+    src="https://cdn.plot.ly/plotly-2.35.2.min.js"
+  ></script>
+  <div
+    id="movies-genre-top5"
+    class="plotly-graph-div"
+    style="height: 100%; width: 100%"
+  ></div>
+  <script type="text/javascript">
+    window.PLOTLYENV = window.PLOTLYENV || {}
+    if (document.getElementById('movies-genre-top5')) {
+      Plotly.newPlot(
+        'movies-genre-top5',
+        [
+          {
+            values: [50, 35, 30, 25, 20],
+            labels: ['剧情', '喜剧', '动画', '科幻', '动作'],
+            type: 'pie',
+            marker: {
+              colors: ['#636efa', '#ff4fc1', '#00cc96', '#ab63fa', '#FFA15A'],
+            },
+            textinfo: 'none',
+            hole: 0,
+            showlegend: true,
+            legendgroup: 'genre',
+            domain: {
+              row: 0,
+              column: 0,
+            },
+          },
+        ],
+        {
+          template: {
+            data: { pie: [{ type: 'pie' }] },
+            layout: {
+              legend: {
+                orientation: 'h',
+                x: 0.5,
+                xanchor: 'center',
+                y: -0.1,
+                yanchor: 'top',
+                itemwidth: 30,
+                traceorder: 'normal',
+                itemsizing: 'constant',
+              },
+            },
+          },
+          title: { text: '我观影的类型分布', x: 0.5, xanchor: 'center' },
+          height: 400,
+          grid: { rows: 1, columns: 1 },
+          showlegend: true,
+          margin: { t: 60, b: 60, l: 60, r: 60 },
+        },
+        { displayModeBar: true, scrollZoom: false, responsive: true },
+      )
+    }
+  </script>
+</div>
