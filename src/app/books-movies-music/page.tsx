@@ -156,6 +156,14 @@ const booksByYear: Record<string, any[]> = {
 const moviesByYear: Record<string, any[]> = {
   2025: [
     {
+      title: '成瘾剂量 Dopesick ',
+      cover: '/images/movies/成瘾剂量 Dopesick.webp',
+      year: 2021,
+      info: '剧情',
+      rating: 9.6,
+      comment: '「double, doube and double」',
+    },
+    {
       title: '哪吒之魔童闹海',
       cover: '/images/movies/哪吒之魔童闹海.jpg',
       year: 2025,
@@ -186,14 +194,6 @@ const moviesByYear: Record<string, any[]> = {
       info: '剧情 / 喜剧',
       rating: 8.8,
       comment: '单曲循环「我想要拥有你」中 · · ·',
-    },
-    {
-      title: '死侍与金刚狼 Deadpool & Wolverine ',
-      cover: '/images/movies/死侍与金刚狼.jpg',
-      year: 2024,
-      info: '剧情 / 家庭',
-      rating: 8.5,
-      comment: '漫威挽尊之作。',
     },
   ],
   2024: [
@@ -282,6 +282,14 @@ const moviesByYear: Record<string, any[]> = {
   ],
   2022: [
     {
+      title: 'JOJO的奇妙冒险',
+      cover: '/images/movies/JOJO的奇妙冒险.webp',
+      year: 2012 - 2021,
+      info: '剧情 / 动作 / 动画 / 冒险',
+      rating: 9.8,
+      comment: '「这是替身攻击！」',
+    },
+    {
       title: '头号玩家 Ready Player One',
       cover: '/images/movies/头号玩家.jpg',
       year: 2018,
@@ -312,14 +320,6 @@ const moviesByYear: Record<string, any[]> = {
       info: '剧情 / 同性 / 传记 / 战争',
       rating: 9.2,
       comment: '人和机器的区别究竟是什么呢？',
-    },
-    {
-      title: '调音师 Andhadhun',
-      cover: '/images/movies/调音师.jpg',
-      year: 2018,
-      info: '喜剧 / 悬疑 / 惊悚 / 犯罪',
-      rating: 9.1,
-      comment: '年度最佳悬疑片！',
     },
   ],
 }
