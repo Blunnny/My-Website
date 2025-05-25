@@ -390,13 +390,13 @@ const categories: CategoriesType = {
         title: '中国土地市场网',
         url: 'https://www.landchina.com/#/',
         description: '查询土地信息',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '中国版权保护中心',
         url: 'https://www.ccopyright.com.cn/',
         description: '著作信息查询',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
     ],
     会计信息: [

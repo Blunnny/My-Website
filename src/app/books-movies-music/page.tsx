@@ -284,7 +284,7 @@ const moviesByYear: Record<string, any[]> = {
     {
       title: 'JOJO的奇妙冒险',
       cover: '/images/movies/JOJO的奇妙冒险.webp',
-      year: 2012 - 2021,
+      year: '2012 - 2021',
       info: '剧情 / 动作 / 动画 / 冒险',
       rating: 9.8,
       comment: '「这是替身攻击！」',
