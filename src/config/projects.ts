@@ -305,16 +305,6 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
       {
-        name: 'stardroid(sky map)',
-        description: '带你在晚上看星星！（免费无广告）',
-        link: {
-          href: 'github.com/sky-map-team/stardroid?tab=readme-ov-file',
-          label: 'stardroid',
-        },
-        tags: ['Android', 'Java', 'Kotlin'],
-        category: 'watching',
-      },
-      {
         name: 'ContextMenuManager',
         description: '管理鼠标右键内容，让右键菜单不再冗长！',
         link: {
@@ -341,6 +331,16 @@ export const projects: ProjectsType = {
         link: { href: 'github.com/iptv-org/iptv', label: 'IPTV' },
         description: '收看来自全世界的电视节目！',
         tags: ['JavaScript', 'TypeScript'],
+        category: 'watching',
+      },
+      {
+        name: 'stardroid(sky map)',
+        description: '带你在晚上看星星！（免费无广告）',
+        link: {
+          href: 'github.com/sky-map-team/stardroid?tab=readme-ov-file',
+          label: 'stardroid',
+        },
+        tags: ['Android', 'Java', 'Kotlin'],
         category: 'watching',
       },
     ],
