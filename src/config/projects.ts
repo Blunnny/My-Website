@@ -27,6 +27,8 @@ export type WatchingCategory =
   | '技术学习'
   | '文件处理'
   | '小工具'
+  | '娱乐'
+
 // 项目数据结构类型定义
 export type ProjectsType = {
   my: ProjectItemType[]
@@ -99,6 +101,16 @@ export const projects: ProjectsType = {
         tags: ['Python'],
         category: 'watching',
       },
+      {
+        name: 'agenticSeek',
+        link: {
+          href: 'github.com/Fosowl/agenticSeek',
+          label: 'agenticSeek',
+        },
+        description: '完全本地化的AI助手（配置要求较高，显存至少需要12GB）',
+        tags: ['Python', 'JavaScript', 'LLM'],
+        category: 'watching',
+      },
     ],
     金融: [
       {
@@ -109,6 +121,16 @@ export const projects: ProjectsType = {
         },
         description: 'AI 驱动的对冲基金',
         tags: ['Python', 'Docker', 'AI', 'Stockmarket'],
+        category: 'watching',
+      },
+      {
+        name: 'qlib',
+        link: {
+          href: 'github.com/microsoft/qlib',
+          label: 'qlib',
+        },
+        description: '微软出品的AI量化投资平台',
+        tags: ['Python', 'AI'],
         category: 'watching',
       },
     ],
@@ -310,6 +332,15 @@ export const projects: ProjectsType = {
           label: 'KeyCastOW',
         },
         tags: ['C', 'C++'],
+        category: 'watching',
+      },
+    ],
+    娱乐: [
+      {
+        name: 'IPTV',
+        link: { href: 'github.com/iptv-org/iptv', label: 'IPTV' },
+        description: '收看来自全世界的电视节目！',
+        tags: ['JavaScript', 'TypeScript'],
         category: 'watching',
       },
     ],
