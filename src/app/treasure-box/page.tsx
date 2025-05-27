@@ -922,7 +922,7 @@ const categories: CategoriesType = {
         title: '中华古籍资源库',
         url: 'http://read.nlc.cn/thematDataSearch/toGujiIndex',
         description: '中国国家数字图书馆旗下的海量古籍资料',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
       {
         title: '中华珍宝馆',
