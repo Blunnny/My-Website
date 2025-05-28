@@ -264,20 +264,20 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「死亡不是生命的终点，遗忘才是。」',
     },
     {
+      title: '里斯本丸沉没',
+      cover: '/images/movies/里斯本丸沉没.webp',
+      year: 2023,
+      info: '纪录片',
+      rating: 9.4,
+      comment: '「活下来的人并没有真正活着，在很久之后我才意识到这一点。」',
+    },
+    {
       title: '星期三',
       cover: '/images/movies/星期三.jpg',
       year: 2022,
       info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
       rating: 9.3,
       comment: '太爱星期三和小狼女了。',
-    },
-    {
-      title: '四月是你的谎言 四月は君の嘘',
-      cover: '/images/movies/四月是你的谎言.jpg',
-      year: 2014,
-      info: '剧情 / 动画 / 音乐',
-      rating: 9.3,
-      comment: '初中看完结局一个月没走出来，现在在看仍然感动。',
     },
   ],
   2022: [
