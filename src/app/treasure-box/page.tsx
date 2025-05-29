@@ -1143,6 +1143,12 @@ const categories: CategoriesType = {
         description: '电脑打字语练习网站',
         tags: ['部分免费', '无广告'],
       },
+      {
+        title: '看见统计',
+        url: 'https://seeing-theory.brown.edu/cn.html',
+        description: '最好的统计学入门网站',
+        tags: ['免费', '无广告'],
+      },
     ],
   },
 
