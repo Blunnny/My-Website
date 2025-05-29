@@ -418,6 +418,12 @@ const categories: CategoriesType = {
         description: '会计信息交流网站',
         tags: ['免费', '有广告'],
       },
+      {
+        title: '北大法宝',
+        url: 'https://www.pkulaw.com/',
+        description: '各类法律法规的一站式查询网站',
+        tags: ['部分免费', '有广告'],
+      },
     ],
     审计信息: [
       {
