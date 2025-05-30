@@ -156,21 +156,22 @@ const booksByYear: Record<string, any[]> = {
 const moviesByYear: Record<string, any[]> = {
   2025: [
     {
-      title: '成瘾剂量 Dopesick ',
-      cover: '/images/movies/成瘾剂量 Dopesick.webp',
-      year: 2021,
-      info: '剧情',
-      rating: 9.6,
-      comment: '「double, doube and double」',
-    },
-    {
       title: '哪吒之魔童闹海',
       cover: '/images/movies/哪吒之魔童闹海.jpg',
       year: 2025,
       info: '剧情 / 喜剧 / 动画 / 奇幻',
-      rating: 9.5,
+      rating: 9.6,
       comment: '首部电影院二刷的电影。',
     },
+    {
+      title: '成瘾剂量 Dopesick ',
+      cover: '/images/movies/成瘾剂量 Dopesick.webp',
+      year: 2021,
+      info: '剧情',
+      rating: 9.5,
+      comment: '「Pain torments us, but it is an inevitable part of life.」',
+    },
+
     {
       title: '黑镜 第七季',
       cover: '/images/movies/黑镜.png',
