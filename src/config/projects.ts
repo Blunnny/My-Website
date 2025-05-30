@@ -227,6 +227,16 @@ export const projects: ProjectsType = {
         tags: ['GO', 'HTML', 'Docker'],
         category: 'watching',
       },
+      {
+        name: 'LivePortrait',
+        description: '让照片动起来（猫也可以！）',
+        link: {
+          href: 'github.com/KwaiVGI/LivePortrait',
+          label: 'LivePortrait',
+        },
+        tags: ['Python', 'CUDA', 'C++'],
+        category: 'watching',
+      },
     ],
     技术学习: [
       {
