@@ -28,6 +28,7 @@ export type WatchingCategory =
   | '文件处理'
   | '小工具'
   | '娱乐'
+  | '艺术设计'
 
 // 项目数据结构类型定义
 export type ProjectsType = {
@@ -131,6 +132,16 @@ export const projects: ProjectsType = {
         },
         description: '微软出品的AI量化投资平台',
         tags: ['Python', 'AI'],
+        category: 'watching',
+      },
+      {
+        name: 'nautilus_trader',
+        link: {
+          href: 'github.com/nautechsystems/nautilus_trader',
+          label: 'nautilus_trader',
+        },
+        description: '一个高性能算法交易平台和事件驱动回测器',
+        tags: ['Python', 'Rust', 'Cpython'],
         category: 'watching',
       },
     ],
@@ -279,6 +290,16 @@ export const projects: ProjectsType = {
         tags: ['Python', 'GUI', 'CSS'],
         category: 'watching',
       },
+      {
+        name: 'prompt-eng-interactive-tutorial',
+        description: 'Anthropic 出品的提示词教程！',
+        link: {
+          href: 'github.com/anthropics/prompt-eng-interactive-tutorial',
+          label: 'prompt',
+        },
+        tags: ['Python', 'Jupyter Notebook'],
+        category: 'watching',
+      },
     ],
     文件处理: [
       {
@@ -290,6 +311,41 @@ export const projects: ProjectsType = {
           label: 'MinerU',
         },
         tags: ['Python', 'Typescript'],
+        category: 'watching',
+      },
+    ],
+    娱乐: [
+      {
+        name: 'IPTV',
+        link: { href: 'github.com/iptv-org/iptv', label: 'IPTV' },
+        description: '收看来自全世界的电视节目！',
+        tags: ['JavaScript', 'TypeScript'],
+        category: 'watching',
+      },
+      {
+        name: 'stardroid(sky map)',
+        description: '带你在晚上看星星！',
+        link: {
+          href: 'github.com/sky-map-team/stardroid?tab=readme-ov-file',
+          label: 'stardroid',
+        },
+        tags: ['Android', 'Java', 'Kotlin'],
+        category: 'watching',
+      },
+    ],
+    艺术设计: [
+      {
+        name: 'onlook',
+        link: { href: 'github.com/onlook-dev/onlook', label: 'onlook' },
+        description: '设计师的cursor！',
+        tags: ['TypeScript'],
+        category: 'watching',
+      },
+      {
+        name: 'postiz-app',
+        link: { href: 'github.com/gitroomhq/postiz-app', label: 'postiz-app' },
+        description: 'AI驱动的社交媒体排期工具',
+        tags: ['TypeScript', 'JavaScript', 'CSS'],
         category: 'watching',
       },
     ],
@@ -332,25 +388,6 @@ export const projects: ProjectsType = {
           label: 'KeyCastOW',
         },
         tags: ['C', 'C++'],
-        category: 'watching',
-      },
-    ],
-    娱乐: [
-      {
-        name: 'IPTV',
-        link: { href: 'github.com/iptv-org/iptv', label: 'IPTV' },
-        description: '收看来自全世界的电视节目！',
-        tags: ['JavaScript', 'TypeScript'],
-        category: 'watching',
-      },
-      {
-        name: 'stardroid(sky map)',
-        description: '带你在晚上看星星！（免费无广告）',
-        link: {
-          href: 'github.com/sky-map-team/stardroid?tab=readme-ov-file',
-          label: 'stardroid',
-        },
-        tags: ['Android', 'Java', 'Kotlin'],
         category: 'watching',
       },
     ],

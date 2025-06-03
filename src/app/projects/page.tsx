@@ -17,6 +17,7 @@ const watchingCategoryList: WatchingCategory[] = [
   '文件处理',
   '小工具',
   '娱乐',
+  '艺术设计',
 ]
 
 export default function ProjectsPage() {
