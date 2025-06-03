@@ -332,6 +332,16 @@ export const projects: ProjectsType = {
         tags: ['Android', 'Java', 'Kotlin'],
         category: 'watching',
       },
+      {
+        name: 'HowToCook',
+        description: '程序员做法指南',
+        link: {
+          href: 'github.com/Anduin2017/HowToCook',
+          label: 'HowToCook',
+        },
+        tags: ['Dockerfile'],
+        category: 'watching',
+      },
     ],
     艺术设计: [
       {
