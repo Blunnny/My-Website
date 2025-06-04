@@ -300,6 +300,16 @@ export const projects: ProjectsType = {
         tags: ['Python', 'Jupyter Notebook'],
         category: 'watching',
       },
+      {
+        name: 'python-mastery',
+        description: 'python进阶教程',
+        link: {
+          href: 'https://github.com/dabeaz-course/python-mastery',
+          label: 'python-mastery',
+        },
+        tags: ['Python'],
+        category: 'watching',
+      },
     ],
     文件处理: [
       {

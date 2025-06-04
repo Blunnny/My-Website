@@ -1178,6 +1178,12 @@ const categories: CategoriesType = {
         description: '计算机本科学业规划',
         tags: ['免费', '无广告'],
       },
+      {
+        title: '入入入入门（fén）综述',
+        url: 'https://xp0int-team.feishu.cn/wiki/wikcnnWbXXGELt1xHkyBhvdQKrh',
+        description: '网安方向的计算机入门指南',
+        tags: ['免费', '无广告'],
+      },
     ],
     学习网站: [
       {
