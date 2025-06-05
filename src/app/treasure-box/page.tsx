@@ -1405,6 +1405,12 @@ const categories: CategoriesType = {
         description: '租房相关的信息都在这里',
         tags: ['免费', '有广告'],
       },
+      {
+        title: '时光图书馆',
+        url: 'https://atimebook.com/',
+        description: '涵盖历史、美术、图片等多领域的历史资料的网站',
+        tags: ['免费', '无广告'],
+      },
     ],
   },
 }
