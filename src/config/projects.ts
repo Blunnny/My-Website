@@ -272,7 +272,7 @@ export const projects: ProjectsType = {
       },
       {
         name: 'Python-100-Days',
-        description: 'Python - 100天从新手到大师（其实内容远远不止python）',
+        description: 'Python - 100天从新手到大师（当然了这是不可能的）',
         link: {
           href: 'github.com/jackfrued/Python-100-Days',
           label: 'Python-100-Days',
@@ -308,6 +308,16 @@ export const projects: ProjectsType = {
           label: 'python-mastery',
         },
         tags: ['Python'],
+        category: 'watching',
+      },
+      {
+        name: 'Hello-CTF',
+        description: 'CTF网络攻防入门教程',
+        link: {
+          href: 'https://github.com/ProbiusOfficial/Hello-CTF',
+          label: 'Hello-CTF',
+        },
+        tags: ['Python', 'PHP', 'HTML'],
         category: 'watching',
       },
     ],
