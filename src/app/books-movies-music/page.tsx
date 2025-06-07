@@ -4,8 +4,8 @@ import { Container } from '@/components/layout/Container'
 import Image from 'next/image'
 import { Star, Eye, Info, CheckCircle } from 'lucide-react'
 
-// 2021-2024年度分组数据，2024年有内容，其余留空
 const booksByYear: Record<string, any[]> = {
+  2025: [],
   2024: [
     {
       title: '动物农场',
@@ -75,6 +75,15 @@ const booksByYear: Record<string, any[]> = {
         '「当宏大叙事已经解体的今天，叙事并没有停止，而是化为了一些小叙事。在无数的小叙事中，我们重新编织起生命的意义。」"',
     },
     {
+      title: '金融经济学二十五讲',
+      cover: '/images/books/金融经济学二十五讲.jpg',
+      year: 2018,
+      info: '徐高',
+      publisher: '中国人民大学出版社',
+      rating: 9.3,
+      comment: '金融学入门必读书目。',
+    },
+    {
       title: '金榜题名之后',
       cover: '/images/books/金榜题名之后.jpg',
       year: 2023,
@@ -83,24 +92,14 @@ const booksByYear: Record<string, any[]> = {
       rating: 9.1,
       comment: '大一新生必读书目。',
     },
-
     {
-      title: '窗边的小豆豆',
-      cover: '/images/books/窗边的小豆豆.jpg',
-      year: 2003,
-      info: '[日] 黑柳彻子',
-      publisher: '南海出版公司',
+      title: '估值建模',
+      cover: '/images/books/估值建模.jpg',
+      year: 2011,
+      info: '诚迅金融培训公司',
+      publisher: '中国金融出版社',
       rating: 9.0,
-      comment: '教育不是注满一桶水，而是点燃一把火。',
-    },
-    {
-      title: '13 67',
-      cover: '/images/books/13 67.jpg',
-      year: 2014,
-      info: '陳浩基',
-      publisher: '皇冠文化出版有限公司',
-      rating: 9.0,
-      comment: '专属于香港的传奇故事。',
+      comment: '野鸡培训机构的良心出品。',
     },
   ],
   2022: [
@@ -131,24 +130,120 @@ const booksByYear: Record<string, any[]> = {
       rating: 9.3,
       comment: '北上广深的问题不是城市太大，而是还不够大。',
     },
-
+    {
+      title: '证券分析师实践指南',
+      cover: '/images/books/证券分析师实践指南.jpg',
+      year: 2018,
+      info: '[美] 詹姆斯·J.瓦伦丁',
+      publisher: '机械工业出版社',
+      rating: 9.2,
+      comment: '了解证券分析师的日常工作。',
+    },
+    {
+      title: '股市进阶之道',
+      cover: '/images/books/股市进阶之道.jpg',
+      year: 2014,
+      info: '李杰',
+      publisher: '中国铁道出版社',
+      rating: 9.0,
+      comment: '一个韭菜的自我修养。',
+    },
+  ],
+  2021: [
+    {
+      title: '恶意',
+      cover: '/images/books/恶意.jpg',
+      year: 2016,
+      info: '[日] 东野圭吾',
+      publisher: '南海出版公司',
+      rating: 8.3,
+      comment:
+        '「令他害怕的，并非暴力本身，而是那些讨厌自己的人所散发的负面能量。」',
+    },
+    {
+      title: '13 67',
+      cover: '/images/books/13 67.jpg',
+      year: 2014,
+      info: '陳浩基',
+      publisher: '皇冠文化出版有限公司',
+      rating: 9.0,
+      comment: '专属于香港的传奇故事。',
+    },
+  ],
+  2020: [
+    {
+      title: '万历十五年',
+      cover: '/images/books/万历十五年.jpg',
+      year: 1997,
+      info: '[美] 黄仁宇',
+      publisher: '新知三联书店',
+      rating: 9.5,
+      comment: '大明王朝衰败的症结。',
+    },
+    {
+      title: '激荡三十年',
+      cover: '/images/books/激荡三十年.jpg',
+      year: 2017,
+      info: '吴晓波',
+      publisher: '中信出版社',
+      rating: 9.0,
+      comment: '波澜壮阔，迷茫无奈。',
+    },
+    {
+      title: '诡计博物馆',
+      cover: '/images/books/诡计博物馆.jpg',
+      year: 2020,
+      info: '[日] 大山诚一郎',
+      publisher: '上海文艺出版社',
+      rating: 8.5,
+      comment: '最爱《复仇日记》这篇，有点东野圭吾的味道。',
+    },
     {
       title: '故事便利店',
       cover: '/images/books/故事便利店.jpg',
       year: 2022,
       info: '骆以军',
       publisher: '河南文艺出版社',
-      rating: 8.5,
+      rating: 8.3,
       comment: '有种小时读意林、格言和读者的感觉。',
     },
+  ],
+  2019: [
     {
-      title: '诡计博物馆',
-      cover: '/images/books/诡计博物馆.jpg',
-      year: 2020,
-      info: '[日]大山诚一郎',
-      publisher: '上海文艺出版社',
-      rating: 8.5,
-      comment: '最爱《复仇日记》这篇，有点东野圭吾的味道。',
+      title: '1984',
+      cover: '/images/books/1984.jpg',
+      year: 2010,
+      info: '[英] 乔治·奥威尔',
+      publisher: '北京十月文艺出版社',
+      rating: 9.8,
+      comment: '「战争即和平，自由即奴役，无知即力量。」',
+    },
+    {
+      title: '三体',
+      cover: '/images/books/三体.jpg',
+      year: 2008,
+      info: '刘慈欣',
+      publisher: '重庆出版社',
+      rating: 9.8,
+      comment: '「给岁月以文明，而不是给文明以岁月。」',
+    },
+    {
+      title: '东方快车谋杀案',
+      cover: '/images/books/东方快车谋杀案.jpg',
+      year: 2006,
+      info: '[英] 阿加莎·克里斯蒂',
+      publisher: '人民文学出版社',
+      rating: 9.5,
+      comment: '推理小说经典之作。',
+    },
+    {
+      title: '窗边的小豆豆',
+      cover: '/images/books/窗边的小豆豆.jpg',
+      year: 2003,
+      info: '[日] 黑柳彻子',
+      publisher: '南海出版公司',
+      rating: 9.0,
+      comment: '教育不是注满一桶水，而是点燃一把火。',
     },
   ],
 }
@@ -160,18 +255,18 @@ const moviesByYear: Record<string, any[]> = {
       cover: '/images/movies/哪吒之魔童闹海.jpg',
       year: 2025,
       info: '剧情 / 喜剧 / 动画 / 奇幻',
-      rating: 9.6,
-      comment: '首部电影院二刷的电影。',
+      rating: 9.7,
+      comment:
+        '「我乃哪吒三太子，能降妖来会作诗。今日到此锄奸恶，尔等妖魔快受死。」',
     },
     {
-      title: '成瘾剂量 Dopesick ',
-      cover: '/images/movies/成瘾剂量 Dopesick.webp',
-      year: 2021,
-      info: '剧情',
-      rating: 9.5,
-      comment: '「Pain torments us, but it is an inevitable part of life.」',
+      title: '葬送的芙莉莲 葬送のフリーレン',
+      cover: '/images/movies/葬送的芙莉莲.webp',
+      year: 2023,
+      info: '动画 / 奇幻 / 冒险',
+      rating: 9.6,
+      comment: '「如果能再了解你一点就好了。」',
     },
-
     {
       title: '黑镜 第七季',
       cover: '/images/movies/黑镜.png',
@@ -181,20 +276,20 @@ const moviesByYear: Record<string, any[]> = {
       comment: '暗黑科技向的巅峰之作！',
     },
     {
+      title: '成瘾剂量 Dopesick ',
+      cover: '/images/movies/成瘾剂量 Dopesick.webp',
+      year: 2021,
+      info: '剧情',
+      rating: 9.3,
+      comment: '「Pain torments us, but it is an inevitable part of life.」',
+    },
+    {
       title: '破·地狱',
       cover: '/images/movies/破·地狱.jpg',
       year: 2024,
       info: '剧情 / 家庭',
       rating: 8.9,
       comment: '「其實生人都係需要破地獄嘅。」',
-    },
-    {
-      title: '影后',
-      cover: '/images/movies/影后.jpg',
-      year: 2024,
-      info: '剧情 / 喜剧',
-      rating: 8.8,
-      comment: '单曲循环「我想要拥有你」中 · · ·',
     },
   ],
   2024: [
@@ -212,7 +307,7 @@ const moviesByYear: Record<string, any[]> = {
       year: '2014-2019',
       info: '喜剧 / 剧情',
       rating: 9.8,
-      comment: 'make the world a better place!',
+      comment: 'Make the world a better place!',
     },
     {
       title: '齐木楠雄的灾难',
@@ -228,15 +323,15 @@ const moviesByYear: Record<string, any[]> = {
       year: 2024,
       info: '剧情 / 动作 / 科幻 / 冒险',
       rating: 9.4,
-      comment: '独特的沙漠美学，值得一看。',
+      comment: '独特的沙漠美学。',
     },
     {
-      title: '鬼灭之刃 鬼滅の刃',
-      cover: '/images/movies/鬼灭之刃.jpg',
-      year: 2019,
-      info: '动画 / 奇幻',
-      rating: 9.0,
-      comment: '「老去或是死亡，都是人类短暂生命的美妙之处。」',
+      title: '影后',
+      cover: '/images/movies/影后.jpg',
+      year: 2024,
+      info: '剧情 / 喜剧',
+      rating: 8.8,
+      comment: '单曲循环「我想要拥有你」中 · · ·',
     },
   ],
   2023: [
@@ -273,12 +368,12 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「活下来的人并没有真正活着，在很久之后我才意识到这一点。」',
     },
     {
-      title: '星期三',
-      cover: '/images/movies/星期三.jpg',
-      year: 2022,
-      info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
-      rating: 9.3,
-      comment: '太爱星期三和小狼女了。',
+      title: '周处除三害',
+      cover: '/images/movies/周处除三害.webp',
+      year: 2023,
+      info: '动作 / 犯罪',
+      rating: 9.0,
+      comment: '「时间差不多咯！」',
     },
   ],
   2022: [
@@ -315,12 +410,50 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「等你自由了，你第一件事要做什么？跳舞」',
     },
     {
+      title: '星期三',
+      cover: '/images/movies/星期三.jpg',
+      year: 2022,
+      info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
+      rating: 9.3,
+      comment: '太爱星期三和小狼女了。',
+    },
+  ],
+  2021: [
+    {
+      title: '英雄联盟：双城之战 第一季 Arcane Season 1',
+      cover: '/images/movies/英雄联盟：双城之战.webp',
+      year: 2021,
+      info: '动作 / 科幻 / 动画 / 冒险',
+      rating: 9.3,
+      comment: "「Don't cry, you are perfect.」",
+    },
+    {
       title: '模仿游戏 The Imitation Game',
       cover: '/images/movies/模仿游戏.jpg',
       year: 2014,
       info: '剧情 / 同性 / 传记 / 战争',
       rating: 9.2,
       comment: '人和机器的区别究竟是什么呢？',
+    },
+  ],
+  2020: [
+    {
+      title: '鬼灭之刃 鬼滅の刃',
+      cover: '/images/movies/鬼灭之刃.jpg',
+      year: 2019,
+      info: '动画 / 奇幻',
+      rating: 9.0,
+      comment: '「老去或是死亡，都是人类短暂生命的美妙之处。」',
+    },
+  ],
+  2019: [
+    {
+      title: '绿皮书 Green Book',
+      cover: '/images/movies/绿皮书.webp',
+      year: 2018,
+      info: '剧情 / 喜剧 / 音乐 / 传记',
+      rating: 9.6,
+      comment: "「They don't have a choice, but you do.」",
     },
   ],
 }
@@ -495,6 +628,9 @@ const musicsByYear: Record<string, any[]> = {
       comment: '「谈爱恨不能潦草 战鼓敲啊敲 用信任立下誓言我来熬」',
     },
   ],
+  2021: [],
+  2020: [],
+  2019: [],
 }
 
 const games = [
@@ -550,10 +686,8 @@ function YearSection({
   dataByYear: Record<string, any[]>
   type: string
 }) {
-  // 如果是图书部分，过滤掉2021年
-  const years = Object.keys(dataByYear)
-    .filter((y) => !(type === 'book' && y === '2021'))
-    .sort((a, b) => b.localeCompare(a))
+  // 获取所有年份并按降序排序
+  const years = Object.keys(dataByYear).sort((a, b) => b.localeCompare(a))
   const [year, setYear] = useState(years[0])
   return (
     <div className="mb-12">
