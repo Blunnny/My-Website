@@ -4,9 +4,9 @@ import { Container } from '@/components/layout/Container'
 import Image from 'next/image'
 import { Star, Eye, Info, CheckCircle } from 'lucide-react'
 
+// 图书
 const booksByYear: Record<string, any[]> = {
-  2025: [],
-  2024: [
+  2025: [
     {
       title: '动物农场',
       cover: '/images/books/动物农场.jpg',
@@ -25,6 +25,8 @@ const booksByYear: Record<string, any[]> = {
       rating: 9.3,
       comment: '估值的社会学解释。',
     },
+  ],
+  2024: [
     {
       title: '长安的荔枝',
       cover: '/images/books/长安的荔枝.jpg',
@@ -53,8 +55,6 @@ const booksByYear: Record<string, any[]> = {
       rating: 8.5,
       comment: '在照抄日本的答案之外，我们究竟能从日本的教训中学到什么？',
     },
-  ],
-  2023: [
     {
       title: '宏观经济数据分析手册',
       cover: '/images/books/宏观经济数据分析手册.jpg',
@@ -74,6 +74,8 @@ const booksByYear: Record<string, any[]> = {
       comment:
         '「当宏大叙事已经解体的今天，叙事并没有停止，而是化为了一些小叙事。在无数的小叙事中，我们重新编织起生命的意义。」"',
     },
+  ],
+  2023: [
     {
       title: '金融经济学二十五讲',
       cover: '/images/books/金融经济学二十五讲.jpg',
@@ -84,13 +86,13 @@ const booksByYear: Record<string, any[]> = {
       comment: '金融学入门必读书目。',
     },
     {
-      title: '金榜题名之后',
-      cover: '/images/books/金榜题名之后.jpg',
+      title: '穿透财报',
+      cover: '/images/books/穿透财报.jpg',
       year: 2023,
-      info: '郑雅君',
-      publisher: '上海三联书店',
+      info: '邹佩轩',
+      publisher: '人民邮电出版社',
       rating: 9.1,
-      comment: '大一新生必读书目。',
+      comment: '兼具理论深度与实践的二级市场财报分析指南。',
     },
     {
       title: '估值建模',
@@ -100,6 +102,24 @@ const booksByYear: Record<string, any[]> = {
       publisher: '中国金融出版社',
       rating: 9.0,
       comment: '野鸡培训机构的良心出品。',
+    },
+    {
+      title: '高级计量经济学及Stata应用',
+      cover: '/images/books/计量经济学.jpg',
+      year: 2014,
+      info: '陈强',
+      publisher: '高等教育出版社',
+      rating: 9.5,
+      comment: '拯救了我毕业论文的神书！',
+    },
+    {
+      title: '投资中最简单的事',
+      cover: '/images/books/投资中最简单的事.jpg',
+      year: 2014,
+      info: '邱国鹭',
+      publisher: '中国人民大学出版社',
+      rating: 9.0,
+      comment: '了解价值投资的入门书。',
     },
   ],
   2022: [
@@ -168,6 +188,15 @@ const booksByYear: Record<string, any[]> = {
       publisher: '皇冠文化出版有限公司',
       rating: 9.0,
       comment: '专属于香港的传奇故事。',
+    },
+    {
+      title: '金榜题名之后',
+      cover: '/images/books/金榜题名之后.jpg',
+      year: 2023,
+      info: '郑雅君',
+      publisher: '上海三联书店',
+      rating: 9.1,
+      comment: '大一新生必读书目。',
     },
   ],
   2020: [
@@ -248,6 +277,7 @@ const booksByYear: Record<string, any[]> = {
   ],
 }
 
+// 电影
 const moviesByYear: Record<string, any[]> = {
   2025: [
     {
@@ -549,6 +579,7 @@ const moviesByYear: Record<string, any[]> = {
   ],
 }
 
+// 音乐
 const musicsByYear: Record<string, any[]> = {
   2025: [
     {
@@ -719,9 +750,134 @@ const musicsByYear: Record<string, any[]> = {
       comment: '「谈爱恨不能潦草 战鼓敲啊敲 用信任立下誓言我来熬」',
     },
   ],
-  2021: [],
-  2020: [],
-  2019: [],
+  2021: [
+    {
+      title: 'Hey KONG',
+      cover: '/images/musics/Hey KONG.jpg',
+      year: 2019,
+      artist: '刘聪KEY.L / $CC731',
+      rating: 9.3,
+      comment: '「hey kong, can you hear me?」',
+    },
+    {
+      title: '想去海边',
+      cover: '/images/musics/想去海边.jpg',
+      year: 2020,
+      artist: '夏日入侵企画',
+      rating: 9.0,
+      comment: '「黄昏 夕阳 还有愿望没实现」',
+    },
+    {
+      title: '我很快乐',
+      cover: '/images/musics/我很快乐.jpg',
+      year: 2010,
+      artist: '刘惜君',
+      rating: 9.4,
+      comment: '「眼泪掉不下来 我还是很快乐」',
+    },
+    {
+      title: '国王与乞丐',
+      cover: '/images/musics/国王与乞丐.jpg',
+      year: 2015,
+      artist: '华晨宇 / 杨宗纬',
+      rating: 9.4,
+      comment: '「明知往前就会坠落 抱着遗憾重返寂寞」',
+    },
+    {
+      title: 'Strike a match',
+      cover: '/images/musics/match.jpg',
+      year: 2016,
+      artist: 'Zayde Wølf',
+      rating: 9.3,
+      comment: '「I am gonna strike a match!」',
+    },
+  ],
+  2020: [
+    {
+      title: 'Way Back Home',
+      cover: '/images/musics/Way Back Home.jpg',
+      year: 2018,
+      artist: 'SHAUN / 숀',
+      rating: 9.3,
+      comment: '「멈춘 시간 속 잠든 너를 찾아가」',
+    },
+    {
+      title: 'Living in the Shadows',
+      cover: '/images/musics/Living in the Shadows.jpg',
+      year: 2016,
+      artist: 'Matthew Perryman Jones',
+      rating: 9.0,
+      comment: '「Who is enemy?」',
+    },
+    {
+      title: 'Big Bang Theory Theme',
+      cover: '/images/musics/Big Bang Theory Theme.jpg',
+      year: 2007,
+      artist: 'Barenaked Ladies',
+      rating: 9.6,
+      comment: '「It all started with a big bang!」',
+    },
+    {
+      title: '疯人院',
+      cover: '/images/musics/疯人院.jpg',
+      year: 2020,
+      artist: '华晨宇',
+      rating: 9.2,
+      comment: '「当我再度毁灭后，一切变更纯净」',
+    },
+    {
+      title: '象牙舟',
+      cover: '/images/musics/象牙舟.jpg',
+      year: 2019,
+      artist: '傻子与白痴 Fool and Idiot',
+      rating: 9.6,
+      comment: '「重山万岭 无论清浊都行舟」',
+    },
+  ],
+  2019: [
+    {
+      title: 'Lemon',
+      cover: '/images/musics/Lemon.jpg',
+      year: 2018,
+      artist: '米津玄師',
+      rating: 9.7,
+      comment:
+        '「あの日の悲しみさえ あの日の苦しみさえ そのすべてを愛してた あなたとともに」',
+    },
+    {
+      title: '小半',
+      cover: '/images/musics/小半.jpg',
+      year: 2016,
+      artist: '陈粒',
+      rating: 9.3,
+      comment: '「不应该 太心软 不大胆 太死板 不果敢 玩弄着肆无忌惮」',
+    },
+    {
+      title: '一天',
+      cover: '/images/musics/一天.jpg',
+      year: 2019,
+      artist: '黄宣',
+      rating: 9.4,
+      comment: '「相遇那天 就定格了永远」',
+    },
+    {
+      title: '张三的歌',
+      cover: '/images/musics/张三的歌.jpg',
+      year: 1986,
+      artist: '李寿全',
+      rating: 9.8,
+      comment: '「虽然没有华厦美衣裳 但是心里充满着希望」',
+    },
+    {
+      title: 'Despacito',
+      cover: '/images/musics/Despacito.jpg',
+      year: 2017,
+      artist: 'Luis Fonsi / Daddy Yankee',
+      rating: 9.6,
+      comment:
+        '「Quiero respirar tu cuello despacito Deja que te diga cosas al oido」',
+    },
+  ],
 }
 
 const games = [
