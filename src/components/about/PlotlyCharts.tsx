@@ -384,30 +384,6 @@ export default function PlotlyCharts() {
           </div>
         </div>
       </section>
-      {/* 其他数据 */}
-      <section>
-        <h2 className="mb-8 flex items-center gap-3 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-          <BarChart3 className="h-8 w-8" />
-          其他数据
-        </h2>
-
-        {/* 消费速度 - 单个图表居中 */}
-        <div className="mb-12 flex justify-center">
-          <div className="w-full" style={{ maxWidth: '540px' }}>
-            <div className={chartContainerClass}>
-              <iframe
-                src="/output_html/advanced_consumption_speed.html"
-                className={iframeClass}
-                title="平均消费速度"
-                scrolling="no"
-                loading="lazy"
-                allowFullScreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
