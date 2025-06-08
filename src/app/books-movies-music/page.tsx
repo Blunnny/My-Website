@@ -370,7 +370,7 @@ const moviesByYear: Record<string, any[]> = {
       cover: '/images/movies/生活大爆炸.jpg',
       year: '2007-2018',
       info: '喜剧 / 爱情',
-      rating: 9.8,
+      rating: 9.9,
       comment: '永远的经典！',
     },
 
@@ -433,12 +433,12 @@ const moviesByYear: Record<string, any[]> = {
       comment: '动画想象力的巅峰之作！',
     },
     {
-      title: '乔乔的异想世界 Jojo Rabbit',
-      cover: '/images/movies/乔乔的异想世界.jpg',
-      year: 2019,
-      info: '剧情 / 喜剧 / 战争',
-      rating: 9.3,
-      comment: '「等你自由了，你第一件事要做什么？跳舞」',
+      title: '赛博朋克：边缘行者 Cyberpunk: Edgerunners',
+      cover: '/images/movies/赛博朋克.webp',
+      year: 2022,
+      info: '动作 / 科幻 / 动画 / 惊悚 / 犯罪 / 冒险',
+      rating: 9.5,
+      comment: '「子弹杯里兑伏特加加冰，兑小可可乐，生的伟大，死的光荣。」',
     },
     {
       title: '星期三',
