@@ -163,6 +163,13 @@ export const projects: ProjectsType = {
         tags: ['Python'],
         category: 'watching',
       },
+      {
+        name: 'scrapy',
+        link: { href: 'github.com/scrapy/scrapy', label: 'scrapy' },
+        description: '最主流的Python爬虫框架',
+        tags: ['Python'],
+        category: 'watching',
+      },
     ],
     自动化: [
       {
@@ -333,6 +340,16 @@ export const projects: ProjectsType = {
         tags: ['Python', 'Typescript'],
         category: 'watching',
       },
+      {
+        name: 'quarkdown',
+        description: '用markdown写出漂亮排版的工具（跟夸克没关系！）',
+        link: {
+          href: 'github.com/iamgio/quarkdown',
+          label: 'quarkdown',
+        },
+        tags: ['Kotlin', 'HTML', 'CSS'],
+        category: 'watching',
+      },
     ],
     娱乐: [
       {
@@ -418,6 +435,16 @@ export const projects: ProjectsType = {
           label: 'KeyCastOW',
         },
         tags: ['C', 'C++'],
+        category: 'watching',
+      },
+      {
+        name: '163MusicLyrics',
+        description: '网易云、QQ音乐下载工具',
+        link: {
+          href: 'github.com/jitwxs/163MusicLyrics',
+          label: '163MusicLyrics',
+        },
+        tags: ['C#'],
         category: 'watching',
       },
     ],
