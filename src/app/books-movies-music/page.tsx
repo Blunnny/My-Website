@@ -456,7 +456,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2021,
       info: '动作 / 科幻 / 动画 / 冒险',
       rating: 9.3,
-      comment: "「Don't cry, you are perfect.」",
+      comment: '「Jinx means jinx!」',
     },
     {
       title: '模仿游戏 The Imitation Game',
