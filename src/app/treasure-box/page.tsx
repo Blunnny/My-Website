@@ -1330,6 +1330,12 @@ const categories: CategoriesType = {
         description: '在线和各国网友玩红警',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'YCCgame',
+        url: 'https://www.uss.ink/',
+        description: '低价下载各类游戏',
+        tags: ['收费', '无广告'],
+      },
     ],
   },
 
