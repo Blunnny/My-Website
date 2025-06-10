@@ -379,7 +379,7 @@ const moviesByYear: Record<string, any[]> = {
       cover: '/images/movies/寻梦环游记.jpg',
       year: 2017,
       info: '喜剧 / 动画 / 音乐 / 奇幻',
-      rating: 9.5,
+      rating: 9.6,
       comment: '「死亡不是生命的终点，遗忘才是。」',
     },
     {
@@ -456,7 +456,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2021,
       info: '动作 / 科幻 / 动画 / 冒险',
       rating: 9.3,
-      comment: '「Jinx means jinx!」',
+      comment: '「JINX means jinx!」',
     },
     {
       title: '模仿游戏 The Imitation Game',
@@ -880,6 +880,7 @@ const musicsByYear: Record<string, any[]> = {
   ],
 }
 
+// 玩过的游戏
 const games = [
   {
     title: 'GTA5',
@@ -919,10 +920,95 @@ const games = [
     cover: '/images/games/死亡搁浅 DEATH STRANDING.jpg',
     year: 2019,
     type: '游戏 / 冒险 / 动作',
-    rating: 9.8,
+    rating: 9.5,
     comment: '用开罗尔网络重新编织千万条羁绊的绳结。',
   },
 ]
+
+// 关注的游戏（待填充）
+const upcomingGames = [
+  {
+    title: '待定游戏1',
+    cover: '/images/games/placeholder.jpg',
+    year: 2024,
+    type: '游戏类型',
+    comment: '游戏简介',
+    rating: 0, // 仅占位，不显示
+  },
+  // 可以在这里添加更多游戏
+]
+
+function GameSection() {
+  const [activeTab, setActiveTab] = useState('played')
+
+  return (
+    <div className="mb-12">
+      <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
+        All work and no play makes Jack a dull boy
+      </h2>
+      <div className="mb-4 flex items-center gap-2">
+        <button
+          className={`rounded-full border px-4 py-1 text-sm transition-colors ${
+            activeTab === 'played'
+              ? 'bg-primary text-primary-foreground'
+              : 'bg-background text-foreground hover:bg-muted'
+          }`}
+          onClick={() => setActiveTab('played')}
+        >
+          我玩过的游戏
+        </button>
+        <button
+          className={`rounded-full border px-4 py-1 text-sm transition-colors ${
+            activeTab === 'upcoming'
+              ? 'bg-primary text-primary-foreground'
+              : 'bg-background text-foreground hover:bg-muted'
+          }`}
+          onClick={() => setActiveTab('upcoming')}
+        >
+          我关注的游戏
+        </button>
+      </div>
+      <ul className="divide-y divide-muted-foreground/10">
+        {(activeTab === 'played' ? games : upcomingGames).map((item, idx) => (
+          <li key={item.title} className="flex items-center gap-4 py-4">
+            <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
+              <Image
+                src={item.cover}
+                alt={item.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-2">
+                <span className="text-lg font-bold">
+                  {idx + 1}. {item.title}
+                </span>
+                <span className="ml-2 text-xs text-muted-foreground">
+                  {item.year}
+                </span>
+                <span className="ml-2 text-xs text-muted-foreground">
+                  {item.type}
+                </span>
+              </div>
+              <div className="mt-2 flex items-center gap-2 text-sm">
+                <span className="text-xs text-muted-foreground">
+                  {item.comment}
+                </span>
+              </div>
+            </div>
+            {activeTab === 'played' && (
+              <div className="ml-2 flex items-center gap-1">
+                <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
+                <span className="font-semibold">{item.rating.toFixed(1)}</span>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 function YearSection({
   title,
@@ -1117,11 +1203,7 @@ export default function BooksMoviesMusicPage() {
           dataByYear={musicsByYear}
           type="music"
         />
-        <Section
-          title="All work and no play makes Jack a dull boy"
-          items={games}
-          type="game"
-        />
+        <GameSection />
       </div>
     </Container>
   )
