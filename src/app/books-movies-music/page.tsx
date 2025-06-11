@@ -925,17 +925,48 @@ const games = [
   },
 ]
 
-// 关注的游戏（待填充）
+// 关注的游戏
 const upcomingGames = [
   {
-    title: '待定游戏1',
-    cover: '/images/games/placeholder.jpg',
-    year: 2024,
-    type: '游戏类型',
-    comment: '游戏简介',
+    title: '侠盗猎车手6 Grand Theft Auto VI',
+    cover: '/images/games/侠盗猎车手6.jpg',
+    year: 2026,
+    type: '游戏 / 射击 / 冒险 / 动作',
+    comment: 'R门永存！',
     rating: 0, // 仅占位，不显示
   },
-  // 可以在这里添加更多游戏
+  {
+    title: '昭和米国物语 Showa American Story',
+    cover: '/images/games/昭和米国物语.jpg',
+    year: 2026,
+    type: '游戏 / 射击 / 角色扮演 / 冒险 / 动作',
+    comment: '文化拱火概念股',
+    rating: 0, // 仅占位，不显示
+  },
+  {
+    title: '双人成行 It Takes Two',
+    cover: '/images/games/双人成行.jpg',
+    year: 2021,
+    type: '游戏 / 益智 / 冒险 / 动作',
+    comment: '“双人”是游戏最大的门槛',
+    rating: 0, // 仅占位，不显示
+  },
+  {
+    title: '明末：渊虚之羽 WUCHANG: Fallen Feathers',
+    cover: '/images/games/渊虚之羽.jpg',
+    year: 2025,
+    type: '游戏 / 角色扮演 / 冒险 / 动作',
+    comment: '村里第二个大学生？',
+    rating: 0, // 仅占位，不显示
+  },
+  {
+    title: '苏丹的游戏',
+    cover: '/images/games/苏丹的游戏.jpg',
+    year: 2025,
+    type: '游戏 / 卡牌 / 模拟 / 角色扮演 / 策略',
+    comment: '极具特色的卡牌经营游戏',
+    rating: 0, // 仅占位，不显示
+  },
 ]
 
 function GameSection() {
@@ -955,7 +986,7 @@ function GameSection() {
           }`}
           onClick={() => setActiveTab('played')}
         >
-          我玩过的游戏
+          玩过的游戏
         </button>
         <button
           className={`rounded-full border px-4 py-1 text-sm transition-colors ${
@@ -965,7 +996,7 @@ function GameSection() {
           }`}
           onClick={() => setActiveTab('upcoming')}
         >
-          我关注的游戏
+          还没玩的游戏
         </button>
       </div>
       <ul className="divide-y divide-muted-foreground/10">
