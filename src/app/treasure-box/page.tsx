@@ -268,10 +268,16 @@ const categories: CategoriesType = {
         tags: ['部分免费', '无广告'],
       },
       {
-        title: 'AI 导航',
+        title: 'AI导航',
         url: 'https://www.jyshare.com/ai/',
         description: '汇聚AI对话、绘画、编程等多方面的AI工具',
         tags: ['部分免费', '无广告'],
+      },
+      {
+        title: '中文互联网百大AI应用',
+        url: 'https://www.turingscat.com/ai-top-100',
+        description: '为中文互联网甄选100个好用的AI产品',
+        tags: ['免费', '无广告'],
       },
     ],
     其他工具: [
@@ -451,7 +457,7 @@ const categories: CategoriesType = {
         title: '国家标准公开系统',
         url: 'https://openstd.samr.gov.cn/bzgk/gb/',
         description: '国家标准信息查询系统',
-        tags: ['免费', '政府网站'],
+        tags: ['政府网站'],
       },
     ],
   },
