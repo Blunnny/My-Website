@@ -32,7 +32,7 @@ type MainCategory =
 type ToolSubCategory =
   | '音视频处理'
   | '图片处理'
-  | 'office学习'
+  | '文件处理'
   | '文件格式转换'
   | '小工具集合'
   | '其他工具'
@@ -168,11 +168,17 @@ const categories: CategoriesType = {
         tags: ['免费', '无广告'],
       },
     ],
-    office学习: [
+    文件处理: [
       {
         title: '懒人EXCEL',
         url: 'https://www.lanrenexcel.com/',
         description: '关于EXCEL的一切都可以在这里找到！',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'napkin',
+        url: 'https://www.napkin.ai/',
+        description: '一个可以将文本可视化的网站。',
         tags: ['部分免费', '无广告'],
       },
     ],
@@ -276,7 +282,7 @@ const categories: CategoriesType = {
       {
         title: '中文互联网百大AI应用',
         url: 'https://www.turingscat.com/ai-top-100',
-        description: '为中文互联网甄选100个好用的AI产品',
+        description: '为中文互联网甄选100个好用的AI产品 ',
         tags: ['免费', '无广告'],
       },
     ],
@@ -1140,6 +1146,12 @@ const categories: CategoriesType = {
         url: 'https://www.allhistory.com/',
         description: '历史课程学习',
         tags: ['免费', '有广告'],
+      },
+      {
+        title: 'oldmapsonline',
+        url: 'https://www.oldmapsonline.org/en#position=6/22.233/114.004',
+        description: '展示世界历史发展的网站',
+        tags: ['部分免费', '无广告'],
       },
     ],
     其他: [
