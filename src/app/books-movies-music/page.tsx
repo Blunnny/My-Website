@@ -940,16 +940,16 @@ const upcomingGames = [
     cover: '/images/games/昭和米国物语.jpg',
     year: 2026,
     type: '游戏 / 射击 / 角色扮演 / 冒险 / 动作',
-    comment: '文化拱火概念股',
-    rating: 0, // 仅占位，不显示
+    comment: '文化拱火概念股。',
+    rating: 0,
   },
   {
     title: '双人成行 It Takes Two',
     cover: '/images/games/双人成行.jpg',
     year: 2021,
     type: '游戏 / 益智 / 冒险 / 动作',
-    comment: '“双人”是游戏最大的门槛',
-    rating: 0, // 仅占位，不显示
+    comment: '“双人”是游戏最大的门槛。',
+    rating: 0,
   },
   {
     title: '明末：渊虚之羽 WUCHANG: Fallen Feathers',
@@ -957,15 +957,31 @@ const upcomingGames = [
     year: 2025,
     type: '游戏 / 角色扮演 / 冒险 / 动作',
     comment: '村里第二个大学生？',
-    rating: 0, // 仅占位，不显示
+    rating: 0,
   },
   {
     title: '苏丹的游戏',
     cover: '/images/games/苏丹的游戏.jpg',
     year: 2025,
     type: '游戏 / 卡牌 / 模拟 / 角色扮演 / 策略',
-    comment: '极具特色的卡牌经营游戏',
-    rating: 0, // 仅占位，不显示
+    comment: '极具特色的卡牌经营游戏。',
+    rating: 0,
+  },
+  {
+    title: "博德之门3 Baldur's Gate 3",
+    cover: '/images/games/博德之门3.jpg',
+    year: 2023,
+    type: '游戏 / 角色扮演 / 冒险 / 策略',
+    comment: '「大概就是坠入爱河的感觉。」',
+    rating: 0,
+  },
+  {
+    title: '原子之心 Atomic Heart',
+    cover: '/images/games/原子之心.jpg',
+    year: 2023,
+    type: '游戏 / 第一人称射击 / 角色扮演 / 冒险 / 动作',
+    comment: '插满赤旗的未来世界。',
+    rating: 0,
   },
 ]
 
