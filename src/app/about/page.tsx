@@ -2,7 +2,11 @@ import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { aboutMeHeadline, aboutParagraphs } from '@/config/infoConfig'
+import {
+  aboutMeHeadline,
+  aboutParagraphs,
+  aboutFood,
+} from '@/config/infoConfig'
 import { Container } from '@/components/layout/Container'
 import { activities } from '@/config/projects'
 import { ActivityCard } from '@/components/home/ActivityCard'
@@ -37,9 +41,21 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-xl text-zinc-700 dark:text-zinc-300">
             {aboutParagraphs.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
+              <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* 饮食喜好模块 */}
+      <div className="mx-auto my-16 flex max-w-3xl flex-col gap-4 border-t border-muted py-8 lg:max-w-none">
+        <h2 className="mb-4 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
+          关于吃饭
+        </h2>
+        <div className="space-y-4 text-lg text-zinc-700 dark:text-zinc-300">
+          {aboutFood.map((item, idx) => (
+            <p key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+          ))}
         </div>
       </div>
 
