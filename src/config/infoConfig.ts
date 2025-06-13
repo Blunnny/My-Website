@@ -13,19 +13,22 @@ export const githubUsername = 'Blunnny'
 export const aboutMeHeadline = 'Who am I?'
 export const aboutParagraphs = [
   '在南方上学的北方人，<del>可从容应对北方的雾霾与暴雪，南方的回南天和大蟑螂。</del>',
-  '误入会计的理科生，刚入门<del>但已被技术革命叙事洗脑的</del>新手程序员。',
-  '曾经得到过无数人的帮助，希望未来也能帮助更多的人！',
-  '理想是推动人类进步，愿望是世界和平。',
+  '误入会计的理科生，刚入门<del>但已被技术革命叙事洗脑</del>的新手程序员。',
+  '曾经得到过无数人的帮助，希望未来也能够帮助更多的人！',
+  '梦想是推动人类进步，愿望是世界和平。',
   'Make the world a better place!',
 ]
 
 export const aboutFood = [
   '喜：' +
     [
-      '锅包肉',
       '把子肉',
+      '锅包肉',
+      '地三鲜',
       '肉夹馍',
       '凉皮',
+      '胡辣汤',
+      '糁汤',
       '豆腐脑（咸的！）',
       '羊肉串',
       '大盘鸡',
@@ -36,7 +39,7 @@ export const aboutFood = [
       '鸭血粉丝汤',
       '小笼包',
       '生煎包',
-      '西湖醋鱼（是的你没看错）',
+      '西湖醋鱼（是的）',
       '东坡肉',
       '福州鱼丸',
       '海蛎煎',
@@ -49,6 +52,8 @@ export const aboutFood = [
       '剁椒鱼头',
       '早茶（的一切！）',
       '潮汕牛肉火锅',
+      '猪脚饭',
+      '海鲜生腌',
       '炒牛河',
       '顺德双皮奶',
       '湛江生蚝',
@@ -67,17 +72,18 @@ export const aboutFood = [
       '披萨',
       '汉堡',
       '炸鸡',
-      '烤肉',
+      '烤肉。',
     ].join('、'),
   '忌：' +
     [
       '虾皮（吃馄饨时的最大阻力）',
       '甜豆腐脑（异端！）',
       '韭菜',
-      '煎饼卷大葱<del>（不是山东人都爱吃大葱的！）</del>',
+      '煎饼卷大葱<del>（不要问为什么山东人不吃大葱）</del>',
       '保留了一部分味道的九转大肠',
-      '土笋冻（真的有人爱吃🐛吗？？）',
-      '<del>香港大学的各个餐厅</del>',
+      '土笋冻',
+      '<del>厦门大学的各个餐厅。</del>',
+      '<del>香港大学的各个餐厅。</del>',
     ].join('、'),
   'to be continued...',
 ]
@@ -129,6 +135,16 @@ export const techIcons = [
   'mysql',
   'openai',
   'samsung',
+  'cocacola',
+  'nasa',
+  'x',
+  'huawei',
+  'tailwindcss',
+  'anaconda',
+  'intel',
+  'hp',
+  'starbucks',
+  'qualcomm',
 ]
 
 export const projectHeadLine = '我的项目'

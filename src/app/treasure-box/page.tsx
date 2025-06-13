@@ -167,6 +167,18 @@ const categories: CategoriesType = {
         description: '超多PDF文件在线转换与处理工具',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'docsmall',
+        url: 'https://docsmall.com/',
+        description: '免费的在线图片与 PDF 处理工具',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'tinywow',
+        url: 'https://tinywow.com/',
+        description: 'PDF、视频、图片和其他在线工具（无中文语言）',
+        tags: ['免费', '无广告'],
+      },
     ],
     文件处理: [
       {
