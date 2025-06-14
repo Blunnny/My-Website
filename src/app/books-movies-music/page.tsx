@@ -604,7 +604,7 @@ const musicsByYear: Record<string, any[]> = {
       year: 2024,
       artist: '小男孩乐团',
       rating: 9.5,
-      comment: '出轨の小曲，但是真的好听！',
+      comment: '你什么时候开始听这种歌？好青春喔。',
     },
     {
       title: '有种',
