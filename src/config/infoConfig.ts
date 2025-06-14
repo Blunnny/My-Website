@@ -79,10 +79,10 @@ export const aboutFood = [
       '虾皮（吃馄饨时的最大阻力）',
       '甜豆腐脑（异端！）',
       '韭菜',
-      '煎饼卷大葱<del>（不要问为什么山东人不吃大葱）</del>',
+      '煎饼卷大葱（不是山东人都爱吃大葱的！）',
       '保留了一部分味道的九转大肠',
       '土笋冻',
-      '<del>厦门大学的各个餐厅。</del>',
+      '<del>厦门大学的各个餐厅</del>',
       '<del>香港大学的各个餐厅。</del>',
     ].join('、'),
   'to be continued...',
@@ -145,6 +145,7 @@ export const techIcons = [
   'hp',
   'starbucks',
   'qualcomm',
+  'netflix',
 ]
 
 export const projectHeadLine = '我的项目'
