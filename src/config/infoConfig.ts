@@ -83,7 +83,7 @@ export const aboutFood = [
       '保留了一部分味道的九转大肠',
       '土笋冻',
       '<del>厦门大学的各个餐厅</del>',
-      '<del>香港大学的各个餐厅。</del>',
+      '<del>香港大学的各个餐厅</del>。',
     ].join('、'),
   'to be continued...',
 ]

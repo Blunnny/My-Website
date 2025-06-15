@@ -34,7 +34,8 @@ const booksByYear: Record<string, any[]> = {
       info: '马伯庸',
       publisher: '湖南文艺出版社',
       rating: 9.3,
-      comment: '「一骑红尘妃子笑，无人知是荔枝来」',
+      comment:
+        '「他这个人哪，笨拙，胆小，窝囊，可一定会豁出命去守护他所珍视的东西。」',
     },
     {
       title: '计算广告',
@@ -802,12 +803,13 @@ const musicsByYear: Record<string, any[]> = {
       comment: '「멈춘 시간 속 잠든 너를 찾아가」',
     },
     {
-      title: 'Living in the Shadows',
-      cover: '/images/musics/Living in the Shadows.jpg',
-      year: 2016,
-      artist: 'Matthew Perryman Jones',
-      rating: 9.0,
-      comment: '「Who is enemy?」',
+      title: '华夏',
+      cover: '/images/musics/华夏.jpg',
+      year: 2019,
+      artist: 'GAI周延',
+      rating: 9.5,
+      comment:
+        '「尘埃岂能掩芳华，炎黄浩瀚沐苍霞。上下五千年岁月似流沙，不枉魂魄入华夏。」',
     },
     {
       title: 'Big Bang Theory Theme',
