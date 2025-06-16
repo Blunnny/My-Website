@@ -15,8 +15,7 @@ export const aboutParagraphs = [
   '在南方上学的北方人，<del>可从容应对北方的雾霾与暴雪，南方的回南天和大蟑螂。</del>',
   '误入会计的理科生，刚入门<del>但已被技术革命叙事洗脑</del>的新手程序员。',
   '曾经得到过无数人的帮助，希望未来也能够帮助更多的人！',
-  '梦想是推动人类进步，愿望是世界和平。',
-  'Make the world a better place!',
+  '梦想是推动人类进步，Make the world a better place!',
 ]
 
 export const aboutFood = [
