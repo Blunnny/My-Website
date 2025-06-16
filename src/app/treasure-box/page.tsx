@@ -1447,6 +1447,12 @@ const categories: CategoriesType = {
         description: '涵盖历史、美术、图片等多领域的历史资料的网站',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'HowToCook',
+        url: 'https://github.com/Anduin2017/HowToCook',
+        description: '程序员出品的菜谱合集！',
+        tags: ['免费', '无广告'],
+      },
     ],
   },
 }
