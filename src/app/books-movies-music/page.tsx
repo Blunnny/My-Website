@@ -743,12 +743,12 @@ const musicsByYear: Record<string, any[]> = {
       comment: '「我 叮咚的 弹奏着 故事里那首儿歌 缤纷的音乐盒木马还旋转着」',
     },
     {
-      title: '缘分一道桥',
-      cover: '/images/musics/缘分一道桥.jpg',
-      year: 2016,
-      artist: '王力宏 / 谭维维',
-      rating: 9.0,
-      comment: '「谈爱恨不能潦草 战鼓敲啊敲 用信任立下誓言我来熬」',
+      title: 'I Really Want to Stay at Your House',
+      cover: '/images/musics/cyberpunk.jpg',
+      year: 2022,
+      artist: 'Cyberpunk',
+      rating: 9.5,
+      comment: '「Cause I really wanna stay at your house」',
     },
   ],
   2021: [
@@ -871,13 +871,12 @@ const musicsByYear: Record<string, any[]> = {
       comment: '「虽然没有华厦美衣裳 但是心里充满着希望」',
     },
     {
-      title: 'Despacito',
-      cover: '/images/musics/Despacito.jpg',
-      year: 2017,
-      artist: 'Luis Fonsi / Daddy Yankee',
-      rating: 9.6,
-      comment:
-        '「Quiero respirar tu cuello despacito Deja que te diga cosas al oido」',
+      title: '缘分一道桥',
+      cover: '/images/musics/缘分一道桥.jpg',
+      year: 2016,
+      artist: '王力宏 / 谭维维',
+      rating: 9.0,
+      comment: '「谈爱恨不能潦草 战鼓敲啊敲 用信任立下誓言我来熬」',
     },
   ],
 }
