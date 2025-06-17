@@ -1407,6 +1407,12 @@ const categories: CategoriesType = {
         description: 'AI 过滤后的全球新闻',
         tags: ['部分免费', '无广告'],
       },
+      {
+        title: 'tv.garden',
+        url: 'https://tv.garden/',
+        description: '收看来自世界各地的电视节目！',
+        tags: ['免费', '无广告'],
+      },
     ],
     演讲: [
       {
