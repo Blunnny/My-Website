@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { ContainerInner, ContainerOuter } from '@/components/layout/Container'
 import { name } from '@/config/infoConfig'
 import SocialLinks from '@/components/home/SocialLinks'
-import { GithubRepo } from '@/components/shared/GithubRepo'
 
 export function Footer() {
   return (
@@ -14,7 +13,6 @@ export function Footer() {
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-start">
               <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm font-medium">
                 <SocialLinks className="mt-0" />
-                <GithubRepo />
               </div>
               <div className="flex flex-col items-start justify-center">
                 <div className="flex flex-row items-center justify-end gap-2">

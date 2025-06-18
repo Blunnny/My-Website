@@ -1,31 +1,26 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-
-import { Button } from "@/components/ui/button"
+import * as React from 'react'
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
 export function ThemeToggle() {
-  const { setTheme, theme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
 
   const toggleTheme = () => {
-    // 直接在light和dark之间切换，跳过system
     const newTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
-    // console.log('切换主题:', newTheme)
     setTheme(newTheme)
   }
 
+  const isDark = resolvedTheme === 'dark'
+
   return (
-    <Button 
-      variant="ghost" 
-      size="icon" 
-      onClick={toggleTheme}
-      className="relative"
-    >
-      <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <label className="switch">
+      <input type="checkbox" checked={isDark} onChange={toggleTheme} />
+      <span className="slider">
+        <Sun className="absolute left-1 top-1 h-3 w-3 scale-100 text-yellow-400 opacity-100 transition-all duration-500 dark:scale-0 dark:opacity-0" />
+        <Moon className="absolute right-1 top-1 h-3 w-3 scale-0 text-blue-300 opacity-0 transition-all duration-500 dark:scale-100 dark:opacity-100" />
+      </span>
+    </label>
   )
 }

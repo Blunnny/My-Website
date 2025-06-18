@@ -106,14 +106,19 @@ export type SocialLinkType = {
 // 微信公众号以及 bilibili 链接
 export const socialLinks: Array<SocialLinkType> = [
   {
-    name: 'Wechat',
+    name: '微信公众号',
     icon: 'wechat',
     href: 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=Mzg5NTU4MzE1Ng==&scene=124#wechat_redirect',
   },
   {
-    name: 'Bilibili',
+    name: 'B站',
     icon: 'bilibili',
     href: 'https://space.bilibili.com/17405856',
+  },
+  {
+    name: 'GitHub',
+    icon: 'github',
+    href: `https://github.com/${githubUsername}`,
   },
 ]
 

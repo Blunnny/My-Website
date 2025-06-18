@@ -1272,6 +1272,12 @@ const categories: CategoriesType = {
         description: '正则表达式可视化网站',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'uiverse',
+        url: 'https://uiverse.io/',
+        description: '最大的开源UI库',
+        tags: ['免费', '无广告'],
+      },
     ],
     资源网站: [
       {

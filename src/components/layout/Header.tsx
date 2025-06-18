@@ -105,7 +105,7 @@ function NavItem({
       <Link
         href={href}
         className={clsx(
-          'relative block flex items-center justify-center whitespace-nowrap px-4 py-2 text-center transition',
+          'relative block flex items-center justify-center whitespace-nowrap px-4 py-2 text-center transition-all duration-300',
           isActive
             ? 'text-primary'
             : 'opacity-80 hover:text-primary hover:opacity-100',
@@ -123,7 +123,7 @@ function NavItem({
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex flex-nowrap items-center rounded-full bg-card px-3 text-sm font-medium shadow-md ring-1 ring-muted backdrop-blur">
+      <ul className="flex flex-nowrap items-center rounded-full bg-[#e8e4df] px-3 text-sm font-medium shadow-xl ring-1 ring-muted backdrop-blur transition-all duration-300 *:transition-all *:duration-300 hover:scale-x-105 dark:bg-[#191818]">
         {navItems.map((item, index) => (
           <Fragment key={item.name}>
             {index > 0 && (
