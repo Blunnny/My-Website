@@ -1044,7 +1044,7 @@ const categories: CategoriesType = {
         title: '爱课程',
         url: 'https://www.icourses.cn/home/',
         description:
-          '教育部、财政部“十二五”期间委托高等教育出版社建设的高等教育课程资源共享平台',
+          '教育部、财政部"十二五"期间委托高等教育出版社建设的高等教育课程资源共享平台',
         tags: ['免费', '无广告'],
       },
       {
@@ -1582,10 +1582,10 @@ export default function TreasureBoxPage() {
                 setSelectedMainCategory(category)
                 setSelectedSubCategory(Object.keys(categories[category])[0])
               }}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+              className={`rounded-full border px-4 py-1 text-sm transition-all duration-300 ease-in-out ${
                 selectedMainCategory === category
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  ? 'transform-none bg-primary text-primary-foreground shadow-none'
+                  : 'bg-background text-foreground shadow-none hover:-translate-x-0.5 hover:-translate-y-1 hover:transform hover:bg-muted hover:shadow-[2px_5px_0_0_black] active:translate-x-0.5 active:translate-y-0.5 active:transform active:shadow-none dark:hover:shadow-[2px_5px_0_0_white]'
               }`}
             >
               {category}
@@ -1599,10 +1599,10 @@ export default function TreasureBoxPage() {
             <button
               key={subCategory}
               onClick={() => setSelectedSubCategory(subCategory)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+              className={`rounded-full border px-4 py-1 text-sm transition-all duration-300 ease-in-out ${
                 selectedSubCategory === subCategory
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  ? 'transform-none bg-pink-400 text-white shadow-none'
+                  : 'bg-background text-foreground shadow-none hover:-translate-x-0.5 hover:-translate-y-1 hover:transform hover:bg-muted hover:shadow-[2px_5px_0_0_black] active:translate-x-0.5 active:translate-y-0.5 active:transform active:shadow-none dark:hover:shadow-[2px_5px_0_0_white]'
               }`}
             >
               {subCategory}

@@ -103,7 +103,7 @@ export type SocialLinkType = {
   href: string
 }
 
-// 微信公众号以及 bilibili 链接
+// 社交媒体链接，格式在 SocialLinks.tsx 文件中
 export const socialLinks: Array<SocialLinkType> = [
   {
     name: '微信公众号',
