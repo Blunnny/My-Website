@@ -26,6 +26,7 @@ import {
 } from '@/config/projects'
 import IconCloud from '@/components/ui/icon-cloud'
 import { Award, Briefcase, Heart } from 'lucide-react'
+import Link from 'next/link'
 
 export default async function Home() {
   let blogList = (await getAllBlogs()).slice(0, 4)
@@ -68,8 +69,22 @@ export default async function Home() {
         {/* Research & Projects */}
         <div className="mx-auto my-4 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
           <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
-            <Briefcase size={28} />
-            {projectHeadLine}
+            <Link href="/projects" scroll={false}>
+              <span
+                className="project-animated-title text-xl font-semibold text-black dark:text-white md:text-3xl"
+                style={{
+                  position: 'relative',
+                  display: 'inline-block',
+                  color: 'inherit',
+                  WebkitTextStroke: 'unset',
+                }}
+              >
+                {'　' + projectHeadLine + '　'}
+                <span className="hover-text" aria-hidden="true">
+                  {'　' + projectHeadLine + '　'}
+                </span>
+              </span>
+            </Link>
           </h2>
           <p className="mb-8 max-w-2xl text-base text-muted-foreground">
             {projectIntro}
@@ -87,8 +102,22 @@ export default async function Home() {
         {/* Hobbies & Volunteer */}
         <div className="mx-auto my-4 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
           <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
-            <Heart size={28} />
-            {activitiesHeadLine}
+            <Link href="/about" scroll={false}>
+              <span
+                className="project-animated-title text-xl font-semibold text-black dark:text-white md:text-3xl"
+                style={{
+                  position: 'relative',
+                  display: 'inline-block',
+                  color: 'inherit',
+                  WebkitTextStroke: 'unset',
+                }}
+              >
+                {'　' + activitiesHeadLine + '　'}
+                <span className="hover-text" aria-hidden="true">
+                  {'　' + activitiesHeadLine + '　'}
+                </span>
+              </span>
+            </Link>
           </h2>
           <p className="mb-8 max-w-2xl text-base text-muted-foreground">
             {activitiesIntro}
@@ -110,7 +139,22 @@ export default async function Home() {
         {/* Blog Section */}
         <div className="mx-auto my-8 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
           <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
-            {blogHeadLine}
+            <Link href="/blogs" scroll={false}>
+              <span
+                className="project-animated-title text-xl font-semibold text-black dark:text-white md:text-3xl"
+                style={{
+                  position: 'relative',
+                  display: 'inline-block',
+                  color: 'inherit',
+                  WebkitTextStroke: 'unset',
+                }}
+              >
+                {'　' + blogHeadLine + '　'}
+                <span className="hover-text" aria-hidden="true">
+                  {'　' + blogHeadLine + '　'}
+                </span>
+              </span>
+            </Link>
           </h2>
           <p className="mb-8 max-w-2xl text-base text-muted-foreground">
             {blogIntro}

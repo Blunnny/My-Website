@@ -61,7 +61,6 @@ export default function About() {
 
       <div className="mx-auto my-16 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
         <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
-          <Calendar size={28} />
           兴趣爱好
         </h2>
         <ul
