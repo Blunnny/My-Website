@@ -5,16 +5,17 @@ export * from './career'
 // personal info
 export const name = '靳安和'
 export const headline = '欢迎访问我的个人网站！'
-export const introduction = '编译生活，调试人生，为思想找寻一席之地。'
+export const introduction =
+  'Made in the future, Making the future, Living in the future.'
 export const email = 'jah22956@163.com'
 export const githubUsername = 'Blunnny'
 
 // about page
 export const aboutMeHeadline = 'Who am I?'
 export const aboutParagraphs = [
+  '数码设备参数党/光污染外设爱好者/赛博仓鼠/由ISTJ转化而来的INTJ',
   '在南方上学的北方人，<del>可从容应对北方的雾霾与暴雪，南方的回南天和大蟑螂。</del>',
-  '误入会计的理科生，刚入门<del>但已被技术革命叙事洗脑</del>的新手程序员。',
-  '数码设备爱好者/光污染外设爱好者/赛博仓鼠/由INST转化而来的INTJ',
+  '误入会计的理科生，刚入门但已被技术革命叙事洗脑的新手程序员。',
   '曾经得到过无数人的帮助，希望未来也能够帮助更多的人！',
   '梦想是推动人类进步，Make the world a better place!',
 ]
@@ -82,7 +83,7 @@ export const aboutFood = [
       '虾皮（吃馄饨时的最大阻力）',
       '甜豆腐脑（异端！）',
       '韭菜',
-      '煎饼卷大葱（不是山东人都爱吃大葱的！）',
+      '煎饼卷大葱，<del>不要问为什么山东人不吃大葱）</del>',
       '保留了一部分味道的九转大肠',
       '土笋冻',
       '<del>厦门大学的各个餐厅</del>',

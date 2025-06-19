@@ -371,7 +371,7 @@ export const projects: ProjectsType = {
       },
       {
         name: 'HowToCook',
-        description: '程序员做法指南',
+        description: '程序员做饭指南',
         link: {
           href: 'github.com/Anduin2017/HowToCook',
           label: 'HowToCook',
