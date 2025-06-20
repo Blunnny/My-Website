@@ -5,8 +5,7 @@ export * from './career'
 // personal info
 export const name = '靳安和'
 export const headline = '欢迎访问我的个人网站！'
-export const introduction =
-  'Made in the future, Making the future, Living in the future.'
+export const introduction = 'Future-Made. Future-Making. Future-Living.'
 export const email = 'jah22956@163.com'
 export const githubUsername = 'Blunnny'
 
