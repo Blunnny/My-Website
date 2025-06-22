@@ -82,6 +82,17 @@ export const projects: ProjectsType = {
       logo: '/images/icon/TasteBuddy.png',
       category: 'my',
     },
+    {
+      name: '智能财务评分系统',
+      description: '基于人工智能和 AKSHARE 开源项目的智能财务分析系统',
+      link: {
+        href: 'github.com/Blunnny/Smart-Finance-Rating',
+        label: 'GitHub',
+      },
+      tags: ['AI', 'Python'],
+      logo: '/images/icon/Smart-Finance-Rating.png',
+      category: 'my',
+    },
   ],
   watching: {
     LLM: [
