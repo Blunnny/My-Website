@@ -1286,6 +1286,12 @@ const categories: CategoriesType = {
         description: '6000+动画组件开源UI库',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'Best-websites-a-programmer-should-visit',
+        url: 'https://github.com/sdmg15/Best-websites-a-programmer-should-visit',
+        description: '如题，程序员用到的一切网站都可以在这里找到',
+        tags: ['免费', '无广告'],
+      },
     ],
     商业变现: [
       {

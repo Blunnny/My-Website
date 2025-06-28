@@ -352,6 +352,26 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
       {
+        name: 'MonkeyOCR',
+        description: 'MinerU竞品之一',
+        link: {
+          href: 'github.com/Yuliang-Liu/MonkeyOCR',
+          label: 'MonkeyOCR',
+        },
+        tags: ['Python', 'shell'],
+        category: 'watching',
+      },
+      {
+        name: 'OCRFlux',
+        description: 'MinerU竞品之二',
+        link: {
+          href: 'github.com/chatdoc-com/OCRFlux',
+          label: 'OCRFlux',
+        },
+        tags: ['Python', 'shell'],
+        category: 'watching',
+      },
+      {
         name: 'quarkdown',
         description: '用markdown写出漂亮排版的工具（跟夸克没关系！）',
         link: {
