@@ -84,8 +84,8 @@ export const aboutFood = [
       '煎饼卷大葱，<del>不要问为什么山东人不吃大葱）</del>',
       '保留了一部分味道的九转大肠',
       '土笋冻',
-      '<del>厦门大学的各个餐厅</del>',
-      '<del>香港大学的各个餐厅</del>。',
+      '<del>厦门大学的各个食堂</del>',
+      '<del>厦门大学的各个食堂</del>。',
     ].join('、'),
   'to be continued...',
 ]

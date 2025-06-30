@@ -3,6 +3,7 @@ import Newsletter from '@/components/home/Newsletter'
 import Career from '@/components/home/Career'
 import Education from '@/components/home/Education'
 import SocialLinks from '@/components/home/SocialLinks'
+import RandomLyric from '@/components/home/RandomLyric'
 import { headline, introduction } from '@/config/infoConfig'
 import { BlogCard } from '@/components/home/BlogCard'
 import { getAllBlogs, type BlogType } from '@/lib/blogs'
@@ -44,6 +45,8 @@ export default async function Home() {
             <div className="mt-6 flex flex-row items-center gap-2">
               <SocialLinks className="mt-0" />
             </div>
+            <div className="my-12" />
+            <RandomLyric />
           </div>
           <div className="relative ml-auto flex size-full w-full items-center justify-center overflow-hidden px-20 md:mr-8 md:w-2/3 md:px-0">
             <IconCloud iconSlugs={techIcons} />
