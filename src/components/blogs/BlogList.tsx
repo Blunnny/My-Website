@@ -8,7 +8,7 @@ import { formatDate } from '@/lib/formatDate'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-function Blog({ blog }: { blog: BlogType }) {
+function Blog({ blog, showSource }: { blog: BlogType; showSource?: boolean }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
@@ -22,6 +22,24 @@ function Blog({ blog }: { blog: BlogType }) {
           {formatDate(blog.date)}
         </Card.Eyebrow>
         <Card.Description>{blog.description}</Card.Description>
+        {showSource && (
+          <div className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+            <div>作者：{blog.author || '佚名'}</div>
+            {blog.source && (
+              <div>
+                来源：
+                <a
+                  href={blog.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline"
+                >
+                  {blog.source}
+                </a>
+              </div>
+            )}
+          </div>
+        )}
         <Card.Cta>Read blog</Card.Cta>
       </Card>
       <Card.Eyebrow
@@ -73,7 +91,11 @@ function BlogListContent({ initialBlogs }: BlogListProps) {
       />
       <div className="flex max-w-3xl flex-col space-y-16">
         {currentBlogs.map((blog: BlogType) => (
-          <Blog key={blog.slug} blog={blog} />
+          <Blog
+            key={blog.slug}
+            blog={blog}
+            showSource={currentCategory === '好文转载'}
+          />
         ))}
       </div>
       {/* 分页导航 */}

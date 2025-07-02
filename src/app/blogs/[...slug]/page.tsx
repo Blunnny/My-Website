@@ -9,19 +9,22 @@ export const runtime = process.env.NEXT_RUNTIME === 'edge' ? 'edge' : 'nodejs'
 
 interface Props {
   params: {
-    slug: string
+    slug: string[]
   }
 }
 
 export async function generateStaticParams() {
   const blogs = await getAllBlogs()
   return blogs.map((blog) => ({
-    slug: blog.slug,
+    slug: blog.slug.split('/').map(encodeURIComponent),
   }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const blog = await getBlogBySlug(params.slug)
+  const slug = Array.isArray(params.slug)
+    ? params.slug.map(decodeURIComponent).join('/')
+    : decodeURIComponent(params.slug)
+  const blog = await getBlogBySlug(slug)
   if (!blog) {
     return {}
   }
@@ -33,13 +36,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPage({ params }: Props) {
-  const blog = await getBlogBySlug(params.slug)
+  const slug = Array.isArray(params.slug)
+    ? params.slug.map(decodeURIComponent).join('/')
+    : decodeURIComponent(params.slug)
+  const blog = await getBlogBySlug(slug)
 
   if (!blog) {
     notFound()
   }
 
-  const content = await getMDXContent(params.slug)
+  const content = await getMDXContent(slug)
 
   return (
     <BlogLayout blog={blog}>

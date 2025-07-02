@@ -11,6 +11,7 @@ export type BlogType = {
   slug: string
   tags?: string[]
   content: string
+  source?: string
 }
 
 async function importBlog(blogFilename: string): Promise<BlogType> {
@@ -23,13 +24,13 @@ async function importBlog(blogFilename: string): Promise<BlogType> {
 
   // @ts-expect-error
   return {
-    slug: blogFilename.replace(/\.mdx$/, ''),
+    slug: blogFilename.replace(/\\/g, '/').replace(/\.mdx$/, ''),
     ...data,
   }
 }
 
 export async function getAllBlogs() {
-  let blogFileNames = await glob('*.mdx', {
+  let blogFileNames = await glob('**/*.mdx', {
     cwd: './src/content/blog',
   })
 
@@ -44,8 +45,8 @@ export async function getAllBlogs() {
 
 export async function getBlogBySlug(slug: string): Promise<BlogType | null> {
   try {
-    // 移除可能存在的 .mdx 扩展名
-    const cleanSlug = slug.replace(/\.mdx$/, '')
+    // decode slug 以支持特殊字符
+    const cleanSlug = decodeURIComponent(slug.replace(/\.mdx$/, ''))
     return await importBlog(`${cleanSlug}.mdx`)
   } catch (error) {
     console.error(`Failed to load blog with slug: ${slug}`, error)
