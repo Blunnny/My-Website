@@ -84,13 +84,24 @@ export const projects: ProjectsType = {
     },
     {
       name: '智能财务评分系统',
-      description: '基于人工智能和 AKSHARE 开源项目的智能财务分析系统',
+      description: '可以实现一键对财报的分析！',
       link: {
         href: 'github.com/Blunnny/Smart-Finance-Rating',
         label: 'GitHub',
       },
       tags: ['AI', 'Python'],
       logo: '/images/icon/Smart-Finance-Rating.png',
+      category: 'my',
+    },
+    {
+      name: '增值税发票识别器',
+      description: '我不想再看发票了！',
+      link: {
+        href: 'github.com/Blunnny/Invoice-Recognizer',
+        label: 'GitHub',
+      },
+      tags: ['AI', 'Python'],
+      logo: '/images/icon/identifier.png',
       category: 'my',
     },
   ],
