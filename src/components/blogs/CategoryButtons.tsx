@@ -70,7 +70,12 @@ export function CategoryButtons({
 
   // 组件初始化时应用默认过滤
   useEffect(() => {
-    filterBlogsByCategory('全部')
+    // 初始化时，直接过滤掉"好文转载"的文章，因为默认是"我的博客"分类
+    const filteredBlogs = blogs.filter((blog) => {
+      const tags = blog.tags || []
+      return !tags.includes('好文转载')
+    })
+    onCategoryChange(filteredBlogs, '全部')
   }, []) // 空依赖数组，只在组件挂载时执行一次
 
   const handlePrimaryCategoryChange = (primaryCategory: PrimaryCategory) => {

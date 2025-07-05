@@ -30,7 +30,14 @@ import { Award, Briefcase, Heart } from 'lucide-react'
 import Link from 'next/link'
 
 export default async function Home() {
-  let blogList = (await getAllBlogs()).slice(0, 4)
+  // 获取所有博客并过滤掉"好文转载"的文章，然后取前4篇
+  let allBlogs = await getAllBlogs()
+  let blogList = allBlogs
+    .filter((blog) => {
+      const tags = blog.tags || []
+      return !tags.includes('好文转载')
+    })
+    .slice(0, 4)
 
   return (
     <>
