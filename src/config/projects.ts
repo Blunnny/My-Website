@@ -134,6 +134,16 @@ export const projects: ProjectsType = {
         tags: ['Python', 'JavaScript', 'LLM'],
         category: 'watching',
       },
+      {
+        name: 'Twocast',
+        link: {
+          href: 'github.com/panyanyany/Twocast',
+          label: 'Twocast',
+        },
+        description: 'AI生成双人播客！',
+        tags: ['TypeScript', 'JavaScript', 'LLM'],
+        category: 'watching',
+      },
     ],
     金融: [
       {
@@ -277,6 +287,16 @@ export const projects: ProjectsType = {
         tags: ['Python', 'CUDA', 'C++'],
         category: 'watching',
       },
+      {
+        name: 'VideoCaptioner - 卡卡字幕助手',
+        description: '通过语音识别来生成视频字幕',
+        link: {
+          href: 'github.com/WEIFENG2333/VideoCaptioner',
+          label: 'VideoCaptioner',
+        },
+        tags: ['Python'],
+        category: 'watching',
+      },
     ],
     技术学习: [
       {
@@ -390,6 +410,16 @@ export const projects: ProjectsType = {
           label: 'quarkdown',
         },
         tags: ['Kotlin', 'HTML', 'CSS'],
+        category: 'watching',
+      },
+      {
+        name: 'chatlog',
+        description: '解密本地微信数据库，获取聊天数据',
+        link: {
+          href: 'github.com/sjzar/chatlog',
+          label: 'chatlog',
+        },
+        tags: ['Go', 'HTML'],
         category: 'watching',
       },
     ],

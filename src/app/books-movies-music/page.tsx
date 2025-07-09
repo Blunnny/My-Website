@@ -570,12 +570,12 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「I am Iron Man.」',
     },
     {
-      title: '垫底辣妹 ビリギャル',
-      cover: '/images/movies/垫底辣妹.webp',
-      year: 2015,
-      info: '剧情 / 家庭',
-      rating: 8.8,
-      comment: '「把目标降低一次，就会越来越低的。」',
+      title: '长安十二时辰',
+      cover: '/images/movies/长安十二时辰.webp',
+      year: 2019,
+      info: '剧情 / 悬疑 / 古装',
+      rating: 9.0,
+      comment: '「世人只知巨龙之怒，伏尸百万，却不知蚍蜉之怒，也能摧城撼树。」',
     },
   ],
 }
