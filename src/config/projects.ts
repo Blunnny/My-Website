@@ -29,6 +29,7 @@ export type WatchingCategory =
   | '小工具'
   | '娱乐'
   | '艺术设计'
+  | '资源'
 
 // 项目数据结构类型定义
 export type ProjectsType = {
@@ -174,6 +175,16 @@ export const projects: ProjectsType = {
         },
         description: '一个高性能算法交易平台和事件驱动回测器',
         tags: ['Python', 'Rust', 'Cpython'],
+        category: 'watching',
+      },
+      {
+        name: 'TradingAgents',
+        link: {
+          href: 'github.com/TauricResearch/TradingAgents',
+          label: 'TradingAgents',
+        },
+        description: '一个多智能体大语言模型金融交易框架',
+        tags: ['Python', 'LLM'],
         category: 'watching',
       },
     ],
@@ -517,6 +528,18 @@ export const projects: ProjectsType = {
           label: '163MusicLyrics',
         },
         tags: ['C#'],
+        category: 'watching',
+      },
+    ],
+    资源: [
+      {
+        name: 'free-for-dev',
+        description: '开发者的白嫖资源库',
+        link: {
+          href: 'github.com/ripienaar/free-for-dev',
+          label: 'free-for-dev',
+        },
+        tags: ['HTML'],
         category: 'watching',
       },
     ],

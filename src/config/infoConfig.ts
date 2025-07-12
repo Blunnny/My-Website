@@ -12,7 +12,7 @@ export const githubUsername = 'Blunnny'
 // about page
 export const aboutMeHeadline = 'Who am I?'
 export const aboutParagraphs = [
-  '光污染外设爱好者/赛博仓鼠/ISTJ⮕INTJ⮕INFJ',
+  '光污染外设爱好者/赛博仓鼠/在不同老头间横跳ISTJ⮕INTJ⮕INFJ',
   '在南方上学的北方人，<del>可从容应对北方的雾霾与暴雪，南方的回南天和大蟑螂。</del>',
   '误入会计的理科生，刚入门但已被技术革命叙事洗脑的新手程序员。',
   '曾经得到过无数人的帮助，希望未来也能够帮助更多的人！',
