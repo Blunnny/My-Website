@@ -275,6 +275,15 @@ const booksByYear: Record<string, any[]> = {
       rating: 9.0,
       comment: '教育不是注满一桶水，而是点燃一把火。',
     },
+    {
+      title: '解忧杂货铺',
+      cover: '/images/books/解忧杂货铺.jpg',
+      year: 2014,
+      info: '[日] 东野圭吾',
+      publisher: '南海出版公司',
+      rating: 9.4,
+      comment: '「感谢你把这么奢侈的烦恼讲给我听。」',
+    },
   ],
 }
 
