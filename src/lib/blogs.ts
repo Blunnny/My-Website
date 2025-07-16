@@ -45,8 +45,8 @@ export async function getAllBlogs() {
 
 export async function getBlogBySlug(slug: string): Promise<BlogType | null> {
   try {
-    // decode slug 以支持特殊字符
-    const cleanSlug = decodeURIComponent(slug.replace(/\.mdx$/, ''))
+    // 移除双重解码，因为 slug 在页面组件中已经被正确解码
+    const cleanSlug = slug.replace(/\.mdx$/, '')
     return await importBlog(`${cleanSlug}.mdx`)
   } catch (error) {
     console.error(`Failed to load blog with slug: ${slug}`, error)
