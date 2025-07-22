@@ -95,7 +95,7 @@ type ShoppingSubCategory = '购物指南' | '购物网站'
 type GameSubCategory = '游戏网站'
 
 // 其他子分类类型定义
-type OtherSubCategory = '世界公民' | '其他' | '演讲'
+type OtherSubCategory = '世界公民' | '其他' | '演讲' | '调酒'
 
 // 分类数据结构类型定义
 type CategoriesType = {
@@ -1470,6 +1470,50 @@ const categories: CategoriesType = {
         url: 'https://github.com/Anduin2017/HowToCook',
         description: '程序员出品的菜谱合集！',
         tags: ['免费', '无广告'],
+      },
+    ],
+    调酒: [
+      {
+        title: 'IBA',
+        url: 'https://iba-world.com/',
+        description: '国际调酒师协会官方网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Diffordsguide',
+        url: 'https://www.diffordsguide.com/',
+        description: '包含大量鸡尾酒配方、相关历史文化等内容的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'COCKTAIL TIME',
+        url: 'https://www.kevinkos.com/recipes',
+        description: '提供了大量鸡尾酒配方以及制作视频的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'LIQUOR',
+        url: 'https://www.liquor.com/',
+        description: '综合性酒类饮品网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'behind the bar with cara devine',
+        url: 'https://www.behindthebarwithcaradevine.com/',
+        description: '鸡尾酒文化网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Punch',
+        url: 'https://punchdrink.com/',
+        description: '提供各种经典和创新鸡尾酒配方的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Diageo Bar Academy',
+        url: 'https://www.diageobaracademy.com/en-zz/home',
+        description: 'Diageo调酒学苑官方网站',
+        tags: ['部分免费', '无广告'],
       },
     ],
   },
