@@ -1513,7 +1513,7 @@ const categories: CategoriesType = {
         title: 'Diageo Bar Academy',
         url: 'https://www.diageobaracademy.com/en-zz/home',
         description: 'Diageo调酒学苑官方网站',
-        tags: ['部分免费', '无广告'],
+        tags: ['免费', '无广告'],
       },
     ],
   },
