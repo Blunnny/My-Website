@@ -906,7 +906,7 @@ const games = [
     year: 2024,
     type: '游戏 / 角色扮演 / 冒险 / 动作',
     rating: 9.9,
-    comment: '踏平坎坷成大道！',
+    comment: '「这一回，我又赢了，金蝉子。」',
   },
   {
     title: '艾尔登法环 Elden Ring',
