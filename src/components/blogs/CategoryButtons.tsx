@@ -19,19 +19,21 @@ export function CategoryButtons({
     useState<PrimaryCategory>('我的博客')
   const [activeCategory, setActiveCategory] = useState<Category>('全部')
 
-  const filterBlogsByCategory = (category: Category) => {
+  // 修改 filterBlogsByCategory，增加 primaryCategory 参数，默认用 activePrimaryCategory
+  const filterBlogsByCategory = (
+    category: Category,
+    primaryCategory: PrimaryCategory = activePrimaryCategory,
+  ) => {
     setActiveCategory(category)
 
     if (category === '全部') {
-      // 只有在"我的博客"分类下，"全部"才不包含"好文转载"的文章
-      if (activePrimaryCategory === '我的博客') {
+      if (primaryCategory === '我的博客') {
         const filteredBlogs = blogs.filter((blog) => {
           const tags = blog.tags || []
           return !tags.includes('好文转载')
         })
         onCategoryChange(filteredBlogs, category)
       } else {
-        // 在其他主分类下，"全部"显示所有文章
         onCategoryChange(blogs, category)
       }
       return
@@ -78,17 +80,16 @@ export function CategoryButtons({
     onCategoryChange(filteredBlogs, '全部')
   }, []) // 空依赖数组，只在组件挂载时执行一次
 
+  // handlePrimaryCategoryChange 里传递目标主分类
   const handlePrimaryCategoryChange = (primaryCategory: PrimaryCategory) => {
     setActivePrimaryCategory(primaryCategory)
 
     if (primaryCategory === '文章收藏') {
-      // 切换到文章收藏时，直接显示好文转载内容
       setActiveCategory('好文转载')
-      filterBlogsByCategory('好文转载')
+      filterBlogsByCategory('好文转载', '文章收藏')
     } else {
-      // 切换到我的博客时，显示全部内容
       setActiveCategory('全部')
-      filterBlogsByCategory('全部')
+      filterBlogsByCategory('全部', '我的博客')
     }
   }
 
