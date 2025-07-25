@@ -321,7 +321,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2021,
       info: '剧情',
       rating: 9.3,
-      comment: '「Pain torments us, but it is an inevitable part of life.」',
+      comment: '「Pain it is an inevitable part of life.」',
     },
     {
       title: '破·地狱',
