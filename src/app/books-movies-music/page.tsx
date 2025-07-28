@@ -962,14 +962,6 @@ const upcomingGames = [
     rating: 0,
   },
   {
-    title: '明末：渊虚之羽 WUCHANG: Fallen Feathers',
-    cover: '/images/games/渊虚之羽.jpg',
-    year: 2025,
-    type: '游戏 / 角色扮演 / 冒险 / 动作',
-    comment: '村里第二个大学生？',
-    rating: 0,
-  },
-  {
     title: '苏丹的游戏',
     cover: '/images/games/苏丹的游戏.jpg',
     year: 2025,
