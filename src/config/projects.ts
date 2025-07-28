@@ -235,6 +235,16 @@ export const projects: ProjectsType = {
         tags: ['Typescript', 'Vue', 'Python', 'AI'],
         category: 'watching',
       },
+      {
+        name: 'terminator',
+        link: {
+          href: 'github.com/mediar-ai/terminator/tree/main',
+          label: 'terminator',
+        },
+        description: '通过实时分析屏幕内容实现AI代理',
+        tags: ['Rust', 'Javascript', 'Python', 'AI'],
+        category: 'watching',
+      },
     ],
     音视频处理: [
       {
