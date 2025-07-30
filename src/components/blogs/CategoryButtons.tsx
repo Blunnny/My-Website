@@ -2,6 +2,7 @@
 
 import { type BlogType } from '@/lib/blogs'
 import { useState, useEffect } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 type Category = '全部' | '会计' | '金融&经济' | '技术' | '其他' | '好文转载'
 type PrimaryCategory = '我的博客' | '文章收藏'
@@ -15,16 +16,56 @@ export function CategoryButtons({
   blogs,
   onCategoryChange,
 }: CategoryButtonsProps) {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
+  // 从 URL 参数中读取状态，如果没有则使用默认值
+  const urlPrimaryCategory =
+    (searchParams.get('primaryCategory') as PrimaryCategory) || '我的博客'
+  const urlCategory =
+    (searchParams.get('category') as Category) ||
+    (urlPrimaryCategory === '文章收藏' ? '好文转载' : '全部')
+
   const [activePrimaryCategory, setActivePrimaryCategory] =
-    useState<PrimaryCategory>('我的博客')
-  const [activeCategory, setActiveCategory] = useState<Category>('全部')
+    useState<PrimaryCategory>(urlPrimaryCategory)
+  const [activeCategory, setActiveCategory] = useState<Category>(urlCategory)
+
+  // 保存当前滚动位置到 sessionStorage
+  const saveScrollPosition = () => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem(
+        'blogListScrollPosition',
+        window.scrollY.toString(),
+      )
+    }
+  }
+
+  // 更新 URL 参数
+  const updateUrlParams = (
+    primaryCategory: PrimaryCategory,
+    category: Category,
+    page: number = 1,
+  ) => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.set('primaryCategory', primaryCategory)
+    params.set('category', category)
+    params.set('page', page.toString())
+    router.push(`/blogs?${params.toString()}`)
+  }
 
   // 修改 filterBlogsByCategory，增加 primaryCategory 参数，默认用 activePrimaryCategory
   const filterBlogsByCategory = (
     category: Category,
     primaryCategory: PrimaryCategory = activePrimaryCategory,
+    shouldUpdateUrl: boolean = true,
   ) => {
     setActiveCategory(category)
+
+    // 只有在用户点击时才保存滚动位置和更新 URL
+    if (shouldUpdateUrl) {
+      saveScrollPosition()
+      updateUrlParams(primaryCategory, category)
+    }
 
     if (category === '全部') {
       if (primaryCategory === '我的博客') {
@@ -70,14 +111,27 @@ export function CategoryButtons({
     onCategoryChange(filteredBlogs, category)
   }
 
-  // 组件初始化时应用默认过滤
+  // 恢复滚动位置
+  const restoreScrollPosition = () => {
+    if (typeof window !== 'undefined') {
+      const savedPosition = sessionStorage.getItem('blogListScrollPosition')
+      if (savedPosition) {
+        // 使用 setTimeout 确保DOM已经渲染完成
+        setTimeout(() => {
+          window.scrollTo(0, parseInt(savedPosition, 10))
+          // 清除保存的滚动位置
+          sessionStorage.removeItem('blogListScrollPosition')
+        }, 100)
+      }
+    }
+  }
+
+  // 组件初始化时应用从URL恢复的状态过滤
   useEffect(() => {
-    // 初始化时，直接过滤掉"好文转载"的文章，因为默认是"我的博客"分类
-    const filteredBlogs = blogs.filter((blog) => {
-      const tags = blog.tags || []
-      return !tags.includes('好文转载')
-    })
-    onCategoryChange(filteredBlogs, '全部')
+    // 使用从URL恢复的状态进行初始化，不更新URL
+    filterBlogsByCategory(urlCategory, urlPrimaryCategory, false)
+    // 恢复滚动位置
+    restoreScrollPosition()
   }, []) // 空依赖数组，只在组件挂载时执行一次
 
   // handlePrimaryCategoryChange 里传递目标主分类

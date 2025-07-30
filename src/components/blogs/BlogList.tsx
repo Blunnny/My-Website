@@ -9,9 +9,19 @@ import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 function Blog({ blog, showSource }: { blog: BlogType; showSource?: boolean }) {
+  // 点击博客链接时保存滚动位置
+  const handleBlogClick = () => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem(
+        'blogListScrollPosition',
+        window.scrollY.toString(),
+      )
+    }
+  }
+
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
+      <Card className="md:col-span-3" onClick={handleBlogClick}>
         <Card.Title href={`/blogs/${blog.slug}`}>{blog.title}</Card.Title>
         <Card.Eyebrow
           as="time"
@@ -61,7 +71,10 @@ function BlogListContent({ initialBlogs }: BlogListProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [blogs, setBlogs] = useState(initialBlogs)
-  const [currentCategory, setCurrentCategory] = useState('全部')
+
+  // 从 URL 参数中读取当前分类状态
+  const urlCategory = searchParams.get('category') || '全部'
+  const [currentCategory, setCurrentCategory] = useState(urlCategory)
 
   const blogsPerPage = 10
   const totalPages = Math.ceil(blogs.length / blogsPerPage)
@@ -69,12 +82,18 @@ function BlogListContent({ initialBlogs }: BlogListProps) {
   const startIndex = (currentPage - 1) * blogsPerPage
   const currentBlogs = blogs.slice(startIndex, startIndex + blogsPerPage)
 
+  // 保存滚动位置并跳转到指定页面
   const handlePageChange = (page: number) => {
+    // 保存当前滚动位置
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem(
+        'blogListScrollPosition',
+        window.scrollY.toString(),
+      )
+    }
+
     const params = new URLSearchParams(searchParams.toString())
     params.set('page', page.toString())
-    if (currentCategory !== '全部') {
-      params.set('category', currentCategory)
-    }
     router.push(`/blogs?${params.toString()}`)
   }
 
@@ -85,8 +104,6 @@ function BlogListContent({ initialBlogs }: BlogListProps) {
         onCategoryChange={(filteredBlogs, category) => {
           setBlogs(filteredBlogs)
           setCurrentCategory(category)
-          // 切换分类时重置到第一页
-          handlePageChange(1)
         }}
       />
       <div className="flex max-w-3xl flex-col space-y-16">
