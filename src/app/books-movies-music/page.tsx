@@ -313,7 +313,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2025,
       info: '剧情 / 科幻 / 悬疑 / 惊悚 / 犯罪',
       rating: 9.5,
-      comment: '暗黑科技向的巅峰之作！',
+      comment: '「你有多少时间？」「我有的是时间。」',
     },
     {
       title: '成瘾剂量 Dopesick ',
@@ -321,7 +321,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2021,
       info: '剧情',
       rating: 9.3,
-      comment: '「Pain it is an inevitable part of life.」',
+      comment: '「Pain is an inevitable part of life.」',
     },
     {
       title: '破·地狱',
@@ -347,7 +347,7 @@ const moviesByYear: Record<string, any[]> = {
       year: '2014-2019',
       info: '喜剧 / 剧情',
       rating: 9.8,
-      comment: 'Make the world a better place!',
+      comment: '「Make the world a better place!」',
     },
     {
       title: '齐木楠雄的灾难',
@@ -355,7 +355,7 @@ const moviesByYear: Record<string, any[]> = {
       year: '2016-2019',
       info: '剧情 / 喜剧 / 动画 / 奇幻',
       rating: 9.3,
-      comment: '下饭小神剧。',
+      comment: '如果做不了神，就做一个幸福的普通人吧。',
     },
     {
       title: '沙丘2 Dune: Part Two',
@@ -363,15 +363,15 @@ const moviesByYear: Record<string, any[]> = {
       year: 2024,
       info: '剧情 / 动作 / 科幻 / 冒险',
       rating: 9.4,
-      comment: '独特的沙漠美学。',
+      comment: '「当资源极其有限时，恐惧是我们唯一的资本。」',
     },
     {
       title: '影后',
       cover: '/images/movies/影后.jpg',
       year: 2024,
       info: '剧情 / 喜剧',
-      rating: 8.8,
-      comment: '单曲循环「我想要拥有你」中 · · ·',
+      rating: 9.0,
+      comment: '「史艾瑪你聽好，等你是個咖，才有資格掉眼淚！」',
     },
   ],
   2023: [
@@ -381,7 +381,7 @@ const moviesByYear: Record<string, any[]> = {
       year: '2007-2018',
       info: '喜剧 / 爱情',
       rating: 9.9,
-      comment: '永远的经典！',
+      comment: "「If you weren't my friend, there'd be a hole in my life.」",
     },
 
     {
@@ -440,7 +440,8 @@ const moviesByYear: Record<string, any[]> = {
       year: 2018,
       info: '动作 / 科幻 / 动画 / 冒险',
       rating: 9.4,
-      comment: '动画想象力的巅峰之作！',
+      comment:
+        '「我要怎样才能知道我准备好了？」「你不会知道，这就是一种信念。」',
     },
     {
       title: '赛博朋克：边缘行者 Cyberpunk: Edgerunners',
@@ -474,7 +475,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2014,
       info: '剧情 / 同性 / 传记 / 战争',
       rating: 9.2,
-      comment: '人和机器的区别究竟是什么呢？',
+      comment: '「有时候，正是那些你无法想象的人，成就了你无法想象的事。」',
     },
     {
       title: '遇见你之前 Me Before You',
@@ -517,7 +518,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2019,
       info: '剧情 / 喜剧 / 悬疑 / 犯罪',
       rating: 9.0,
-      comment: '值得一看的悬疑小品。',
+      comment: '「My House, My Rules, My Coffee.」',
     },
     {
       title: '华尔街之狼 The Wolf of Wall Street',
@@ -568,7 +569,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2014,
       info: '喜剧 / 剧情',
       rating: 9.5,
-      comment: '复古的色调，大师的配乐再加一点冷不丁的幽默',
+      comment: '「I was once considered a great beauty.」',
     },
     {
       title: '复仇者联盟4：终局之战 Avengers: Endgame',
@@ -890,50 +891,70 @@ const musicsByYear: Record<string, any[]> = {
   ],
 }
 
-// 玩过的游戏
-const games = [
-  {
-    title: 'GTA5',
-    cover: '/images/games/GTA5.jpg',
-    year: 2015,
-    type: '角色扮演 / 冒险 / 动作 / 开放世界',
-    rating: 10.0,
-    comment: 'GTA6不要跳票了😭',
-  },
-  {
-    title: '黑神话·悟空',
-    cover: '/images/games/黑神话·悟空.jpg',
-    year: 2024,
-    type: '游戏 / 角色扮演 / 冒险 / 动作',
-    rating: 9.9,
-    comment: '「这一回，我又赢了，金蝉子。」',
-  },
-  {
-    title: '艾尔登法环 Elden Ring',
-    cover: '/images/games/艾尔登法环.jpg',
-    year: 2022,
-    type: '游戏 / 角色扮演 / 冒险 / 动作',
-    rating: 9.8,
-    comment: '「即使引导早已破碎，也请您当上艾尔登之王。」',
-  },
-  {
-    title: '赛博朋克 2077 Cyberpunk 2077',
-    cover: '/images/games/赛博朋克 2077 Cyberpunk 2077.jpg',
-    year: 2020,
-    type: '游戏 / 第一人称射击 / 角色扮演 / 冒险 / 动作',
-    rating: 9.8,
-    comment:
-      '「你是愿意当个无名之辈，一辈子安生？还是就算活不到三十岁，也要名留青史呢？」',
-  },
-  {
-    title: '死亡搁浅 DEATH STRANDING',
-    cover: '/images/games/死亡搁浅 DEATH STRANDING.jpg',
-    year: 2019,
-    type: '游戏 / 冒险 / 动作',
-    rating: 9.5,
-    comment: '用开罗尔网络重新编织千万条羁绊的绳结。',
-  },
-]
+// 玩过的游戏 - 按类型分组
+const gamesByType = {
+  单机游戏: [
+    {
+      title: 'GTA5',
+      cover: '/images/games/GTA5.jpg',
+      year: 2015,
+      type: '角色扮演 / 冒险 / 动作 / 开放世界',
+      rating: 10.0,
+      comment: 'GTA6不要跳票了😭',
+    },
+    {
+      title: '黑神话·悟空',
+      cover: '/images/games/黑神话·悟空.jpg',
+      year: 2024,
+      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      rating: 9.9,
+      comment: '「这一回，我又赢了，金蝉子。」',
+    },
+    {
+      title: '艾尔登法环 Elden Ring',
+      cover: '/images/games/艾尔登法环.jpg',
+      year: 2022,
+      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      rating: 9.8,
+      comment: '「即使引导早已破碎，也请您当上艾尔登之王。」',
+    },
+    {
+      title: '赛博朋克 2077 Cyberpunk 2077',
+      cover: '/images/games/赛博朋克 2077 Cyberpunk 2077.jpg',
+      year: 2020,
+      type: '游戏 / 第一人称射击 / 角色扮演 / 冒险 / 动作',
+      rating: 9.8,
+      comment:
+        '「你是愿意当个无名之辈，一辈子安生？还是就算活不到三十岁，也要名留青史呢？」',
+    },
+    {
+      title: '死亡搁浅 DEATH STRANDING',
+      cover: '/images/games/死亡搁浅 DEATH STRANDING.jpg',
+      year: 2019,
+      type: '游戏 / 冒险 / 动作',
+      rating: 9.5,
+      comment: '用开罗尔网络重新编织千万条羁绊的绳结。',
+    },
+  ],
+  网游: [
+    {
+      title: '炉石传说（已退坑）',
+      cover: '/images/games/炉石传说.jpg',
+      year: 2017,
+      type: '游戏 / 卡牌 ',
+      rating: 8.5,
+      comment: '我至今依然记得一包开出女王和螺丝的那一天。',
+    },
+    {
+      title: '穿越火线（已云）',
+      cover: '/images/games/穿越火线.jpg',
+      year: 2012,
+      type: '游戏 / FPS ',
+      rating: 8.0,
+      comment: '十年老兵前来报到！',
+    },
+  ],
+}
 
 // 关注的游戏
 const upcomingGames = [
@@ -958,7 +979,7 @@ const upcomingGames = [
     cover: '/images/games/双人成行.jpg',
     year: 2021,
     type: '游戏 / 益智 / 冒险 / 动作',
-    comment: '“双人”是游戏最大的门槛。',
+    comment: '双人是游戏最大的门槛。',
     rating: 0,
   },
   {
@@ -989,36 +1010,69 @@ const upcomingGames = [
 
 function GameSection() {
   const [activeTab, setActiveTab] = useState('played')
+  const [activeGameType, setActiveGameType] = useState('单机游戏')
+
+  // 获取当前要显示的游戏列表
+  const getCurrentGames = () => {
+    if (activeTab === 'played') {
+      return gamesByType[activeGameType as keyof typeof gamesByType] || []
+    }
+    return upcomingGames
+  }
+
+  const currentGames = getCurrentGames()
 
   return (
     <div className="mb-12">
       <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
         All work and no play makes Jack a dull boy
       </h2>
+
+      {/* 主分类按钮 */}
       <div className="mb-4 flex items-center gap-2">
         <button
-          className={`rounded-full border px-4 py-1 text-sm transition-colors ${
+          className={`rounded-full border px-4 py-1 text-sm transition-all duration-300 ease-in-out ${
             activeTab === 'played'
-              ? 'bg-primary text-primary-foreground'
-              : 'bg-background text-foreground hover:bg-muted'
+              ? 'transform-none bg-primary text-primary-foreground shadow-none'
+              : 'bg-background text-foreground shadow-none hover:-translate-x-0.5 hover:-translate-y-1 hover:transform hover:bg-muted hover:shadow-[2px_5px_0_0_black] active:translate-x-0.5 active:translate-y-0.5 active:transform active:shadow-none dark:hover:shadow-[2px_5px_0_0_white]'
           }`}
           onClick={() => setActiveTab('played')}
         >
           玩过的游戏
         </button>
         <button
-          className={`rounded-full border px-4 py-1 text-sm transition-colors ${
+          className={`rounded-full border px-4 py-1 text-sm transition-all duration-300 ease-in-out ${
             activeTab === 'upcoming'
-              ? 'bg-primary text-primary-foreground'
-              : 'bg-background text-foreground hover:bg-muted'
+              ? 'transform-none bg-primary text-primary-foreground shadow-none'
+              : 'bg-background text-foreground shadow-none hover:-translate-x-0.5 hover:-translate-y-1 hover:transform hover:bg-muted hover:shadow-[2px_5px_0_0_black] active:translate-x-0.5 active:translate-y-0.5 active:transform active:shadow-none dark:hover:shadow-[2px_5px_0_0_white]'
           }`}
           onClick={() => setActiveTab('upcoming')}
         >
           还没玩的游戏
         </button>
       </div>
+
+      {/* 二级分类按钮 - 只在"玩过的游戏"时显示 */}
+      {activeTab === 'played' && (
+        <div className="mb-4 flex items-center gap-2">
+          {Object.keys(gamesByType).map((gameType) => (
+            <button
+              key={gameType}
+              className={`rounded-full border px-4 py-1 text-sm transition-all duration-300 ease-in-out ${
+                activeGameType === gameType
+                  ? 'transform-none bg-pink-400 text-white shadow-none'
+                  : 'bg-background text-foreground shadow-none hover:-translate-x-0.5 hover:-translate-y-1 hover:transform hover:bg-muted hover:shadow-[2px_5px_0_0_black] active:translate-x-0.5 active:translate-y-0.5 active:transform active:shadow-none dark:hover:shadow-[2px_5px_0_0_white]'
+              }`}
+              onClick={() => setActiveGameType(gameType)}
+            >
+              {gameType}
+            </button>
+          ))}
+        </div>
+      )}
+
       <ul className="divide-y divide-muted-foreground/10">
-        {(activeTab === 'played' ? games : upcomingGames).map((item, idx) => (
+        {currentGames.map((item, idx) => (
           <li key={item.title} className="flex items-center gap-4 py-4">
             <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
               <Image
