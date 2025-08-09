@@ -309,7 +309,7 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
       {
-        name: 'VideoCaptioner - 卡卡字幕助手',
+        name: '卡卡字幕助手',
         description: '通过语音识别来生成视频字幕',
         link: {
           href: 'github.com/WEIFENG2333/VideoCaptioner',
@@ -538,6 +538,47 @@ export const projects: ProjectsType = {
           label: '163MusicLyrics',
         },
         tags: ['C#'],
+        category: 'watching',
+      },
+      {
+        name: 'B2Y',
+        description: '在YouTube上自动同步显示B站弹幕',
+        link: {
+          href: 'github.com/ahaduoduoduo/bilibili-youtube-danmaku',
+          label: 'B2Y',
+        },
+        tags: ['JavaScript', 'HTML', 'CSS'],
+        category: 'watching',
+      },
+      {
+        name: '白板',
+        description: '开源的白板工具',
+        link: {
+          href: 'github.com/plait-board/drawnix',
+          label: '白板',
+        },
+        tags: ['TypeScript', 'SCSS', 'HTML'],
+        category: 'watching',
+      },
+      {
+        name: '哔哔君',
+        description:
+          '哩哔哩字幕列表浏览器扩展，功能包括下载、总结、翻译字幕等。',
+        link: {
+          href: 'github.com/IndieKKY/bilibili-subtitle',
+          label: '哔哔君',
+        },
+        tags: ['TypeScript', 'JavaScript'],
+        category: 'watching',
+      },
+      {
+        name: 'EcoPaste',
+        description: '跨平台的剪贴板管理工具',
+        link: {
+          href: 'github.com/EcoPasteHub/EcoPaste',
+          label: 'EcoPaste',
+        },
+        tags: ['TypeScript', 'Rust'],
         category: 'watching',
       },
     ],
