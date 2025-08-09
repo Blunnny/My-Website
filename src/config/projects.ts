@@ -472,6 +472,16 @@ export const projects: ProjectsType = {
         tags: ['Dockerfile'],
         category: 'watching',
       },
+      {
+        name: 'MoonTV',
+        description: '一个开箱即用的、跨平台的影视聚合播放站',
+        link: {
+          href: 'github.com/LunaTechLab/MoonTV',
+          label: 'MoonTV',
+        },
+        tags: ['TypeScript', 'CSS'],
+        category: 'watching',
+      },
     ],
     艺术设计: [
       {
@@ -591,6 +601,16 @@ export const projects: ProjectsType = {
           label: 'free-for-dev',
         },
         tags: ['HTML'],
+        category: 'watching',
+      },
+      {
+        name: '盘搜',
+        description: '基于TG频道的网盘搜索工具',
+        link: {
+          href: 'github.com/ZhjGo/pansou-ui',
+          label: '盘搜',
+        },
+        tags: ['HTML', 'JavaScript'],
         category: 'watching',
       },
     ],
