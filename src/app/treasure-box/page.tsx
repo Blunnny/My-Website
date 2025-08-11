@@ -1272,12 +1272,6 @@ const categories: CategoriesType = {
         description: '正则表达式可视化网站',
         tags: ['免费', '无广告'],
       },
-      {
-        title: 'uiverse',
-        url: 'https://uiverse.io/',
-        description: '最大的开源UI库',
-        tags: ['免费', '无广告'],
-      },
     ],
     资源网站: [
       {
@@ -1287,9 +1281,33 @@ const categories: CategoriesType = {
         tags: ['免费', '无广告'],
       },
       {
+        title: 'MagicUI',
+        url: 'https://magicui.design/',
+        description: '百余种免费且开源的动画组件和效果',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'aceternity',
+        url: 'https://ui.aceternity.com/',
+        description: '包含大量炫酷动画素材的网站',
+        tags: ['部分免费', '无广告'],
+      },
+      {
+        title: 'cult ui',
+        url: 'https://www.cult-ui.com/',
+        description: '免费且开源的组件',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Motion',
+        url: 'https://motion.dev/',
+        description: '一款强大的动画库',
+        tags: ['部分免费', '无广告'],
+      },
+      {
         title: 'Best-websites-a-programmer-should-visit',
         url: 'https://github.com/sdmg15/Best-websites-a-programmer-should-visit',
-        description: '如题，程序员用到的一切网站都可以在这里找到',
+        description: '程序员用到的一切网站都可以在这里找到！',
         tags: ['免费', '无广告'],
       },
     ],
