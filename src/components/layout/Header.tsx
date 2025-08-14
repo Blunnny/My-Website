@@ -26,7 +26,11 @@ function MobileNavItem({
 }) {
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
+      <Popover.Button
+        as={Link}
+        href={href}
+        className="block py-2 transition-all duration-200 hover:translate-x-1 hover:text-primary active:translate-x-0.5"
+      >
         {children}
       </Popover.Button>
     </li>
@@ -38,17 +42,17 @@ function MobileNavigation(
 ) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full px-4 py-2 text-sm font-medium shadow-lg ring-1 ring-muted backdrop-blur ">
+      <Popover.Button className="group flex items-center rounded-full px-4 py-2 text-sm font-medium shadow-lg ring-1 ring-muted backdrop-blur transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:ring-primary/30 active:scale-95">
         Menu
-        <ChevronDownIcon className="ml-3 h-auto w-2" />
+        <ChevronDownIcon className="ml-3 h-auto w-2 transition-transform duration-300 group-data-[state=open]:rotate-180" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
           as={Fragment}
-          enter="duration-150 ease-out"
+          enter="duration-300 ease-out"
           enterFrom="opacity-0"
           enterTo="opacity-100"
-          leave="duration-150 ease-in"
+          leave="duration-200 ease-in"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
@@ -56,19 +60,22 @@ function MobileNavigation(
         </Transition.Child>
         <Transition.Child
           as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-150 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
+          enter="duration-300 ease-out"
+          enterFrom="opacity-0 scale-95 translate-y-2"
+          enterTo="opacity-100 scale-100 translate-y-0"
+          leave="duration-200 ease-in"
+          leaveFrom="opacity-100 scale-100 translate-y-0"
+          leaveTo="opacity-0 scale-95 translate-y-2"
         >
           <Popover.Panel
             focus
-            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-card p-8 ring-1 ring-muted"
+            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-card p-8 shadow-2xl ring-1 ring-muted backdrop-blur-sm"
           >
             <div className="flex flex-row-reverse items-center justify-between">
-              <Popover.Button aria-label="Close menu" className="-m-1 p-1">
+              <Popover.Button
+                aria-label="Close menu"
+                className="-m-1 p-1 transition-all duration-200 hover:scale-110 hover:text-primary active:scale-95"
+              >
                 <XIcon className="h-6 w-6 text-muted-foreground" />
               </Popover.Button>
               <h2 className="text-sm font-medium text-muted-foreground">
@@ -105,15 +112,15 @@ function NavItem({
       <Link
         href={href}
         className={clsx(
-          'relative block flex items-center justify-center whitespace-nowrap px-4 py-2 text-center transition-all duration-300',
+          'hover:drop-shadow-primary/30 relative block flex items-center justify-center whitespace-nowrap px-4 py-2 text-center transition-all duration-300 ease-out hover:scale-110 hover:transform hover:drop-shadow-lg active:scale-95',
           isActive
-            ? 'text-primary'
-            : 'opacity-80 hover:text-primary hover:opacity-100',
+            ? 'text-primary drop-shadow-sm'
+            : 'opacity-80 hover:text-primary hover:opacity-100 hover:drop-shadow-md',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-[1.5px] bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 dark:from-primary/0 dark:via-primary/40 dark:to-primary/0" />
+          <span className="absolute inset-x-1 -bottom-px h-[1.5px] bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 transition-all duration-300 ease-out dark:from-primary/0 dark:via-primary/40 dark:to-primary/0" />
         )}
       </Link>
     </li>
@@ -123,12 +130,12 @@ function NavItem({
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex flex-nowrap items-center rounded-full bg-[#e8e4df] px-3 text-sm font-medium shadow-xl ring-1 ring-muted backdrop-blur transition-all duration-300 *:transition-all *:duration-300 hover:scale-x-105 dark:bg-[#191818]">
+      <ul className="flex flex-nowrap items-center rounded-full bg-[#e8e4df] px-3 text-sm font-medium shadow-xl ring-1 ring-muted backdrop-blur transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl dark:bg-[#191818] dark:hover:shadow-2xl dark:hover:shadow-primary/20">
         {navItems.map((item, index) => (
           <Fragment key={item.name}>
             {index > 0 && (
               <li className="flex items-center">
-                <div className="h-4 w-px bg-muted-foreground/30" />
+                <div className="h-4 w-px bg-muted-foreground/30 transition-all duration-300 hover:bg-primary/50" />
               </li>
             )}
             <NavItem href={item.href}>{item.name}</NavItem>
@@ -157,12 +164,16 @@ function AvatarContainer({
       <div
         className={clsx(
           className,
-          'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10',
+          'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition-all duration-300 hover:scale-110 hover:shadow-xl hover:ring-primary/30 active:scale-95 dark:bg-zinc-800/90 dark:ring-white/10',
         )}
         {...props}
       />
       {showName && (
-        <Link href="/" aria-label="Home" className="pointer-events-auto">
+        <Link
+          href="/"
+          aria-label="Home"
+          className="pointer-events-auto transition-all duration-200 hover:scale-105 hover:text-primary"
+        >
           <div className="text-md font-semibold capitalize">{name}</div>
         </Link>
       )}
@@ -181,7 +192,10 @@ function Avatar({
     <Link
       href="/"
       aria-label="Home"
-      className={clsx(className, 'pointer-events-auto')}
+      className={clsx(
+        className,
+        'pointer-events-auto transition-all duration-300 hover:scale-105 hover:drop-shadow-lg active:scale-95',
+      )}
       {...props}
     >
       <Image

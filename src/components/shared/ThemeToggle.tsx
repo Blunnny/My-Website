@@ -15,7 +15,7 @@ export function ThemeToggle() {
   const isDark = resolvedTheme === 'dark'
 
   return (
-    <label className="switch">
+    <label className="switch hover:drop-shadow-primary/30 transition-all duration-300 hover:scale-110 hover:drop-shadow-lg active:scale-95">
       <input type="checkbox" checked={isDark} onChange={toggleTheme} />
       <span className="slider">
         <Sun className="absolute left-1 top-1 h-3 w-3 scale-100 text-yellow-400 opacity-100 transition-all duration-500 dark:scale-0 dark:opacity-0" />
