@@ -7,7 +7,7 @@ import { CustomIcon } from '@/components/shared/CustomIcon'
 
 function CareerItem({ careerItem }: { careerItem: CareerItemType }) {
   return (
-    <li className="flex gap-4">
+    <li className="group flex gap-4 rounded-lg p-2 transition-all duration-200 hover:scale-[1.01] hover:bg-muted/50 dark:hover:bg-white/10">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center overflow-hidden rounded-full border border-muted bg-background shadow-md">
         {careerItem.image ? (
           <Image
