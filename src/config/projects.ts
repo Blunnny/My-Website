@@ -374,7 +374,7 @@ export const projects: ProjectsType = {
         name: 'python-mastery',
         description: 'python进阶教程',
         link: {
-          href: 'https://github.com/dabeaz-course/python-mastery',
+          href: 'github.com/dabeaz-course/python-mastery',
           label: 'python-mastery',
         },
         tags: ['Python'],
@@ -384,10 +384,20 @@ export const projects: ProjectsType = {
         name: 'Hello-CTF',
         description: 'CTF网络攻防入门教程',
         link: {
-          href: 'https://github.com/ProbiusOfficial/Hello-CTF',
+          href: 'github.com/ProbiusOfficial/Hello-CTF',
           label: 'Hello-CTF',
         },
         tags: ['Python', 'PHP', 'HTML'],
+        category: 'watching',
+      },
+      {
+        name: 'toBeBetterJavaer',
+        description: 'JAVA学习与进阶之路',
+        link: {
+          href: 'github.com/itwanger/toBeBetterJavaer',
+          label: 'toBeBetterJavaer',
+        },
+        tags: ['-'],
         category: 'watching',
       },
     ],
@@ -591,6 +601,16 @@ export const projects: ProjectsType = {
         tags: ['TypeScript', 'Rust'],
         category: 'watching',
       },
+      {
+        name: 'fuck-u-code',
+        description: '屎山代码检测器，来看看你的代码有多烂？',
+        link: {
+          href: 'github.com/Done-0/fuck-u-code',
+          label: 'fuck-u-code',
+        },
+        tags: ['Go'],
+        category: 'watching',
+      },
     ],
     资源: [
       {
@@ -611,6 +631,26 @@ export const projects: ProjectsType = {
           label: '盘搜',
         },
         tags: ['HTML', 'JavaScript'],
+        category: 'watching',
+      },
+      {
+        name: 'Campus_recruitment_interview_questions',
+        description: '大厂技术岗的面经汇总',
+        link: {
+          href: 'github.com/0voice/Campus_recruitment_interview_questions',
+          label: 'Campus_recruitment_interview_questions',
+        },
+        tags: ['-'],
+        category: 'watching',
+      },
+      {
+        name: '60s',
+        description: '全球CDN加速的开放API集合',
+        link: {
+          href: 'github.com/vikiboss/60s',
+          label: '60s',
+        },
+        tags: ['-'],
         category: 'watching',
       },
     ],
