@@ -23,7 +23,8 @@ const booksByYear: Record<string, any[]> = {
       info: '周洛华',
       publisher: '上海财经大学出版社',
       rating: 9.5,
-      comment: '估值的社会学解释。',
+      comment:
+        '「资产的价值并不来自其本身，而是来自它所确立的个人与其他人、与社会的关系。」',
     },
     {
       title: '太白金星有点烦',
@@ -158,7 +159,8 @@ const booksByYear: Record<string, any[]> = {
       info: '黄奇帆',
       publisher: '中信出版社',
       rating: 9.5,
-      comment: '高屋建瓴，值得反复阅读。',
+      comment:
+        '「中国应当打好五张牌，市场是王牌，产业链是王牌中的王牌，金融是盾牌，科技是关键牌，开放是底牌。」',
     },
     {
       title: '大国大城',
@@ -167,7 +169,7 @@ const booksByYear: Record<string, any[]> = {
       info: '陆铭',
       publisher: '上海人民出版社',
       rating: 9.3,
-      comment: '北上广深的问题不是城市太大，而是还不够大。',
+      comment: '「北上广深的问题不是城市太大，而是还不够大。」',
     },
     {
       title: '证券分析师实践指南',
@@ -206,7 +208,8 @@ const booksByYear: Record<string, any[]> = {
       info: '陳浩基',
       publisher: '皇冠文化出版有限公司',
       rating: 9.0,
-      comment: '专属于香港的传奇故事。',
+      comment:
+        '「我不需要討好你們，因爲警察就是要站在被害者的一方，為沉默的他們作聲。」',
     },
     {
       title: '金榜题名之后',
@@ -215,7 +218,8 @@ const booksByYear: Record<string, any[]> = {
       info: '郑雅君',
       publisher: '上海三联书店',
       rating: 9.1,
-      comment: '大一新生必读书目。',
+      comment:
+        '「这本书要为和我一样经历过文化障碍的学子而写，不能只瓦解热望而不传递勇气。」',
     },
   ],
   2020: [
@@ -226,7 +230,7 @@ const booksByYear: Record<string, any[]> = {
       info: '[美] 黄仁宇',
       publisher: '新知三联书店',
       rating: 9.5,
-      comment: '大明王朝衰败的症结。',
+      comment: '「叙事不妨细致，结论却要看远不顾近。」',
     },
     {
       title: '激荡三十年',
@@ -235,7 +239,8 @@ const booksByYear: Record<string, any[]> = {
       info: '吴晓波',
       publisher: '中信出版社',
       rating: 9.0,
-      comment: '波澜壮阔，迷茫无奈。',
+      comment:
+        '「历史本来就应该是对人自身的描述，它应该是可以触摸的，是可以被感知的，它充满了血肉、运动和偶然性。」',
     },
     {
       title: '诡计博物馆',
@@ -244,7 +249,7 @@ const booksByYear: Record<string, any[]> = {
       info: '[日] 大山诚一郎',
       publisher: '上海文艺出版社',
       rating: 8.5,
-      comment: '最爱《复仇日记》这篇，有点东野圭吾的味道。',
+      comment: '「这是我所能为你做的唯一的事情了。」',
     },
     {
       title: '故事便利店',
@@ -253,7 +258,7 @@ const booksByYear: Record<string, any[]> = {
       info: '骆以军',
       publisher: '河南文艺出版社',
       rating: 8.3,
-      comment: '有种小时读意林、格言和读者的感觉。',
+      comment: '「人心的细微变化都是在水波下面，在水流的深处静静地流动。」',
     },
   ],
   2019: [
@@ -282,7 +287,8 @@ const booksByYear: Record<string, any[]> = {
       info: '[英] 阿加莎·克里斯蒂',
       publisher: '人民文学出版社',
       rating: 9.5,
-      comment: '推理小说经典之作。',
+      comment:
+        '「不可能的事原不会发生，因而不管表面现象如何，发生的事必然是可能的。」',
     },
     {
       title: '窗边的小豆豆',
@@ -291,7 +297,7 @@ const booksByYear: Record<string, any[]> = {
       info: '[日] 黑柳彻子',
       publisher: '南海出版公司',
       rating: 9.0,
-      comment: '教育不是注满一桶水，而是点燃一把火。',
+      comment: '「教育不是注满一桶水，而是点燃一把火。」',
     },
     {
       title: '解忧杂货铺',
@@ -475,7 +481,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2022,
       info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
       rating: 9.3,
-      comment: '太爱星期三和小狼女了。',
+      comment: '「我宁愿孤独，也不愿和那些人为伍。」',
     },
   ],
   2021: [
@@ -501,7 +507,7 @@ const moviesByYear: Record<string, any[]> = {
       year: 2016,
       info: '剧情 / 爱情',
       rating: 9.0,
-      comment: '龙妈的眉毛不要再跳了！！！',
+      comment: '「Live boldly. Push yourself. Don’t settle.」',
     },
     {
       title: '你的名字。 君の名は。',
