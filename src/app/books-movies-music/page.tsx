@@ -332,7 +332,7 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「如果能再了解你一点就好了。」',
     },
     {
-      title: '黑镜 第七季',
+      title: '黑镜 第七季 Black Mirror Season 7',
       cover: '/images/movies/黑镜.png',
       year: 2025,
       info: '剧情 / 科幻 / 悬疑 / 惊悚 / 犯罪',
@@ -348,7 +348,7 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「Pain is an inevitable part of life.」',
     },
     {
-      title: '破·地狱',
+      title: '破·地狱 破·地獄',
       cover: '/images/movies/破·地狱.jpg',
       year: 2024,
       info: '剧情 / 家庭',
@@ -374,7 +374,7 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「Make the world a better place!」',
     },
     {
-      title: '齐木楠雄的灾难',
+      title: '齐木楠雄的灾难 斉木楠雄のΨ難',
       cover: '/images/movies/齐木楠雄的灾难.jpg',
       year: '2016-2019',
       info: '剧情 / 喜剧 / 动画 / 奇幻',
@@ -443,7 +443,7 @@ const moviesByYear: Record<string, any[]> = {
   ],
   2022: [
     {
-      title: 'JOJO的奇妙冒险',
+      title: 'JOJO的奇妙冒险 ジョジョの奇妙な冒険',
       cover: '/images/movies/JOJO的奇妙冒险.webp',
       year: '2012 - 2021',
       info: '剧情 / 动作 / 动画 / 冒险',
@@ -476,7 +476,7 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「子弹杯里兑伏特加加冰，兑小可可乐，生的伟大，死的光荣。」',
     },
     {
-      title: '星期三',
+      title: '星期三 Wednesday',
       cover: '/images/movies/星期三.jpg',
       year: 2022,
       info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
@@ -562,7 +562,7 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「想见你 只想见你 未来过去 我只想见你」',
     },
     {
-      title: '权力的游戏',
+      title: '权力的游戏 Game of Thrones ',
       cover: '/images/movies/权力的游戏.webp',
       year: '2011-2019',
       info: '剧情 / 奇幻 / 冒险',
