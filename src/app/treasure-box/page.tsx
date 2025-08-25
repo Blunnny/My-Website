@@ -1018,8 +1018,14 @@ const categories: CategoriesType = {
     ],
     运动健身: [
       {
+        title: 'darebee',
+        url: 'https://darebee.com/',
+        description: '包含了大量与健身相关知识的网站',
+        tags: ['免费', '无广告'],
+      },
+      {
         title: 'musclewiki',
-        url: 'https://musclewiki.com//',
+        url: 'https://musclewiki.com/',
         description: '教你健身的网站',
         tags: ['免费', '有广告'],
       },
