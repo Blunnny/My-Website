@@ -634,7 +634,7 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
       {
-        name: 'Campus_recruitment_interview_questions',
+        name: 'Interview_questions',
         description: '大厂技术岗的面经汇总',
         link: {
           href: 'github.com/0voice/Campus_recruitment_interview_questions',
