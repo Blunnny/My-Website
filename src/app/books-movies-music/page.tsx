@@ -919,7 +919,7 @@ const musicsByYear: Record<string, any[]> = {
 const gamesByType = {
   单机游戏: [
     {
-      title: 'GTA5',
+      title: '侠盗猎车手5 Grand Theft Auto V',
       cover: '/images/games/GTA5.jpg',
       year: 2015,
       type: '角色扮演 / 冒险 / 动作 / 开放世界',
@@ -927,12 +927,12 @@ const gamesByType = {
       comment: 'GTA6不要跳票了😭',
     },
     {
-      title: '黑神话·悟空',
-      cover: '/images/games/黑神话·悟空.jpg',
-      year: 2024,
-      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      title: '荒野大镖客：救赎2 Red Dead Redemption 2',
+      cover: '/images/games/荒野大镖客：救赎2 Red Dead Redemption 2.jpg',
+      year: 2018,
+      type: '游戏 / 射击 / 冒险 / 动作',
       rating: 9.9,
-      comment: '「这一回，我又赢了，金蝉子。」',
+      comment: '「I had a GOD DAMN PLAN!」',
     },
     {
       title: '艾尔登法环 Elden Ring',
@@ -943,13 +943,29 @@ const gamesByType = {
       comment: '「即使引导早已破碎，也请您当上艾尔登之王。」',
     },
     {
+      title: '黑神话·悟空',
+      cover: '/images/games/黑神话·悟空.jpg',
+      year: 2024,
+      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      rating: 9.7,
+      comment: '「这一回，我又赢了，金蝉子。」',
+    },
+    {
       title: '赛博朋克 2077 Cyberpunk 2077',
       cover: '/images/games/赛博朋克 2077 Cyberpunk 2077.jpg',
       year: 2020,
       type: '游戏 / 第一人称射击 / 角色扮演 / 冒险 / 动作',
-      rating: 9.8,
+      rating: 9.7,
       comment:
         '「你是愿意当个无名之辈，一辈子安生？还是就算活不到三十岁，也要名留青史呢？」',
+    },
+    {
+      title: '杀戮尖塔 Slay the Spire',
+      cover: '/images/games/杀戮尖塔 Slay the Spire.jpg',
+      year: 2019,
+      type: '游戏 / 卡牌 / 角色扮演 / 策略',
+      rating: 9.6,
+      comment: '「My chili recipe...dies...with me.」',
     },
     {
       title: '死亡搁浅 DEATH STRANDING',
@@ -957,7 +973,15 @@ const gamesByType = {
       year: 2019,
       type: '游戏 / 冒险 / 动作',
       rating: 9.5,
-      comment: '用开罗尔网络重新编织千万条羁绊的绳结。',
+      comment: '「Keep on keeping on.」',
+    },
+    {
+      title: '无主之地3 Borderlands 3',
+      cover: '/images/games/无主之地3 Borderlands 3.jpg',
+      year: 2019,
+      type: '游戏 / 第一人称射击 / 角色扮演 / 冒险 / 动作',
+      rating: 9.0,
+      comment: '「My chili recipe...dies...with me.」',
     },
   ],
   网游: [
