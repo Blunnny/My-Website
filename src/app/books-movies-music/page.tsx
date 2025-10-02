@@ -319,41 +319,41 @@ const moviesByYear: Record<string, any[]> = {
       cover: '/images/movies/哪吒之魔童闹海.jpg',
       year: 2025,
       info: '剧情 / 喜剧 / 动画 / 奇幻',
-      rating: 9.7,
+      rating: 9.5,
       comment:
         '「我乃哪吒三太子，能降妖来会作诗。今日到此锄奸恶，尔等妖魔快受死。」',
     },
     {
-      title: '葬送的芙莉莲 葬送のフリーレン',
-      cover: '/images/movies/葬送的芙莉莲.webp',
-      year: 2023,
-      info: '动画 / 奇幻 / 冒险',
-      rating: 9.6,
-      comment: '「如果能再了解你一点就好了。」',
+      title: '实习生 The Intern',
+      cover: '/images/movies/实习生 The Intern.webp',
+      year: 2015,
+      info: '喜剧',
+      rating: 9.0,
+      comment: "「You're never wrong to do the right thing.」",
     },
     {
-      title: '黑镜 第七季 Black Mirror Season 7',
-      cover: '/images/movies/黑镜.png',
+      title: '捕风追影',
+      cover: '/images/movies/捕风追影.webp',
       year: 2025,
-      info: '剧情 / 科幻 / 悬疑 / 惊悚 / 犯罪',
-      rating: 9.5,
-      comment: '「你有多少时间？」「我有的是时间。」',
+      info: '剧情 / 动作 / 犯罪',
+      rating: 8.5,
+      comment: '龙叔和小玉！',
     },
     {
-      title: '成瘾剂量 Dopesick ',
-      cover: '/images/movies/成瘾剂量 Dopesick.webp',
-      year: 2021,
-      info: '剧情',
+      title: '浪浪山小妖怪',
+      cover: '/images/movies/浪浪山小妖怪.webp',
+      year: 2025,
+      info: '剧情 / 喜剧 / 动画 / 奇幻',
+      rating: 8.8,
+      comment: '取经的冒牌货，人生的真主角。',
+    },
+    {
+      title: '我是谁：没有绝对安全的系统 Who Am I - Kein System ist sicher',
+      cover: '/images/movies/我是谁.webp',
+      year: 2014,
+      info: '悬疑 / 惊悚 / 犯罪',
       rating: 9.3,
-      comment: '「Pain is an inevitable part of life.」',
-    },
-    {
-      title: '破·地狱 破·地獄',
-      cover: '/images/movies/破·地狱.jpg',
-      year: 2024,
-      info: '剧情 / 家庭',
-      rating: 8.9,
-      comment: '「其實生人都係需要破地獄嘅。」',
+      comment: '「No System is Safe.」',
     },
   ],
   2024: [
@@ -365,22 +365,7 @@ const moviesByYear: Record<string, any[]> = {
       rating: 9.7,
       comment: '「诗在，书在，长安就在」',
     },
-    {
-      title: '硅谷 Silicon Valley',
-      cover: '/images/movies/硅谷.jpg',
-      year: '2014-2019',
-      info: '喜剧 / 剧情',
-      rating: 9.8,
-      comment: '「Make the world a better place!」',
-    },
-    {
-      title: '齐木楠雄的灾难 斉木楠雄のΨ難',
-      cover: '/images/movies/齐木楠雄的灾难.jpg',
-      year: '2016-2019',
-      info: '剧情 / 喜剧 / 动画 / 奇幻',
-      rating: 9.3,
-      comment: '如果做不了神，就做一个幸福的普通人吧。',
-    },
+
     {
       title: '沙丘2 Dune: Part Two',
       cover: '/images/movies/沙丘2.jpg',
@@ -388,33 +373,6 @@ const moviesByYear: Record<string, any[]> = {
       info: '剧情 / 动作 / 科幻 / 冒险',
       rating: 9.4,
       comment: '「当资源极其有限时，恐惧是我们唯一的资本。」',
-    },
-    {
-      title: '影后',
-      cover: '/images/movies/影后.jpg',
-      year: 2024,
-      info: '剧情 / 喜剧',
-      rating: 9.0,
-      comment: '「史艾瑪你聽好，等你是個咖，才有資格掉眼淚！」',
-    },
-  ],
-  2023: [
-    {
-      title: '生活大爆炸 The Big Bang Theory',
-      cover: '/images/movies/生活大爆炸.jpg',
-      year: '2007-2018',
-      info: '喜剧 / 爱情',
-      rating: 9.9,
-      comment: "「If you weren't my friend, there'd be a hole in my life.」",
-    },
-
-    {
-      title: '寻梦环游记 Coco',
-      cover: '/images/movies/寻梦环游记.jpg',
-      year: 2017,
-      info: '喜剧 / 动画 / 音乐 / 奇幻',
-      rating: 9.6,
-      comment: '「死亡不是生命的终点，遗忘才是。」',
     },
     {
       title: '里斯本丸沉没',
@@ -425,6 +383,33 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「活下来的人并没有真正活着，在很久之后我才意识到这一点。」',
     },
     {
+      title: '破·地狱 破·地獄',
+      cover: '/images/movies/破·地狱.jpg',
+      year: 2024,
+      info: '剧情 / 家庭',
+      rating: 9.3,
+      comment: '「其實生人都係需要破地獄嘅。」',
+    },
+    {
+      title: '九龙城寨之围城 九龍城寨·圍城',
+      cover: '/images/movies/九龙城寨之围城.webp',
+      year: 2024,
+      info: '动作 / 犯罪',
+      rating: 9.0,
+      comment: '「我頂。頂。頂。頂。」',
+    },
+  ],
+  2023: [
+    {
+      title: '寻梦环游记 Coco',
+      cover: '/images/movies/寻梦环游记.jpg',
+      year: 2017,
+      info: '喜剧 / 动画 / 音乐 / 奇幻',
+      rating: 9.6,
+      comment: '「死亡不是生命的终点，遗忘才是。」',
+    },
+
+    {
       title: '周处除三害',
       cover: '/images/movies/周处除三害.webp',
       year: 2023,
@@ -433,23 +418,32 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「时间差不多咯！」',
     },
     {
-      title: '中国奇谭',
-      cover: '/images/movies/中国奇谭.webp',
+      title: '年会不能停！',
+      cover: '/images/movies/年会不能停！.webp',
       year: 2023,
-      info: '动画 / 短片 / 奇幻',
-      rating: 9.4,
-      comment: '「送货郎，你丢的究竟是鹅，还是那心上人？」',
+      info: '剧情 / 喜剧',
+      rating: 9.2,
+      comment: '「他能当领导，肯定有两把刷子。」',
+    },
+    {
+      title: '白日之下',
+      cover: '/images/movies/白日之下.webp',
+      year: 2023,
+      info: '剧情 / 犯罪',
+      rating: 9.2,
+      comment:
+        '「可能真的沒人在乎，可能我們試了一千次都沒用，但說不定這次就能改變。」',
+    },
+    {
+      title: '流浪地球2',
+      cover: '/images/movies/流浪地球2.webp',
+      year: 2023,
+      info: '科幻 / 冒险 / 灾难',
+      rating: 9.5,
+      comment: '「没有人的文明毫无意义。」',
     },
   ],
   2022: [
-    {
-      title: 'JOJO的奇妙冒险 ジョジョの奇妙な冒険',
-      cover: '/images/movies/JOJO的奇妙冒险.webp',
-      year: '2012 - 2021',
-      info: '剧情 / 动作 / 动画 / 冒险',
-      rating: 9.8,
-      comment: '「这是替身攻击！」',
-    },
     {
       title: '头号玩家 Ready Player One',
       cover: '/images/movies/头号玩家.jpg',
@@ -458,41 +452,43 @@ const moviesByYear: Record<string, any[]> = {
       rating: 9.6,
       comment: '「谢谢你来玩我的游戏。」',
     },
+
     {
-      title: '蜘蛛侠：平行宇宙 Spider-Man: Into the Spider-Verse',
-      cover: '/images/movies/蜘蛛侠：平行宇宙.jpg',
-      year: 2018,
-      info: '动作 / 科幻 / 动画 / 冒险',
-      rating: 9.4,
-      comment:
-        '「我要怎样才能知道我准备好了？」「你不会知道，这就是一种信念。」',
+      title: '子弹列车 Bullet Train',
+      cover: '/images/movies/子弹列车 Bullet Train.webp',
+      year: 2022,
+      info: '喜剧 / 动作 / 惊悚',
+      rating: 9.0,
+      comment: '「Who the fuck are you?」',
     },
     {
-      title: '赛博朋克：边缘行者 Cyberpunk: Edgerunners',
-      cover: '/images/movies/赛博朋克.webp',
+      title: '小丑 Joker',
+      cover: '/images/movies/小丑 Joker.webp',
       year: 2022,
-      info: '动作 / 科幻 / 动画 / 惊悚 / 犯罪 / 冒险',
-      rating: 9.5,
-      comment: '「子弹杯里兑伏特加加冰，兑小可可乐，生的伟大，死的光荣。」',
-    },
-    {
-      title: '星期三 Wednesday',
-      cover: '/images/movies/星期三.jpg',
-      year: 2022,
-      info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
+      info: '剧情 / 惊悚 / 犯罪',
       rating: 9.3,
-      comment: '「我宁愿孤独，也不愿和那些人为伍。」',
+      comment:
+        "「I used to think that my life was atragedy. But now I realize, it's a comedy.」",
+    },
+    {
+      title: '瞬息全宇宙 Everything Everywhere All at Once',
+      cover: '/images/movies/瞬息全宇宙 Everything Everywhere All at Once.webp',
+      year: 2022,
+      info: '喜剧 / 奇幻 / 冒险',
+      rating: 9.5,
+      comment:
+        '「I wanted to say, in another life, I would have really liked just doing laundry and taxes with you.」',
+    },
+    {
+      title: '扬名立万',
+      cover: '/images/movies/扬名立万.webp',
+      year: 2021,
+      info: '剧情 / 喜剧 / 悬疑',
+      rating: 9.2,
+      comment: '「知道这个世界上什么最可怕吗？记忆。」',
     },
   ],
   2021: [
-    {
-      title: '英雄联盟：双城之战 第一季 Arcane Season 1',
-      cover: '/images/movies/英雄联盟：双城之战.webp',
-      year: 2021,
-      info: '动作 / 科幻 / 动画 / 冒险',
-      rating: 9.3,
-      comment: '「JINX means jinx!」',
-    },
     {
       title: '模仿游戏 The Imitation Game',
       cover: '/images/movies/模仿游戏.jpg',
@@ -526,6 +522,216 @@ const moviesByYear: Record<string, any[]> = {
       rating: 9.8,
       comment: "「All that city you just couldn't see an end to it.」",
     },
+    {
+      title: '花束般的恋爱 花束みたいな恋をした',
+      cover: '/images/movies/花束般的恋爱.webp',
+      year: 2021,
+      info: '剧情 / 爱情',
+      rating: 9.2,
+      comment:
+        '「立体声音乐用耳机听的话，左右耳会听到不一样的声音，如果两人各听一耳就会听到不同的歌曲。」',
+    },
+  ],
+  2020: [
+    {
+      title: '华尔街之狼 The Wolf of Wall Street',
+      cover: '/images/movies/华尔街之狼.webp',
+      year: 2013,
+      info: '剧情 / 传记 / 犯罪',
+      rating: 9.3,
+      comment:
+        '「The art of making money is learning to receive life and enjoy it.」',
+    },
+    {
+      title: '好小子们 Good Boys',
+      cover: '/images/movies/好小子们 Good Boys.webp',
+      year: 2019,
+      info: '喜剧 / 儿童 / 冒险',
+      rating: 9.0,
+      comment:
+        "「We're in sixth grade now. We need to start doing sixth-grade things.」",
+    },
+    {
+      title: '穿条纹睡衣的男孩 The Boy in the Striped Pajamas',
+      cover:
+        '/images/movies/穿条纹睡衣的男孩 The Boy in the Striped Pajamas.webp',
+      year: 2008,
+      info: '剧情 / 战争',
+      rating: 9.6,
+      comment: "「We are still friends, aren't we?」",
+    },
+    {
+      title: '蜘蛛侠：平行宇宙 Spider-Man: Into the Spider-Verse',
+      cover: '/images/movies/蜘蛛侠：平行宇宙.jpg',
+      year: 2018,
+      info: '动作 / 科幻 / 动画 / 冒险',
+      rating: 9.4,
+      comment:
+        '「我要怎样才能知道我准备好了？」「你不会知道，这就是一种信念。」',
+    },
+    {
+      title: '调音师 Andhadhun',
+      cover: '/images/movies/调音师.webp',
+      year: 2018,
+      info: '喜剧 / 悬疑 / 惊悚 / 犯罪',
+      rating: 9.0,
+      comment: '「What is life? It depends on the liver.」',
+    },
+  ],
+  2019: [
+    {
+      title: '绿皮书 Green Book',
+      cover: '/images/movies/绿皮书.webp',
+      year: 2018,
+      info: '剧情 / 喜剧 / 音乐 / 传记',
+      rating: 9.7,
+      comment: "「They don't have a choice, but you do.」",
+    },
+
+    {
+      title: '布达佩斯大饭店 The Grand Budapest Hotel',
+      cover: '/images/movies/布达佩斯大饭店.jpg',
+      year: 2014,
+      info: '喜剧 / 剧情',
+      rating: 9.5,
+      comment: '「I was once considered a great beauty.」',
+    },
+    {
+      title: '复仇者联盟4：终局之战 Avengers: Endgame',
+      cover: '/images/movies/复仇者联盟4.webp',
+      year: 2019,
+      info: '剧情 / 动作 / 科幻 / 奇幻 / 冒险',
+      rating: 9.5,
+      comment: '「I am Iron Man.」',
+    },
+    {
+      title: '三傻大闹宝莱坞 3 Idiots',
+      cover: '/images/movies/三傻大闹宝莱坞 3 Idiots.webp',
+      year: 2009,
+      info: '剧情 / 喜剧 / 爱情 / 歌舞',
+      rating: 9.2,
+      comment:
+        '「盐水具有极强的导电性，初二物理知识，我们都学过，只有他会应用。」',
+    },
+    {
+      title: '王牌特工：特工学院 Kingsman: The Secret Service',
+      cover: '/images/movies/王牌特工.webp',
+      year: 2014,
+      info: '喜剧 / 动作 / 冒险',
+      rating: 9.0,
+      comment:
+        "「The suit is a modern gentleman's armor, and the Kingsman agents are the new knights.」",
+    },
+  ],
+}
+
+// 电视剧
+const tvByYear: Record<string, any[]> = {
+  2025: [
+    {
+      title: '黑镜 第七季 Black Mirror Season 7',
+      cover: '/images/movies/黑镜.png',
+      year: 2025,
+      info: '剧情 / 科幻 / 悬疑 / 惊悚 / 犯罪',
+      rating: 9.5,
+      comment: '「你有多少时间？」「我有的是时间。」',
+    },
+    {
+      title: '葬送的芙莉莲 葬送のフリーレン',
+      cover: '/images/movies/葬送的芙莉莲.webp',
+      year: 2023,
+      info: '动画 / 奇幻 / 冒险',
+      rating: 9.6,
+      comment: '「如果能再了解你一点就好了。」',
+    },
+    {
+      title: '成瘾剂量 Dopesick ',
+      cover: '/images/movies/成瘾剂量 Dopesick.webp',
+      year: 2021,
+      info: '剧情',
+      rating: 9.3,
+      comment: '「Pain is an inevitable part of life.」',
+    },
+  ],
+  2024: [
+    {
+      title: '硅谷 Silicon Valley',
+      cover: '/images/movies/硅谷.jpg',
+      year: '2014-2019',
+      info: '喜剧 / 剧情',
+      rating: 9.8,
+      comment: '「Make the world a better place!」',
+    },
+    {
+      title: '齐木楠雄的灾难 斉木楠雄のΨ難',
+      cover: '/images/movies/齐木楠雄的灾难.jpg',
+      year: '2016-2019',
+      info: '剧情 / 喜剧 / 动画 / 奇幻',
+      rating: 9.3,
+      comment: '如果做不了神，就做一个幸福的普通人吧。',
+    },
+    {
+      title: '影后',
+      cover: '/images/movies/影后.jpg',
+      year: 2024,
+      info: '剧情 / 喜剧',
+      rating: 9.0,
+      comment: '「史艾瑪你聽好，等你是個咖，才有資格掉眼淚！」',
+    },
+  ],
+  2023: [
+    {
+      title: '生活大爆炸 The Big Bang Theory',
+      cover: '/images/movies/生活大爆炸.jpg',
+      year: '2007-2018',
+      info: '喜剧 / 爱情',
+      rating: 9.9,
+      comment: "「If you weren't my friend, there'd be a hole in my life.」",
+    },
+    {
+      title: '中国奇谭',
+      cover: '/images/movies/中国奇谭.webp',
+      year: 2023,
+      info: '动画 / 短片 / 奇幻',
+      rating: 9.4,
+      comment: '「送货郎，你丢的究竟是鹅，还是那心上人？」',
+    },
+  ],
+  2022: [
+    {
+      title: 'JOJO的奇妙冒险 ジョジョの奇妙な冒険',
+      cover: '/images/movies/JOJO的奇妙冒险.webp',
+      year: '2012 - 2021',
+      info: '剧情 / 动作 / 动画 / 冒险',
+      rating: 9.8,
+      comment: '「这是替身攻击！」',
+    },
+    {
+      title: '赛博朋克：边缘行者 Cyberpunk: Edgerunners',
+      cover: '/images/movies/赛博朋克.webp',
+      year: 2022,
+      info: '动作 / 科幻 / 动画 / 惊悚 / 犯罪 / 冒险',
+      rating: 9.5,
+      comment: '「子弹杯里兑伏特加加冰，兑小可可乐，生的伟大，死的光荣。」',
+    },
+    {
+      title: '星期三 Wednesday',
+      cover: '/images/movies/星期三.jpg',
+      year: 2022,
+      info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
+      rating: 9.3,
+      comment: '「我宁愿孤独，也不愿和那些人为伍。」',
+    },
+  ],
+  2021: [
+    {
+      title: '英雄联盟：双城之战 第一季 Arcane Season 1',
+      cover: '/images/movies/英雄联盟：双城之战.webp',
+      year: 2021,
+      info: '动作 / 科幻 / 动画 / 冒险',
+      rating: 9.3,
+      comment: '「JINX means jinx!」',
+    },
   ],
   2020: [
     {
@@ -543,15 +749,6 @@ const moviesByYear: Record<string, any[]> = {
       info: '剧情 / 悬疑',
       rating: 9.6,
       comment: '「医学是为未来而生的工作。」',
-    },
-    {
-      title: '华尔街之狼 The Wolf of Wall Street',
-      cover: '/images/movies/华尔街之狼.webp',
-      year: 2013,
-      info: '剧情 / 传记 / 犯罪',
-      rating: 9.3,
-      comment:
-        '「The art of making money is learning to receive life and enjoy it.」',
     },
     {
       title: '想见你 想見你',
@@ -572,36 +769,12 @@ const moviesByYear: Record<string, any[]> = {
   ],
   2019: [
     {
-      title: '绿皮书 Green Book',
-      cover: '/images/movies/绿皮书.webp',
-      year: 2018,
-      info: '剧情 / 喜剧 / 音乐 / 传记',
-      rating: 9.7,
-      comment: "「They don't have a choice, but you do.」",
-    },
-    {
       title: '加勒比海盗系列 Pirates of the Caribbean',
       cover: '/images/movies/加勒比海盗.webp',
       year: '2003-2017',
       info: '动作 / 冒险 / 奇幻 / 剧情',
       rating: 9.3,
       comment: '「Dying is the day worth living for!」',
-    },
-    {
-      title: '布达佩斯大饭店 The Grand Budapest Hotel',
-      cover: '/images/movies/布达佩斯大饭店.jpg',
-      year: 2014,
-      info: '喜剧 / 剧情',
-      rating: 9.5,
-      comment: '「I was once considered a great beauty.」',
-    },
-    {
-      title: '复仇者联盟4：终局之战 Avengers: Endgame',
-      cover: '/images/movies/复仇者联盟4.webp',
-      year: 2019,
-      info: '剧情 / 动作 / 科幻 / 奇幻 / 冒险',
-      rating: 9.5,
-      comment: '「I am Iron Man.」',
     },
     {
       title: '长安十二时辰',
@@ -965,7 +1138,7 @@ const gamesByType = {
       year: 2019,
       type: '游戏 / 卡牌 / 角色扮演 / 策略',
       rating: 9.6,
-      comment: '「My chili recipe...dies...with me.」',
+      comment: '「🤖:至少也要见到第一个boss吧」',
     },
     {
       title: '死亡搁浅 DEATH STRANDING',
@@ -999,7 +1172,7 @@ const gamesByType = {
       year: 2012,
       type: '游戏 / FPS ',
       rating: 8.0,
-      comment: '十年老兵前来报到！',
+      comment: '十年老兵',
     },
   ],
 }
@@ -1052,6 +1225,14 @@ const upcomingGames = [
     year: 2023,
     type: '游戏 / 第一人称射击 / 角色扮演 / 冒险 / 动作',
     comment: '插满赤旗的未来世界。',
+    rating: 0,
+  },
+  {
+    title: '极乐迪斯科 Disco Elysium',
+    cover: '/images/games/极乐迪斯科 Disco Elysium.jpg',
+    year: 2019,
+    type: '游戏 / 角色扮演',
+    comment: 'CRPG的文艺复兴与后社会主义的百年孤独。',
     rating: 0,
   },
 ]
@@ -1349,6 +1530,7 @@ export default function BooksMoviesMusicPage() {
           dataByYear={moviesByYear}
           type="movie"
         />
+        <YearSection title="第二人生" dataByYear={tvByYear} type="tv" />
         <YearSection
           title="单曲循环！"
           dataByYear={musicsByYear}
