@@ -743,7 +743,7 @@ const tvByYear: Record<string, any[]> = {
       year: 2023,
       info: '剧情 / 家庭 / 犯罪',
       rating: 9.4,
-      comment: '「往前走，别回头.」',
+      comment: '「往前走，别回头。」',
     },
     {
       title: '旺达幻视 WandaVision',
@@ -966,12 +966,12 @@ const musicsByYear: Record<string, any[]> = {
       comment: '「時來運到 天下無敵 即使最終得個夢」',
     },
     {
-      title: '可不可以',
-      cover: '/images/musics/可不可以.jpg',
-      year: 2018,
-      artist: '张紫豪',
-      rating: 8.5,
-      comment: '她不一样😭',
+      title: '遇',
+      cover: '/images/musics/遇.jpg',
+      year: 2004,
+      artist: 'ai.mini',
+      rating: 9.0,
+      comment: '「都怪雨下的那么急 都怪没有地方躲雨」',
     },
   ],
   2024: [
@@ -1276,6 +1276,14 @@ const gamesByType = {
         '「你是愿意当个无名之辈，一辈子安生？还是就算活不到三十岁，也要名留青史呢？」',
     },
     {
+      title: '战神4 God of War',
+      cover: '/images/games/战神4 God of War.jpg',
+      year: 2018,
+      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      rating: 9.7,
+      comment: '「不要把我的沉默误解为我没有悲伤。」',
+    },
+    {
       title: '杀戮尖塔 Slay the Spire',
       cover: '/images/games/杀戮尖塔 Slay the Spire.jpg',
       year: 2019,
@@ -1290,6 +1298,14 @@ const gamesByType = {
       type: '游戏 / 冒险 / 动作',
       rating: 9.5,
       comment: '「Keep on keeping on.」',
+    },
+    {
+      title: '热血无赖 Sleeping Dogs',
+      cover: '/images/games/热血无赖 Sleeping Dogs.jpg',
+      year: 2012,
+      type: '游戏 / 射击 / 冒险 / 动作',
+      rating: 9.2,
+      comment: '「A man who never eats pork buns, is never a whole man!」',
     },
     {
       title: '无主之地3 Borderlands 3',
@@ -1396,9 +1412,14 @@ function GameSection() {
 
   return (
     <div className="mb-12">
-      <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
-        All work and no play makes Jack a dull boy
-      </h2>
+      <div className="mb-4 flex items-baseline gap-3">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground">
+          游戏
+        </h2>
+        <span className="text-base font-medium text-muted-foreground">
+          All work and no play makes Jack a dull boy
+        </span>
+      </div>
 
       {/* 主分类按钮 */}
       <div className="mb-4 flex items-center gap-2">
@@ -1487,10 +1508,12 @@ function GameSection() {
 
 function YearSection({
   title,
+  subtitle,
   dataByYear,
   type,
 }: {
   title: string
+  subtitle?: string
   dataByYear: Record<string, any[]>
   type: string
 }) {
@@ -1499,9 +1522,16 @@ function YearSection({
   const [year, setYear] = useState(years[0])
   return (
     <div className="mb-12">
-      <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
-        {title}
-      </h2>
+      <div className="mb-2 flex items-baseline gap-3">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground">
+          {title}
+        </h2>
+        {subtitle && (
+          <span className="text-base font-medium text-muted-foreground">
+            {subtitle}
+          </span>
+        )}
+      </div>
       <div className="mb-4 flex items-center gap-2">
         <span className="text-base font-medium text-muted-foreground">
           年度 TOP5
@@ -1664,18 +1694,26 @@ export default function BooksMoviesMusicPage() {
           且将新火试新茶，诗酒趁年华
         </h1>
         <YearSection
-          title="字里行间，卧游千山"
+          title="图书"
+          subtitle="字里行间，卧游千山"
           dataByYear={booksByYear}
           type="book"
         />
         <YearSection
-          title="二十四帧人间世"
+          title="电影"
+          subtitle="二十四帧人间世"
           dataByYear={moviesByYear}
           type="movie"
         />
-        <YearSection title="第二人生" dataByYear={tvByYear} type="tv" />
+        <YearSection 
+          title="电视剧" 
+          subtitle="第二人生" 
+          dataByYear={tvByYear} 
+          type="tv" 
+        />
         <YearSection
-          title="单曲循环！"
+          title="音乐"
+          subtitle="单曲循环！"
           dataByYear={musicsByYear}
           type="music"
         />
