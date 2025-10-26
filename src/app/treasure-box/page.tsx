@@ -1246,6 +1246,12 @@ const categories: CategoriesType = {
         description: 'JavaScript学习网站',
         tags: ['部分免费', '无广告'],
       },
+      {
+        title: '你缺失的那门计算机课',
+        url: 'https://www.criwits.top/missing/',
+        description: '一份适合电脑小白的、面向今日与未来的信息时代指南',
+        tags: ['免费', '无广告'],
+      },
     ],
     实用工具: [
       {

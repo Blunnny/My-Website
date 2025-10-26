@@ -187,6 +187,16 @@ export const projects: ProjectsType = {
         tags: ['Python', 'LLM'],
         category: 'watching',
       },
+      {
+        name: 'TradingAgents-CN',
+        link: {
+          href: 'github.com/hsliuping/TradingAgents-CN',
+          label: 'TradingAgents-CN',
+        },
+        description: 'TradingAgents的中文增强版',
+        tags: ['Python', 'LLM'],
+        category: 'watching',
+      },
     ],
     数据分析: [
       {
@@ -453,6 +463,26 @@ export const projects: ProjectsType = {
         tags: ['Go', 'HTML'],
         category: 'watching',
       },
+      {
+        name: 'Imagine',
+        description: '一个适用于各种系统的PNG/JPEG图片压缩工具',
+        link: {
+          href: 'github.com/meowtec/Imagine',
+          label: 'Imagine',
+        },
+        tags: ['Typescript'],
+        category: 'watching',
+      },
+      {
+        name: 'FileConverter',
+        description: '一个可以转换几乎所有主流文件格式的开源工具',
+        link: {
+          href: 'github.com/Tichau/FileConverter',
+          label: 'FileConverter',
+        },
+        tags: ['C#'],
+        category: 'watching',
+      },
     ],
     娱乐: [
       {
@@ -490,6 +520,16 @@ export const projects: ProjectsType = {
           label: 'MoonTV',
         },
         tags: ['TypeScript', 'CSS'],
+        category: 'watching',
+      },
+      {
+        name: 'CookLikeHOC',
+        description: '像老乡鸡那样做饭-《老乡鸡菜品溯源报告》的电子版',
+        link: {
+          href: 'github.com/Gar-b-age/CookLikeHOC',
+          label: 'CookLikeHOC',
+        },
+        tags: ['TypeScript', 'JavaScript', 'Dockerfile'],
         category: 'watching',
       },
     ],
@@ -649,6 +689,16 @@ export const projects: ProjectsType = {
         link: {
           href: 'github.com/vikiboss/60s',
           label: '60s',
+        },
+        tags: ['-'],
+        category: 'watching',
+      },
+      {
+        name: 'ossnav',
+        description: '收录了大量开源免费资源的仓库',
+        link: {
+          href: 'github.com/maxiaobang7/ossnav',
+          label: 'ossnav',
         },
         tags: ['-'],
         category: 'watching',
