@@ -87,6 +87,7 @@ type CodingSubCategory =
   | '实用工具'
   | '资源网站'
   | '商业变现'
+  | 'AI大模型测评'
 
 // 购物子分类类型定义
 type ShoppingSubCategory = '购物指南' | '购物网站'
@@ -1328,6 +1329,38 @@ const categories: CategoriesType = {
         title: 'weekly',
         url: 'https://github.com/ljinkai/weekly?tab=readme-ov-file',
         description: '独立开发变现周刊',
+        tags: ['免费', '无广告'],
+      },
+    ],
+    AI大模型测评: [
+      {
+        title: 'LMArena',
+        url: 'https://lmarena.ai/leaderboard/',
+        description: 'AI大模型竞技场',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'Alpha Arena',
+        url: 'https://nof1.ai/',
+        description: 'AI大模型在加密货币中的实盘竞赛',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'AIME 2025',
+        url: 'https://artificialanalysis.ai/evaluations/aime-2025',
+        description: '针对AI进行的奥林匹克级的数学推理能力测试',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'SWE',
+        url: 'https://www.swebench.com/',
+        description: 'AI编程能力的测试',
+        tags: ['免费', '无广告'],
+      },
+      {
+        title: 'AgentBench',
+        url: 'https://github.com/THUDM/AgentBench',
+        description: '多智能体领域的AI能力测试',
         tags: ['免费', '无广告'],
       },
     ],
