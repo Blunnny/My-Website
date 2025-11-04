@@ -340,12 +340,13 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「世界不会变，你只能自己换位置。」',
     },
     {
-      title: '浪浪山小妖怪',
-      cover: '/images/movies/浪浪山小妖怪.webp',
+      title: '一战再战',
+      cover: '/images/movies/一战再战.webp',
       year: 2025,
-      info: '剧情 / 喜剧 / 动画 / 奇幻',
-      rating: 8.8,
-      comment: '取经的冒牌货，人生的真主角。',
+      info: '剧情 / 动作 / 惊悚 / 犯罪',
+      rating: 9.2,
+      comment:
+        "「I need a weapon, man. All you've got are goddamn nunchuks here.」",
     },
     {
       title: '我是谁：没有绝对安全的系统 Who Am I - Kein System ist sicher',
@@ -1705,11 +1706,11 @@ export default function BooksMoviesMusicPage() {
           dataByYear={moviesByYear}
           type="movie"
         />
-        <YearSection 
-          title="电视剧" 
-          subtitle="第二人生" 
-          dataByYear={tvByYear} 
-          type="tv" 
+        <YearSection
+          title="电视剧"
+          subtitle="第二人生"
+          dataByYear={tvByYear}
+          type="tv"
         />
         <YearSection
           title="音乐"
