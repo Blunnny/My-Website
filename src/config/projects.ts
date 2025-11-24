@@ -207,6 +207,26 @@ export const projects: ProjectsType = {
         tags: ['Clojure', 'typescript', 'SQL', 'BI'],
         category: 'watching',
       },
+      {
+        name: 'BettaFish 微舆',
+        link: {
+          href: 'github.com/666ghj/BettaFish?tab=readme-ov-file',
+          label: 'BettaFish',
+        },
+        description: '人人可用的多Agent舆情分析助手',
+        tags: ['Python', 'HTML'],
+        category: 'watching',
+      },
+      {
+        name: 'TrendRadar',
+        link: {
+          href: 'github.com/sansan0/TrendRadar',
+          label: 'TrendRadar',
+        },
+        description: '开源的新闻热点分析助手',
+        tags: ['Python', 'HTML'],
+        category: 'watching',
+      },
     ],
     爬虫: [
       {
@@ -326,6 +346,16 @@ export const projects: ProjectsType = {
           label: 'VideoCaptioner',
         },
         tags: ['Python'],
+        category: 'watching',
+      },
+      {
+        name: 'spleeter',
+        description: '一个音频分离工具（人声、音乐声、背景声）',
+        link: {
+          href: 'github.com/deezer/spleeter',
+          label: 'spleeter',
+        },
+        tags: ['Python', 'Dockerfile'],
         category: 'watching',
       },
     ],
@@ -532,6 +562,26 @@ export const projects: ProjectsType = {
         tags: ['TypeScript', 'JavaScript', 'Dockerfile'],
         category: 'watching',
       },
+      {
+        name: 'preserve-cd',
+        description: '绝版游戏保护工程',
+        link: {
+          href: 'github.com/skywind3000/preserve-cd',
+          label: 'preserve-cd',
+        },
+        tags: ['-'],
+        category: 'watching',
+      },
+      {
+        name: 'mimotion',
+        description: '小米运动刷步数！',
+        link: {
+          href: 'github.com/TonyJiangWJ/mimotion',
+          label: 'mimotion',
+        },
+        tags: ['Python', 'Shell'],
+        category: 'watching',
+      },
     ],
     艺术设计: [
       {
@@ -651,6 +701,26 @@ export const projects: ProjectsType = {
         tags: ['Go'],
         category: 'watching',
       },
+      {
+        name: 'ExplorerPatcher',
+        description: 'Win11页面优化工具',
+        link: {
+          href: 'github.com/valinet/ExplorerPatcher',
+          label: 'ExplorerPatcher',
+        },
+        tags: ['C', 'C++'],
+        category: 'watching',
+      },
+      {
+        name: 'codebox',
+        description: '解除CSDN/知乎等平台的代码复制限制与登录弹窗',
+        link: {
+          href: 'github.com/027xiguapi/code-box',
+          label: 'codebox',
+        },
+        tags: ['TypeScript', 'HTML'],
+        category: 'watching',
+      },
     ],
     资源: [
       {
@@ -699,6 +769,17 @@ export const projects: ProjectsType = {
         link: {
           href: 'github.com/maxiaobang7/ossnav',
           label: 'ossnav',
+        },
+        tags: ['-'],
+        category: 'watching',
+      },
+      {
+        name: 'free-font',
+        description:
+          '收录了大量可免费商用的字体，覆盖中文、英文、日文等常用语言',
+        link: {
+          href: 'github.com/jaywcjlove/free-font',
+          label: 'free-font',
         },
         tags: ['-'],
         category: 'watching',
