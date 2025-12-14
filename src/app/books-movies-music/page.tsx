@@ -349,12 +349,12 @@ const moviesByYear: Record<string, any[]> = {
         "「I need a weapon, man. All you've got are goddamn nunchuks here.」",
     },
     {
-      title: '我是谁：没有绝对安全的系统 Who Am I - Kein System ist sicher',
-      cover: '/images/movies/我是谁.webp',
-      year: 2014,
-      info: '悬疑 / 惊悚 / 犯罪',
-      rating: 9.0,
-      comment: '「No System is Safe.」',
+      title: '疯狂动物城2 Zootopia 2',
+      cover: '/images/movies/疯狂动物城2.webp',
+      year: 2025,
+      info: '喜剧 / 动画 / 悬疑 / 犯罪 / 冒险',
+      rating: 9.4,
+      comment: '「别害怕与我们不同的人，那也许正是你最需要的力量。」',
     },
   ],
   2024: [
@@ -1232,9 +1232,9 @@ const musicsByYear: Record<string, any[]> = {
   ],
 }
 
-// 玩过的游戏 - 按类型分组
+// 玩过的游戏 - 按玩法分类
 const gamesByType = {
-  单机游戏: [
+  '3A大作': [
     {
       title: '侠盗猎车手5 Grand Theft Auto V',
       cover: '/images/games/GTA5.jpg',
@@ -1252,20 +1252,36 @@ const gamesByType = {
       comment: '「I had a GOD DAMN PLAN!」',
     },
     {
-      title: '艾尔登法环 Elden Ring',
-      cover: '/images/games/艾尔登法环.jpg',
-      year: 2022,
-      type: '游戏 / 角色扮演 / 冒险 / 动作',
-      rating: 9.8,
-      comment: '「即使引导早已破碎，也请您当上艾尔登之王。」',
-    },
-    {
       title: '黑神话·悟空',
       cover: '/images/games/黑神话·悟空.jpg',
       year: 2024,
       type: '游戏 / 角色扮演 / 冒险 / 动作',
       rating: 9.7,
       comment: '「这一回，我又赢了，金蝉子。」',
+    },
+    {
+      title: '热血无赖 Sleeping Dogs',
+      cover: '/images/games/热血无赖 Sleeping Dogs.jpg',
+      year: 2012,
+      type: '游戏 / 射击 / 冒险 / 动作',
+      rating: 9.2,
+      comment: '「A man who never eats pork buns, is never a whole man!」',
+    },
+    {
+      title: '战神4 God of War',
+      cover: '/images/games/战神4 God of War.jpg',
+      year: 2018,
+      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      rating: 9.7,
+      comment: '「不要把我的沉默误解为我没有悲伤。」',
+    },
+    {
+      title: '艾尔登法环 Elden Ring',
+      cover: '/images/games/艾尔登法环.jpg',
+      year: 2022,
+      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      rating: 9.8,
+      comment: '「即使引导早已破碎，也请您当上艾尔登之王。」',
     },
     {
       title: '赛博朋克 2077 Cyberpunk 2077',
@@ -1277,22 +1293,6 @@ const gamesByType = {
         '「你是愿意当个无名之辈，一辈子安生？还是就算活不到三十岁，也要名留青史呢？」',
     },
     {
-      title: '战神4 God of War',
-      cover: '/images/games/战神4 God of War.jpg',
-      year: 2018,
-      type: '游戏 / 角色扮演 / 冒险 / 动作',
-      rating: 9.7,
-      comment: '「不要把我的沉默误解为我没有悲伤。」',
-    },
-    {
-      title: '杀戮尖塔 Slay the Spire',
-      cover: '/images/games/杀戮尖塔 Slay the Spire.jpg',
-      year: 2019,
-      type: '游戏 / 卡牌 / 角色扮演 / 策略',
-      rating: 9.6,
-      comment: '「🤖:至少也要见到第一个boss吧」',
-    },
-    {
       title: '死亡搁浅 DEATH STRANDING',
       cover: '/images/games/死亡搁浅 DEATH STRANDING.jpg',
       year: 2019,
@@ -1300,14 +1300,8 @@ const gamesByType = {
       rating: 9.5,
       comment: '「Keep on keeping on.」',
     },
-    {
-      title: '热血无赖 Sleeping Dogs',
-      cover: '/images/games/热血无赖 Sleeping Dogs.jpg',
-      year: 2012,
-      type: '游戏 / 射击 / 冒险 / 动作',
-      rating: 9.2,
-      comment: '「A man who never eats pork buns, is never a whole man!」',
-    },
+  ],
+  射击类: [
     {
       title: '无主之地3 Borderlands 3',
       cover: '/images/games/无主之地3 Borderlands 3.jpg',
@@ -1316,8 +1310,32 @@ const gamesByType = {
       rating: 9.0,
       comment: '「My chili recipe...dies...with me.」',
     },
+    {
+      title: '逃离鸭科夫 Escape from Tarkov',
+      cover: '/images/games/逃离鸭科夫.jpg',
+      year: 2025,
+      type: '游戏 / 第一人称射击 / 战术 / 提取射击',
+      rating: 8.7,
+      comment: '解压搜打撤',
+    },
+    {
+      title: '穿越火线（已云）',
+      cover: '/images/games/穿越火线.jpg',
+      year: 2012,
+      type: '游戏 / FPS ',
+      rating: 8.0,
+      comment: '十年老兵🫡',
+    },
   ],
-  网游: [
+  卡牌类: [
+    {
+      title: '杀戮尖塔 Slay the Spire',
+      cover: '/images/games/杀戮尖塔 Slay the Spire.jpg',
+      year: 2019,
+      type: '游戏 / 卡牌 / 角色扮演 / 策略',
+      rating: 9.2,
+      comment: '「🤖:至少也要见到第一个boss吧」',
+    },
     {
       title: '炉石传说（已退坑）',
       cover: '/images/games/炉石传说.jpg',
@@ -1326,13 +1344,39 @@ const gamesByType = {
       rating: 8.5,
       comment: '我至今依然记得一包开出女王和螺丝的那一天。',
     },
+  ],
+  互动影游: [
     {
-      title: '穿越火线（已云）',
-      cover: '/images/games/穿越火线.jpg',
-      year: 2012,
-      type: '游戏 / FPS ',
+      title: '隐形守护者',
+      cover: '/images/games/隐形守护者.jpg',
+      year: 2019,
+      type: '游戏 / 文字冒险',
+      rating: 9.6,
+      comment: '「初看愿做旁观者，转眼已是局中人」',
+    },
+    {
+      title: '超英派遣中心 Dispatch',
+      cover: '/images/games/Dispatch.jpg',
+      year: 2025,
+      type: '游戏 / 益智 / 冒险 / 策略 / 动作',
+      rating: 8.8,
+      comment: '「They look fucking identical, Robert!」',
+    },
+    {
+      title: '完蛋！我被美女包围了！',
+      cover: '/images/games/完蛋.jpg',
+      year: 2023,
+      type: '游戏 / 文字冒险',
       rating: 8.0,
-      comment: '十年老兵',
+      comment: '开创互动影游新赛道',
+    },
+    {
+      title: '情感反诈模拟器',
+      cover: '/images/games/情感反诈模拟器.jpg',
+      year: 2025,
+      type: '游戏 / 文字冒险',
+      rating: 8.2,
+      comment: '已经被《可不可以》腌入味了',
     },
   ],
 }
@@ -1399,7 +1443,9 @@ const upcomingGames = [
 
 function GameSection() {
   const [activeTab, setActiveTab] = useState('played')
-  const [activeGameType, setActiveGameType] = useState('单机游戏')
+  const [activeGameType, setActiveGameType] = useState(
+    Object.keys(gamesByType)[0],
+  )
 
   // 获取当前要显示的游戏列表
   const getCurrentGames = () => {
@@ -1409,7 +1455,10 @@ function GameSection() {
     return upcomingGames
   }
 
-  const currentGames = getCurrentGames()
+  const currentGames =
+    activeTab === 'played'
+      ? [...getCurrentGames()].sort((a, b) => b.rating - a.rating)
+      : getCurrentGames()
 
   return (
     <div className="mb-12">
