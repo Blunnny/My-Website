@@ -1534,6 +1534,12 @@ const categories: CategoriesType = {
         description: '程序员出品的菜谱合集！',
         tags: ['免费', '无广告'],
       },
+      {
+        title: 'excel-esports',
+        url: 'https://play.excel-esports.com/',
+        description: 'Excel电竞大赛',
+        tags: ['部分免费', '无广告'],
+      },
     ],
     调酒: [
       {
