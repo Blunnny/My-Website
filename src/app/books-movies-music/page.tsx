@@ -8,7 +8,7 @@ import { Star, Eye, Info, CheckCircle } from 'lucide-react'
 const booksByYear: Record<string, any[]> = {
   2025: [
     {
-      title: '主权个人（The Sovereign Individual）',
+      title: '主权个人',
       cover: '/images/books/主权个人.jpg',
       year: 1999,
       info: '詹姆斯·戴尔·戴维森、威廉·里兹',
