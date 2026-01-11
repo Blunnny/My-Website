@@ -8,12 +8,21 @@ import { Star, Eye, Info, CheckCircle } from 'lucide-react'
 const booksByYear: Record<string, any[]> = {
   2025: [
     {
+      title: '主权个人（The Sovereign Individual）',
+      cover: '/images/books/主权个人.jpg',
+      year: 1999,
+      info: '詹姆斯·戴尔·戴维森、威廉·里兹',
+      publisher: 'Free Press',
+      rating: 9.7,
+      comment: '「未来是无序的。」',
+    },
+    {
       title: '动物农场',
       cover: '/images/books/动物农场.jpg',
       year: 2010,
       info: '乔治·奥威尔',
       publisher: '上海译文出版社',
-      rating: 9.6,
+      rating: 9.8,
       comment: '「所有动物都是平等的，但有些动物比其他动物更平等。」',
     },
     {
@@ -32,7 +41,7 @@ const booksByYear: Record<string, any[]> = {
       year: 2023,
       info: '马伯庸',
       publisher: '湖南文艺出版社',
-      rating: 9.5,
+      rating: 9.2,
       comment: '「超脱因果，不是不沾因果；太上忘情，不是无情无欲。」',
     },
     {
@@ -41,7 +50,7 @@ const booksByYear: Record<string, any[]> = {
       year: 2010,
       info: '三津田信三',
       publisher: '講談社',
-      rating: 9.0,
+      rating: 8.8,
       comment: '推理+恐怖+勇敢者游戏！',
     },
   ],
