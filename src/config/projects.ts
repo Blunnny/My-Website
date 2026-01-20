@@ -105,6 +105,17 @@ export const projects: ProjectsType = {
       logo: '/images/icon/identifier.png',
       category: 'my',
     },
+    {
+      name: '浅草缘签',
+      description: '在浅草寺实现赛博占卜！',
+      link: {
+        href: 'github.com/Blunnny/Sensoji-Temple-fortune',
+        label: 'GitHub',
+      },
+      tags: ['TypeScript', 'CSS', 'HTML'],
+      logo: '/images/icon/temple.png',
+      category: 'my',
+    },
   ],
   watching: {
     LLM: [
