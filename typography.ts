@@ -80,29 +80,35 @@ export default function typographyStyles({ theme }: PluginUtils) {
         },
 
         // Headings
-        'h2, h3': {
+        'h2, h3, h4': {
           color: 'var(--tw-prose-headings)',
           fontWeight: theme('fontWeight.semibold'),
         },
         h2: {
-          fontSize: theme('fontSize.xl')[0],
-          lineHeight: theme('lineHeight.7'),
-          marginTop: theme('spacing.20'),
-          marginBottom: theme('spacing.4'),
-        },
-        h3: {
-          fontSize: theme('fontSize.base')[0],
-          lineHeight: theme('lineHeight.7'),
+          fontSize: theme('fontSize.2xl')[0],
+          lineHeight: theme('lineHeight.8'),
           marginTop: theme('spacing.16'),
           marginBottom: theme('spacing.4'),
         },
-        ':is(h2, h3) + *': {
+        h3: {
+          fontSize: theme('fontSize.xl')[0],
+          lineHeight: theme('lineHeight.7'),
+          marginTop: theme('spacing.12'),
+          marginBottom: theme('spacing.4'),
+        },
+        h4: {
+          fontSize: theme('fontSize.lg')[0],
+          lineHeight: theme('lineHeight.7'),
+          marginTop: theme('spacing.10'),
+          marginBottom: theme('spacing.4'),
+        },
+        ':is(h2, h3, h4) + *': {
           marginTop: 0,
         },
 
         // Images
         img: {
-          borderRadius: theme('borderRadius.3xl'),
+          borderRadius: 0,
         },
 
         // Inline elements
@@ -136,7 +142,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
         'a code': {
           color: 'inherit',
         },
-        ':is(h2, h3) code': {
+        ':is(h2, h3, h4) code': {
           fontWeight: theme('fontWeight.bold'),
         },
 
