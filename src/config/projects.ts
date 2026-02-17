@@ -296,6 +296,16 @@ export const projects: ProjectsType = {
         tags: ['Rust', 'Javascript', 'Python', 'AI'],
         category: 'watching',
       },
+      {
+        name: 'WebRPA',
+        link: {
+          href: 'github.com/pmh1314520/WebRPA',
+          label: 'WebRPA',
+        },
+        description: '一款功能强大的可视化网页自动化工具',
+        tags: ['Typescript', 'Javascript', 'Python'],
+        category: 'watching',
+      },
     ],
     音视频处理: [
       {
@@ -752,6 +762,36 @@ export const projects: ProjectsType = {
         tags: ['JavaScript', 'CSS', 'HTML'],
         category: 'watching',
       },
+      {
+        name: 'HQ-ICON',
+        description: '从 App Store 上获取应用图标',
+        link: {
+          href: 'github.com/YuKongA/HQ-ICON',
+          label: 'HQ-ICON',
+        },
+        tags: ['JavaScript', 'CSS', 'HTML'],
+        category: 'watching',
+      },
+      {
+        name: 'snow-shot',
+        description: '超好用的截图工具',
+        link: {
+          href: 'github.com/mg-chao/snow-shot',
+          label: 'snow-shot',
+        },
+        tags: ['Rust', 'TypeScript'],
+        category: 'watching',
+      },
+      {
+        name: 'VidBee',
+        description: '一个几乎可以从全球任何网站下载视频的工具',
+        link: {
+          href: 'github.com/nexmoe/VidBee',
+          label: 'VidBee',
+        },
+        tags: ['JavaScript', 'TypeScript'],
+        category: 'watching',
+      },
     ],
     资源: [
       {
@@ -813,6 +853,16 @@ export const projects: ProjectsType = {
           label: 'free-font',
         },
         tags: ['-'],
+        category: 'watching',
+      },
+      {
+        name: 'open-meteo',
+        description: '非商业用途的免费天气预报 API，提供全球范围内的天气数据',
+        link: {
+          href: 'github.com/open-meteo/open-meteo',
+          label: 'open-meteo',
+        },
+        tags: ['swift'],
         category: 'watching',
       },
     ],
