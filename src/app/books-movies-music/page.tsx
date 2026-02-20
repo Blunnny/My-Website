@@ -333,6 +333,17 @@ const booksByYear: Record<string, any[]> = {
 
 // 电影
 const moviesByYear: Record<string, any[]> = {
+  2026: [
+    {
+      title: '大空头',
+      cover: '/images/movies/大空头.jpg',
+      year: 2015,
+      info: '剧情 / 传记',
+      rating: 9.6,
+      comment:
+        "「If we're right, people lose homes, people lose jobs, people lose pensions.」",
+    },
+  ],
   2025: [
     {
       title: '哪吒之魔童闹海',
@@ -953,6 +964,24 @@ const tvByYear: Record<string, any[]> = {
 
 // 音乐
 const musicsByYear: Record<string, any[]> = {
+  2026: [
+    {
+      title: '恩赐',
+      cover: '/images/musics/恩赐.jpg',
+      year: 2021,
+      artist: '乐游记乐队',
+      rating: 9.4,
+      comment: '「也許荊棘路途經已 相信世界定有天意」',
+    },
+    {
+      title: '燕儿归',
+      cover: '/images/musics/燕儿归.jpg',
+      year: 2018,
+      artist: '牛奶咖啡',
+      rating: 9.2,
+      comment: '「走过路 又走过桥 醒来海上摇啊摇」',
+    },
+  ],
   2025: [
     {
       title: '夕阳之歌 In Brasil',
