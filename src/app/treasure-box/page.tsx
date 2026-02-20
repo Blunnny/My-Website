@@ -1175,6 +1175,12 @@ const categories: CategoriesType = {
     ],
     其他: [
       {
+        title: 'Z-library',
+        url: 'https://zh.1lib.sk/',
+        description: '在这里下载一切书籍！',
+        tags: ['免费', '无广告'],
+      },
+      {
         title: 'edclub',
         url: 'https://www.edclub.com/',
         description: '电脑打字语练习网站',
