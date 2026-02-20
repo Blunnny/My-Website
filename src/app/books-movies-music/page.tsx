@@ -336,7 +336,7 @@ const moviesByYear: Record<string, any[]> = {
   2026: [
     {
       title: '大空头',
-      cover: '/images/movies/大空头.jpg',
+      cover: '/images/movies/大空头.webp',
       year: 2015,
       info: '剧情 / 传记',
       rating: 9.6,
