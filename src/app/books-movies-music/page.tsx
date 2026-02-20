@@ -6,6 +6,17 @@ import { Star, Eye, Info, CheckCircle } from 'lucide-react'
 
 // 图书
 const booksByYear: Record<string, any[]> = {
+  2026: [
+    {
+      title: '量化股票组合管理',
+      cover: '/images/books/量化股票组合管理.jpg',
+      year: 2022,
+      info: '路德维希·B.钦塞瑞尼 / 金大焕',
+      publisher: '机械工业出版社',
+      rating: 9.5,
+      comment: '比那些Python语法占半本书的不知道强到哪里去了。',
+    },
+  ],
   2025: [
     {
       title: '主权个人',
@@ -668,7 +679,7 @@ const tvByYear: Record<string, any[]> = {
       year: 2025,
       info: '喜剧 / 悬疑 / 犯罪 / 奇幻',
       rating: 9.0,
-      comment: '「I don\’t evolve…I cocoon.」',
+      comment: '「I don’t evolve…I cocoon.」',
     },
     {
       title: '东京女子图鉴 東京女子図鑑',
