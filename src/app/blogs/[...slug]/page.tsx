@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { getBlogBySlug, getAllBlogs } from '@/lib/blogs'
+import { getBlogBySlug, getAllBlogSlugs } from '@/lib/blogs'
 import { getMDXContent } from '@/lib/mdx'
 import { BlogLayout } from '@/components/layout/BlogLayout'
 
@@ -14,9 +14,9 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const blogs = await getAllBlogs()
-  return blogs.map((blog) => ({
-    slug: blog.slug.split('/').map(encodeURIComponent),
+  const slugs = await getAllBlogSlugs()
+  return slugs.map((slug) => ({
+    slug: slug.split('/').map(encodeURIComponent),
   }))
 }
 

@@ -14,27 +14,50 @@ export type BlogType = {
   source?: string
 }
 
-async function importBlog(blogFilename: string): Promise<BlogType> {
-  const source = await fs.readFile(
-    path.join(process.cwd(), 'src/content/blog', blogFilename),
-    'utf-8',
+const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
+
+function getFileSlug(blogFilename: string) {
+  return blogFilename.replace(/\\/g, '/').replace(/\.mdx$/, '')
+}
+
+type BlogEntry = {
+  blog: BlogType
+  filePath: string
+  slug: string
+}
+
+async function getBlogEntries(): Promise<BlogEntry[]> {
+  const blogFileNames = await glob('**/*.mdx', {
+    cwd: BLOG_DIR,
+  })
+
+  const entries = await Promise.all(
+    blogFileNames.map(async (blogFilename) => {
+      const fullPath = path.join(BLOG_DIR, blogFilename)
+      const source = await fs.readFile(fullPath, 'utf-8')
+
+      const { data } = matter(source)
+      const dataAny = data as any
+
+      const fileSlug = getFileSlug(blogFilename)
+
+      return {
+        blog: {
+          slug: fileSlug,
+          ...dataAny,
+        },
+        filePath: fullPath,
+        slug: fileSlug,
+      }
+    }),
   )
 
-  const { data } = matter(source)
-
-  // @ts-expect-error
-  return {
-    slug: blogFilename.replace(/\\/g, '/').replace(/\.mdx$/, ''),
-    ...data,
-  }
+  return entries
 }
 
 export async function getAllBlogs() {
-  let blogFileNames = await glob('**/*.mdx', {
-    cwd: './src/content/blog',
-  })
-
-  let blogs = await Promise.all(blogFileNames.map(importBlog))
+  const entries = await getBlogEntries()
+  const blogs = entries.map((entry) => entry.blog)
 
   return blogs.sort((a, z) => {
     const aDate = a.date ? +new Date(a.date) : 0
@@ -44,12 +67,26 @@ export async function getAllBlogs() {
 }
 
 export async function getBlogBySlug(slug: string): Promise<BlogType | null> {
+  const cleanSlug = slug.replace(/\.mdx$/, '')
+
   try {
-    // 移除双重解码，因为 slug 在页面组件中已经被正确解码
-    const cleanSlug = slug.replace(/\.mdx$/, '')
-    return await importBlog(`${cleanSlug}.mdx`)
+    const entries = await getBlogEntries()
+    const entry = entries.find((item) => item.slug === cleanSlug)
+    return entry ? entry.blog : null
   } catch (error) {
     console.error(`Failed to load blog with slug: ${slug}`, error)
     return null
   }
+}
+
+export async function resolveBlogFilePathBySlug(slug: string) {
+  const cleanSlug = slug.replace(/\.mdx$/, '')
+  const entries = await getBlogEntries()
+  const entry = entries.find((item) => item.slug === cleanSlug)
+  return entry ? entry.filePath : null
+}
+
+export async function getAllBlogSlugs() {
+  const entries = await getBlogEntries()
+  return entries.map((entry) => entry.slug)
 }
