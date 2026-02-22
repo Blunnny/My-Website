@@ -1564,42 +1564,51 @@ function GameSection() {
       )}
 
       <ul className="divide-y divide-muted-foreground/10">
-        {currentGames.map((item, idx) => (
-          <li key={item.title} className="flex items-center gap-4 py-4">
-            <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
-              <Image
-                src={item.cover}
-                alt={item.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-2">
-                <span className="text-lg font-bold">
-                  {idx + 1}. {item.title}
-                </span>
-                <span className="ml-2 text-xs text-muted-foreground">
-                  {item.year}
-                </span>
-                <span className="ml-2 text-xs text-muted-foreground">
-                  {item.type}
-                </span>
+        {currentGames.map((item, idx) => {
+          const fileName = item.cover.toString().split('/').pop() ?? ''
+          const coverSrc =
+            activeTab === 'played'
+              ? `/images/games/played/${activeGameType}/${fileName}`
+              : `/images/games/upcoming/${fileName}`
+          return (
+            <li key={item.title} className="flex items-center gap-4 py-4">
+              <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
+                <Image
+                  src={coverSrc}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="mt-2 flex items-center gap-2 text-sm">
-                <span className="text-xs text-muted-foreground">
-                  {item.comment}
-                </span>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg font-bold">
+                    {idx + 1}. {item.title}
+                  </span>
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {item.year}
+                  </span>
+                  <span className="ml-2 text-xs text-muted-foreground">
+                    {item.type}
+                  </span>
+                </div>
+                <div className="mt-2 flex items-center gap-2 text-sm">
+                  <span className="text-xs text-muted-foreground">
+                    {item.comment}
+                  </span>
+                </div>
               </div>
-            </div>
-            {activeTab === 'played' && (
-              <div className="ml-2 flex items-center gap-1">
-                <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
-                <span className="font-semibold">{item.rating.toFixed(1)}</span>
-              </div>
-            )}
-          </li>
-        ))}
+              {activeTab === 'played' && (
+                <div className="ml-2 flex items-center gap-1">
+                  <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
+                  <span className="font-semibold">
+                    {item.rating.toFixed(1)}
+                  </span>
+                </div>
+              )}
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
@@ -1648,65 +1657,80 @@ function YearSection({
       <ul className="divide-y divide-muted-foreground/10">
         {[...dataByYear[year]]
           .sort((a, b) => b.rating - a.rating)
-          .map((item, idx) => (
-            <li key={item.title} className="flex items-center gap-4 py-4">
-              <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
-                <Image
-                  src={item.cover}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg font-bold">
-                    {idx + 1}. {item.title}
-                  </span>
-                  {type === 'book' && item.info && (
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.info}
+          .map((item, idx) => {
+            const fileName = item.cover.toString().split('/').pop() ?? ''
+            let coverSrc = item.cover
+            if (type === 'book') {
+              coverSrc = `/images/books/${year}/${fileName}`
+            } else if (type === 'tv') {
+              coverSrc = `/images/drama/${year}/${fileName}`
+            } else if (type === 'movie') {
+              coverSrc = `/images/movies/${year}/${fileName}`
+            } else if (type === 'music') {
+              coverSrc = `/images/musics/${year}/${fileName}`
+            }
+            return (
+              <li key={item.title} className="flex items-center gap-4 py-4">
+                <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
+                  <Image
+                    src={coverSrc}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg font-bold">
+                      {idx + 1}. {item.title}
                     </span>
-                  )}
-                  {type === 'music' && item.artist && (
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.artist}
-                    </span>
-                  )}
-                  <span className="ml-2 text-xs text-muted-foreground">
-                    {item.year}
-                  </span>
-                  {type === 'game' && item.type && (
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.type}
-                    </span>
-                  )}
-                  {type === 'book' && item.publisher && (
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.publisher}
-                    </span>
-                  )}
-                  {type !== 'game' &&
-                    type !== 'book' &&
-                    type !== 'music' &&
-                    item.info && (
+                    {type === 'book' && item.info && (
                       <span className="ml-2 text-xs text-muted-foreground">
                         {item.info}
                       </span>
                     )}
+                    {type === 'music' && item.artist && (
+                      <span className="ml-2 text-xs text-muted-foreground">
+                        {item.artist}
+                      </span>
+                    )}
+                    <span className="ml-2 text-xs text-muted-foreground">
+                      {item.year}
+                    </span>
+                    {type === 'game' && item.type && (
+                      <span className="ml-2 text-xs text-muted-foreground">
+                        {item.type}
+                      </span>
+                    )}
+                    {type === 'book' && item.publisher && (
+                      <span className="ml-2 text-xs text-muted-foreground">
+                        {item.publisher}
+                      </span>
+                    )}
+                    {type !== 'game' &&
+                      type !== 'book' &&
+                      type !== 'music' &&
+                      item.info && (
+                        <span className="ml-2 text-xs text-muted-foreground">
+                          {item.info}
+                        </span>
+                      )}
+                  </div>
+                  <div className="mt-2 flex items-center gap-2 text-sm">
+                    <span className="text-xs text-muted-foreground">
+                      {item.comment || '这是一段我的评价。'}
+                    </span>
+                  </div>
                 </div>
-                <div className="mt-2 flex items-center gap-2 text-sm">
-                  <span className="text-xs text-muted-foreground">
-                    {item.comment || '这是一段我的评价。'}
+                <div className="ml-2 flex items-center gap-1">
+                  <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
+                  <span className="font-semibold">
+                    {item.rating.toFixed(1)}
                   </span>
                 </div>
-              </div>
-              <div className="ml-2 flex items-center gap-1">
-                <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
-                <span className="font-semibold">{item.rating.toFixed(1)}</span>
-              </div>
-            </li>
-          ))}
+              </li>
+            )
+          })}
       </ul>
     </div>
   )
