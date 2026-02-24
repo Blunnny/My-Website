@@ -16,7 +16,7 @@ interface Props {
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs()
   return slugs.map((slug) => ({
-    slug: slug.split('/').map(encodeURIComponent),
+    slug: slug.split('/'),
   }))
 }
 
