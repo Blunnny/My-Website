@@ -2,6 +2,8 @@ import { compileMDX } from 'next-mdx-remote/rsc'
 import { promises as fs } from 'fs'
 import { mdxComponents } from '@/components/shared/MdxComponents'
 import { resolveBlogFilePathBySlug } from '@/lib/blogs'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
 export async function getMDXContent(slug: string) {
   const filePath = await resolveBlogFilePathBySlug(slug)
@@ -15,7 +17,13 @@ export async function getMDXContent(slug: string) {
   const { content } = await compileMDX({
     source,
     components: mdxComponents,
-    options: { parseFrontmatter: true },
+    options: {
+      parseFrontmatter: true,
+      mdxOptions: {
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    },
   })
 
   return content

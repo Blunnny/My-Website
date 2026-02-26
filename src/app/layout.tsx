@@ -4,6 +4,7 @@ import { Providers } from '@/app/providers'
 import { Layout } from '@/components/layout/Layout'
 import { name, headline, introduction } from '@/config/infoConfig'
 import '@/styles/tailwind.css'
+import 'katex/dist/katex.min.css'
 
 export const metadata: Metadata = {
   title: {
