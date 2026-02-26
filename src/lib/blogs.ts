@@ -12,12 +12,24 @@ export type BlogType = {
   tags?: string[]
   content: string
   source?: string
+  category?: string
+  subCategory?: string
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
 
 function getFileSlug(blogFilename: string) {
   return blogFilename.replace(/\\/g, '/').replace(/\.mdx$/, '')
+}
+
+function getCategory(blogFilename: string) {
+  const parts = blogFilename.replace(/\\/g, '/').split('/')
+  return parts[0]
+}
+
+function getSubCategory(blogFilename: string) {
+  const parts = blogFilename.replace(/\\/g, '/').split('/')
+  return parts.length > 1 ? parts[1] : undefined
 }
 
 type BlogEntry = {
@@ -40,10 +52,14 @@ async function getBlogEntries(): Promise<BlogEntry[]> {
       const dataAny = data as any
 
       const fileSlug = getFileSlug(blogFilename)
+      const category = getCategory(blogFilename)
+      const subCategory = getSubCategory(blogFilename)
 
       return {
         blog: {
           slug: fileSlug,
+          category,
+          subCategory,
           ...dataAny,
         },
         filePath: fullPath,

@@ -111,7 +111,7 @@ function BlogListContent({ initialBlogs }: BlogListProps) {
           <Blog
             key={blog.slug}
             blog={blog}
-            showSource={currentCategory === '好文转载'}
+            showSource={blog.tags?.includes('好文转载')}
           />
         ))}
       </div>
