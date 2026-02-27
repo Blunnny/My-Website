@@ -199,7 +199,7 @@ export function CategoryButtons({
     },
     finance: {
       bonds: '债券',
-      forecasting: '预测',
+      forecasting: '财务预测',
       valuation: '估值',
     },
   }

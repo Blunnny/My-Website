@@ -3,6 +3,7 @@ import { promises as fs } from 'fs'
 import { mdxComponents } from '@/components/shared/MdxComponents'
 import { resolveBlogFilePathBySlug } from '@/lib/blogs'
 import remarkMath from 'remark-math'
+import remarkGfm from 'remark-gfm'
 import rehypeKatex from 'rehype-katex'
 
 export async function getMDXContent(slug: string) {
@@ -20,7 +21,7 @@ export async function getMDXContent(slug: string) {
     options: {
       parseFrontmatter: true,
       mdxOptions: {
-        remarkPlugins: [remarkMath],
+        remarkPlugins: [remarkMath, remarkGfm],
         rehypePlugins: [rehypeKatex],
       },
     },

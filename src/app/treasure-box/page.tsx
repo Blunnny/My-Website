@@ -178,7 +178,7 @@ const categories: CategoriesType = {
         title: 'tinywow',
         url: 'https://tinywow.com/',
         description: 'PDF、视频、图片和其他在线工具（无中文语言）',
-        tags: ['免费', '无广告'],
+        tags: ['收费', '无广告'],
       },
     ],
     文件处理: [

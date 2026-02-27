@@ -16,7 +16,7 @@ interface Props {
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs()
   return slugs.map((slug) => ({
-    slug: slug.split('/'),
+    slug: slug.split('/').map((segment) => encodeURIComponent(segment)),
   }))
 }
 
@@ -49,7 +49,7 @@ export default async function BlogPage({ params }: Props) {
 
   return (
     <BlogLayout blog={blog}>
-      <div className="prose dark:prose-invert mt-8">{content}</div>
+      <div className="prose mt-8 dark:prose-invert">{content}</div>
     </BlogLayout>
   )
 }
