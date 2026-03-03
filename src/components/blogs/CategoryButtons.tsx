@@ -200,6 +200,7 @@ export function CategoryButtons({
     finance: {
       bonds: '债券',
       forecasting: '财务预测',
+      'quantitative-investment': '量化投资',
       valuation: '估值',
     },
   }

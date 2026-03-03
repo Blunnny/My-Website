@@ -53,8 +53,11 @@ const BlogImage = ({ caption, className, ...props }: BlogImageProps) => {
   )
 }
 
+import { CodeBlock } from './CodeBlock'
+
 export const mdxComponents: MDXComponents = {
   Image: (props: ImageProps) => <Image {...props} className="my-6" />,
   a: CustomLink,
   BlogImage,
+  pre: CodeBlock,
 }
