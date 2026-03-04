@@ -5,6 +5,7 @@ import { resolveBlogFilePathBySlug } from '@/lib/blogs'
 import remarkMath from 'remark-math'
 import remarkGfm from 'remark-gfm'
 import rehypeKatex from 'rehype-katex'
+import rehypeSlug from 'rehype-slug'
 // @ts-ignore 缺少类型声明文件
 import rehypePrism from '@mapbox/rehype-prism'
 import { visit } from 'unist-util-visit'
@@ -51,7 +52,7 @@ export async function getMDXContent(slug: string) {
       parseFrontmatter: true,
       mdxOptions: {
         remarkPlugins: [remarkMath, remarkGfm],
-        rehypePlugins: [rehypeCodeTitles, rehypeKatex, rehypePrism],
+        rehypePlugins: [rehypeCodeTitles, rehypeKatex, rehypePrism, rehypeSlug],
       },
     },
   })

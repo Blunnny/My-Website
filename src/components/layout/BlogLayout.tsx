@@ -8,6 +8,7 @@ import { Container } from '@/components/layout/Container'
 import { Prose } from '@/components/shared/Prose'
 import { type BlogType } from '@/lib/blogs'
 import { formatDate } from '@/lib/formatDate'
+import { TableOfContents } from '@/components/blog/TableOfContents'
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -34,6 +35,7 @@ export function BlogLayout({
 
   return (
     <Container className="mt-16 lg:mt-32">
+      <TableOfContents />
       <div className="xl:relative">
         <div className="mx-auto max-w-2xl">
           {previousPathname && (
