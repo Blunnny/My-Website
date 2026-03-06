@@ -16,14 +16,12 @@ interface Props {
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs()
   return slugs.map((slug) => ({
-    slug: slug.split('/').map((segment) => encodeURIComponent(segment)),
+    slug: slug.split('/'),
   }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const slug = Array.isArray(params.slug)
-    ? params.slug.map(decodeURIComponent).join('/')
-    : decodeURIComponent(params.slug)
+  const slug = Array.isArray(params.slug) ? params.slug.join('/') : params.slug
   const blog = await getBlogBySlug(slug)
   if (!blog) {
     return {}
@@ -36,9 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPage({ params }: Props) {
-  const slug = Array.isArray(params.slug)
-    ? params.slug.map(decodeURIComponent).join('/')
-    : decodeURIComponent(params.slug)
+  const slug = Array.isArray(params.slug) ? params.slug.join('/') : params.slug
   const blog = await getBlogBySlug(slug)
 
   if (!blog) {

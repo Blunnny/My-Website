@@ -659,6 +659,16 @@ const moviesByYear: Record<string, any[]> = {
 
 // 电视剧
 const tvByYear: Record<string, any[]> = {
+  2026: [
+    {
+      title: '棋士',
+      cover: '/images/drama/棋士.webp',
+      year: 2025,
+      info: '悬疑 / 犯罪',
+      rating: 8.3,
+      comment: '中国版《绝命毒师》。',
+    },
+  ],
   2025: [
     {
       title: '黑镜 第七季 Black Mirror Season 7',
