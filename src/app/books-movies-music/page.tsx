@@ -343,6 +343,14 @@ const moviesByYear: Record<string, any[]> = {
       comment:
         "「If we're right, people lose homes, people lose jobs, people lose pensions.」",
     },
+    {
+      title: '夜王',
+      cover: '/images/movies/夜王.webp',
+      year: 2026,
+      info: '剧情 / 喜剧',
+      rating: 9.2,
+      comment: '「我真的在这里留下过很多耳环。」',
+    },
   ],
   2025: [
     {
@@ -989,7 +997,7 @@ const musicsByYear: Record<string, any[]> = {
       year: 2005,
       artist: '周笔畅',
       rating: 9.2,
-      comment: '「载着我的思念 飞过来地平线 你温暖的笑脸还一如从前」',
+      comment: '「载着我的思念 飞过了地平线 你温暖的笑脸还一如从前」',
     },
     {
       title: '燕儿归',
