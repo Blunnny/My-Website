@@ -984,6 +984,14 @@ const tvByYear: Record<string, any[]> = {
 const musicsByYear: Record<string, any[]> = {
   2026: [
     {
+      title: '花',
+      cover: '/images/musics/花.jpg',
+      year: 2007,
+      artist: '中孝介',
+      rating: 9.6,
+      comment: '「花のように  花のように  ただ風に揺れるだけの  この生命」',
+    },
+    {
       title: '恩赐',
       cover: '/images/musics/恩赐.jpg',
       year: 2021,
