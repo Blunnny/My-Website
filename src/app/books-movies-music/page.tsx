@@ -1391,6 +1391,14 @@ const gamesByType = {
       rating: 9.5,
       comment: '「Keep on keeping on.」',
     },
+    {
+      title: '泰坦陨落2 Titanfall 2',
+      cover: '/images/games/泰坦陨落2 Titanfall 2.jpg',
+      year: 2016,
+      type: '游戏 / 第一人称射击 / 动作',
+      rating: 9.1,
+      comment: '「BT 7274：协议三，保护铁驭。」',
+    },
   ],
   射击类: [
     {
