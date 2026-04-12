@@ -8,7 +8,6 @@ import { headline, introduction } from '@/config/infoConfig'
 import { BlogCard } from '@/components/home/BlogCard'
 import { getAllBlogs, type BlogType } from '@/lib/blogs'
 import { ProjectCard } from '@/components/project/ProjectCard'
-import { ActivityCard } from '@/components/home/ActivityCard'
 import {
   projectHeadLine,
   projectIntro,
@@ -21,9 +20,6 @@ import {
   awards,
   awardsHeadLine,
   awardsIntro,
-  activities,
-  activitiesHeadLine,
-  activitiesIntro,
 } from '@/config/projects'
 import IconCloud from '@/components/ui/icon-cloud'
 import { Award, Briefcase, Heart } from 'lucide-react'
@@ -105,43 +101,6 @@ export default async function Home() {
           >
             {projects.my.map((project) => (
               <ProjectCard key={project.name} project={project} titleAs="h3" />
-            ))}
-          </ul>
-        </div>
-
-        {/* Hobbies & Volunteer */}
-        <div className="mx-auto my-4 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
-          <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
-            <Link href="/about" scroll={false}>
-              <span
-                className="project-animated-title text-xl font-semibold text-black dark:text-white md:text-3xl"
-                style={{
-                  position: 'relative',
-                  display: 'inline-block',
-                  color: 'inherit',
-                  WebkitTextStroke: 'unset',
-                }}
-              >
-                {'　' + activitiesHeadLine + '　'}
-                <span className="hover-text" aria-hidden="true">
-                  {'　' + activitiesHeadLine + '　'}
-                </span>
-              </span>
-            </Link>
-          </h2>
-          <p className="mb-8 max-w-2xl text-base text-muted-foreground">
-            {activitiesIntro}
-          </p>
-          <ul
-            role="list"
-            className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3"
-          >
-            {activities.map((activity) => (
-              <ActivityCard
-                key={activity.name}
-                activity={activity}
-                titleAs="h3"
-              />
             ))}
           </ul>
         </div>

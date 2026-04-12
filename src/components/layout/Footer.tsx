@@ -5,6 +5,8 @@ import { name } from '@/config/infoConfig'
 import SocialLinks from '@/components/home/SocialLinks'
 
 export function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="mt-32 flex-none">
       <ContainerOuter>
@@ -17,8 +19,8 @@ export function Footer() {
                 </div>
                 <div className="mt-2 flex flex-row items-center justify-center gap-2 sm:mt-0">
                   <p className="text-sm text-muted-foreground">
-                    &copy; {new Date().getFullYear()} {name} All rights
-                    reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;鲁ICP备
+                    &copy; 2001-{year} {name} All rights reserved.
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;鲁ICP备
                     2025159378号
                   </p>
                 </div>

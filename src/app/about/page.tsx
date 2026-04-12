@@ -8,8 +8,6 @@ import {
   aboutFood,
 } from '@/config/infoConfig'
 import { Container } from '@/components/layout/Container'
-import { activities } from '@/config/projects'
-import { ActivityCard } from '@/components/home/ActivityCard'
 import { Book, Clapperboard, Gamepad2, LineChart, Calendar } from 'lucide-react'
 import PlotlyCharts from '@/components/about/PlotlyCharts'
 
@@ -57,24 +55,6 @@ export default function About() {
             <p key={idx} dangerouslySetInnerHTML={{ __html: item }} />
           ))}
         </div>
-      </div>
-
-      <div className="mx-auto my-16 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
-        <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
-          兴趣爱好
-        </h2>
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3"
-        >
-          {activities.map((activity) => (
-            <ActivityCard
-              key={activity.name}
-              activity={activity}
-              titleAs="h3"
-            />
-          ))}
-        </ul>
       </div>
 
       <div className="mx-auto my-16 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
