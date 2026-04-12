@@ -116,6 +116,17 @@ export const projects: ProjectsType = {
       logo: '/images/icon/temple.png',
       category: 'my',
     },
+    {
+      name: 'FUCK_BEISEN',
+      description: '北森题库自动化填写工具',
+      link: {
+        href: 'github.com/Blunnny/FUCK_BEISEN',
+        label: 'GitHub',
+      },
+      tags: ['Python'],
+      logo: '/images/icon/beisen.png',
+      category: 'my',
+    },
   ],
   watching: {
     LLM: [
