@@ -674,7 +674,7 @@ const tvByYear: Record<string, any[]> = {
       year: 2015,
       info: '剧情 / 科幻',
       rating: 9.3,
-      comment: '「n the end, we will all be judged by the courage in our hearts.」',
+      comment: '「In the end, we will all be judged by the courage in our hearts.」',
     },
     {
       title: '棋士',
