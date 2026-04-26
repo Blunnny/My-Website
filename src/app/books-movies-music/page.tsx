@@ -669,6 +669,14 @@ const moviesByYear: Record<string, any[]> = {
 const tvByYear: Record<string, any[]> = {
   2026: [
     {
+      title: '超感猎杀 第一季 Sense8 Season 1',
+      cover: '/images/drama/超感猎杀.webp',
+      year: 2015,
+      info: '剧情 / 科幻',
+      rating: 9.3,
+      comment: '中国版《绝命毒师》。',
+    },
+    {
       title: '棋士',
       cover: '/images/drama/棋士.webp',
       year: 2025,
