@@ -10,6 +10,7 @@ import {
 import { Container } from '@/components/layout/Container'
 import { Book, Clapperboard, Gamepad2, LineChart, Calendar } from 'lucide-react'
 import PlotlyCharts from '@/components/about/PlotlyCharts'
+import FootprintSection from '@/components/footprint/FootprintSection'
 
 import portraitImage from '@/images/portrait.jpg'
 import SocialLinks from '@/components/about/SocialLinks'
@@ -56,6 +57,9 @@ export default function About() {
           ))}
         </div>
       </div>
+
+      {/* 我的足迹 */}
+      <FootprintSection />
 
       <div className="mx-auto my-16 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
         <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
