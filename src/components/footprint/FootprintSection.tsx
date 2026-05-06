@@ -62,13 +62,6 @@ export default function FootprintSection() {
           </span>{' '}
           座城市
         </span>
-        <span className="text-muted-foreground">
-          累计{' '}
-          <span className="text-base font-semibold text-foreground">
-            {totalVisits}
-          </span>{' '}
-          次出行
-        </span>
       </div>
 
       <WorldMap items={footprints} />
