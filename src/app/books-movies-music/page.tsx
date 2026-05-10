@@ -16,6 +16,15 @@ const booksByYear: Record<string, any[]> = {
       rating: 9.5,
       comment: '比那些Python语法占半本书的不知道强到哪里去了。',
     },
+    {
+      title: '比特本位',
+      cover: '/images/books/比特本位.jpg',
+      year: 2025,
+      info: '周洛华',
+      publisher: '上海财经大学出版社',
+      rating: 9.3,
+      comment: '「理解比特币并不需要高深的智慧，但需要巨大的勇气。」',
+    },
   ],
   2025: [
     {
