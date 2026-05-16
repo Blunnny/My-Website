@@ -360,6 +360,14 @@ const moviesByYear: Record<string, any[]> = {
       rating: 9.2,
       comment: '「我真的在这里留下过很多耳环。」',
     },
+    {
+      title: '给阿嬷的情书',
+      cover: '/images/movies/给阿嬷的情书.webp',
+      year: 2026,
+      info: '剧情 / 家庭',
+      rating: 9.7,
+      comment: '「江海万里，心中念你，便不觉遥远。」',
+    },
   ],
   2025: [
     {
