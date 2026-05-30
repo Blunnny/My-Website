@@ -25,6 +25,15 @@ const booksByYear: Record<string, any[]> = {
       rating: 9.3,
       comment: '「理解比特币并不需要高深的智慧，但需要巨大的勇气。」',
     },
+    {
+      title: 'X的悲剧',
+      cover: '/images/books/X的悲剧.jpg',
+      year: 2023,
+      info: '[美] 埃勒里·奎因',
+      publisher: '河南文艺出版社',
+      rating: 8.5,
+      comment: '「暴力犯罪源于人的控制欲——是人的生命这出戏最精致的结晶物，而其极致便是谋杀。」',
+    },
   ],
   2025: [
     {
