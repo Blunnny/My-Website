@@ -803,6 +803,16 @@ export const projects: ProjectsType = {
         tags: ['JavaScript', 'TypeScript'],
         category: 'watching',
       },
+      {
+        name: 'tiez-clipboard',
+        description: '一款基于 Tauri 的跨平台剪贴板管理器',
+        link: {
+          href: 'github.com/jimuzhe/tiez-clipboard',
+          label: 'tiz-clipboarde',
+        },
+        tags: ['Rust', 'TypeScript', 'CSS'],
+        category: 'watching',
+      },
     ],
     资源: [
       {
@@ -874,6 +884,16 @@ export const projects: ProjectsType = {
           label: 'open-meteo',
         },
         tags: ['swift'],
+        category: 'watching',
+      },
+      {
+        name: 'motrix-next',
+        description: '一个开源的全能下载工具',
+        link: {
+          href: 'github.com/AnInsomniacy/motrix-next',
+          label: 'motrix-next',
+        },
+        tags: ['TypeScript', 'JavaScript', 'Rust'],
         category: 'watching',
       },
     ],
