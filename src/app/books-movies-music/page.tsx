@@ -377,6 +377,14 @@ const moviesByYear: Record<string, any[]> = {
       rating: 9.7,
       comment: '「江海万里，心中念你，便不觉遥远。」',
     },
+    {
+      title: '挽救计划',
+      cover: '/images/movies/挽救计划.webp',
+      year: 2026,
+      info: '剧情 / 科幻 / 惊悚',
+      rating: 9.7,
+      comment: '「Rocky watch whole crew die. Could not fix. Grace say Grace will die. Rocky fix.」',
+    },
   ],
   2025: [
     {
