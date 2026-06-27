@@ -727,6 +727,14 @@ const tvByYear: Record<string, any[]> = {
       rating: 8.3,
       comment: '中国版《绝命毒师》。',
     },
+    {
+      title: '铁拳教育 참교육',
+      cover: '/images/drama/铁拳教育.webp',
+      year: 2026,
+      info: '剧情 / 动作',
+      rating: 8.6,
+      comment: '「我们不站在老师这边，也不站学生这边；我们只站在受害者这边。」',
+    },
   ],
   2025: [
     {
