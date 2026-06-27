@@ -34,6 +34,15 @@ const booksByYear: Record<string, any[]> = {
       rating: 8.5,
       comment: '「暴力犯罪源于人的控制欲——是人的生命这出戏最精致的结晶物，而其极致便是谋杀。」',
     },
+    {
+      title: '控制论与科学方法论',
+      cover: '/images/books/控制论与科学方法论.jpg',
+      year: 2025,
+      info: '金观涛 / [美] 华国凡',
+      publisher: '广东人民出版社',
+      rating: 9.6,
+      comment: '「科学的光辉照亮了黑暗的宇宙，而这光芒的来源就是人。」',
+    },
   ],
   2025: [
     {
@@ -366,7 +375,7 @@ const moviesByYear: Record<string, any[]> = {
       cover: '/images/movies/夜王.webp',
       year: 2026,
       info: '剧情 / 喜剧',
-      rating: 9.2,
+      rating: 9.0,
       comment: '「我真的在这里留下过很多耳环。」',
     },
     {
@@ -382,7 +391,7 @@ const moviesByYear: Record<string, any[]> = {
       cover: '/images/movies/挽救计划.webp',
       year: 2026,
       info: '剧情 / 科幻 / 惊悚',
-      rating: 9.7,
+      rating: 9.3,
       comment: '「Rocky watch whole crew die. Could not fix. Grace say Grace will die. Rocky fix.」',
     },
   ],
