@@ -394,6 +394,22 @@ const moviesByYear: Record<string, any[]> = {
       rating: 9.3,
       comment: '「Rocky watch whole crew die. Could not fix. Grace say Grace will die. Rocky fix.」',
     },
+    {
+      title: '血钻 Blood Diamond',
+      cover: '/images/movies/血钻.webp',
+      year: 2006,
+      info: '剧情 / 惊悚 / 冒险',
+      rating: 9.0,
+      comment: '「You think I\'m a devil? It\'s only because I\'m living in hell.」',
+    },
+    {
+      title: '八仙！',
+      cover: '/images/movies/八仙！.webp',
+      year: 2026,
+      info: '喜剧 / 动画 / 奇幻 / 冒险',
+      rating: 8.8,
+      comment: '「不问来路，只问去处；不问得失，只认对错。」',
+    },
   ],
   2025: [
     {
