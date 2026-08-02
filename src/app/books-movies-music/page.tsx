@@ -748,7 +748,7 @@ const tvByYear: Record<string, any[]> = {
       cover: '/images/drama/拾荒者统治.webp',
       year: 2023,
       info: '剧情 / 科幻 / 动画 / 冒险',
-      rating: 8.6,
+      rating: 9.5,
       comment: '「Don\'t know, don\'t care.」',
     },
   ],
