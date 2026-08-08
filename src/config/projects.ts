@@ -18,7 +18,7 @@ export type ActivityItemType = {
 
 // 项目分类类型定义，注意添加时还要在page.tsx中添加
 export type WatchingCategory =
-  | 'LLM'
+  | 'AI'
   | '金融'
   | '数据分析'
   | '爬虫'
@@ -129,7 +129,7 @@ export const projects: ProjectsType = {
     },
   ],
   watching: {
-    LLM: [
+    AI: [
       {
         name: 'minimind',
         link: { href: 'github.com/jingyaogong/minimind', label: 'AI minimind' },
@@ -168,13 +168,23 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
       {
-        name: 'Open-AutoGLM',
+        name: 'hermes-agent',
         link: {
-          href: 'github.com/zai-org/Open-AutoGLM',
-          label: 'Open-AutoGLM',
+          href: 'github.com/NousResearch/hermes-agent',
+          label: 'hermes-agent',
         },
-        description: '让AI操作手机！',
-        tags: ['Python'],
+        description: '小龙虾之后又一爆火Agent',
+        tags: ['TypeScript', 'Pyhton'],
+        category: 'watching',
+      },
+      {
+        name: 'models.dev',
+        link: {
+          href: 'github.com/anomalyco/models.dev',
+          label: 'models.dev',
+        },
+        description: '一个开源的AI模型数据库',
+        tags: ['TypeScript'],
         category: 'watching',
       },
     ],
@@ -227,6 +237,16 @@ export const projects: ProjectsType = {
         },
         description: 'TradingAgents的中文增强版',
         tags: ['Python', 'LLM'],
+        category: 'watching',
+      },
+      {
+        name: 'stock-sdk',
+        link: {
+          href: 'github.com/chengzuopeng/stock-sdk',
+          label: 'stock-sdk',
+        },
+        description: '为前端设计的JavaScript SDK。',
+        tags: ['TypeScript'],
         category: 'watching',
       },
     ],
@@ -433,26 +453,6 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
       {
-        name: 'toga',
-        description: '一个 Python 与操作系统原生 GUI 工具包。',
-        link: {
-          href: 'github.com/beeware/toga',
-          label: 'toga',
-        },
-        tags: ['Python', 'GUI', 'CSS'],
-        category: 'watching',
-      },
-      {
-        name: 'prompt-eng-interactive-tutorial',
-        description: 'Anthropic 出品的提示词教程！',
-        link: {
-          href: 'github.com/anthropics/prompt-eng-interactive-tutorial',
-          label: 'prompt',
-        },
-        tags: ['Python', 'Jupyter Notebook'],
-        category: 'watching',
-      },
-      {
         name: 'python-mastery',
         description: 'python进阶教程',
         link: {
@@ -472,16 +472,6 @@ export const projects: ProjectsType = {
         tags: ['Python', 'PHP', 'HTML'],
         category: 'watching',
       },
-      {
-        name: 'toBeBetterJavaer',
-        description: 'JAVA学习与进阶之路',
-        link: {
-          href: 'github.com/itwanger/toBeBetterJavaer',
-          label: 'toBeBetterJavaer',
-        },
-        tags: ['-'],
-        category: 'watching',
-      },
     ],
     文件处理: [
       {
@@ -496,26 +486,6 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
       {
-        name: 'MonkeyOCR',
-        description: 'MinerU竞品之一',
-        link: {
-          href: 'github.com/Yuliang-Liu/MonkeyOCR',
-          label: 'MonkeyOCR',
-        },
-        tags: ['Python', 'shell'],
-        category: 'watching',
-      },
-      {
-        name: 'OCRFlux',
-        description: 'MinerU竞品之二',
-        link: {
-          href: 'github.com/chatdoc-com/OCRFlux',
-          label: 'OCRFlux',
-        },
-        tags: ['Python', 'shell'],
-        category: 'watching',
-      },
-      {
         name: 'quarkdown',
         description: '用markdown写出漂亮排版的工具（跟夸克没关系！）',
         link: {
@@ -523,16 +493,6 @@ export const projects: ProjectsType = {
           label: 'quarkdown',
         },
         tags: ['Kotlin', 'HTML', 'CSS'],
-        category: 'watching',
-      },
-      {
-        name: 'chatlog',
-        description: '解密本地微信数据库，获取聊天数据',
-        link: {
-          href: 'github.com/sjzar/chatlog',
-          label: 'chatlog',
-        },
-        tags: ['Go', 'HTML'],
         category: 'watching',
       },
       {
@@ -638,6 +598,27 @@ export const projects: ProjectsType = {
         link: { href: 'github.com/gitroomhq/postiz-app', label: 'postiz-app' },
         description: 'AI驱动的社交媒体排期工具',
         tags: ['TypeScript', 'JavaScript', 'CSS'],
+        category: 'watching',
+      },
+      {
+        name: 'awesome-design-md',
+        link: { href: 'github.com/VoltAgent/awesome-design-md', label: 'awesome-design-md' },
+        description: '网页设计灵感收集库',
+        tags: ['Markdown'],
+        category: 'watching',
+      },
+      {
+        name: 'github.com/ianho7/maptoposter-online',
+        link: { href: 'github.com/ianho7/maptoposter-online', label: 'maptoposter-online' },
+        description: '做漂亮城市海报的小工具',
+        tags: ['TypeScript','Rust'],
+        category: 'watching',
+      },
+      {
+        name: 'github.com/helloianneo/ian-xiaohei-illustrations',
+        link: { href: 'github.com/helloianneo/ian-xiaohei-illustrations', label: 'ian-xiaohei-illustrations' },
+        description: '一个帮文章配图的skill',
+        tags: ['-'],
         category: 'watching',
       },
     ],
@@ -826,16 +807,6 @@ export const projects: ProjectsType = {
         category: 'watching',
       },
       {
-        name: '盘搜',
-        description: '基于TG频道的网盘搜索工具',
-        link: {
-          href: 'github.com/ZhjGo/pansou-ui',
-          label: '盘搜',
-        },
-        tags: ['HTML', 'JavaScript'],
-        category: 'watching',
-      },
-      {
         name: 'Interview_questions',
         description: '大厂技术岗的面经汇总',
         link: {
@@ -896,53 +867,60 @@ export const projects: ProjectsType = {
         tags: ['TypeScript', 'JavaScript', 'Rust'],
         category: 'watching',
       },
+      {
+        name: 'gaokaomath',
+        description: '历年高考数学真题汇总',
+        link: {
+          href: 'github.com/deekur/gaokaomath',
+          label: 'gaokaomath',
+        },
+        tags: ['-'],
+        category: 'watching',
+      },
+      {
+        name: 'TorrentSearch',
+        description: '一个开源的种子搜索APP',
+        link: {
+          href: 'github.com/prajwalch/TorrentSearch',
+          label: 'TorrentSearch',
+        },
+        tags: ['Kotlin'],
+        category: 'watching',
+      },
+      {
+        name: 'mediary-scout',
+        description: '一个开源的影视搜索agnet',
+        link: {
+          href: 'github.com/fancydirty/mediary-scout',
+          label: 'mediary-scout',
+        },
+        tags: ['TypeScript','JavaScript'],
+        category: 'watching',
+      },
+      {
+        name: 'exercises-dataset',
+        description: '健身动作的数据集',
+        link: {
+          href: 'github.com/hasaneyldrm/exercises-dataset',
+          label: 'exercises-dataset',
+        },
+        tags: ['HTML'],
+        category: 'watching',
+      },
+      {
+        name: 'awesome-zhuiju-free',
+        description: '免费无广告的追剧资源指南',
+        link: {
+          href: 'github.com/laoma2053/awesome-zhuiju-free',
+          label: 'awesome-zhuiju-free',
+        },
+        tags: ['JavaScript'],
+        category: 'watching',
+      },
     ],
   },
 }
 
-// Awards
-export const awardsHeadLine = '所获奖项'
-export const awardsIntro = '学术和职业成就的认可。'
 
-export const awards: Array<ActivityItemType> = [
-  {
-    name: '互联网+大学生创新创业大赛国赛铜奖（主赛道）',
-    description: '"智"预癌症',
-    date: '2021',
-    location: '中国, 厦门',
-  },
-  {
-    name: '互联网+大学生创新创业大赛校赛金奖（红旅赛道）',
-    description: '红树林校园公益教育',
-    date: '2021',
-    location: '中国, 厦门',
-  },
-]
 
-// Hobbies & Volunteer
-export const activitiesHeadLine = '兴趣爱好'
-export const activitiesIntro = '琴棋书画诗酒花，代码咖啡猫与茶。'
 
-export const activities: Array<ActivityItemType> = [
-  {
-    name: '乒乓球',
-    description:
-      '小学三年级开始学习乒乓球，曾称霸球馆小学组，后被市队淘汰选手击碎道心，遂放弃职业之路。',
-    date: '2010-至今',
-    location: '济南',
-  },
-  {
-    name: '钢琴',
-    description:
-      '初中一年级开始学习钢琴，艰难完成拜厄钢琴基础教程，最高水平可演奏《卡农》（现在仍然可以！），后因学业压力放弃钢琴。',
-    date: '2013-至今',
-    location: '济南',
-  },
-  {
-    name: '旅游',
-    description:
-      '已探索地区：法国、德国、意大利、奥地利、瑞士、梵蒂冈、新加坡、日本、香港、澳门，更多地区探索中...',
-    date: '2001-未来',
-    location: '全世界！',
-  },
-]

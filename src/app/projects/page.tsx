@@ -7,7 +7,7 @@ import { projects, WatchingCategory } from '@/config/projects'
 
 // 分类列表
 const watchingCategoryList: WatchingCategory[] = [
-  'LLM',
+  'AI',
   '金融',
   '数据分析',
   '爬虫',
@@ -23,7 +23,7 @@ const watchingCategoryList: WatchingCategory[] = [
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] =
-    useState<WatchingCategory>('LLM')
+    useState<WatchingCategory>('AI')
 
   return (
     <Container className="mt-16 sm:mt-32">
