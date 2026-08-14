@@ -17,13 +17,7 @@ import {
   blogIntro,
   techIcons,
 } from '@/config/infoConfig'
-import {
-  awards,
-  awardsHeadLine,
-  awardsIntro,
-} from '@/config/projects'
 import IconCloud from '@/components/ui/icon-cloud'
-import { Award, Briefcase, Heart } from 'lucide-react'
 import Link from 'next/link'
 
 export default async function Home() {

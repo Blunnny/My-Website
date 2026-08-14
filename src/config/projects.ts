@@ -42,6 +42,10 @@ export const projectHeadLine = '我做的小项目'
 export const projectIntro = '此中有真意，bug已忘言。'
 export const watchingIntro = '观千剑而后识器，追开源而觅真知。'
 
+export const awardsHeadLine = '荣誉奖项'
+export const awardsIntro = ''
+export const awards: ActivityItemType[] = []
+
 // 项目的详细信息
 export const projects: ProjectsType = {
   my: [
