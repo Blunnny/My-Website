@@ -751,6 +751,14 @@ const tvByYear: Record<string, any[]> = {
       rating: 9.5,
       comment: '「Don\'t know, don\'t care.」',
     },
+    {
+      title: '开庭 COURT!',
+      cover: '/images/drama/开庭.webp',
+      year: 2026,
+      info: '剧情',
+      rating: 9.3,
+      comment: '「我们听到的一切都只是观点，不是事实；我们看到的一切都只是视角，不是真相。」',
+    },
   ],
   2025: [
     {
