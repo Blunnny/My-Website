@@ -728,12 +728,12 @@ const tvByYear: Record<string, any[]> = {
       comment: '「In the end, we will all be judged by the courage in our hearts.」',
     },
     {
-      title: '棋士',
-      cover: '/images/drama/棋士.webp',
-      year: 2025,
-      info: '悬疑 / 犯罪',
-      rating: 8.3,
-      comment: '中国版《绝命毒师》。',
+      title: '四重奏 カルテット',
+      cover: '/images/drama/四重奏.webp',
+      year: 2017,
+      info: '剧情 / 爱情 / 悬疑 / 音乐',
+      rating: 9.4,
+      comment: '人生，真是易如反掌。',
     },
     {
       title: '铁拳教育 참교육',
