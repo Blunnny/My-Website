@@ -1,7 +1,6 @@
 export * from './projects'
 export * from './education'
 export * from './career'
-export * from './footprint'
 
 // personal info
 export const name = '靳安和'

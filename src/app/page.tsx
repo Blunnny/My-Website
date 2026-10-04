@@ -4,7 +4,6 @@ import Career from '@/components/home/Career'
 import Education from '@/components/home/Education'
 import SocialLinks from '@/components/home/SocialLinks'
 import RandomLyric from '@/components/home/RandomLyric'
-import FootprintSection from '@/components/footprint/FootprintSection'
 import { headline, introduction } from '@/config/infoConfig'
 import { BlogCard } from '@/components/home/BlogCard'
 import { getAllBlogs, type BlogType } from '@/lib/blogs'
@@ -66,9 +65,6 @@ export default async function Home() {
             ))}
           </ul>
         </div> */}
-
-        {/* My Footprint */}
-        <FootprintSection />
 
         {/* Research & Projects */}
         <div className="mx-auto my-4 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">

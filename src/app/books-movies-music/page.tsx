@@ -43,6 +43,15 @@ const booksByYear: Record<string, any[]> = {
       rating: 9.6,
       comment: '「科学的光辉照亮了黑暗的宇宙，而这光芒的来源就是人。」',
     },
+    {
+      title: '大厂小民',
+      cover: '/images/books/大厂小民.jpg',
+      year: 2026,
+      info: '张小满',
+      publisher: '文汇出版社',
+      rating: 9.4,
+      comment: '「没有人是螺丝钉，千万别把自己拧得太紧。」',
+    },
   ],
   2025: [
     {
@@ -395,12 +404,12 @@ const moviesByYear: Record<string, any[]> = {
       comment: '「Rocky watch whole crew die. Could not fix. Grace say Grace will die. Rocky fix.」',
     },
     {
-      title: '蜘蛛侠：崭新之日',
-      cover: '/images/movies/蜘蛛侠：崭新之日.webp',
+      title: '奥德赛 The Odyssey',
+      cover: '/images/movies/奥德赛.webp',
       year: 2026,
-      info: '动作 / 科幻 / 冒险',
-      rating: 9.0,
-      comment: '「人们喜欢你，不是因为你很特别，而是因为你是你。」',
+      info: '动作 / 历史 / 奇幻 / 冒险',
+      rating: 9.5,
+      comment: '「The clearest view of men is from below.」',
     },
   ],
   2025: [
@@ -733,7 +742,7 @@ const tvByYear: Record<string, any[]> = {
       year: 2017,
       info: '剧情 / 爱情 / 悬疑 / 音乐',
       rating: 9.4,
-      comment: '人生，真是易如反掌。',
+      comment: '「人生，真是易如反掌。」',
     },
     {
       title: '铁拳教育 참교육',
@@ -1481,6 +1490,14 @@ const gamesByType = {
       type: '游戏 / 第一人称射击 / 动作',
       rating: 9.1,
       comment: '「BT 7274：协议三，保护铁驭。」',
+    },
+    {
+      title: '巫师3：狂猎 The Witcher 3: Wild Hunt',
+      cover: '/images/games/巫师3.jpg',
+      year: 2015,
+      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      rating: 9.9,
+      comment: '「但他还爱着他的妻子。」「不对，他只是记得他应该要爱妻子而已。」',
     },
   ],
   射击类: [
