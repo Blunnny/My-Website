@@ -1,10 +1,18 @@
 import { type Metadata } from 'next'
+import { Noto_Sans_SC } from 'next/font/google'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/layout/Layout'
 import { name, headline, introduction } from '@/config/infoConfig'
 import '@/styles/tailwind.css'
 import 'katex/dist/katex.min.css'
+
+const sans = Noto_Sans_SC({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-sans',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -23,11 +31,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html
+      lang="zh-CN"
+      className={`h-full antialiased ${sans.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
-      <body className="flex h-full">
+      <body className={`${sans.className} flex h-full`}>
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>

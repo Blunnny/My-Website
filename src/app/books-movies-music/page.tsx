@@ -1,8 +1,9 @@
 'use client'
 import { useState } from 'react'
 import { Container } from '@/components/layout/Container'
-import Image from 'next/image'
-import { Star, Eye, Info, CheckCircle } from 'lucide-react'
+import { FilterPill } from '@/components/ui/filter-pill'
+import { CoverGrid } from '@/components/media/CoverGrid'
+import type { CoverCardItem } from '@/components/media/CoverCard'
 
 // 图书
 const booksByYear: Record<string, any[]> = {
@@ -1640,13 +1641,37 @@ const upcomingGames = [
   },
 ]
 
+function buildMeta(item: any, type: string) {
+  const parts: string[] = []
+  if (type === 'book') {
+    if (item.info) parts.push(item.info)
+    if (item.publisher) parts.push(item.publisher)
+  } else if (type === 'music') {
+    if (item.artist) parts.push(item.artist)
+  } else if (type === 'game') {
+    if (item.type) parts.push(item.type)
+  } else if (item.info) {
+    parts.push(item.info)
+  }
+  if (item.year) parts.push(String(item.year))
+  return parts.join(' · ')
+}
+
+function resolveCoverSrc(item: any, type: string, year: string) {
+  const fileName = item.cover.toString().split('/').pop() ?? ''
+  if (type === 'book') return `/images/books/${year}/${fileName}`
+  if (type === 'tv') return `/images/drama/${year}/${fileName}`
+  if (type === 'movie') return `/images/movies/${year}/${fileName}`
+  if (type === 'music') return `/images/musics/${year}/${fileName}`
+  return item.cover
+}
+
 function GameSection() {
   const [activeTab, setActiveTab] = useState('played')
   const [activeGameType, setActiveGameType] = useState(
     Object.keys(gamesByType)[0],
   )
 
-  // 获取当前要显示的游戏列表
   const getCurrentGames = () => {
     if (activeTab === 'played') {
       return gamesByType[activeGameType as keyof typeof gamesByType] || []
@@ -1659,108 +1684,70 @@ function GameSection() {
       ? [...getCurrentGames()].sort((a, b) => b.rating - a.rating)
       : getCurrentGames()
 
+  const gridItems: CoverCardItem[] = currentGames.map((item, idx) => {
+    const fileName = item.cover.toString().split('/').pop() ?? ''
+    const coverSrc =
+      activeTab === 'played'
+        ? `/images/games/played/${activeGameType}/${fileName}`
+        : `/images/games/upcoming/${fileName}`
+    return {
+      id: `${activeTab}-${activeGameType}-${item.title}`,
+      cover: coverSrc,
+      title: item.title,
+      rank: idx + 1,
+      rating: activeTab === 'played' ? item.rating : undefined,
+      meta: buildMeta(item, 'game'),
+      comment: item.comment,
+    }
+  })
+
   return (
-    <div className="mb-12">
-      <div className="mb-4 flex items-baseline gap-3">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
-          游戏
-        </h2>
-        <span className="text-base font-medium text-muted-foreground">
-          All work and no play makes Jack a dull boy
-        </span>
+    <section className="mb-16 border-t border-muted pt-12 first:border-t-0 first:pt-0">
+      <div className="mb-6">
+        <p className="section-kicker">Games</p>
+        <div className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <h2 className="section-title">游戏</h2>
+          <span className="text-sm text-muted-foreground">
+            All work and no play makes Jack a dull boy
+          </span>
+        </div>
       </div>
 
-      {/* 主分类按钮 */}
-      <div className="mb-4 flex items-center gap-2">
-        <button
-          className={`rounded-full border px-4 py-1 text-sm transition-all duration-300 ease-in-out ${
-            activeTab === 'played'
-              ? 'transform-none bg-primary text-primary-foreground shadow-none'
-              : 'bg-background text-foreground shadow-none hover:-translate-x-0.5 hover:-translate-y-1 hover:transform hover:bg-muted hover:shadow-[2px_5px_0_0_black] active:translate-x-0.5 active:translate-y-0.5 active:transform active:shadow-none dark:hover:shadow-[2px_5px_0_0_white]'
-          }`}
+      <div className="mb-4 flex flex-wrap items-center gap-2">
+        <FilterPill
+          active={activeTab === 'played'}
           onClick={() => setActiveTab('played')}
         >
           玩过的游戏
-        </button>
-        <button
-          className={`rounded-full border px-4 py-1 text-sm transition-all duration-300 ease-in-out ${
-            activeTab === 'upcoming'
-              ? 'transform-none bg-primary text-primary-foreground shadow-none'
-              : 'bg-background text-foreground shadow-none hover:-translate-x-0.5 hover:-translate-y-1 hover:transform hover:bg-muted hover:shadow-[2px_5px_0_0_black] active:translate-x-0.5 active:translate-y-0.5 active:transform active:shadow-none dark:hover:shadow-[2px_5px_0_0_white]'
-          }`}
+        </FilterPill>
+        <FilterPill
+          active={activeTab === 'upcoming'}
           onClick={() => setActiveTab('upcoming')}
         >
           还没玩的游戏
-        </button>
+        </FilterPill>
       </div>
 
-      {/* 二级分类按钮 - 只在"玩过的游戏"时显示 */}
       {activeTab === 'played' && (
-        <div className="mb-4 flex items-center gap-2">
+        <div className="mb-6 flex flex-wrap items-center gap-2">
           {Object.keys(gamesByType).map((gameType) => (
-            <button
+            <FilterPill
               key={gameType}
-              className={`rounded-full border px-4 py-1 text-sm transition-all duration-300 ease-in-out ${
-                activeGameType === gameType
-                  ? 'transform-none bg-pink-400 text-white shadow-none'
-                  : 'bg-background text-foreground shadow-none hover:-translate-x-0.5 hover:-translate-y-1 hover:transform hover:bg-muted hover:shadow-[2px_5px_0_0_black] active:translate-x-0.5 active:translate-y-0.5 active:transform active:shadow-none dark:hover:shadow-[2px_5px_0_0_white]'
-              }`}
+              active={activeGameType === gameType}
               onClick={() => setActiveGameType(gameType)}
             >
               {gameType}
-            </button>
+            </FilterPill>
           ))}
         </div>
       )}
 
-      <ul className="divide-y divide-muted-foreground/10">
-        {currentGames.map((item, idx) => {
-          const fileName = item.cover.toString().split('/').pop() ?? ''
-          const coverSrc =
-            activeTab === 'played'
-              ? `/images/games/played/${activeGameType}/${fileName}`
-              : `/images/games/upcoming/${fileName}`
-          return (
-            <li key={item.title} className="flex items-center gap-4 py-4">
-              <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
-                <Image
-                  src={coverSrc}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg font-bold">
-                    {idx + 1}. {item.title}
-                  </span>
-                  <span className="ml-2 text-xs text-muted-foreground">
-                    {item.year}
-                  </span>
-                  <span className="ml-2 text-xs text-muted-foreground">
-                    {item.type}
-                  </span>
-                </div>
-                <div className="mt-2 flex items-center gap-2 text-sm">
-                  <span className="text-xs text-muted-foreground">
-                    {item.comment}
-                  </span>
-                </div>
-              </div>
-              {activeTab === 'played' && (
-                <div className="ml-2 flex items-center gap-1">
-                  <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
-                  <span className="font-semibold">
-                    {item.rating.toFixed(1)}
-                  </span>
-                </div>
-              )}
-            </li>
-          )
-        })}
-      </ul>
-    </div>
+      <CoverGrid
+        key={`${activeTab}-${activeGameType}`}
+        items={gridItems}
+        aspect="poster"
+      />
+    </section>
   )
 }
 
@@ -1769,226 +1756,100 @@ function YearSection({
   subtitle,
   dataByYear,
   type,
+  kicker,
 }: {
   title: string
   subtitle?: string
   dataByYear: Record<string, any[]>
   type: string
+  kicker: string
 }) {
-  // 获取所有年份并按降序排序
   const years = Object.keys(dataByYear).sort((a, b) => b.localeCompare(a))
   const [year, setYear] = useState(years[0])
+
+  const gridItems: CoverCardItem[] = [...dataByYear[year]]
+    .sort((a, b) => b.rating - a.rating)
+    .map((item, idx) => ({
+      id: `${type}-${year}-${item.title}`,
+      cover: resolveCoverSrc(item, type, year),
+      title: item.title,
+      rank: idx + 1,
+      rating: item.rating,
+      meta: buildMeta(item, type),
+      comment: item.comment || '这是一段我的评价。',
+    }))
+
   return (
-    <div className="mb-12">
-      <div className="mb-2 flex items-baseline gap-3">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
-          {title}
-        </h2>
-        {subtitle && (
-          <span className="text-base font-medium text-muted-foreground">
-            {subtitle}
-          </span>
-        )}
+    <section className="mb-16 border-t border-muted pt-12 first:border-t-0 first:pt-0">
+      <div className="mb-6">
+        <p className="section-kicker">{kicker}</p>
+        <div className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <h2 className="section-title">{title}</h2>
+          {subtitle && (
+            <span className="text-sm text-muted-foreground">{subtitle}</span>
+          )}
+        </div>
       </div>
-      <div className="mb-4 flex items-center gap-2">
-        <span className="text-base font-medium text-muted-foreground">
-          年度 TOP5
-        </span>
+
+      <div className="mb-6 flex flex-wrap items-center gap-2">
+        <span className="mr-1 text-sm text-muted-foreground">年度 TOP5</span>
         {years.map((y) => (
-          <button
-            key={y}
-            className={`rounded-full border px-4 py-1 text-sm transition-colors ${year === y ? 'bg-primary text-primary-foreground' : 'bg-background text-foreground hover:bg-muted'}`}
-            onClick={() => setYear(y)}
-          >
+          <FilterPill key={y} active={year === y} onClick={() => setYear(y)}>
             {y}
-          </button>
+          </FilterPill>
         ))}
       </div>
-      <ul className="divide-y divide-muted-foreground/10">
-        {[...dataByYear[year]]
-          .sort((a, b) => b.rating - a.rating)
-          .map((item, idx) => {
-            const fileName = item.cover.toString().split('/').pop() ?? ''
-            let coverSrc = item.cover
-            if (type === 'book') {
-              coverSrc = `/images/books/${year}/${fileName}`
-            } else if (type === 'tv') {
-              coverSrc = `/images/drama/${year}/${fileName}`
-            } else if (type === 'movie') {
-              coverSrc = `/images/movies/${year}/${fileName}`
-            } else if (type === 'music') {
-              coverSrc = `/images/musics/${year}/${fileName}`
-            }
-            return (
-              <li key={item.title} className="flex items-center gap-4 py-4">
-                <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
-                  <Image
-                    src={coverSrc}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg font-bold">
-                      {idx + 1}. {item.title}
-                    </span>
-                    {type === 'book' && item.info && (
-                      <span className="ml-2 text-xs text-muted-foreground">
-                        {item.info}
-                      </span>
-                    )}
-                    {type === 'music' && item.artist && (
-                      <span className="ml-2 text-xs text-muted-foreground">
-                        {item.artist}
-                      </span>
-                    )}
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.year}
-                    </span>
-                    {type === 'game' && item.type && (
-                      <span className="ml-2 text-xs text-muted-foreground">
-                        {item.type}
-                      </span>
-                    )}
-                    {type === 'book' && item.publisher && (
-                      <span className="ml-2 text-xs text-muted-foreground">
-                        {item.publisher}
-                      </span>
-                    )}
-                    {type !== 'game' &&
-                      type !== 'book' &&
-                      type !== 'music' &&
-                      item.info && (
-                        <span className="ml-2 text-xs text-muted-foreground">
-                          {item.info}
-                        </span>
-                      )}
-                  </div>
-                  <div className="mt-2 flex items-center gap-2 text-sm">
-                    <span className="text-xs text-muted-foreground">
-                      {item.comment || '这是一段我的评价。'}
-                    </span>
-                  </div>
-                </div>
-                <div className="ml-2 flex items-center gap-1">
-                  <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
-                  <span className="font-semibold">
-                    {item.rating.toFixed(1)}
-                  </span>
-                </div>
-              </li>
-            )
-          })}
-      </ul>
-    </div>
-  )
-}
 
-function Section({
-  title,
-  items,
-  type,
-}: {
-  title: string
-  items: any[]
-  type: string
-}) {
-  return (
-    <div className="mb-12">
-      <h2 className="mb-4 text-2xl font-bold tracking-tight text-foreground">
-        {title}
-      </h2>
-      <ul className="divide-y divide-muted-foreground/10">
-        {[...items]
-          .sort((a, b) => b.rating - a.rating)
-          .map((item, idx) => (
-            <li key={item.title} className="flex items-center gap-4 py-4">
-              <div className="relative h-20 w-14 flex-shrink-0 overflow-hidden rounded-md shadow">
-                <Image
-                  src={item.cover}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg font-bold">
-                    {idx + 1}. {item.title}
-                  </span>
-                  {type === 'book' && item.info && (
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.info}
-                    </span>
-                  )}
-                  <span className="ml-2 text-xs text-muted-foreground">
-                    {item.year}
-                  </span>
-                  {type === 'game' && item.type && (
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.type}
-                    </span>
-                  )}
-                  {type === 'book' && item.publisher && (
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.publisher}
-                    </span>
-                  )}
-                  {type !== 'game' && type !== 'book' && item.info && (
-                    <span className="ml-2 text-xs text-muted-foreground">
-                      {item.info}
-                    </span>
-                  )}
-                </div>
-                <div className="mt-2 flex items-center gap-2 text-sm">
-                  <span className="text-xs text-muted-foreground">
-                    {item.comment || '这是一段我的评价。'}
-                  </span>
-                </div>
-              </div>
-              <div className="ml-2 flex items-center gap-1">
-                <Star className="h-4 w-4 text-yellow-400" fill="#facc15" />
-                <span className="font-semibold">{item.rating.toFixed(1)}</span>
-              </div>
-            </li>
-          ))}
-      </ul>
-    </div>
+      <CoverGrid
+        key={`${type}-${year}`}
+        items={gridItems}
+        aspect={type === 'music' ? 'square' : 'poster'}
+      />
+    </section>
   )
 }
 
 export default function BooksMoviesMusicPage() {
   return (
-    <Container className="mt-16 sm:mt-32">
-      <div className="mx-auto max-w-2xl lg:max-w-4xl">
-        <h1 className="mb-8 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          且将新火试新茶，诗酒趁年华
-        </h1>
+    <Container className="mt-16 sm:mt-28">
+      <div className="mx-auto max-w-2xl lg:max-w-5xl">
+        <header className="mb-14 max-w-3xl">
+          <p className="section-kicker">Archive</p>
+          <h1 className="mt-4 text-3xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.15]">
+            且将新火试新茶，诗酒趁年华
+          </h1>
+          <p className="section-lead mt-5">
+            书、影、音与游戏——以封面为门，短评为注。
+          </p>
+        </header>
+
         <YearSection
           title="图书"
           subtitle="字里行间，卧游千山"
           dataByYear={booksByYear}
           type="book"
+          kicker="Books"
         />
         <YearSection
           title="电影"
           subtitle="二十四帧人间世"
           dataByYear={moviesByYear}
           type="movie"
+          kicker="Movies"
         />
         <YearSection
           title="电视剧"
           subtitle="第二人生"
           dataByYear={tvByYear}
           type="tv"
+          kicker="Series"
         />
         <YearSection
           title="音乐"
           subtitle="单曲循环！"
           dataByYear={musicsByYear}
           type="music"
+          kicker="Music"
         />
         <GameSection />
       </div>

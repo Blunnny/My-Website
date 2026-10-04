@@ -68,6 +68,28 @@
   }
 }
 
+@layer utilities {
+  .section-kicker {
+    @apply text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold tracking-tight text-foreground md:text-3xl;
+  }
+
+  .section-lead {
+    @apply max-w-2xl text-base leading-relaxed text-muted-foreground;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:hover\:scale-\[1\.02\]:hover,
+  .motion-safe\:group-hover\:scale-\[1\.02\]:hover,
+  .motion-safe\:active\:scale-\[0\.98\]:active {
+    transform: none !important;
+  }
+}
+
 /* 主题切换开关样式 */
 .switch {
   font-size: 17px;
@@ -127,8 +149,24 @@ input:checked + .slider:before {
   height: 120px;
   width: auto;
   padding-top: 40px;
-  font-family: 'Poppins', sans-serif;
   justify-content: flex-start;
+}
+
+.wrapper.compact {
+  height: auto;
+  padding-top: 0;
+}
+
+.wrapper.compact .icon {
+  margin: 0 8px 0 0;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.dark .wrapper.compact .icon {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .wrapper .icon {

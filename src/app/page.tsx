@@ -1,5 +1,4 @@
 import { Container } from '@/components/layout/Container'
-import Newsletter from '@/components/home/Newsletter'
 import Career from '@/components/home/Career'
 import Education from '@/components/home/Education'
 import SocialLinks from '@/components/home/SocialLinks'
@@ -32,7 +31,7 @@ export default async function Home() {
   return (
     <>
       <Container className="mt-9">
-        {/* personal info */}
+        {/* personal info — 恢复原先双栏布局 */}
         <div className="mb-10 grid grid-cols-1 md:grid-cols-2">
           <div className="md:mt-20">
             <h2 className="text-2xl font-semibold tracking-tight opacity-80 sm:text-3xl">
@@ -50,94 +49,67 @@ export default async function Home() {
           </div>
         </div>
 
-        {/* Awards */}
-        {/* <div className="mx-auto flex flex-col max-w-xl gap-6 lg:max-w-none my-4 py-8 border-t border-muted">
-          <h2 className="flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight md:text-3xl opacity-80 mb-4">
-            <Award size={28}/>
-            {awardsHeadLine}
-          </h2>
-          <ul
-            role="list"
-            className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3"
-          >
-            {awards.map((award) => (
-              <ActivityCard key={award.name} activity={award} titleAs='h3'/>
-            ))}
-          </ul>
-        </div> */}
-
-        {/* Research & Projects */}
-        <div className="mx-auto my-4 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
-          <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
-            <Link href="/projects" scroll={false}>
-              <span
-                className="project-animated-title text-xl font-semibold text-black dark:text-white md:text-3xl"
-                style={{
-                  position: 'relative',
-                  display: 'inline-block',
-                  color: 'inherit',
-                  WebkitTextStroke: 'unset',
-                }}
-              >
-                {'　' + projectHeadLine + '　'}
-                <span className="hover-text" aria-hidden="true">
-                  {'　' + projectHeadLine + '　'}
-                </span>
-              </span>
+        {/* Projects */}
+        <section className="mx-auto max-w-xl border-t border-muted py-12 lg:max-w-none lg:py-16">
+          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="section-kicker">Projects</p>
+              <h2 className="section-title mt-3">
+                <Link
+                  href="/projects"
+                  scroll={false}
+                  className="transition-colors duration-200 hover:text-primary"
+                >
+                  {projectHeadLine}
+                </Link>
+              </h2>
+              <p className="section-lead mt-3">{projectIntro}</p>
+            </div>
+            <Link
+              href="/projects"
+              scroll={false}
+              className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary"
+            >
+              查看全部 →
             </Link>
-          </h2>
-          <p className="mb-8 max-w-2xl text-base text-muted-foreground">
-            {projectIntro}
-          </p>
+          </div>
           <ul
             role="list"
-            className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3"
+            className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3"
           >
             {projects.my.map((project) => (
               <ProjectCard key={project.name} project={project} titleAs="h3" />
             ))}
           </ul>
-        </div>
+        </section>
 
-        {/* Blog Section */}
-        <div className="mx-auto my-8 flex max-w-xl flex-col gap-6 border-t border-muted py-8 lg:max-w-none">
-          <h2 className="mb-4 flex flex-row items-center justify-start gap-2 text-xl font-semibold tracking-tight opacity-80 md:text-3xl">
-            <Link href="/blogs" scroll={false}>
-              <span
-                className="project-animated-title text-xl font-semibold text-black dark:text-white md:text-3xl"
-                style={{
-                  position: 'relative',
-                  display: 'inline-block',
-                  color: 'inherit',
-                  WebkitTextStroke: 'unset',
-                }}
+        {/* Blog + timeline */}
+        <section className="mx-auto max-w-xl border-t border-muted py-12 lg:max-w-none lg:py-16">
+          <div className="mb-10">
+            <p className="section-kicker">Writing</p>
+            <h2 className="section-title mt-3">
+              <Link
+                href="/blogs"
+                scroll={false}
+                className="transition-colors duration-200 hover:text-primary"
               >
-                {'　' + blogHeadLine + '　'}
-                <span className="hover-text" aria-hidden="true">
-                  {'　' + blogHeadLine + '　'}
-                </span>
-              </span>
-            </Link>
-          </h2>
-          <p className="mb-8 max-w-2xl text-base text-muted-foreground">
-            {blogIntro}
-          </p>
-        </div>
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          {/* left column */}
-          {/* blog */}
-          <div className="flex flex-col gap-16">
-            {blogList.map((blog: BlogType) => (
-              <BlogCard key={blog.slug} blog={blog} titleAs="h3" />
-            ))}
+                {blogHeadLine}
+              </Link>
+            </h2>
+            <p className="section-lead mt-3">{blogIntro}</p>
           </div>
-
-          {/* right column */}
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Education />
-            <Career />
+          <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-16">
+            <div className="flex flex-col gap-12">
+              {blogList.map((blog: BlogType) => (
+                <BlogCard key={blog.slug} blog={blog} titleAs="h3" />
+              ))}
+            </div>
+            <div className="space-y-10 lg:pl-4">
+              <Education />
+              <Career />
+            </div>
           </div>
-        </div>
+        </section>
       </Container>
     </>
   )

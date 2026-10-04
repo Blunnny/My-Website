@@ -32,7 +32,7 @@ export function ProjectCard({
   }
   return (
     <li className="group relative flex h-full flex-col items-start">
-      <div className="relative flex h-full w-full flex-col justify-between rounded-2xl border border-muted-foreground/20 p-4 shadow-sm transition-all group-hover:scale-[1.03] group-hover:bg-muted/5 group-hover:shadow-md">
+      <div className="relative flex h-full w-full flex-col justify-between rounded-2xl border border-border/80 bg-card/40 p-4 shadow-sm transition-[border-color,box-shadow,background-color] duration-300 group-hover:border-primary/30 group-hover:bg-muted/20 group-hover:shadow-md">
         <div className="">
           {project.logo ? (
             <div className="flex flex-col items-start justify-center gap-4 sm:flex-row sm:items-center sm:justify-between">

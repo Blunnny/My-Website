@@ -223,13 +223,22 @@ function getRandomLyric() {
   return lyrics[Math.floor(Math.random() * lyrics.length)]
 }
 
-const RandomLyric: React.FC = () => {
+const RandomLyric: React.FC<{ className?: string }> = ({ className }) => {
   const [lyric, setLyric] = React.useState('')
   React.useEffect(() => {
     setLyric(getRandomLyric())
   }, [])
   return (
-    <div className="mt-2 select-none text-left font-[KaiTi,STKaiti,\u6977\u4F53,serif] text-lg italic text-muted-foreground">
+    <div
+      className={
+        className ??
+        'mt-2 select-none text-left font-kaiti text-lg italic text-muted-foreground'
+      }
+      style={{
+        fontFamily:
+          '"KaiTi", "STKaiti", "Kaiti SC", "楷体", "BiauKai", serif',
+      }}
+    >
       <span role="img" aria-label="music">
         ♫
       </span>{' '}

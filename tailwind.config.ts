@@ -25,6 +25,17 @@ export default {
   	},
   	typography: typographyStyles,
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  			kaiti: [
+  				'KaiTi',
+  				'STKaiti',
+  				'Kaiti SC',
+  				'楷体',
+  				'BiauKai',
+  				'serif',
+  			],
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
