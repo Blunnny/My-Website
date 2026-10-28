@@ -80,9 +80,17 @@ export default function typographyStyles({ theme }: PluginUtils) {
         },
 
         // Headings
-        'h2, h3, h4': {
+        'h1, h2, h3, h4': {
           color: 'var(--tw-prose-headings)',
           fontWeight: theme('fontWeight.semibold'),
+          scrollMarginTop: theme('spacing.24'),
+        },
+        h1: {
+          fontSize: theme('fontSize.3xl')[0],
+          lineHeight: theme('lineHeight.9'),
+          letterSpacing: theme('letterSpacing.tight'),
+          marginTop: theme('spacing.16'),
+          marginBottom: theme('spacing.6'),
         },
         h2: {
           fontSize: theme('fontSize.2xl')[0],
@@ -102,7 +110,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
           marginTop: theme('spacing.10'),
           marginBottom: theme('spacing.4'),
         },
-        ':is(h2, h3, h4) + *': {
+        ':is(h1, h2, h3, h4) + *': {
           marginTop: 0,
         },
 
@@ -142,7 +150,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
         'a code': {
           color: 'inherit',
         },
-        ':is(h2, h3, h4) code': {
+        ':is(h1, h2, h3, h4) code': {
           fontWeight: theme('fontWeight.bold'),
         },
 

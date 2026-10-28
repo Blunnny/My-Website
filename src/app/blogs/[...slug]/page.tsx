@@ -1,7 +1,13 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { getBlogBySlug, getAllBlogSlugs } from '@/lib/blogs'
+import {
+  getAllBlogs,
+  getBlogBySlug,
+  getAllBlogSlugs,
+  type BlogType,
+} from '@/lib/blogs'
+import { isCollected } from '@/lib/blogCategories'
 import { getMDXContent } from '@/lib/mdx'
 import { BlogLayout } from '@/components/layout/BlogLayout'
 
@@ -43,8 +49,20 @@ export default async function BlogPage({ params }: Props) {
 
   const content = await getMDXContent(slug)
 
+  // 与列表同序（新→旧），只在同一类型（原创 / 收藏）内导航
+  const siblings = (await getAllBlogs()).filter(
+    (item) => isCollected(item) === isCollected(blog),
+  )
+  const index = siblings.findIndex((item) => item.slug === blog.slug)
+  const toLink = (item?: BlogType) =>
+    item ? { slug: item.slug, title: item.title } : undefined
+
   return (
-    <BlogLayout blog={blog}>
+    <BlogLayout
+      blog={blog}
+      prev={toLink(siblings[index - 1])}
+      next={toLink(siblings[index + 1])}
+    >
       <div className="prose mt-8 dark:prose-invert">{content}</div>
     </BlogLayout>
   )

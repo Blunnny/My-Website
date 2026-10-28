@@ -6,7 +6,7 @@ import RandomLyric from '@/components/home/RandomLyric'
 import { headline, introduction } from '@/config/infoConfig'
 import { BlogCard } from '@/components/home/BlogCard'
 import { getAllBlogs, type BlogType } from '@/lib/blogs'
-import { ProjectCard } from '@/components/project/ProjectCard'
+import { ProjectBento } from '@/components/project/ProjectBento'
 import {
   projectHeadLine,
   projectIntro,
@@ -73,14 +73,7 @@ export default async function Home() {
               查看全部 →
             </Link>
           </div>
-          <ul
-            role="list"
-            className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3"
-          >
-            {projects.my.map((project) => (
-              <ProjectCard key={project.name} project={project} titleAs="h3" />
-            ))}
-          </ul>
+          <ProjectBento projects={projects.my} titleAs="h3" />
         </section>
 
         {/* Blog + timeline */}

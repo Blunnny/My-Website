@@ -10,77 +10,160 @@ interface Heading {
   level: number
 }
 
-export function TableOfContents() {
+const HEADING_SELECTOR =
+  '[data-mdx-content] :is(h1, h2, h3, h4)[id]'
+const ACTIVE_OFFSET = 120
+
+function useHeadings() {
   const [headings, setHeadings] = useState<Heading[]>([])
+  const [activeId, setActiveId] = useState<string>()
+
+  useEffect(() => {
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>(HEADING_SELECTOR),
+    )
+    setHeadings(
+      elements.map((elem) => ({
+        id: elem.id,
+        text: elem.innerText,
+        level: Number(elem.tagName.substring(1)),
+      })),
+    )
+    if (elements.length === 0) return
+
+    let frame = 0
+    const update = () => {
+      frame = 0
+      let current = elements[0].id
+      for (const elem of elements) {
+        if (elem.getBoundingClientRect().top - ACTIVE_OFFSET > 0) break
+        current = elem.id
+      }
+      setActiveId(current)
+    }
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update)
+    }
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [])
+
+  return { headings, activeId }
+}
+
+function HeadingList({
+  headings,
+  activeId,
+  onSelect,
+}: {
+  headings: Heading[]
+  activeId?: string
+  onSelect?: () => void
+}) {
+  const minLevel = Math.min(...headings.map((h) => h.level))
+  return (
+    <ul className="space-y-0.5 border-l border-border/70">
+      {headings.map((heading) => {
+        const active = heading.id === activeId
+        return (
+          <li key={heading.id}>
+            <a
+              href={`#${heading.id}`}
+              onClick={onSelect}
+              aria-current={active ? 'location' : undefined}
+              style={{ paddingLeft: `${0.75 + (heading.level - minLevel) * 0.75}rem` }}
+              className={clsx(
+                '-ml-px block border-l py-1 pr-2 text-[13px] leading-snug transition-colors duration-200',
+                active
+                  ? 'border-primary font-medium text-primary'
+                  : 'border-transparent text-muted-foreground hover:border-border hover:text-foreground',
+              )}
+            >
+              {heading.text}
+            </a>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+export function TableOfContents() {
+  const { headings, activeId } = useHeadings()
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    // Select all headings inside the prose content
-    // We target h2, h3, h4 as per requirement (up to 4 levels usually means h1-h4 or h2-h5)
-    // Assuming h1 is the title, so we look for h2, h3, h4
-    const elements = Array.from(document.querySelectorAll('.prose h2, .prose h3, .prose h4'))
-    const newHeadings = elements.map((elem) => ({
-      id: elem.id,
-      text: (elem as HTMLElement).innerText,
-      level: Number(elem.tagName.substring(1)),
-    }))
-    setHeadings(newHeadings)
-  }, [])
+    if (!isOpen) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setIsOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [isOpen])
 
   if (headings.length === 0) return null
 
   return (
     <>
-      {/* Toggle Button */}
+      {/* 宽屏：正文左侧常驻 */}
+      <aside className="absolute right-full top-0 mr-10 hidden h-full w-52 print:hidden xl:block">
+        <nav
+          aria-label="文章目录"
+          className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pb-6 [scrollbar-width:thin]"
+        >
+          <p className="section-kicker mb-4">目录</p>
+          <HeadingList headings={headings} activeId={activeId} />
+        </nav>
+      </aside>
+
+      {/* 窄屏：悬浮按钮 + 抽屉 */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed left-4 top-24 z-40 p-2 bg-white dark:bg-zinc-800 rounded-md shadow-md border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-colors print:hidden"
-        aria-label="Toggle Table of Contents"
+        type="button"
+        onClick={() => setIsOpen(true)}
+        aria-label="打开目录"
+        className="fixed bottom-6 left-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-background/90 text-muted-foreground shadow-lg backdrop-blur transition-colors hover:border-primary/40 hover:text-primary print:hidden xl:hidden"
       >
-        <List className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+        <List className="h-5 w-5" />
       </button>
 
-      {/* Overlay */}
-      {isOpen && (
-         <div 
-           className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm dark:bg-black/40"
-           onClick={() => setIsOpen(false)}
-         />
-      )}
-      
-      {/* Sidebar/Drawer */}
       <div
+        aria-hidden
+        onClick={() => setIsOpen(false)}
         className={clsx(
-          'fixed left-0 top-0 h-full w-72 bg-white dark:bg-zinc-900 shadow-xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto border-r border-zinc-200 dark:border-zinc-800',
-          isOpen ? 'translate-x-0' : '-translate-x-full'
+          'fixed inset-0 z-50 bg-black/20 backdrop-blur-sm transition-opacity duration-300 dark:bg-black/40 xl:hidden',
+          isOpen ? 'opacity-100' : 'pointer-events-none opacity-0',
+        )}
+      />
+      <div
+        role="dialog"
+        aria-label="文章目录"
+        aria-hidden={!isOpen}
+        className={clsx(
+          'fixed left-0 top-0 z-50 flex h-full w-72 max-w-[85vw] flex-col border-r border-border bg-background shadow-xl transition-transform duration-300 ease-out xl:hidden',
+          isOpen ? 'translate-x-0' : 'pointer-events-none -translate-x-full',
         )}
       >
-        <div className="flex items-center justify-between p-4 border-b border-zinc-100 dark:border-zinc-800 sticky top-0 bg-white dark:bg-zinc-900 z-10">
-          <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">目录</h2>
-          <button 
+        <div className="flex items-center justify-between border-b border-border/70 px-5 py-4">
+          <p className="section-kicker">目录</p>
+          <button
+            type="button"
             onClick={() => setIsOpen(false)}
-            className="p-1 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            aria-label="关闭目录"
+            className="rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
-            <X className="w-5 h-5 text-zinc-500" />
+            <X className="h-4 w-4" />
           </button>
         </div>
-        <nav className="p-4">
-          <ul className="space-y-1">
-            {headings.map((heading) => (
-              <li
-                key={heading.id}
-                style={{ paddingLeft: `${(heading.level - 2) * 16}px` }}
-              >
-                <a
-                  href={`#${heading.id}`}
-                  className="block text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200 transition-colors py-1.5 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 rounded px-2 -ml-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {heading.text}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <nav className="flex-1 overflow-y-auto px-5 py-4">
+          <HeadingList
+            headings={headings}
+            activeId={activeId}
+            onSelect={() => setIsOpen(false)}
+          />
         </nav>
       </div>
     </>

@@ -14,6 +14,16 @@ export type BlogType = {
   source?: string
   category?: string
   subCategory?: string
+  readingTime?: number
+}
+
+const CJK_CHAR = /[\u3400-\u9fff\uf900-\ufaff]/g
+
+// 中文按每分钟 400 字、英文按每分钟 200 词估算
+function estimateReadingMinutes(text: string) {
+  const cjk = text.match(CJK_CHAR)?.length ?? 0
+  const words = text.replace(CJK_CHAR, ' ').match(/[A-Za-z0-9]+/g)?.length ?? 0
+  return Math.max(1, Math.round(cjk / 400 + words / 200))
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
@@ -48,7 +58,7 @@ async function getBlogEntries(): Promise<BlogEntry[]> {
       const fullPath = path.join(BLOG_DIR, blogFilename)
       const source = await fs.readFile(fullPath, 'utf-8')
 
-      const { data } = matter(source)
+      const { data, content } = matter(source)
       const dataAny = data as any
 
       const fileSlug = getFileSlug(blogFilename)
@@ -61,6 +71,7 @@ async function getBlogEntries(): Promise<BlogEntry[]> {
           category,
           subCategory,
           ...dataAny,
+          readingTime: estimateReadingMinutes(content),
         },
         filePath: fullPath,
         slug: fileSlug,

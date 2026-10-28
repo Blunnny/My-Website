@@ -1,73 +1,192 @@
 'use client'
 
 import { useContext } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 import { AppContext } from '@/app/providers'
 import { Container } from '@/components/layout/Container'
 import { Prose } from '@/components/shared/Prose'
 import { type BlogType } from '@/lib/blogs'
 import { formatDate } from '@/lib/formatDate'
+import {
+  categoryHref,
+  categoryPath,
+  displayTags,
+  isCollected,
+} from '@/lib/blogCategories'
 import { TableOfContents } from '@/components/blog/TableOfContents'
 
-function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+type BlogLink = { slug: string; title: string }
+
+function Dot() {
+  return <span className="text-muted-foreground/40">·</span>
+}
+
+function hostnameOf(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '')
+  } catch {
+    return url
+  }
+}
+
+function SiblingLink({
+  blog,
+  direction,
+}: {
+  blog?: BlogLink
+  direction: 'prev' | 'next'
+}) {
+  if (!blog) return <div className="hidden sm:block" />
+  const isPrev = direction === 'prev'
   return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <Link
+      href={`/blogs/${blog.slug}`}
+      className={`group flex flex-col gap-1.5 rounded-2xl border border-border/70 bg-card/50 p-4 transition-colors duration-200 hover:border-primary/40 hover:bg-muted/40 ${
+        isPrev ? '' : 'sm:items-end sm:text-right'
+      }`}
+    >
+      <span className="flex items-center gap-1 text-xs text-muted-foreground">
+        {isPrev && (
+          <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-200 motion-safe:group-hover:-translate-x-0.5" />
+        )}
+        {isPrev ? '上一篇' : '下一篇'}
+        {!isPrev && (
+          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 motion-safe:group-hover:translate-x-0.5" />
+        )}
+      </span>
+      <span className="text-sm font-medium leading-snug text-foreground transition-colors group-hover:text-primary">
+        {blog.title}
+      </span>
+    </Link>
   )
 }
 
 export function BlogLayout({
   blog,
+  prev,
+  next,
   children,
 }: {
   blog: BlogType
+  prev?: BlogLink
+  next?: BlogLink
   children: React.ReactNode
 }) {
   let router = useRouter()
   let { previousPathname } = useContext(AppContext)
+  const { primary, category, sub } = categoryPath(blog)
+  const tags = displayTags(blog)
 
   return (
-    <Container className="mt-16 lg:mt-32">
-      <TableOfContents />
-      <div className="xl:relative">
-        <div className="mx-auto max-w-2xl">
-          {previousPathname && (
-            <button
-              type="button"
-              onClick={() => router.back()}
-              aria-label="Go back to blogs"
-              className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:-mt-2 lg:mb-0 xl:-top-1.5 xl:left-0 xl:mt-0"
-            >
-              <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
-            </button>
-          )}
-          <article>
-            <header className="flex flex-col">
-              <h1 className="mt-6 break-words text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                {blog.title}
-              </h1>
-              <time
-                dateTime={blog.date}
-                className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
-              >
-                <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
-                <span className="ml-3">{formatDate(blog.date)}</span>
-                <span className="mx-2">·</span>
-                <span>{blog.author}</span>
+    <Container className="mt-16 lg:mt-28">
+      <div className="relative mx-auto max-w-2xl">
+        <TableOfContents />
+
+        {previousPathname ? (
+          <button
+            type="button"
+            onClick={() => router.back()}
+            className="group mb-10 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+          >
+            <ArrowLeft className="h-4 w-4 transition-transform duration-200 motion-safe:group-hover:-translate-x-0.5" />
+            返回
+          </button>
+        ) : (
+          <Link
+            href="/blogs"
+            className="group mb-10 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+          >
+            <ArrowLeft className="h-4 w-4 transition-transform duration-200 motion-safe:group-hover:-translate-x-0.5" />
+            全部文章
+          </Link>
+        )}
+
+        <article>
+          <header>
+            <p className="flex flex-wrap items-center gap-x-2 text-xs font-medium tracking-wide">
+              <span className="text-muted-foreground">{primary}</span>
+              {category && (
+                <>
+                  <span className="text-muted-foreground/40">/</span>
+                  <Link
+                    href={categoryHref(blog)}
+                    className="text-primary/90 transition-colors hover:text-primary"
+                  >
+                    {category}
+                    {sub && ` / ${sub}`}
+                  </Link>
+                </>
+              )}
+            </p>
+            <h1 className="mt-4 break-words text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl">
+              {blog.title}
+            </h1>
+            {blog.description && (
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                {blog.description}
+              </p>
+            )}
+            <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 border-y border-border/60 py-3 text-sm text-muted-foreground">
+              <time dateTime={blog.date} className="tabular-nums">
+                {formatDate(blog.date)}
               </time>
-            </header>
-            <Prose className="mt-8" data-mdx-content>
-              {children}
-            </Prose>
-          </article>
-        </div>
+              {blog.author && (
+                <>
+                  <Dot />
+                  <span>{blog.author}</span>
+                </>
+              )}
+              {blog.readingTime && (
+                <>
+                  <Dot />
+                  <span>约 {blog.readingTime} 分钟</span>
+                </>
+              )}
+              {isCollected(blog) && blog.source && (
+                <>
+                  <Dot />
+                  <a
+                    href={blog.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={blog.source}
+                    className="underline decoration-border underline-offset-2 transition-colors hover:text-primary hover:decoration-primary/50"
+                  >
+                    来源：{hostnameOf(blog.source)}
+                  </a>
+                </>
+              )}
+              {tags.length > 0 && (
+                <span className="flex flex-wrap gap-1.5 sm:ml-auto">
+                  {tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-md bg-muted/70 px-1.5 py-0.5 text-xs"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </span>
+              )}
+            </div>
+          </header>
+          <Prose className="mt-8" data-mdx-content>
+            {children}
+          </Prose>
+        </article>
+
+        {(prev || next) && (
+          <nav
+            aria-label="相邻文章"
+            className="mt-16 grid gap-3 border-t border-border/60 pt-8 sm:grid-cols-2"
+          >
+            <SiblingLink blog={prev} direction="prev" />
+            <SiblingLink blog={next} direction="next" />
+          </nav>
+        )}
       </div>
     </Container>
   )
