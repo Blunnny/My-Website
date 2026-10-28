@@ -746,12 +746,12 @@ const tvByYear: Record<string, any[]> = {
       comment: '「人生，真是易如反掌。」',
     },
     {
-      title: '铁拳教育 참교육',
-      cover: '/images/drama/铁拳教育.webp',
-      year: 2026,
-      info: '剧情 / 动作',
-      rating: 8.6,
-      comment: '「我们不站在老师这边，也不站学生这边；我们只站在受害者这边。」',
+      title: '阴谋职场 Inside Job',
+      cover: '/images/drama/阴谋职场.webp',
+      year: 2021-2022,
+      info: '喜剧 / 科幻 / 动画 / 奇幻',
+      rating: 9.4,
+      comment: '「And you will find it one day, just ... without me.」',
     },
     {
       title: '拾荒者统治 Scavengers Reign',
@@ -1816,10 +1816,10 @@ export default function BooksMoviesMusicPage() {
         <header className="mb-14 max-w-3xl">
           <p className="section-kicker">Archive</p>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.15]">
-            且将新火试新茶，诗酒趁年华
+            图书、电影、电视剧与音乐
           </h1>
           <p className="section-lead mt-5">
-            书、影、音与游戏——以封面为门，短评为注。
+            且将新火试新茶，诗酒趁年华。
           </p>
         </header>
 
