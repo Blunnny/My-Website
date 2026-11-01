@@ -109,16 +109,42 @@ export function TableOfContents() {
 
   return (
     <>
-      {/* 宽屏：正文左侧常驻 */}
-      <aside className="absolute right-full top-0 mr-10 hidden h-full w-52 print:hidden xl:block">
-        <nav
-          aria-label="文章目录"
-          className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pb-6 [scrollbar-width:thin]"
+      {/* 宽屏：默认收起，展开后落在正文左侧的空白处 */}
+      <div
+        className="fixed top-28 z-30 hidden w-64 print:hidden xl:block"
+        style={{ left: 'max(1.5rem, calc(50vw - 60rem))' }}
+      >
+        <button
+          type="button"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen((open) => !open)}
+          className={clsx(
+            'inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors duration-200',
+            isOpen
+              ? 'border-primary/40 bg-background text-primary'
+              : 'border-border/70 bg-background/80 text-muted-foreground hover:border-primary/40 hover:text-primary',
+          )}
         >
-          <p className="section-kicker mb-4">目录</p>
-          <HeadingList headings={headings} activeId={activeId} />
-        </nav>
-      </aside>
+          <List className="h-3.5 w-3.5" />
+          目录
+        </button>
+        <div
+          className={clsx(
+            'grid transition-[grid-template-rows] duration-300 ease-out',
+            isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+          )}
+        >
+          <nav
+            aria-label="文章目录"
+            aria-hidden={!isOpen}
+            className="overflow-hidden"
+          >
+            <div className="mt-4 max-h-[calc(100vh-10rem)] overflow-y-auto pb-6 pr-3 [scrollbar-width:thin]">
+              <HeadingList headings={headings} activeId={activeId} />
+            </div>
+          </nav>
+        </div>
+      </div>
 
       {/* 窄屏：悬浮按钮 + 抽屉 */}
       <button
