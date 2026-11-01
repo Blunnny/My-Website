@@ -1,12 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { type BlogType } from '@/lib/blogs'
-import {
-  categoryPath,
-  displayTags,
-  formatDateDot,
-  isCollected,
-} from '@/lib/blogCategories'
+import { categoryPath, formatDateDot, isCollected } from '@/lib/blogCategories'
 
 function hostnameOf(url: string) {
   try {
@@ -28,7 +23,6 @@ export function BlogRow({
   onNavigate?: () => void
 }) {
   const { category, sub } = categoryPath(blog)
-  const tags = displayTags(blog)
   const collected = isCollected(blog)
 
   return (
@@ -46,15 +40,9 @@ export function BlogRow({
             </span>
           </>
         )}
-        {blog.readingTime && (
-          <>
-            <Dot />
-            <span>约 {blog.readingTime} 分钟</span>
-          </>
-        )}
       </div>
 
-      <h2 className="mt-2 text-base font-semibold leading-snug tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary sm:text-lg">
+      <h2 className="mt-3.5 text-base font-semibold leading-snug tracking-tight text-foreground transition-colors duration-200 group-hover:text-primary sm:text-lg">
         <Link
           href={`/blogs/${blog.slug}`}
           onClick={onNavigate}
@@ -65,17 +53,15 @@ export function BlogRow({
       </h2>
 
       {blog.description && (
-        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           {blog.description}
         </p>
       )}
 
-      {(tags.length > 0 || collected) && (
+      {collected && (
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-muted-foreground">
-          {collected && (
-            <span>作者：{blog.author || '佚名'}</span>
-          )}
-          {collected && blog.source && (
+          <span>作者：{blog.author || '佚名'}</span>
+          {blog.source && (
             <span>
               来源：
               <a
@@ -87,18 +73,6 @@ export function BlogRow({
               >
                 {hostnameOf(blog.source)}
               </a>
-            </span>
-          )}
-          {tags.length > 0 && (
-            <span className="flex flex-wrap gap-1.5">
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-md bg-muted/70 px-1.5 py-0.5 text-[11px]"
-                >
-                  #{tag}
-                </span>
-              ))}
             </span>
           )}
         </div>

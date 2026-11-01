@@ -1444,6 +1444,14 @@ const gamesByType = {
       comment: '「这一回，我又赢了，金蝉子。」',
     },
     {
+      title: '影之刃零',
+      cover: '/images/games/影之刃零.jpg',
+      year: 2026,
+      type: '游戏 / 角色扮演 / 冒险 / 动作',
+      rating: 9.4,
+      comment: '中式武侠朋克的传奇。',
+    },
+    {
       title: '热血无赖 Sleeping Dogs',
       cover: '/images/games/热血无赖 Sleeping Dogs.jpg',
       year: 2012,
