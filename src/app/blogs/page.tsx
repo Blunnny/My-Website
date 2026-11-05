@@ -8,7 +8,7 @@ export const runtime = process.env.NEXT_RUNTIME === 'edge' ? 'edge' : 'nodejs'
 
 export const metadata: Metadata = {
   title: '博客',
-  description: '关于会计、计算机、哲学以及最重要的——人生。',
+  description: '记录这个时代。',
 }
 
 export default async function BlogsIndex() {

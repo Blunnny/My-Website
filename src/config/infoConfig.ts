@@ -92,7 +92,7 @@ export const aboutFoodNote = 'to be continued...'
 
 // blog
 export const blogHeadLine = '字耕墨耘，且记浮生'
-export const blogIntro = '关于会计、计算机、哲学以及最重要的——人生。'
+export const blogIntro = '记录这个时代。'
 
 // social links
 export type SocialLinkType = {
