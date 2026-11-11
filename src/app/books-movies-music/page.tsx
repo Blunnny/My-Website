@@ -1449,7 +1449,7 @@ const gamesByType = {
       year: 2026,
       type: '游戏 / 角色扮演 / 冒险 / 动作',
       rating: 9.4,
-      comment: '中式武侠朋克的传奇。',
+      comment: '「灭烛见真火，忘剑得神兵。」',
     },
     {
       title: '热血无赖 Sleeping Dogs',
