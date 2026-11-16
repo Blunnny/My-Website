@@ -1326,9 +1326,9 @@ export const categories: CategoriesType = {
         tags: ['免费', '无广告'],
       },
       {
-        title: 'Alpha Arena',
-        url: 'https://nof1.ai/',
-        description: 'AI大模型在加密货币中的实盘竞赛',
+        title: 'Artificial Analysis',
+        url: 'https://artificialanalysis.ai/leaderboards/models',
+        description: '大模型综合能力榜',
         tags: ['免费', '无广告'],
       },
       {
